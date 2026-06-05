@@ -34,12 +34,15 @@ jobs:
 
       - name: Commit changes if any
         run: |
-          if ! git diff --quiet -- data/; then
+          # Stage first, then check the *staged* diff: `git diff` alone ignores
+          # untracked files, so a brand-new data/history.csv (the baseline run)
+          # would otherwise look like "no changes".
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No data changes — nothing to commit."
+          else
             git config user.name  "fargo-tracker[bot]"
             git config user.email "actions@users.noreply.github.com"
-            git add data/
             git commit -m "data: rating/robustness changes $(date -u +%F)"
             git push
-          else
-            echo "No data changes — nothing to commit."
           fi
