@@ -1,0 +1,13 @@
+HTTP/1.1 404 Not Found
+Content-Length: 123
+Content-Type: application/json; charset=utf-8
+Date: Fri, 05 Jun 2026 17:47:31 GMT
+Server: Microsoft-IIS/10.0
+Cache-Control: no-cache
+Expires: -1
+Pragma: no-cache
+Set-Cookie: ARRAffinity=085da1b1ca1cc3412df04c66c98636a38f50f41113e067d7b0a52649aa5f0749;Path=/;HttpOnly;Secure;Domain=dashboard.fargorate.com
+Set-Cookie: ARRAffinitySameSite=085da1b1ca1cc3412df04c66c98636a38f50f41113e067d7b0a52649aa5f0749;Path=/;HttpOnly;SameSite=None;Secure;Domain=dashboard.fargorate.com
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+
