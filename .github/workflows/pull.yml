@@ -1,0 +1,45 @@
+name: fargo-pull
+
+# Scheduled rating pull. Runs deterministic Python on a runner (open internet),
+# appends any baseline/change rows to data/history.csv, and commits them back.
+# No LLM/agent runs here.
+
+on:
+  schedule:
+    # UTC, best-effort (Actions cron can lag 5-30 min). Off the :00/:30 marks
+    # on purpose — those slots are congested. PLACEHOLDER: 11:17 UTC daily;
+    # adjust to the user's chosen local time.
+    - cron: '17 11 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+# Avoid overlapping runs stepping on each other's commit/push.
+concurrency:
+  group: fargo-pull
+  cancel-in-progress: false
+
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - run: python src/pull.py
+
+      - name: Commit changes if any
+        run: |
+          if ! git diff --quiet -- data/; then
+            git config user.name  "fargo-tracker[bot]"
+            git config user.email "actions@users.noreply.github.com"
+            git add data/
+            git commit -m "data: rating/robustness changes $(date -u +%F)"
+            git push
+          else
+            echo "No data changes — nothing to commit."
+          fi
