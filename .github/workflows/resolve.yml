@@ -1,0 +1,56 @@
+name: fargo-resolve
+
+# Phase 1 helper: resolve names to ids without a local machine. Dispatch with a
+# `search` term to capture candidate matches under docs/resolve/ for review,
+# then dispatch again with the chosen `add_id` to append that player to
+# roster.json. Both steps run src/resolve.py on a runner and commit the result.
+
+on:
+  workflow_dispatch:
+    inputs:
+      search:
+        description: "Name to search for candidate matches (writes docs/resolve/)"
+        required: false
+        default: ""
+      add_id:
+        description: "Confirmed player_id to add to roster.json"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fargo-resolve
+  cancel-in-progress: false
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+
+      - name: Search for candidates
+        if: ${{ inputs.search != '' }}
+        run: python src/resolve.py search "${{ inputs.search }}" --write
+
+      - name: Add confirmed id
+        if: ${{ inputs.add_id != '' }}
+        run: python src/resolve.py add "${{ inputs.add_id }}"
+
+      - name: Commit results if any
+        run: |
+          git add roster.json docs/resolve/ 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git config user.name  "fargo-tracker[bot]"
+            git config user.email "actions@users.noreply.github.com"
+            git commit -m "resolve: update roster / candidates"
+            git push
+          else
+            echo "Nothing to commit."
+          fi
