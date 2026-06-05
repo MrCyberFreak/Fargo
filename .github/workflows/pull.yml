@@ -6,10 +6,13 @@ name: fargo-pull
 
 on:
   schedule:
-    # UTC, best-effort (Actions cron can lag 5-30 min). Off the :00/:30 marks
-    # on purpose — those slots are congested. PLACEHOLDER: 11:17 UTC daily;
-    # adjust to the user's chosen local time.
-    - cron: '17 11 * * *'
+    # 13:17 UTC daily. ~7:17am Denver in daylight time, ~6:17am in standard
+    # time — early morning year-round. GitHub cron is fixed UTC and does NOT
+    # follow DST, so the local time shifts an hour across the changeover (fine
+    # here). Off the :00/:30 marks on purpose to dodge congested cron slots.
+    # Cron is best-effort (5-30 min lag is normal). workflow_dispatch below
+    # stays for manual runs.
+    - cron: '17 13 * * *'
   workflow_dispatch: {}
 
 permissions:
