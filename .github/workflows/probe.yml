@@ -1,0 +1,87 @@
+name: phase0-probe
+
+# THROWAWAY workflow for Phase 0 API reconnaissance (see docs build plan §5).
+# Runs on a GitHub Actions runner (open internet) because the Claude Code build
+# sandbox cannot reach fargorate.com. Captures raw responses from candidate
+# endpoints and commits them under docs/probe/ for read-back. Delete after the
+# API contract is verified and documented in docs/api.md.
+
+on:
+  workflow_dispatch: {}
+  push:
+    # Only re-run when the probe itself changes — NOT when it commits results
+    # back (those touch docs/probe/**), so there is no trigger loop.
+    paths:
+      - '.github/workflows/probe.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Probe candidate endpoints
+        env:
+          UA: "fargo-tracker/0.1 (+https://github.com/MrCyberFreak/Fargo; phase0 recon)"
+        run: |
+          set -u
+          mkdir -p docs/probe
+          OUT=docs/probe
+          : > "$OUT/summary.txt"
+
+          # label|url  — spaces pre-encoded as %20
+          probe() {
+            local label="$1" url="$2"
+            local body="$OUT/${label}.body.txt" head="$OUT/${label}.head.txt"
+            local code
+            code=$(curl -s -S --max-time 25 \
+                     -A "$UA" \
+                     -H 'Accept: application/json' \
+                     -o "$body" -D "$head" \
+                     -w '%{http_code}' \
+                     "$url" 2>>"$OUT/${label}.err.txt" || echo "000")
+            local ctype
+            ctype=$(grep -i '^content-type:' "$head" | tr -d '\r' | head -1)
+            printf '%-28s %s  ->  HTTP %s  [%s]\n' "$label" "$url" "$code" "$ctype" >> "$OUT/summary.txt"
+            # small courtesy delay between calls
+            sleep 2
+          }
+
+          # 1) Reachability + no-auth check (known-good per spec)
+          probe "landingpagemetrics"   "https://dashboard.fargorate.com/api/landingpagemetrics"
+
+          # 2) Search-by-name candidates (documented guess first)
+          probe "indexsearch-q"        "https://dashboard.fargorate.com/api/indexsearch?q=Nathan%20Carroll"
+          probe "indexsearch-query"    "https://dashboard.fargorate.com/api/indexsearch?query=Nathan%20Carroll"
+          probe "indexsearch-term"     "https://dashboard.fargorate.com/api/indexsearch?searchterm=Nathan%20Carroll"
+          probe "playersearch-q"       "https://dashboard.fargorate.com/api/playersearch?q=Nathan%20Carroll"
+          probe "search-q"             "https://dashboard.fargorate.com/api/search?q=Nathan%20Carroll"
+
+          # 3) Lookup-by-id candidates (internal id 1310533 from FairMatch capture)
+          probe "player-path"          "https://dashboard.fargorate.com/api/player/1310533"
+          probe "players-path"         "https://dashboard.fargorate.com/api/players/1310533"
+          probe "player-query"         "https://dashboard.fargorate.com/api/player?id=1310533"
+          probe "playerlookup-query"   "https://dashboard.fargorate.com/api/playerlookup?id=1310533"
+
+          echo "=================== SUMMARY ==================="
+          cat "$OUT/summary.txt"
+          echo "=============================================="
+          echo "----- landingpagemetrics body (first 500 bytes) -----"
+          head -c 500 "$OUT/landingpagemetrics.body.txt" || true
+          echo
+
+      - name: Commit probe results
+        run: |
+          git config user.name  "fargo-tracker[bot]"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/probe/
+          if git diff --cached --quiet; then
+            echo "No probe output to commit."
+          else
+            git commit -m "phase0: capture probe responses [skip ci]"
+            git push
+          fi
