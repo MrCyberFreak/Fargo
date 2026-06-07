@@ -87,17 +87,25 @@ above — they never cause an existing player to stop being tracked:
     per queued name and selects via `pick_match`: a single match is accepted
     **regardless of state** (CO is *preferred* when a CO and an out-of-state
     namesake both exist, so clean local matches are never lost); >1 match in a
-    state bucket is **ambiguous**. Zero-hit names are retried with first-name
-    nickname variants (Andy↔Andrew, …) guarded by a surname match; transient
-    API errors are retried. Writes `docs/resolve/apa_resolution.json` with four
-    buckets: `resolved` (exact-name single), `variant_candidates` (single via a
-    nickname variant), `ambiguous` (>1), `unfound`.
+    state bucket is **ambiguous**. CO is detected with `is_co()` (FargoRate's
+    `location` is inconsistent — "CO" *or* "Denver CO" *or* "Denver, CO" — so it
+    tests the trailing state token, not an exact string). Zero-hit names are
+    retried with first-name nickname variants (Andy↔Andrew, …) guarded by a
+    surname match; transient API errors are retried. Writes
+    `docs/resolve/apa_resolution.json` with four buckets: `resolved` (exact-name
+    single), `variant_candidates` (single via a nickname variant), `ambiguous`
+    (>1), `unfound`.
   - `add` (no network; runs in the same workflow after `resolve`) — **auto-adds
     only the `resolved` (exact-name single) matches** to roster.json (slim entry
     + `apa` cross-link, or cross-link onto an existing id). `variant_candidates`
     and `ambiguous` are **staged for human review, never auto-added** — names
     collide and the roster is never pruned, so a wrong link would track the wrong
-    person forever. The raw APA file lives under git-ignored `basket/`.
+    person forever. Once reviewed, `add --variants` folds the variant bucket in.
+  - `reclassify` (no network) — re-runs `pick_match` over the stored `ambiguous`
+    candidate lists and promotes any that now resolve (e.g. a lone CO player
+    among out-of-state namesakes). Lets a `pick_match` fix be applied to an
+    existing resolution file without re-scraping. The raw APA file lives under
+    git-ignored `basket/`.
 - **NAPA** (planned) — same shape as APA (own rating system, name+state resolve);
   role is the *team override* (include a local-league player regardless of
   FargoRate location) and gap-fill.
@@ -145,8 +153,10 @@ invariant applies unchanged: the pull fetches every rostered id forever.
 covers the DigitalPool importer (id extraction, state filter, dedup, idempotent
 merge); `tests/test_import_apa.py` covers the APA cross-reference (fee-prefix
 cleaning, name norming, crossref bucketing, strictly-additive/idempotent
-cross-link, nickname `variant_queries`, CO-preferred `pick_match`, `resolve`
-bucket routing with `fargo_api.search` stubbed — including the surname guard and
-transient-error retry — and `add` upsert). All use temp files with no network —
+cross-link, nickname `variant_queries`, `is_co` location parsing, CO-preferred
+`pick_match` (incl. city-formatted CO), `resolve` bucket routing with
+`fargo_api.search` stubbed — including the surname guard and transient-error
+retry — `reclassify` promotion, and `add` upsert incl. `--variants`). All use
+temp files with no network —
 `resolve`'s real FargoRate calls are exercised on a runner, not in tests.
 Run: `pip install -r requirements-dev.txt && pytest -q`.

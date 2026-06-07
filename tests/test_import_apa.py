@@ -159,6 +159,22 @@ def test_variant_queries_expands_first_name_keeps_surname():
     assert imp.variant_queries("Cher") == []            # single token
 
 
+def test_is_co_handles_inconsistent_location_formats():
+    assert imp.is_co("CO") and imp.is_co("co")
+    assert imp.is_co("Denver CO") and imp.is_co("Denver, CO") and imp.is_co("Highlands Ranch CO")
+    assert not imp.is_co("TX") and not imp.is_co("Fort Worth TX")
+    assert not imp.is_co("") and not imp.is_co(None)
+
+
+def test_pick_match_treats_city_formatted_co_as_co():
+    # "Denver CO" must beat an out-of-state namesake (regression: exact "CO" check)
+    status, hit = imp.pick_match([rec(1, "A B", "Denver CO"), rec(2, "A B", "TX")])
+    assert status == "resolved" and hit.player_id == 1
+    # two CO (city-formatted) -> still ambiguous
+    status, _ = imp.pick_match([rec(1, "A B", "Denver CO"), rec(2, "A B", "Boulder CO")])
+    assert status == "ambiguous"
+
+
 def test_pick_match_prefers_co_then_single_then_ambiguous():
     # one CO match wins even when out-of-state namesakes exist
     status, hit = imp.pick_match([rec(1, "A B", "CO"), rec(2, "A B", "TX"), rec(3, "A B", "NY")])
@@ -313,6 +329,55 @@ def test_add_creates_new_and_crosslinks_existing(tmp_path, monkeypatch):
     assert saved["200"]["apa"][0]["match_method"] == "name"
     # variant candidate NOT added
     assert "300" not in saved
+
+
+def test_add_variants_flag_includes_variant_bucket(tmp_path, monkeypatch):
+    resolution = _resolution(
+        resolved=[_resolved_row(200, "Exact Match", "CO", 2)],
+        variant=[_resolved_row(300, "Variant Match", "CO", 3, via="variant")])
+    roster_path = _setup_add(tmp_path, monkeypatch, {}, resolution)
+
+    # default: variant NOT added
+    imp.add(today="2026-06-07")
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    assert "200" in saved and "300" not in saved
+
+    # --variants: now the variant bucket is added too, tagged variant
+    s = imp.add(today="2026-06-07", include_variants=True)
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    assert "300" in saved
+    assert saved["300"]["apa"][0]["match_method"] == "variant"
+    assert s["created"] == 1 and s["already_present"] == 1   # 200 already there
+
+
+def test_reclassify_promotes_lone_co_among_namesakes(tmp_path, monkeypatch):
+    resolve_dir = tmp_path / "resolve"; resolve_dir.mkdir()
+    monkeypatch.setattr(imp, "RESOLUTION_PATH", resolve_dir / "apa_resolution.json")
+
+    def amb(name, mid, cands):
+        return {"search_name": name, "matched_via": "name",
+                "memberships": [{"member_id": mid, "member_number": f"804{mid:05d}", "name": name}],
+                "candidates": cands}
+
+    def c(pid, loc):
+        return {"player_id": pid, "name": "X", "rating": 400, "robustness": 50, "location": loc}
+
+    res = {"generated_at": "x", "queue_size": 3, "resolved": [], "variant_candidates": [],
+           "ambiguous": [
+               amb("Lone Co", 1, [c(11, "Denver CO"), c(12, "TX"), c(13, "NY")]),   # -> promote 11
+               amb("All Away", 2, [c(21, "TX"), c(22, "NY")]),                        # stays
+               amb("Two Co", 3, [c(31, "Denver CO"), c(32, "Boulder CO")]),          # stays
+           ], "unfound": [], "errors": 0}
+    (resolve_dir / "apa_resolution.json").write_text(json.dumps(res), encoding="utf-8")
+
+    s = imp.reclassify(today="2026-06-07")
+    assert s["promoted"] == 1 and s["ambiguous_remaining"] == 2
+
+    out = json.loads((resolve_dir / "apa_resolution.json").read_text(encoding="utf-8"))
+    assert len(out["resolved"]) == 1
+    assert out["resolved"][0]["player_id"] == 11 and out["resolved"][0]["location"] == "Denver CO"
+    assert out["resolved"][0]["memberships"][0]["member_id"] == 1
+    assert {a["search_name"] for a in out["ambiguous"]} == {"All Away", "Two Co"}
 
 
 def test_add_is_idempotent(tmp_path, monkeypatch):
