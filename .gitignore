@@ -8,3 +8,7 @@ venv/
 
 # Local Claude Code session tooling (hooks, personal settings)
 .claude/
+
+# Raw roster source lists are staged here and never committed (see CLAUDE.md).
+# Only the curated, non-PII extraction (names + ids) is committed downstream.
+basket/
