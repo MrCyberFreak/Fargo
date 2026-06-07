@@ -29056,6 +29056,27 @@
           "added_date": "2026-06-07"
         }
       ]
+    },
+    "1199370": {
+      "player_id": 1199370,
+      "membership_id": "9900006595597",
+      "name": "Shirish Patel",
+      "state": "Baltimore MD",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3201934,
+          "member_number": "80444097",
+          "name": "Shirishkumar Patel",
+          "first_session": 135,
+          "last_session": 138,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "manual",
+          "added_date": "2026-06-07"
+        }
+      ]
     }
   }
 }

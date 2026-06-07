@@ -1,0 +1,48 @@
+name: fargo-recover-apa
+
+# Second-chance recovery for the APA `unfound` bucket. Reads the unfound names
+# from docs/resolve/apa_resolution.json and, for each, searches FargoRate with a
+# short first-name prefix + surname (avoids the broad-query 500s, catches
+# truncated/variant first names like APA "Shirishkumar Patel" -> FargoRate
+# "Shirish Patel"). Writes docs/resolve/apa_recovery.json for human review and
+# commits it. Adds NOTHING to roster.json — recovery is lower-confidence than the
+# exact pass, so every hit is reviewed (then folded in via apa_manual.json).
+#
+# Network half; the sandbox can't reach fargorate.com (see CLAUDE.md). One query
+# per unique first-name-prefix+surname; ~1s each.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fargo-recover-apa
+  cancel-in-progress: false
+
+jobs:
+  recover-apa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+
+      - name: Recover unfound APA names (prefix + surname search)
+        run: python src/import_apa.py recover
+
+      - name: Commit recovery review file
+        run: |
+          git add docs/resolve/apa_recovery.json
+          if ! git diff --cached --quiet; then
+            git config user.name  "fargo-tracker[bot]"
+            git config user.email "actions@users.noreply.github.com"
+            git commit -m "recover(apa): stage fuzzy unfound matches for review"
+            git push
+          else
+            echo "Nothing to commit."
+          fi
