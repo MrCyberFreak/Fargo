@@ -183,6 +183,14 @@ def test_recover_query_uses_first_name_prefix_plus_surname():
     assert imp.recover_query("Cher") is None                 # single token
 
 
+def test_surname_and_recover_query_ignore_generational_suffix():
+    assert imp.surname("Anthony Tacchia Jr") == "tacchia"    # not "jr"
+    assert imp.surname("Bobby Brown II") == "brown"
+    assert imp.surname("Fred Castellano Jr.") == "castellano"
+    assert imp.recover_query("Anthony Tacchia Jr") == "Anth Tacchia"
+    assert imp.recover_query("Daniel Gillespie JR") == "Dani Gillespie"
+
+
 def test_recover_stages_compatible_matches(tmp_path, monkeypatch):
     resolve_dir = tmp_path / "resolve"; resolve_dir.mkdir()
     monkeypatch.setattr(imp, "RESOLVE_DIR", resolve_dir)
