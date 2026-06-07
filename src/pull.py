@@ -51,7 +51,7 @@ FetchFn = Callable[..., PlayerRecord]
 
 def load_roster(path: Path) -> dict:
     """Return the {player_id_str: entry} mapping, preserving insertion order."""
-    data = json.loads(path.read_text())
+    data = json.loads(path.read_text(encoding="utf-8"))
     return data.get("players", {})
 
 
@@ -64,7 +64,7 @@ def load_last_entries(path: Path) -> dict[int, dict]:
     last: dict[int, dict] = {}
     if not path.exists():
         return last
-    with path.open(newline="") as f:
+    with path.open(newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
             try:
                 last[int(row["player_id"])] = row
@@ -76,7 +76,7 @@ def load_last_entries(path: Path) -> dict[int, dict]:
 def append_rows(path: Path, rows: list[dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     new_file = not path.exists()
-    with path.open("a", newline="") as f:
+    with path.open("a", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=FIELDNAMES)
         if new_file:
             writer.writeheader()

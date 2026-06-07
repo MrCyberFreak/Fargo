@@ -26,7 +26,10 @@ concurrency:
 jobs:
   pull:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # ~1,182 rostered players fetched sequentially at ~1s courtesy delay each is
+    # ~20-30 min every run (the pull fetches all players daily, not just changed
+    # ones). Was 15; raised with headroom for roster growth (NAPA/APA imports).
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
