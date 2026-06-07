@@ -133,6 +133,15 @@ def surname(name: str | None) -> str:
     return parts[-1] if parts else ""
 
 
+def is_co(location: str | None) -> bool:
+    """True if a FargoRate `location` is Colorado. The field is inconsistent —
+    sometimes just "CO", sometimes "Denver CO" or "Denver, CO" — so test the
+    trailing state token, not an exact string match."""
+    if not location:
+        return False
+    return location.upper().replace(",", " ").split()[-1] == "CO"
+
+
 def variant_queries(full_name: str) -> list[str]:
     """First-name nickname variations of a full name, surname kept intact.
     'Andy Carroll' -> ['andrew carroll', 'drew carroll']. Empty if no mapping."""
@@ -264,8 +273,8 @@ def pick_match(candidates: list) -> tuple[str, object]:
     for r in candidates:
         seen.setdefault(r.player_id, r)
     cands = list(seen.values())
-    co = [r for r in cands if (r.location or "").upper() == "CO"]
-    noco = [r for r in cands if (r.location or "").upper() != "CO"]
+    co = [r for r in cands if is_co(r.location)]
+    noco = [r for r in cands if not is_co(r.location)]
     if len(co) == 1:
         return ("resolved", co[0])
     if len(co) > 1:
@@ -381,9 +390,13 @@ def resolve(today: str) -> dict:
     return out
 
 
-def add(today: str) -> dict:
-    """Append every resolved match to roster.json (no network). Idempotent:
-    new ids create a slim entry; existing ids just gain the APA cross-link."""
+def add(today: str, include_variants: bool = False) -> dict:
+    """Append matches to roster.json (no network). Idempotent: new ids create a
+    slim entry; existing ids just gain the APA cross-link.
+
+    By default only the `resolved` (exact-name single) bucket is added. With
+    `include_variants=True` the reviewed `variant_candidates` bucket is added too
+    (each link still records match_method "variant", so it stays auditable)."""
     if not RESOLUTION_PATH.exists():
         print(f"No resolution file at {RESOLUTION_PATH}; run resolve first.", file=sys.stderr)
         raise SystemExit(1)
@@ -392,7 +405,11 @@ def add(today: str) -> dict:
     players = roster.setdefault("players", {})
     summary = {"created": 0, "crosslinked_existing": 0, "already_present": 0}
 
-    for x in res.get("resolved", []):
+    rows = list(res.get("resolved", []))
+    if include_variants:
+        rows += res.get("variant_candidates", [])
+
+    for x in rows:
         key = str(x["player_id"])
         method = x.get("matched_via", "name")
         memberships = x.get("memberships", [])
@@ -420,6 +437,54 @@ def add(today: str) -> dict:
     return summary
 
 
+def reclassify(today: str) -> dict:
+    """Re-bucket the `ambiguous` entries through the current `pick_match` (no
+    network). Each ambiguous entry stored its full candidate list, so re-running
+    the selector recovers the matches that a stale CO check had wrongly flagged —
+    e.g. a lone CO player ("Denver CO") among out-of-state namesakes now resolves
+    to that CO player. Promoted entries move into `resolved` (so `add` will pick
+    them up); the file is rewritten in place."""
+    from types import SimpleNamespace
+
+    if not RESOLUTION_PATH.exists():
+        print(f"No resolution file at {RESOLUTION_PATH}; run resolve first.", file=sys.stderr)
+        raise SystemExit(1)
+    res = json.loads(RESOLUTION_PATH.read_text(encoding="utf-8"))
+
+    still: list[dict] = []
+    promoted = 0
+    for entry in res.get("ambiguous", []):
+        recs = [SimpleNamespace(player_id=c["player_id"], location=c.get("location"),
+                                name=c.get("name"), rating=c.get("rating"),
+                                robustness=c.get("robustness")) for c in entry["candidates"]]
+        status, hit = pick_match(recs)
+        if status == "resolved":
+            res["resolved"].append({
+                "search_name": entry["search_name"],
+                "matched_via": entry.get("matched_via", "name"),
+                "player_id": hit.player_id, "fargo_name": hit.name,
+                "membership_id": None, "rating": hit.rating, "robustness": hit.robustness,
+                "rating_quality": fargo_quality(hit.robustness), "location": hit.location,
+                "memberships": entry["memberships"]})
+            promoted += 1
+        else:
+            still.append(entry)
+
+    res["ambiguous"] = still
+    RESOLUTION_PATH.write_text(
+        json.dumps(res, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return {"promoted": promoted, "resolved_total": len(res["resolved"]),
+            "ambiguous_remaining": len(still)}
+
+
+def fargo_quality(robustness) -> str:
+    """rating_quality without importing fargo_api (keeps reclassify network-free)."""
+    try:
+        return "established" if int(robustness) >= 200 else "preliminary"
+    except (TypeError, ValueError):
+        return "preliminary"
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Cross-reference an APA master list to FargoRate.")
     sub = p.add_subparsers(dest="command", required=True)
@@ -429,7 +494,10 @@ def build_parser() -> argparse.ArgumentParser:
     c.add_argument("--dry-run", action="store_true", help="report only; write nothing")
 
     sub.add_parser("resolve", help="search FargoRate for queued names (network; runner)")
-    sub.add_parser("add", help="append resolved matches to roster.json (no network)")
+    ad = sub.add_parser("add", help="append resolved matches to roster.json (no network)")
+    ad.add_argument("--variants", action="store_true",
+                    help="also add the reviewed variant_candidates bucket")
+    sub.add_parser("reclassify", help="re-bucket ambiguous via current pick_match (no network)")
     return p
 
 
@@ -462,9 +530,16 @@ def main(argv=None) -> int:
         return 0
 
     if args.command == "add":
-        s = add(today)
+        s = add(today, include_variants=args.variants)
+        tag = " (incl. variants)" if args.variants else ""
         print(f"created={s['created']} crosslinked_existing={s['crosslinked_existing']} "
-              f"already_present={s['already_present']} roster_total={s['roster_total']}")
+              f"already_present={s['already_present']} roster_total={s['roster_total']}{tag}")
+        return 0
+
+    if args.command == "reclassify":
+        s = reclassify(today)
+        print(f"promoted {s['promoted']} ambiguous -> resolved "
+              f"(resolved_total={s['resolved_total']} ambiguous_remaining={s['ambiguous_remaining']})")
         return 0
     return 2
 
