@@ -39,12 +39,17 @@ RESOLVE_DIR = ROOT / "docs" / "resolve"
 
 def load_roster() -> dict:
     if ROSTER_PATH.exists():
-        return json.loads(ROSTER_PATH.read_text())
+        return json.loads(ROSTER_PATH.read_text(encoding="utf-8"))
     return {"players": {}}
 
 
 def save_roster(roster: dict) -> None:
-    ROSTER_PATH.write_text(json.dumps(roster, indent=2, ensure_ascii=False) + "\n")
+    # Explicit utf-8: the default platform encoding differs (cp1252 on Windows,
+    # utf-8 on the Linux Actions runner), which would otherwise corrupt non-ASCII
+    # names depending on where the writer ran.
+    ROSTER_PATH.write_text(
+        json.dumps(roster, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
 
 
 def _format_candidate(rec: PlayerRecord) -> str:
