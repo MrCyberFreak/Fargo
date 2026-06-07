@@ -1,12 +1,15 @@
 """Tests for the APA cross-reference importer (src/import_apa.py).
 
-No network: these cover the name-based bridge logic only (the `resolve` step that
-hits FargoRate is exercised on a runner, not here). They lock:
+No network: these cover the name-based bridge logic only (the `resolve` step's
+real FargoRate calls are exercised on a runner; here `fargo_api.search` is
+stubbed). They lock:
 
   * fee-prefix cleaning ("Owes $150 Anna Byrd" -> "Anna Byrd") and name norming
   * crossref bucketing into matched / ambiguous / new against a temp roster
   * the apa cross-link is strictly additive — existing fields untouched, re-run
     adds nothing, and one player can carry several APA memberships
+  * nickname variant expansion, CO-preferred pick_match, resolve() bucket routing
+    (resolved / variant_candidates / ambiguous / unfound), and add() upsert
 """
 
 import json
@@ -15,8 +18,17 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
+import fargo_api  # noqa: E402
 import resolve  # noqa: E402
 import import_apa as imp  # noqa: E402
+
+
+def rec(player_id, name, location, *, rating=400, robustness=50, membership="9900"):
+    """A FargoRate search-result record."""
+    return fargo_api.PlayerRecord(
+        player_id=player_id, membership_id=membership, name=name, rating=rating,
+        robustness=robustness, location=location,
+        rating_quality=fargo_api.quality_for(robustness))
 
 
 def apa_file(players: dict) -> dict:
@@ -136,3 +148,180 @@ def test_dry_run_writes_nothing(tmp_path, monkeypatch):
 
     assert roster_path.read_text(encoding="utf-8") == before
     assert not (imp.RESOLVE_DIR / "apa_to_resolve.json").exists()
+
+
+# --- resolve() helpers --------------------------------------------------------
+
+def test_variant_queries_expands_first_name_keeps_surname():
+    assert imp.variant_queries("Andy Carroll") == ["andrew Carroll", "drew Carroll"]
+    assert imp.variant_queries("Owes $50 Mike Smith") == ["michael Smith", "mick Smith"]
+    assert imp.variant_queries("Zzyzx Nomatch") == []   # no nickname mapping
+    assert imp.variant_queries("Cher") == []            # single token
+
+
+def test_pick_match_prefers_co_then_single_then_ambiguous():
+    # one CO match wins even when out-of-state namesakes exist
+    status, hit = imp.pick_match([rec(1, "A B", "CO"), rec(2, "A B", "TX"), rec(3, "A B", "NY")])
+    assert status == "resolved" and hit.player_id == 1
+    # no CO, exactly one out-of-state -> resolved (non-CO admitted)
+    status, hit = imp.pick_match([rec(2, "A B", "TX")])
+    assert status == "resolved" and hit.player_id == 2
+    # >1 CO -> ambiguous
+    status, hit = imp.pick_match([rec(1, "A B", "CO"), rec(2, "A B", "CO")])
+    assert status == "ambiguous" and len(hit) == 2
+    # no CO, >1 out-of-state -> ambiguous
+    status, hit = imp.pick_match([rec(1, "A B", "TX"), rec(2, "A B", "NY")])
+    assert status == "ambiguous"
+    # dedup by player_id (same id returned twice is one match)
+    status, hit = imp.pick_match([rec(5, "A B", "TX"), rec(5, "A B", "TX")])
+    assert status == "resolved" and hit.player_id == 5
+    # nothing
+    assert imp.pick_match([])[0] == "none"
+
+
+# --- resolve() bucket routing (fargo_api.search stubbed) ----------------------
+
+def _run_resolve(tmp_path, monkeypatch, queue, search_map):
+    resolve_dir = tmp_path / "resolve"
+    resolve_dir.mkdir()
+    (resolve_dir / "apa_to_resolve.json").write_text(json.dumps(queue), encoding="utf-8")
+    monkeypatch.setattr(imp, "RESOLVE_DIR", resolve_dir)
+    monkeypatch.setattr(imp, "TO_RESOLVE_PATH", resolve_dir / "apa_to_resolve.json")
+    monkeypatch.setattr(imp, "RESOLUTION_PATH", resolve_dir / "apa_resolution.json")
+
+    monkeypatch.setattr(fargo_api, "new_session", lambda: None)
+
+    def fake_search(name, session=None):
+        out = search_map.get(name)
+        if isinstance(out, Exception):
+            raise out
+        return out or []
+    monkeypatch.setattr(fargo_api, "search", fake_search)
+    return imp.resolve(today="2026-06-07")
+
+
+def _q(name, mid=1):
+    return {"search_name": name, "norm": imp.norm(name),
+            "memberships": [{"member_id": mid, "member_number": f"804{mid:05d}",
+                             "name": name}]}
+
+
+def test_resolve_routes_into_four_buckets(tmp_path, monkeypatch):
+    queue = [_q("Clean Match", 1), _q("Out Stater", 2), _q("Two Cos", 3),
+             _q("Andy Variant", 4), _q("Ghost Nobody", 5)]
+    search_map = {
+        "Clean Match": [rec(11, "Clean Match", "CO")],
+        "Out Stater": [rec(22, "Out Stater", "TX")],
+        "Two Cos": [rec(31, "Two Cos", "CO"), rec(32, "Two Cos", "CO")],
+        "Andy Variant": [],                       # no exact hit -> try variants
+        "andrew Variant": [rec(44, "Andrew Variant", "CO")],
+        "drew Variant": [],
+        "Ghost Nobody": [],
+    }
+    out = _run_resolve(tmp_path, monkeypatch, queue, search_map)
+
+    assert [r["player_id"] for r in out["resolved"]] == [11, 22]   # exact: CO + non-CO
+    assert out["resolved"][0]["matched_via"] == "name"
+    assert len(out["variant_candidates"]) == 1                     # Andy -> Andrew
+    assert out["variant_candidates"][0]["player_id"] == 44
+    assert out["variant_candidates"][0]["matched_via"] == "variant"
+    assert [a["search_name"] for a in out["ambiguous"]] == ["Two Cos"]
+    assert [u["search_name"] for u in out["unfound"]] == ["Ghost Nobody"]
+    assert out["errors"] == 0
+
+
+def test_resolve_variant_surname_guard_rejects_wrong_surname(tmp_path, monkeypatch):
+    queue = [_q("Andy Carroll", 1)]
+    search_map = {
+        "Andy Carroll": [],
+        "andrew Carroll": [rec(99, "Andrew Jones", "CO")],   # surname mismatch
+        "drew Carroll": [],
+    }
+    out = _run_resolve(tmp_path, monkeypatch, queue, search_map)
+    assert out["variant_candidates"] == [] and len(out["unfound"]) == 1
+
+
+def test_resolve_retries_transient_error_then_succeeds(tmp_path, monkeypatch):
+    monkeypatch.setattr(imp.time, "sleep", lambda *_: None)   # no real backoff
+    calls = {"n": 0}
+
+    def flaky_search(name, session=None):
+        calls["n"] += 1
+        if calls["n"] == 1:
+            raise fargo_api.FargoApiError("HTTP 500 for search 'Anna Byrd'")
+        return [rec(77, "Anna Byrd", "CO")]
+    monkeypatch.setattr(fargo_api, "new_session", lambda: None)
+
+    resolve_dir = tmp_path / "resolve"; resolve_dir.mkdir()
+    (resolve_dir / "apa_to_resolve.json").write_text(json.dumps([_q("Anna Byrd")]), encoding="utf-8")
+    monkeypatch.setattr(imp, "RESOLVE_DIR", resolve_dir)
+    monkeypatch.setattr(imp, "TO_RESOLVE_PATH", resolve_dir / "apa_to_resolve.json")
+    monkeypatch.setattr(imp, "RESOLUTION_PATH", resolve_dir / "apa_resolution.json")
+    monkeypatch.setattr(fargo_api, "search", flaky_search)
+
+    out = imp.resolve(today="2026-06-07")
+    assert out["errors"] == 0 and len(out["resolved"]) == 1
+    assert out["resolved"][0]["player_id"] == 77
+
+
+# --- add() upsert -------------------------------------------------------------
+
+def _resolution(resolved, variant=None, tmp_path=None):
+    return {"generated_at": "2026-06-07", "queue_size": len(resolved),
+            "resolved": resolved, "variant_candidates": variant or [],
+            "ambiguous": [], "unfound": [], "errors": 0}
+
+
+def _resolved_row(player_id, name, location, member_id, *, via="name"):
+    return {"search_name": name, "matched_via": via, "player_id": player_id,
+            "fargo_name": name, "membership_id": "9900", "rating": 400,
+            "robustness": 50, "rating_quality": "preliminary", "location": location,
+            "memberships": [{"member_id": member_id, "member_number": f"804{member_id:05d}",
+                             "name": name}]}
+
+
+def _setup_add(tmp_path, monkeypatch, roster_players, resolution):
+    roster_path = tmp_path / "roster.json"
+    roster_path.write_text(json.dumps({"players": roster_players}), encoding="utf-8")
+    monkeypatch.setattr(resolve, "ROSTER_PATH", roster_path)
+    resolve_dir = tmp_path / "resolve"; resolve_dir.mkdir()
+    monkeypatch.setattr(imp, "RESOLVE_DIR", resolve_dir)
+    monkeypatch.setattr(imp, "RESOLUTION_PATH", resolve_dir / "apa_resolution.json")
+    (resolve_dir / "apa_resolution.json").write_text(json.dumps(resolution), encoding="utf-8")
+    return roster_path
+
+
+def test_add_creates_new_and_crosslinks_existing(tmp_path, monkeypatch):
+    roster_players = {"100": {"player_id": 100, "name": "Existing Player",
+                              "membership_id": "111", "added_date": "2026-01-01"}}
+    resolution = _resolution(
+        resolved=[_resolved_row(100, "Existing Player", "CO", 1),    # existing -> crosslink
+                  _resolved_row(200, "Brand New", "TX", 2)],         # new -> create entry
+        variant=[_resolved_row(300, "Variant Only", "CO", 3, via="variant")])  # NOT added
+    roster_path = _setup_add(tmp_path, monkeypatch, roster_players, resolution)
+
+    s = imp.add(today="2026-06-07")
+    assert s["created"] == 1 and s["crosslinked_existing"] == 1
+
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    # existing entry untouched except additive apa link
+    assert saved["100"]["membership_id"] == "111"
+    assert saved["100"]["added_date"] == "2026-01-01"
+    assert saved["100"]["apa"][0]["member_number"] == "80400001"
+    # new entry created with non-CO state + source apa
+    assert saved["200"]["state"] == "TX" and saved["200"]["source"] == "apa"
+    assert saved["200"]["apa"][0]["match_method"] == "name"
+    # variant candidate NOT added
+    assert "300" not in saved
+
+
+def test_add_is_idempotent(tmp_path, monkeypatch):
+    resolution = _resolution(resolved=[_resolved_row(200, "Brand New", "TX", 2)])
+    roster_path = _setup_add(tmp_path, monkeypatch, {}, resolution)
+
+    first = imp.add(today="2026-06-07")
+    second = imp.add(today="2026-06-08")
+    assert first["created"] == 1
+    assert second["created"] == 0 and second["already_present"] == 1
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    assert len(saved["200"]["apa"]) == 1                  # no duplicate membership
