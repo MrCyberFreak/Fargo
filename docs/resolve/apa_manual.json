@@ -166,5 +166,101 @@
     "membership_id": "9900005371079",
     "location": "Lakewood CO",
     "note": "recovery: lone CO match among out-of-state namesakes (query 'Zach Johnson')"
+  },
+  {
+    "search_name": "Greg Brown",
+    "player_id": 1015017,
+    "fargo_name": "Greg Brown",
+    "membership_id": null,
+    "location": "Hartsel CO",
+    "note": "same person: FargoRate ids [1015017, 1058794] are one human (user-confirmed); profile-group"
+  },
+  {
+    "search_name": "Greg Brown",
+    "player_id": 1058794,
+    "fargo_name": "Greg Brown",
+    "membership_id": null,
+    "location": "Denver CO",
+    "note": "same person: FargoRate ids [1015017, 1058794] are one human (user-confirmed); profile-group"
+  },
+  {
+    "search_name": "Jeff Lang",
+    "player_id": 1120801,
+    "fargo_name": "Jeff Lang",
+    "membership_id": null,
+    "location": "Louisville CO",
+    "note": "same person: FargoRate ids [1120801, 1009701] are one human (user-confirmed); profile-group"
+  },
+  {
+    "search_name": "Jeff Lang",
+    "player_id": 1009701,
+    "fargo_name": "Jeff Lang",
+    "membership_id": null,
+    "location": "Commerce City CO",
+    "note": "same person: FargoRate ids [1120801, 1009701] are one human (user-confirmed); profile-group"
+  },
+  {
+    "search_name": "Kris Sandoval",
+    "player_id": 1249922,
+    "fargo_name": "Kris M. Sandoval",
+    "membership_id": null,
+    "location": "Denver CO",
+    "note": "same person: FargoRate ids [1249922, 1228568] are one human (user-confirmed); profile-group"
+  },
+  {
+    "search_name": "Kris Sandoval",
+    "player_id": 1228568,
+    "fargo_name": "Kris Michael Sandoval",
+    "membership_id": null,
+    "location": "Denver CO",
+    "note": "same person: FargoRate ids [1249922, 1228568] are one human (user-confirmed); profile-group"
+  },
+  {
+    "search_name": "Tim Brown",
+    "player_id": 1380955,
+    "fargo_name": "Tim Brown",
+    "membership_id": null,
+    "location": "Centennial CO",
+    "note": "same person: FargoRate ids [1380955, 1164869] are one human (user-confirmed); profile-group"
+  },
+  {
+    "search_name": "Tim Brown",
+    "player_id": 1164869,
+    "fargo_name": "Tim Brown",
+    "membership_id": null,
+    "location": "Colorado Springs CO",
+    "note": "same person: FargoRate ids [1380955, 1164869] are one human (user-confirmed); profile-group"
+  },
+  {
+    "search_name": "Premchand Koru",
+    "player_id": 1368535,
+    "fargo_name": "Prem Koru",
+    "membership_id": "9900008581109",
+    "location": "Englewood CO",
+    "note": "same person: FargoRate ids [1368535, 1356604] are one human (user-confirmed); profile-group"
+  },
+  {
+    "search_name": "Premchand Koru",
+    "player_id": 1356604,
+    "fargo_name": "Prem Koru",
+    "membership_id": "9900008463849",
+    "location": "CO",
+    "note": "same person: FargoRate ids [1368535, 1356604] are one human (user-confirmed); profile-group"
+  },
+  {
+    "search_name": "Jen Smith",
+    "player_id": 1360884,
+    "fargo_name": "Jennifer Smith",
+    "membership_id": null,
+    "location": "Englewood CO",
+    "note": "user-confirmed pick among different same-name players"
+  },
+  {
+    "search_name": "Patricia Little",
+    "player_id": 1237966,
+    "fargo_name": "Patti Little",
+    "membership_id": null,
+    "location": "Littleton CO",
+    "note": "user-confirmed pick among different same-name players"
   }
 ]
