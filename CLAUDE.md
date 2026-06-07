@@ -104,7 +104,22 @@ above — they never cause an existing player to stop being tracked:
   - `reclassify` (no network) — re-runs `pick_match` over the stored `ambiguous`
     candidate lists and promotes any that now resolve (e.g. a lone CO player
     among out-of-state namesakes). Lets a `pick_match` fix be applied to an
-    existing resolution file without re-scraping. The raw APA file lives under
+    existing resolution file without re-scraping.
+  - `recover` (network, `.github/workflows/recover-apa.yml`) — second-chance pass
+    over `unfound`: searches a short first-name prefix + surname (`recover_query`,
+    e.g. "Shir Patel") to catch names that differ between APA and FargoRate
+    (APA "Shirishkumar Patel" → FargoRate "Shirish Patel") or players who moved.
+    A plain surname search 500s on FargoRate, so the prefix qualifier is required.
+    Candidates are kept when surname matches and `first_compatible` (prefix or
+    nickname). Writes `docs/resolve/apa_recovery.json` — **staged for review,
+    never auto-added** (lower confidence than the exact pass).
+  - `manual` (no network) — adds hand-picked resolutions from
+    `docs/resolve/apa_manual.json` (`{search_name, player_id, …}`), tagging links
+    `match_method "manual"`. For disambiguated multi-CO names and recovery/lookup
+    hits the user confirmed. APA memberships are pulled from the resolve queue by
+    name. **Out-of-state FargoRate location is NOT disqualifying** — many local
+    APA players moved to CO while FargoRate still shows their old state, so a
+    single out-of-state match is a real player. The raw APA file lives under
     git-ignored `basket/`.
 - **NAPA** (planned) — same shape as APA (own rating system, name+state resolve);
   role is the *team override* (include a local-league player regardless of
@@ -129,8 +144,9 @@ is the date the change was **detected**, accurate to within one run interval
 The build sandbox **cannot reach fargorate.com** (allowlist). Every FargoRate
 call runs on a **GitHub Actions runner** (open internet): the scheduled pull
 (`.github/workflows/pull.yml`), name resolution (`.github/workflows/resolve.yml`),
-and the APA batch resolve (`.github/workflows/resolve-apa.yml`). Claude Code only
-needs `github.com`. No LLM runs inside any scheduled job.
+the APA batch resolve (`.github/workflows/resolve-apa.yml`), and the APA recovery
+pass (`.github/workflows/recover-apa.yml`). Claude Code only needs `github.com`.
+No LLM runs inside any scheduled job.
 
 ## Source of truth for the API
 `docs/api.md` — verified endpoints, field mapping, and the known-answer fixture
@@ -156,7 +172,8 @@ cleaning, name norming, crossref bucketing, strictly-additive/idempotent
 cross-link, nickname `variant_queries`, `is_co` location parsing, CO-preferred
 `pick_match` (incl. city-formatted CO), `resolve` bucket routing with
 `fargo_api.search` stubbed — including the surname guard and transient-error
-retry — `reclassify` promotion, and `add` upsert incl. `--variants`). All use
-temp files with no network —
+retry — `reclassify` promotion, `add` upsert incl. `--variants`, `first_compatible`
+/`recover_query`/`recover` routing, and `manual` picks). All use temp files with
+no network —
 `resolve`'s real FargoRate calls are exercised on a runner, not in tests.
 Run: `pip install -r requirements-dev.txt && pytest -q`.

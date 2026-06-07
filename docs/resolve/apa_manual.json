@@ -1,0 +1,10 @@
+[
+  {
+    "search_name": "Shirishkumar Patel",
+    "player_id": 1199370,
+    "fargo_name": "Shirish Patel",
+    "membership_id": "9900006595597",
+    "location": "Baltimore MD",
+    "note": "FargoRate name 'Shirish Patel' (APA has 'Shirishkumar Patel') so the exact search missed him; moved to CO, FargoRate still shows MD. Resolved manually via membershipId."
+  }
+]

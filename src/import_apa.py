@@ -64,6 +64,8 @@ RESOLVE_DIR = ROOT / "docs" / "resolve"
 TO_RESOLVE_PATH = RESOLVE_DIR / "apa_to_resolve.json"
 REPORT_PATH = RESOLVE_DIR / "apa_crossref_report.json"
 RESOLUTION_PATH = RESOLVE_DIR / "apa_resolution.json"
+MANUAL_PATH = RESOLVE_DIR / "apa_manual.json"
+RECOVERY_PATH = RESOLVE_DIR / "apa_recovery.json"
 
 # League-fee annotations get prepended to some names, e.g. "Owes $150 Anna Byrd",
 # "OWES$130 Jordan Freeman", "Owes $180Aaron Knobloch". Strip them off the front.
@@ -151,6 +153,36 @@ def variant_queries(full_name: str) -> list[str]:
     first = parts[0].lower()
     tail = parts[1:]
     return [" ".join([alt, *tail]) for alt in sorted(_NICKNAMES.get(first, ()))]
+
+
+def first_name(name: str | None) -> str:
+    """First token of the normalized name."""
+    parts = norm(name).split()
+    return parts[0] if parts else ""
+
+
+def first_compatible(a: str, c: str) -> bool:
+    """Are two first names plausibly the same person? True when one is a prefix of
+    the other (≥3 chars, catches Shirish↔Shirishkumar, Dan↔Daniel) or they are a
+    known nickname pair. Used to filter recovery candidates."""
+    if not a or not c:
+        return False
+    if a == c:
+        return True
+    short, long = sorted([a, c], key=len)
+    if len(short) >= 3 and long.startswith(short):
+        return True
+    return c in _NICKNAMES.get(a, set()) or a in _NICKNAMES.get(c, set())
+
+
+def recover_query(name: str) -> str | None:
+    """A surname search qualified by a short first-name prefix — avoids the broad
+    'surname alone' queries that FargoRate 500s on, while still prefix-matching a
+    truncated FargoRate first name. 'Shirishkumar Patel' -> 'Shir Patel'."""
+    parts = clean_name(name).split()
+    if len(parts) < 2:
+        return None
+    return f"{parts[0][:4]} {parts[-1]}"
 
 
 def membership_of(rec: dict) -> dict:
@@ -477,6 +509,115 @@ def reclassify(today: str) -> dict:
             "ambiguous_remaining": len(still)}
 
 
+def manual(today: str) -> dict:
+    """Add hand-picked resolutions from docs/resolve/apa_manual.json (no network).
+
+    For cases the automated resolve can't settle: an ambiguous multi-CO name the
+    user disambiguated, or a player whose FargoRate name differs from APA (e.g.
+    APA "Shirishkumar Patel" vs FargoRate "Shirish Patel") so the search missed
+    them. Each pick is `{search_name, player_id, [fargo_name, membership_id,
+    location, note]}`; the APA membership(s) are looked up from the resolve queue
+    by name so the cross-link is attached. Links are tagged match_method
+    "manual". Idempotent."""
+    if not MANUAL_PATH.exists():
+        print(f"No manual picks at {MANUAL_PATH}.", file=sys.stderr)
+        raise SystemExit(1)
+    picks = json.loads(MANUAL_PATH.read_text(encoding="utf-8"))
+    queue = json.loads(TO_RESOLVE_PATH.read_text(encoding="utf-8")) if TO_RESOLVE_PATH.exists() else []
+    mem_by_norm = {norm(q["search_name"]): q["memberships"] for q in queue}
+
+    roster = load_roster()
+    players = roster.setdefault("players", {})
+    summary = {"created": 0, "crosslinked_existing": 0, "already_present": 0, "no_membership": 0}
+
+    for p in picks:
+        key = str(p["player_id"])
+        memberships = p.get("memberships") or mem_by_norm.get(norm(p["search_name"]), [])
+        if not memberships:
+            summary["no_membership"] += 1
+        if key in players:
+            n = _attach_crosslink(roster, key, memberships, today, "manual")
+            summary["crosslinked_existing" if n else "already_present"] += 1
+        else:
+            players[key] = {
+                "player_id": p["player_id"],
+                "membership_id": p.get("membership_id"),
+                "name": p.get("fargo_name") or p.get("search_name"),
+                "state": p.get("location"),
+                "source": "apa",
+                "added_date": today,
+                "apa": [{**m, "source": "apa", "match_method": "manual", "added_date": today}
+                        for m in memberships],
+            }
+            summary["created"] += 1
+
+    save_roster(roster)
+    summary["roster_total"] = len(players)
+    return summary
+
+
+def recover(today: str) -> dict:
+    """Second-chance pass over the `unfound` names (network; runner). Many were
+    missed only because the APA name differs from FargoRate's (e.g.
+    'Shirishkumar Patel' vs 'Shirish Patel') or the player moved. For each, search
+    a short first-name prefix + surname and keep candidates with a matching
+    surname and a compatible first name (`first_compatible`). Writes the review
+    file docs/resolve/apa_recovery.json — **stages everything, adds nothing** (per
+    user decision: recovery is lower-confidence than the exact pass)."""
+    import fargo_api  # lazy — keeps the rest of the module network-free
+
+    if not RESOLUTION_PATH.exists():
+        print(f"No resolution file at {RESOLUTION_PATH}; run resolve first.", file=sys.stderr)
+        raise SystemExit(1)
+    res = json.loads(RESOLUTION_PATH.read_text(encoding="utf-8"))
+    unfound = [x for x in res.get("unfound", []) if "error" not in x]
+    session = fargo_api.new_session()
+
+    cache: dict[str, list | None] = {}   # query -> results (dedupe shared surnames)
+    recovered: list[dict] = []
+    still = errors = 0
+
+    for i, x in enumerate(unfound, 1):
+        q = recover_query(x["search_name"])
+        if not q:
+            still += 1
+            continue
+        if q not in cache:
+            try:
+                cache[q] = _search_with_retry(fargo_api, q, session)
+            except Exception:
+                cache[q] = None
+        results = cache[q]
+        if results is None:
+            errors += 1
+            still += 1
+            continue
+
+        want_sur, want_first = surname(x["search_name"]), first_name(x["search_name"])
+        compat: dict = {}
+        for r in results:
+            if surname(r.name) == want_sur and first_compatible(want_first, first_name(r.name)):
+                compat.setdefault(r.player_id, r)
+        if compat:
+            recovered.append({
+                "search_name": x["search_name"], "query": q,
+                "candidates": [{"player_id": r.player_id, "name": r.name, "location": r.location,
+                                "rating": r.rating, "robustness": r.robustness,
+                                "membership_id": r.membership_id} for r in compat.values()],
+                "memberships": x["memberships"]})
+        else:
+            still += 1
+        if i % 100 == 0:
+            print(f"  ...{i}/{len(unfound)} scanned (recovered={len(recovered)} queries={len(cache)})")
+
+    out = {"generated_at": today, "unfound_scanned": len(unfound),
+           "recovered": recovered, "still_unfound": still,
+           "unique_queries": len(cache), "errors": errors}
+    RESOLVE_DIR.mkdir(parents=True, exist_ok=True)
+    RECOVERY_PATH.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return out
+
+
 def fargo_quality(robustness) -> str:
     """rating_quality without importing fargo_api (keeps reclassify network-free)."""
     try:
@@ -498,6 +639,8 @@ def build_parser() -> argparse.ArgumentParser:
     ad.add_argument("--variants", action="store_true",
                     help="also add the reviewed variant_candidates bucket")
     sub.add_parser("reclassify", help="re-bucket ambiguous via current pick_match (no network)")
+    sub.add_parser("manual", help="add hand-picked resolutions from apa_manual.json (no network)")
+    sub.add_parser("recover", help="second-chance fuzzy search over unfound names (network; runner)")
     return p
 
 
@@ -540,6 +683,20 @@ def main(argv=None) -> int:
         s = reclassify(today)
         print(f"promoted {s['promoted']} ambiguous -> resolved "
               f"(resolved_total={s['resolved_total']} ambiguous_remaining={s['ambiguous_remaining']})")
+        return 0
+
+    if args.command == "manual":
+        s = manual(today)
+        print(f"created={s['created']} crosslinked_existing={s['crosslinked_existing']} "
+              f"already_present={s['already_present']} no_membership={s['no_membership']} "
+              f"roster_total={s['roster_total']}")
+        return 0
+
+    if args.command == "recover":
+        s = recover(today)
+        print(f"\nscanned {s['unfound_scanned']} unfound in {s['unique_queries']} queries -> "
+              f"recovered={len(s['recovered'])} still_unfound={s['still_unfound']} errors={s['errors']}")
+        print(f"wrote {RECOVERY_PATH.relative_to(ROOT)}")
         return 0
     return 2
 

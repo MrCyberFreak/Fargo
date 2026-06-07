@@ -166,6 +166,55 @@ def test_is_co_handles_inconsistent_location_formats():
     assert not imp.is_co("") and not imp.is_co(None)
 
 
+def test_first_compatible_prefix_and_nickname():
+    assert imp.first_compatible("shirishkumar", "shirish")   # truncation
+    assert imp.first_compatible("dan", "daniel")             # prefix
+    assert imp.first_compatible("mike", "michael")           # nickname map
+    assert not imp.first_compatible("shirishkumar", "shirley")   # shared prefix only, not full prefix
+    assert imp.first_compatible("bob", "robert")            # nickname pair (both directions)
+    assert imp.first_compatible("robert", "bob")
+    assert not imp.first_compatible("jo", "joseph")          # too short (<3) to prefix-match
+    assert not imp.first_compatible("alex", "alana")         # share "al" only -> not compatible
+
+
+def test_recover_query_uses_first_name_prefix_plus_surname():
+    assert imp.recover_query("Shirishkumar Patel") == "Shir Patel"
+    assert imp.recover_query("Anna Byrd") == "Anna Byrd"     # 4-char first name unchanged
+    assert imp.recover_query("Cher") is None                 # single token
+
+
+def test_recover_stages_compatible_matches(tmp_path, monkeypatch):
+    resolve_dir = tmp_path / "resolve"; resolve_dir.mkdir()
+    monkeypatch.setattr(imp, "RESOLVE_DIR", resolve_dir)
+    monkeypatch.setattr(imp, "RESOLUTION_PATH", resolve_dir / "apa_resolution.json")
+    monkeypatch.setattr(imp, "RECOVERY_PATH", resolve_dir / "apa_recovery.json")
+    res = {"generated_at": "x", "queue_size": 0, "resolved": [], "variant_candidates": [],
+           "ambiguous": [], "errors": 1,
+           "unfound": [
+               {"search_name": "Shirishkumar Patel", "memberships": [{"member_id": 9}]},
+               {"search_name": "Nobody Whatsoever", "memberships": [{"member_id": 8}]},
+               {"search_name": "Anna Byrd", "memberships": [{"member_id": 7}], "error": "HTTP 500"},
+           ]}
+    (resolve_dir / "apa_resolution.json").write_text(json.dumps(res), encoding="utf-8")
+
+    monkeypatch.setattr(fargo_api, "new_session", lambda: None)
+
+    def fake_search(q, session=None):
+        if q == "Shir Patel":
+            return [rec(1199370, "Shirish Patel", "Baltimore MD"),
+                    rec(999, "Shirley Patton", "TX")]      # wrong surname -> filtered
+        return []
+    monkeypatch.setattr(fargo_api, "search", fake_search)
+
+    out = imp.recover(today="2026-06-07")
+    # Anna Byrd skipped (error), Nobody -> no match, Shirishkumar -> 1 compatible match
+    assert len(out["recovered"]) == 1
+    r = out["recovered"][0]
+    assert r["search_name"] == "Shirishkumar Patel" and r["query"] == "Shir Patel"
+    assert [c["player_id"] for c in r["candidates"]] == [1199370]
+    assert out["unfound_scanned"] == 2 and out["still_unfound"] == 1
+
+
 def test_pick_match_treats_city_formatted_co_as_co():
     # "Denver CO" must beat an out-of-state namesake (regression: exact "CO" check)
     status, hit = imp.pick_match([rec(1, "A B", "Denver CO"), rec(2, "A B", "TX")])
@@ -378,6 +427,39 @@ def test_reclassify_promotes_lone_co_among_namesakes(tmp_path, monkeypatch):
     assert out["resolved"][0]["player_id"] == 11 and out["resolved"][0]["location"] == "Denver CO"
     assert out["resolved"][0]["memberships"][0]["member_id"] == 1
     assert {a["search_name"] for a in out["ambiguous"]} == {"All Away", "Two Co"}
+
+
+def test_manual_adds_picks_with_membership_from_queue(tmp_path, monkeypatch):
+    roster_path = tmp_path / "roster.json"
+    roster_path.write_text(json.dumps({"players": {}}), encoding="utf-8")
+    monkeypatch.setattr(resolve, "ROSTER_PATH", roster_path)
+    resolve_dir = tmp_path / "resolve"; resolve_dir.mkdir()
+    monkeypatch.setattr(imp, "RESOLVE_DIR", resolve_dir)
+    monkeypatch.setattr(imp, "MANUAL_PATH", resolve_dir / "apa_manual.json")
+    monkeypatch.setattr(imp, "TO_RESOLVE_PATH", resolve_dir / "apa_to_resolve.json")
+
+    # the resolve queue carries the APA memberships, keyed by name
+    (resolve_dir / "apa_to_resolve.json").write_text(json.dumps([
+        {"search_name": "Shirishkumar Patel", "norm": imp.norm("Shirishkumar Patel"),
+         "memberships": [{"member_id": 9, "member_number": "80444097", "name": "Shirishkumar Patel"}]}]),
+        encoding="utf-8")
+    # a manual pick where the FargoRate name differs from the APA name
+    (resolve_dir / "apa_manual.json").write_text(json.dumps([
+        {"search_name": "Shirishkumar Patel", "player_id": 1199370,
+         "fargo_name": "Shirish Patel", "membership_id": "9900006595597",
+         "location": "Baltimore MD", "note": "moved to CO"}]), encoding="utf-8")
+
+    s = imp.manual(today="2026-06-07")
+    assert s["created"] == 1 and s["no_membership"] == 0
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    e = saved["1199370"]
+    assert e["name"] == "Shirish Patel" and e["state"] == "Baltimore MD" and e["source"] == "apa"
+    assert e["apa"][0]["member_number"] == "80444097"        # cross-link pulled from queue
+    assert e["apa"][0]["match_method"] == "manual"
+
+    # idempotent
+    again = imp.manual(today="2026-06-08")
+    assert again["created"] == 0 and again["already_present"] == 1
 
 
 def test_add_is_idempotent(tmp_path, monkeypatch):
