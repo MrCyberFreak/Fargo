@@ -58,6 +58,30 @@ Three identifiers exist and the API's names are confusing (see `docs/api.md`):
     (re-running adds new memberships, never rewrites). One human can hold several
     APA memberships ("skill levels"); all are kept on the one player, never
     collapsed.
+- `people.json` — **generated master profile file** (one entry per *person*); see
+  the person/profile layer below. Never hand-edit; regenerate with `people.py`.
+- `people_merges.json` — curated, human-confirmed "these player_ids are the same
+  human" list (the only hand-maintained input to `people.json`).
+
+## Person/profile layer (`src/people.py`)
+`roster.json` keys on `player_id` — but a single human can hold several FargoRate
+accounts (duplicate registrations) and several league memberships. `people.json`
+is the **master profile file**: one entry per person, owning all their
+`fargo_player_ids` + source-tagged `memberships` + `sources` + notes.
+- **Generated, not authored.** `python src/people.py build` regenerates
+  `people.json` from `roster.json` + `people_merges.json` (union-find groups
+  player_ids; the smallest id is the `person_id`). Idempotent; new roster
+  additions flow in on the next build, and a person is never duplicated.
+- **Additive only.** This layer never changes `roster.json`, the daily pull, or
+  `history.csv` — every `player_id` stays in the roster and is still scraped
+  daily. The profile just *aggregates* them.
+- **Source-agnostic.** `memberships` are `{"source": "apa", ...}`, so NAPA/other
+  leagues plug in with no schema change.
+- **Profiles.** `python src/people.py profiles` renders `docs/profiles.md` (cards
+  with each person's current rating per id from `history.csv` + source notes);
+  default is merged / multi-source people, `--all` renders everyone.
+- To merge ids confirmed as one human, add an entry to `people_merges.json` and
+  re-run `build`. Merging is identity-only — it never prunes the roster.
 
 ## Admission vs tracking (core invariant — do not break)
 Location/league filters gate **admission only** — *which* player_ids get added
@@ -176,4 +200,6 @@ retry — `reclassify` promotion, `add` upsert incl. `--variants`, `first_compat
 /`recover_query`/`recover` routing, and `manual` picks). All use temp files with
 no network —
 `resolve`'s real FargoRate calls are exercised on a runner, not in tests.
-Run: `pip install -r requirements-dev.txt && pytest -q`.
+`tests/test_people.py` covers the person/profile layer (merge grouping, smallest-id
+person_id, source union + membership dedup, chained merges, profile rendering with
+history). Run: `pip install -r requirements-dev.txt && pytest -q`.
