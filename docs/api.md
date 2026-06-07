@@ -27,6 +27,17 @@ GET /api/indexsearch?q=<name>
 - The parameter is **`q`**. Other names (`query`, `searchterm`) return HTTP 500;
   `/api/playersearch` and `/api/search` return 404.
 - Response shape: `{"value": [ <candidate>, ... ]}`.
+- **Known upstream bug — some queries always HTTP 500.** Certain searches crash
+  FargoRate's serializer and return 500 on *every* attempt (not transient):
+  `q=Byrd` and `q=Anna Byrd` both 500 consistently (confirmed via two network
+  paths). It appears a corrupted record matching that text breaks the response,
+  so any query that would surface it fails. Broad single-token surname queries
+  (e.g. `q=Patel`) also 500 — likely too-large / malformed result sets. **Avoid
+  bare-surname searches**; qualify with a first-name prefix (`q=Shir Patel`,
+  which prefix-matches and returns a small set — see `import_apa.recover_query`).
+  Names hit by the bug (e.g. *Anna Byrd*) can't be resolved by search until
+  FargoRate fixes the record; look the player up in the FargoRate app and add by
+  id instead.
 
 Example — `GET /api/indexsearch?q=Nathan%20Carroll`:
 ```json
