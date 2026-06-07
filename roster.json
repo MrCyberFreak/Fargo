@@ -28,7 +28,20 @@
         "ActiveInLMS": null,
         "Ratings": null,
         "FullName": "Nathan Carroll"
-      }
+      },
+      "apa": [
+        {
+          "member_id": 2844341,
+          "member_number": "80402048",
+          "name": "Nathan Carroll",
+          "first_session": 135,
+          "last_session": 137,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "11320": {
       "player_id": 11320,
@@ -37,7 +50,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 467,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3253141,
+          "member_number": "80401586",
+          "name": "Adam King",
+          "first_session": 125,
+          "last_session": 125,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "625764": {
       "player_id": 625764,
@@ -82,7 +108,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 4891,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2958191,
+          "member_number": "80424515",
+          "name": "Angelo Wesson",
+          "first_session": 124,
+          "last_session": 133,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "935950": {
       "player_id": 935950,
@@ -118,7 +157,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 14356,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1218664,
+          "member_number": "80414992",
+          "name": "Andrew Drake",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1041504": {
       "player_id": 1041504,
@@ -181,7 +233,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 31980,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2870292,
+          "member_number": "80423991",
+          "name": "Adam Burke",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1075488": {
       "player_id": 1075488,
@@ -190,7 +255,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 39385,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1534322,
+          "member_number": "80417265",
+          "name": "Aaron Erfman",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1143736": {
       "player_id": 1143736,
@@ -253,7 +331,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 72189,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3173097,
+          "member_number": "80401206",
+          "name": "Amanda Trich",
+          "first_session": 125,
+          "last_session": 133,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1135663": {
       "player_id": 1135663,
@@ -262,7 +353,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 76780,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3329413,
+          "member_number": "80402029",
+          "name": "Andy Connell",
+          "first_session": 132,
+          "last_session": 139,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "822705": {
       "player_id": 822705,
@@ -352,7 +456,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 127687,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3130681,
+          "member_number": "80434280",
+          "name": "Aaron Thrower",
+          "first_session": 125,
+          "last_session": 125,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1280659": {
       "player_id": 1280659,
@@ -361,7 +478,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 127880,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3230502,
+          "member_number": "80434926",
+          "name": "Amanda Rae Hernandez",
+          "first_session": 123,
+          "last_session": 125,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1223403": {
       "player_id": 1223403,
@@ -478,7 +608,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 155927,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2077235,
+          "member_number": "80419594",
+          "name": "Adrian Valerio",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1362848": {
       "player_id": 1362848,
@@ -487,7 +630,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 158640,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3234010,
+          "member_number": "80400818",
+          "name": "Alia Minardi",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1200522": {
       "player_id": 1200522,
@@ -631,7 +787,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 5612,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2028406,
+          "member_number": "80424750",
+          "name": "April Erfman",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1095808": {
       "player_id": 1095808,
@@ -667,7 +836,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 13277,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2715434,
+          "member_number": "80423340",
+          "name": "Armando Nila",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1338676": {
       "player_id": 1338676,
@@ -676,7 +858,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 17678,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3029334,
+          "member_number": "80425053",
+          "name": "Ashleigh Skoworn",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "13732": {
       "player_id": 13732,
@@ -694,7 +889,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 30017,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3137137,
+          "member_number": "80401061",
+          "name": "Austin Sutton",
+          "first_session": 124,
+          "last_session": 129,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1028019": {
       "player_id": 1028019,
@@ -820,7 +1028,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 96568,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3120467,
+          "member_number": "80401861",
+          "name": "Ashok Kumar Vajra",
+          "first_session": 129,
+          "last_session": 133,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "18048": {
       "player_id": 18048,
@@ -856,7 +1077,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 118011,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3391231,
+          "member_number": "80435819",
+          "name": "Austin Lloyd",
+          "first_session": 135,
+          "last_session": 135,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1294295": {
       "player_id": 1294295,
@@ -919,7 +1153,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 134446,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3157040,
+          "member_number": "80401471",
+          "name": "Anna Cusic",
+          "first_session": 123,
+          "last_session": 132,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "625714": {
       "player_id": 625714,
@@ -955,7 +1202,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 150774,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2535121,
+          "member_number": "80423249",
+          "name": "Art Tabares",
+          "first_session": 123,
+          "last_session": 123,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1242862": {
       "player_id": 1242862,
@@ -964,7 +1224,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 152948,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3445238,
+          "member_number": "80402725",
+          "name": "Arjun Suri",
+          "first_session": 138,
+          "last_session": 139,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1367889": {
       "player_id": 1367889,
@@ -1009,7 +1282,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 175086,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3200158,
+          "member_number": "80402172",
+          "name": "Anthony Amorosa",
+          "first_session": 138,
+          "last_session": 139,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1386333": {
       "player_id": 1386333,
@@ -1027,7 +1313,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 1097,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3279755,
+          "member_number": "80401870",
+          "name": "Brad Reed",
+          "first_session": 125,
+          "last_session": 125,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "814157": {
       "player_id": 814157,
@@ -1090,7 +1389,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 6897,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1970287,
+          "member_number": "80418959",
+          "name": "Brandon Krug",
+          "first_session": 123,
+          "last_session": 123,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1064937": {
       "player_id": 1064937,
@@ -1099,7 +1411,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 10799,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3272020,
+          "member_number": "80401051",
+          "name": "Brian Cribari",
+          "first_session": 125,
+          "last_session": 138,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "972767": {
       "player_id": 972767,
@@ -1117,7 +1442,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 13792,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 865989,
+          "member_number": "80404317",
+          "name": "Brian Webb",
+          "first_session": 132,
+          "last_session": 133,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "16978": {
       "player_id": 16978,
@@ -1252,7 +1590,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 77725,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1370290,
+          "member_number": "80401465",
+          "name": "Brian Reece",
+          "first_session": 123,
+          "last_session": 124,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1236045": {
       "player_id": 1236045,
@@ -1315,7 +1666,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 132955,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2377793,
+          "member_number": "80401500",
+          "name": "Brandon Davidson",
+          "first_session": 123,
+          "last_session": 132,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1350948": {
       "player_id": 1350948,
@@ -1387,7 +1751,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 143526,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2479576,
+          "member_number": "80402143",
+          "name": "Brian Roybal",
+          "first_session": 137,
+          "last_session": 139,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1370176": {
       "player_id": 1370176,
@@ -1432,7 +1809,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 154990,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3153863,
+          "member_number": "80401141",
+          "name": "Brandon Frye",
+          "first_session": 124,
+          "last_session": 130,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1324684": {
       "player_id": 1324684,
@@ -1459,7 +1849,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 161834,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3427407,
+          "member_number": "80402124",
+          "name": "Brian Leary",
+          "first_session": 137,
+          "last_session": 139,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1362876": {
       "player_id": 1362876,
@@ -1513,7 +1916,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 1712,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3086558,
+          "member_number": "80400376",
+          "name": "Catherine Colosia",
+          "first_session": 124,
+          "last_session": 125,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1116152": {
       "player_id": 1116152,
@@ -1567,7 +1983,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 10838,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2995468,
+          "member_number": "80424757",
+          "name": "Chris Biermann",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "972776": {
       "player_id": 972776,
@@ -1594,7 +2023,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 12895,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2275792,
+          "member_number": "80420938",
+          "name": "Bruce Lord",
+          "first_session": 125,
+          "last_session": 125,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1232686": {
       "player_id": 1232686,
@@ -1603,7 +2045,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 15983,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2148328,
+          "member_number": "80420101",
+          "name": "Casey Mullan",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1083738": {
       "player_id": 1083738,
@@ -1630,7 +2085,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 39331,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2746830,
+          "member_number": "80423168",
+          "name": "Cameron Brown",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1104323": {
       "player_id": 1104323,
@@ -1675,7 +2143,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 76653,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 643134,
+          "member_number": "80402152",
+          "name": "Cathy Ruger",
+          "first_session": 124,
+          "last_session": 138,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "650643": {
       "player_id": 650643,
@@ -1693,7 +2174,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 79964,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2766528,
+          "member_number": "80423280",
+          "name": "Chantelle Schuckman",
+          "first_session": 129,
+          "last_session": 133,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "13613": {
       "player_id": 13613,
@@ -1756,7 +2250,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 116201,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2771141,
+          "member_number": "80423361",
+          "name": "Bryant McKinnie",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1187046": {
       "player_id": 1187046,
@@ -1954,7 +2461,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 3134,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 862509,
+          "member_number": "80401738",
+          "name": "Christine Honeman",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "625180": {
       "player_id": 625180,
@@ -2035,7 +2555,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 17955,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3194799,
+          "member_number": "80401328",
+          "name": "Cory Conrad",
+          "first_session": 123,
+          "last_session": 129,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1073711": {
       "player_id": 1073711,
@@ -2071,7 +2604,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 21991,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2128156,
+          "member_number": "80420073",
+          "name": "Corey Sulkko",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1128445": {
       "player_id": 1128445,
@@ -2107,7 +2653,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 32550,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3083459,
+          "member_number": "80400593",
+          "name": "Chris Marye",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "859226": {
       "player_id": 859226,
@@ -2215,7 +2774,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 99943,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3428652,
+          "member_number": "80402657",
+          "name": "Cindy Miller",
+          "first_session": 137,
+          "last_session": 137,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1220870": {
       "player_id": 1220870,
@@ -2242,7 +2814,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 112522,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3286064,
+          "member_number": "80401357",
+          "name": "Clayton Stevens",
+          "first_session": 134,
+          "last_session": 139,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "972795": {
       "player_id": 972795,
@@ -2278,7 +2863,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 118122,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3085317,
+          "member_number": "80400606",
+          "name": "Chris Parks",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1294297": {
       "player_id": 1294297,
@@ -2323,7 +2921,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 139300,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3330702,
+          "member_number": "80401827",
+          "name": "Chris Maddox",
+          "first_session": 132,
+          "last_session": 133,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "737591": {
       "player_id": 737591,
@@ -2350,7 +2961,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 141944,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 718967,
+          "member_number": "80406969",
+          "name": "Craig Douglas",
+          "first_session": 123,
+          "last_session": 135,
+          "sessions_count": 9,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1261788": {
       "player_id": 1261788,
@@ -2467,7 +3091,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 258,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3159113,
+          "member_number": "80400662",
+          "name": "David Anderson",
+          "first_session": 123,
+          "last_session": 123,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "10942": {
       "player_id": 10942,
@@ -2539,7 +3176,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 12821,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3028313,
+          "member_number": "80425042",
+          "name": "Dale Rodgers",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1322835": {
       "player_id": 1322835,
@@ -2755,7 +3405,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 98929,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1704784,
+          "member_number": "80418615",
+          "name": "Danielle Schlehuber",
+          "first_session": 123,
+          "last_session": 132,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "15179": {
       "player_id": 15179,
@@ -2773,7 +3436,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 107634,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2958890,
+          "member_number": "80424530",
+          "name": "Dan Price",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1255568": {
       "player_id": 1255568,
@@ -2836,7 +3512,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 128230,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3402715,
+          "member_number": "80435930",
+          "name": "Dan Walker",
+          "first_session": 135,
+          "last_session": 135,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1370182": {
       "player_id": 1370182,
@@ -2863,7 +3552,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 139031,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3377365,
+          "member_number": "80435657",
+          "name": "David Healy",
+          "first_session": 139,
+          "last_session": 139,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1234678": {
       "player_id": 1234678,
@@ -2899,7 +3601,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 142359,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3173094,
+          "member_number": "80401091",
+          "name": "Darren Thompson",
+          "first_session": 123,
+          "last_session": 132,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1342737": {
       "player_id": 1342737,
@@ -2917,7 +3632,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 147797,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 861648,
+          "member_number": "80408742",
+          "name": "Dave Johnson",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1312608": {
       "player_id": 1312608,
@@ -2926,7 +3654,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 154595,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3410393,
+          "member_number": "80402605",
+          "name": "Danene Yokeum",
+          "first_session": 136,
+          "last_session": 139,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1352876": {
       "player_id": 1352876,
@@ -3052,7 +3793,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 12109,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2613792,
+          "member_number": "80401530",
+          "name": "Denny Huynh",
+          "first_session": 123,
+          "last_session": 129,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "972803": {
       "player_id": 972803,
@@ -3061,7 +3815,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 14543,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3057306,
+          "member_number": "80400137",
+          "name": "Deo Basnet",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1130380": {
       "player_id": 1130380,
@@ -3088,7 +3855,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 32891,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2312921,
+          "member_number": "80421124",
+          "name": "David Motarjemi",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1140019": {
       "player_id": 1140019,
@@ -3304,7 +4084,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 129784,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3384706,
+          "member_number": "80402530",
+          "name": "Derin Ozcelebi",
+          "first_session": 135,
+          "last_session": 135,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1271565": {
       "player_id": 1271565,
@@ -3358,7 +4151,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 158368,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2272482,
+          "member_number": "80420900",
+          "name": "Deepak Kirpalani",
+          "first_session": 135,
+          "last_session": 135,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1354701": {
       "player_id": 1354701,
@@ -3403,7 +4209,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 176986,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3446415,
+          "member_number": "80402782",
+          "name": "David Kinnison",
+          "first_session": 138,
+          "last_session": 139,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1374464": {
       "player_id": 1374464,
@@ -3448,7 +4267,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 5152,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3196289,
+          "member_number": "80401351",
+          "name": "Ed Powers",
+          "first_session": 123,
+          "last_session": 132,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1073619": {
       "player_id": 1073619,
@@ -3493,7 +4325,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 8311,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3159985,
+          "member_number": "80401170",
+          "name": "Draven Whittaker",
+          "first_session": 123,
+          "last_session": 134,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "997914": {
       "player_id": 997914,
@@ -3583,7 +4428,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 33156,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2722942,
+          "member_number": "80423085",
+          "name": "Dustin Sterling",
+          "first_session": 123,
+          "last_session": 138,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1111134": {
       "player_id": 1111134,
@@ -3592,7 +4450,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 33237,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3144532,
+          "member_number": "80401083",
+          "name": "Ellen Canchola",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1123357": {
       "player_id": 1123357,
@@ -3601,7 +4472,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 40548,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 720548,
+          "member_number": "80401683",
+          "name": "Don Gould",
+          "first_session": 125,
+          "last_session": 125,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1090597": {
       "player_id": 1090597,
@@ -3709,7 +4593,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 79051,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2273300,
+          "member_number": "80404943",
+          "name": "Dustin McCall",
+          "first_session": 125,
+          "last_session": 125,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1114162": {
       "player_id": 1114162,
@@ -3853,7 +4750,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 151723,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2855496,
+          "member_number": "80423962",
+          "name": "Dylan Jennings",
+          "first_session": 125,
+          "last_session": 133,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "972873": {
       "player_id": 972873,
@@ -3970,7 +4880,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 33303,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3204718,
+          "member_number": "80400763",
+          "name": "Ethan Bankston",
+          "first_session": 123,
+          "last_session": 130,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "716381": {
       "player_id": 716381,
@@ -4006,7 +4929,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 70177,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1678685,
+          "member_number": "80403408",
+          "name": "Eugene Min",
+          "first_session": 123,
+          "last_session": 129,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "843136": {
       "player_id": 843136,
@@ -4096,7 +5032,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 110428,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3253973,
+          "member_number": "80434998",
+          "name": "Eric Hurtado",
+          "first_session": 133,
+          "last_session": 139,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1264787": {
       "player_id": 1264787,
@@ -4105,7 +5054,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 112199,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3284576,
+          "member_number": "80401894",
+          "name": "Erika Ortega",
+          "first_session": 129,
+          "last_session": 133,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1152950": {
       "player_id": 1152950,
@@ -4132,7 +5094,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 123446,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2538898,
+          "member_number": "80423071",
+          "name": "Ernie Dorrance",
+          "first_session": 124,
+          "last_session": 139,
+          "sessions_count": 11,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "826475": {
       "player_id": 826475,
@@ -4186,7 +5161,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 136991,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2022021,
+          "member_number": "80427846",
+          "name": "Erika Charlifoux",
+          "first_session": 123,
+          "last_session": 124,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1234213": {
       "player_id": 1234213,
@@ -4240,7 +5228,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 153761,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3440397,
+          "member_number": "80402207",
+          "name": "Frank Volpe",
+          "first_session": 138,
+          "last_session": 139,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1365706": {
       "player_id": 1365706,
@@ -4249,7 +5250,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 159048,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3450396,
+          "member_number": "80402771",
+          "name": "Garrett Hamlin",
+          "first_session": 138,
+          "last_session": 139,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1345436": {
       "player_id": 1345436,
@@ -4276,7 +5290,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 165059,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2577620,
+          "member_number": "80401949",
+          "name": "Eric Brookhouser",
+          "first_session": 133,
+          "last_session": 133,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "730449": {
       "player_id": 730449,
@@ -4303,7 +5330,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 3286,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3059452,
+          "member_number": "80433833",
+          "name": "Gina Trujillo",
+          "first_session": 125,
+          "last_session": 136,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1124938": {
       "player_id": 1124938,
@@ -4384,7 +5424,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 15306,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1478107,
+          "member_number": "80416858",
+          "name": "Greg Romero",
+          "first_session": 125,
+          "last_session": 133,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1133845": {
       "player_id": 1133845,
@@ -4564,7 +5617,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 91000,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2066109,
+          "member_number": "80405091",
+          "name": "Holly Knepp",
+          "first_session": 124,
+          "last_session": 133,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1204166": {
       "player_id": 1204166,
@@ -4573,7 +5639,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 94383,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3258105,
+          "member_number": "80401594",
+          "name": "Gerrod Lujan",
+          "first_session": 124,
+          "last_session": 139,
+          "sessions_count": 11,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "720681": {
       "player_id": 720681,
@@ -4681,7 +5760,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 139434,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3406669,
+          "member_number": "80402587",
+          "name": "Gordon Hubbell",
+          "first_session": 136,
+          "last_session": 139,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1305615": {
       "player_id": 1305615,
@@ -4690,7 +5782,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 143791,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3398213,
+          "member_number": "80402575",
+          "name": "Ian Rushing",
+          "first_session": 135,
+          "last_session": 139,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1313374": {
       "player_id": 1313374,
@@ -4825,7 +5930,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 7539,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3176955,
+          "member_number": "80400682",
+          "name": "James Bennett",
+          "first_session": 123,
+          "last_session": 125,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1282295": {
       "player_id": 1282295,
@@ -4861,7 +5979,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 33798,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2934833,
+          "member_number": "80424459",
+          "name": "Jake McClain",
+          "first_session": 123,
+          "last_session": 129,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "986284": {
       "player_id": 986284,
@@ -4870,7 +6001,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 33846,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2970477,
+          "member_number": "80424591",
+          "name": "James Salazar",
+          "first_session": 125,
+          "last_session": 132,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1268127": {
       "player_id": 1268127,
@@ -4888,7 +6032,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 42299,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3122114,
+          "member_number": "80400523",
+          "name": "Jacob Casados",
+          "first_session": 123,
+          "last_session": 132,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1347084": {
       "player_id": 1347084,
@@ -5068,7 +6225,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 132764,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1481040,
+          "member_number": "80416927",
+          "name": "Jay Brown",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1319451": {
       "player_id": 1319451,
@@ -5212,7 +6382,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 1907,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2373366,
+          "member_number": "80401624",
+          "name": "Jeremiah Gage",
+          "first_session": 125,
+          "last_session": 129,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1108146": {
       "player_id": 1108146,
@@ -5248,7 +6431,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 9634,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2808219,
+          "member_number": "80423594",
+          "name": "Jenny Laney",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "927186": {
       "player_id": 927186,
@@ -5266,7 +6462,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 13050,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1586874,
+          "member_number": "80422861",
+          "name": "Jeremy Bloedon",
+          "first_session": 132,
+          "last_session": 133,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "986285": {
       "player_id": 986285,
@@ -5293,7 +6502,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 21333,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2839835,
+          "member_number": "80423856",
+          "name": "Jb Poullard",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1105181": {
       "player_id": 1105181,
@@ -5302,7 +6524,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 34133,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2557162,
+          "member_number": "80422127",
+          "name": "Jessica Knapp",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1313381": {
       "player_id": 1313381,
@@ -5392,7 +6627,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 70413,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3026884,
+          "member_number": "80425025",
+          "name": "Jeff Clark",
+          "first_session": 123,
+          "last_session": 135,
+          "sessions_count": 8,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1186007": {
       "player_id": 1186007,
@@ -5734,7 +6982,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 30044,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2277672,
+          "member_number": "80420956",
+          "name": "Joey Robinson-ridings",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1341583": {
       "player_id": 1341583,
@@ -5779,7 +7040,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 40218,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3427451,
+          "member_number": "80402157",
+          "name": "JJ Martell",
+          "first_session": 137,
+          "last_session": 139,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1145387": {
       "player_id": 1145387,
@@ -5824,7 +7098,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 68709,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2850293,
+          "member_number": "80423917",
+          "name": "Joann Ray",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1189037": {
       "player_id": 1189037,
@@ -5851,7 +7138,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 79296,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2766531,
+          "member_number": "80423281",
+          "name": "John Schuckman",
+          "first_session": 130,
+          "last_session": 133,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1239085": {
       "player_id": 1239085,
@@ -6103,7 +7403,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 53527,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2790093,
+          "member_number": "80423536",
+          "name": "Julien Ortega",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1341584": {
       "player_id": 1341584,
@@ -6166,7 +7479,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 94077,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3010613,
+          "member_number": "80424823",
+          "name": "Jordan Pelzer",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1228924": {
       "player_id": 1228924,
@@ -6355,7 +7681,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 155151,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 793089,
+          "member_number": "80408341",
+          "name": "Josette Rivera",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1293107": {
       "player_id": 1293107,
@@ -6373,7 +7712,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 157053,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3369430,
+          "member_number": "80402091",
+          "name": "Josh Rottschaefer",
+          "first_session": 134,
+          "last_session": 139,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1219920": {
       "player_id": 1219920,
@@ -6382,7 +7734,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 161436,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3064318,
+          "member_number": "80430146",
+          "name": "Josh Messmore",
+          "first_session": 123,
+          "last_session": 137,
+          "sessions_count": 11,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1348817": {
       "player_id": 1348817,
@@ -6427,7 +7792,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 2331,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3043629,
+          "member_number": "80400139",
+          "name": "Kat Plavnick",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1117387": {
       "player_id": 1117387,
@@ -6436,7 +7814,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 2883,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3206103,
+          "member_number": "80400753",
+          "name": "Kennyth Juarez",
+          "first_session": 124,
+          "last_session": 133,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1014192": {
       "player_id": 1014192,
@@ -6463,7 +7854,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 5435,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3331052,
+          "member_number": "80401868",
+          "name": "Kris Clark",
+          "first_session": 132,
+          "last_session": 133,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "852126": {
       "player_id": 852126,
@@ -6490,7 +7894,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 11656,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2888664,
+          "member_number": "80424138",
+          "name": "Kim Swenson",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "846905": {
       "player_id": 846905,
@@ -6499,7 +7916,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 11881,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1661750,
+          "member_number": "80422398",
+          "name": "Kevin Palmer",
+          "first_session": 123,
+          "last_session": 132,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1301139": {
       "player_id": 1301139,
@@ -6526,7 +7956,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 19984,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3088964,
+          "member_number": "80400334",
+          "name": "Krishna Kumar",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1131330": {
       "player_id": 1131330,
@@ -6571,7 +8014,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 37742,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3197858,
+          "member_number": "80400725",
+          "name": "Kris Breth",
+          "first_session": 125,
+          "last_session": 132,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1093527": {
       "player_id": 1093527,
@@ -6634,7 +8090,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 76592,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2088735,
+          "member_number": "80419718",
+          "name": "Kim Majerus",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1150094": {
       "player_id": 1150094,
@@ -6643,7 +8112,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 76758,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2777091,
+          "member_number": "80401901",
+          "name": "Kyle Tjader",
+          "first_session": 130,
+          "last_session": 132,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "17399": {
       "player_id": 17399,
@@ -6724,7 +8206,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 133647,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 932034,
+          "member_number": "80406332",
+          "name": "Kelly Draper",
+          "first_session": 136,
+          "last_session": 139,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1315462": {
       "player_id": 1315462,
@@ -6787,7 +8282,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 158771,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1066166,
+          "member_number": "80410931",
+          "name": "Kristine Douglas",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1370203": {
       "player_id": 1370203,
@@ -7003,7 +8511,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 35088,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3203441,
+          "member_number": "80401303",
+          "name": "Lloyd Scott",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1168854": {
       "player_id": 1168854,
@@ -7156,7 +8677,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 113968,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2813700,
+          "member_number": "80423665",
+          "name": "Linda Andrews",
+          "first_session": 124,
+          "last_session": 132,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1268483": {
       "player_id": 1268483,
@@ -7264,7 +8798,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 2135,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1243904,
+          "member_number": "80415293",
+          "name": "Maria Finley",
+          "first_session": 123,
+          "last_session": 125,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1095832": {
       "player_id": 1095832,
@@ -7327,7 +8874,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 16061,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2834646,
+          "member_number": "80423769",
+          "name": "Matt Lemmo",
+          "first_session": 123,
+          "last_session": 129,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "10821": {
       "player_id": 10821,
@@ -7372,7 +8932,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 35338,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 931218,
+          "member_number": "80403036",
+          "name": "Matt Burns",
+          "first_session": 123,
+          "last_session": 135,
+          "sessions_count": 9,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1155114": {
       "player_id": 1155114,
@@ -7462,7 +9035,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 69712,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3047032,
+          "member_number": "80400090",
+          "name": "Michael Kidd",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1117318": {
       "player_id": 1117318,
@@ -7588,7 +9174,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 166791,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3309552,
+          "member_number": "80435314",
+          "name": "Matthew Cox",
+          "first_session": 130,
+          "last_session": 137,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1085426": {
       "player_id": 1085426,
@@ -7642,7 +9241,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 3635,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3101897,
+          "member_number": "80400415",
+          "name": "Miguel Anariba",
+          "first_session": 130,
+          "last_session": 133,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "754783": {
       "player_id": 754783,
@@ -7678,7 +9290,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 11152,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2375455,
+          "member_number": "80421434",
+          "name": "Mike Pope",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1122655": {
       "player_id": 1122655,
@@ -7768,7 +9393,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 69711,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3013116,
+          "member_number": "80424862",
+          "name": "Michael Magnelli",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 12,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1268124": {
       "player_id": 1268124,
@@ -7831,7 +9469,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 97498,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3326843,
+          "member_number": "80401828",
+          "name": "Michael Welling",
+          "first_session": 132,
+          "last_session": 132,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1350961": {
       "player_id": 1350961,
@@ -7921,7 +9572,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 156942,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 643596,
+          "member_number": "80404895",
+          "name": "Mitch Majerus",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1257750": {
       "player_id": 1257750,
@@ -7930,7 +9594,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 157825,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3389902,
+          "member_number": "80402529",
+          "name": "Michael Zarlengo",
+          "first_session": 135,
+          "last_session": 139,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1248243": {
       "player_id": 1248243,
@@ -7966,7 +9643,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 177723,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3312949,
+          "member_number": "80401674",
+          "name": "Nathan Kutter",
+          "first_session": 130,
+          "last_session": 133,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1073703": {
       "player_id": 1073703,
@@ -8038,7 +9728,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 12184,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1598767,
+          "member_number": "80418707",
+          "name": "Patrick Bradford",
+          "first_session": 136,
+          "last_session": 139,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1135907": {
       "player_id": 1135907,
@@ -8092,7 +9795,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 35757,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3137829,
+          "member_number": "80400941",
+          "name": "Nic Paxton",
+          "first_session": 123,
+          "last_session": 129,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1118862": {
       "player_id": 1118862,
@@ -8119,7 +9835,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 35969,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1066375,
+          "member_number": "80412017",
+          "name": "Pendleton Than",
+          "first_session": 123,
+          "last_session": 123,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1343647": {
       "player_id": 1343647,
@@ -8128,7 +9857,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 38579,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 792976,
+          "member_number": "80408217",
+          "name": "Paul Sullivan",
+          "first_session": 132,
+          "last_session": 133,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "973961": {
       "player_id": 973961,
@@ -8236,7 +9978,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 80550,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3123434,
+          "member_number": "80401664",
+          "name": "Nikki Maxwell",
+          "first_session": 125,
+          "last_session": 133,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1198552": {
       "player_id": 1198552,
@@ -8245,7 +10000,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 90984,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2993979,
+          "member_number": "80424720",
+          "name": "Nick Williams",
+          "first_session": 125,
+          "last_session": 139,
+          "sessions_count": 11,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1263273": {
       "player_id": 1263273,
@@ -8272,7 +10040,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 112843,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3274137,
+          "member_number": "80400966",
+          "name": "Patrick Newell",
+          "first_session": 125,
+          "last_session": 132,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1181219": {
       "player_id": 1181219,
@@ -8362,7 +10143,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 155498,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2118468,
+          "member_number": "80420024",
+          "name": "Paul Richardson",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1370212": {
       "player_id": 1370212,
@@ -8407,7 +10201,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 177448,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1649729,
+          "member_number": "80418234",
+          "name": "Neal Morgan",
+          "first_session": 132,
+          "last_session": 139,
+          "sessions_count": 8,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1225811": {
       "player_id": 1225811,
@@ -8461,7 +10268,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 12227,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3081875,
+          "member_number": "80400598",
+          "name": "Renee Norman",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1112846": {
       "player_id": 1112846,
@@ -8506,7 +10326,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 46920,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1998301,
+          "member_number": "80419463",
+          "name": "Rachel Bradford",
+          "first_session": 129,
+          "last_session": 139,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1095834": {
       "player_id": 1095834,
@@ -8533,7 +10366,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 61470,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2144408,
+          "member_number": "80422796",
+          "name": "Rebecca Thunstrom",
+          "first_session": 125,
+          "last_session": 139,
+          "sessions_count": 10,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1201748": {
       "player_id": 1201748,
@@ -8614,7 +10460,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 98928,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2786111,
+          "member_number": "80423504",
+          "name": "Rachel Downing",
+          "first_session": 130,
+          "last_session": 132,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1181566": {
       "player_id": 1181566,
@@ -8650,7 +10509,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 135494,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3274411,
+          "member_number": "80401110",
+          "name": "Rashael Richardson",
+          "first_session": 125,
+          "last_session": 134,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1249917": {
       "player_id": 1249917,
@@ -8731,7 +10603,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 159994,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3307894,
+          "member_number": "80401892",
+          "name": "Randy Wade",
+          "first_session": 130,
+          "last_session": 130,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1352901": {
       "player_id": 1352901,
@@ -8821,7 +10706,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 12356,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3464871,
+          "member_number": "80402815",
+          "name": "Ryan Henry",
+          "first_session": 139,
+          "last_session": 139,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1179349": {
       "player_id": 1179349,
@@ -8839,7 +10737,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 19312,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2846659,
+          "member_number": "80423873",
+          "name": "Russ Green",
+          "first_session": 123,
+          "last_session": 125,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1134632": {
       "player_id": 1134632,
@@ -8857,7 +10768,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 21081,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3004309,
+          "member_number": "80424801",
+          "name": "Rosa Lawhorn",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "17541": {
       "player_id": 17541,
@@ -8947,7 +10871,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 64078,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 999398,
+          "member_number": "80411127",
+          "name": "Roxanne Hoffner",
+          "first_session": 123,
+          "last_session": 125,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1282969": {
       "player_id": 1282969,
@@ -8983,7 +10920,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 74498,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1260672,
+          "member_number": "80400505",
+          "name": "Ryan Ocelnik",
+          "first_session": 129,
+          "last_session": 139,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1104146": {
       "player_id": 1104146,
@@ -8992,7 +10942,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 74805,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3286014,
+          "member_number": "80401808",
+          "name": "Robert London",
+          "first_session": 129,
+          "last_session": 130,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1090607": {
       "player_id": 1090607,
@@ -9037,7 +11000,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 112768,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2026092,
+          "member_number": "80419297",
+          "name": "Ryan Miller",
+          "first_session": 123,
+          "last_session": 129,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1238479": {
       "player_id": 1238479,
@@ -9100,7 +11076,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 139838,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 719436,
+          "member_number": "80407459",
+          "name": "Ruben Vasquez",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1106904": {
       "player_id": 1106904,
@@ -9109,7 +11098,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 142140,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3141802,
+          "member_number": "80400948",
+          "name": "Ron Shepard",
+          "first_session": 123,
+          "last_session": 125,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1223412": {
       "player_id": 1223412,
@@ -9136,7 +11138,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 154827,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3244849,
+          "member_number": "80400842",
+          "name": "Robert Danbury",
+          "first_session": 137,
+          "last_session": 139,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1371916": {
       "player_id": 1371916,
@@ -9280,7 +11295,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 13261,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3197067,
+          "member_number": "80400722",
+          "name": "Shania Vezelici",
+          "first_session": 124,
+          "last_session": 130,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "826008": {
       "player_id": 826008,
@@ -9307,7 +11335,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 36648,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2549538,
+          "member_number": "80422238",
+          "name": "Scott Carter",
+          "first_session": 133,
+          "last_session": 139,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1210830": {
       "player_id": 1210830,
@@ -9343,7 +11384,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 40698,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3224516,
+          "member_number": "80456618",
+          "name": "Ryan Salisbury",
+          "first_session": 129,
+          "last_session": 133,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "12159": {
       "player_id": 12159,
@@ -9433,7 +11487,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 90999,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3285720,
+          "member_number": "80401768",
+          "name": "Scott Lessard",
+          "first_session": 129,
+          "last_session": 133,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1327143": {
       "player_id": 1327143,
@@ -9487,7 +11554,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 143790,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3398206,
+          "member_number": "80402565",
+          "name": "Sean Rushing",
+          "first_session": 135,
+          "last_session": 139,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1348820": {
       "player_id": 1348820,
@@ -9505,7 +11585,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 151277,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3407472,
+          "member_number": "80402593",
+          "name": "Sam Miller",
+          "first_session": 136,
+          "last_session": 138,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1258837": {
       "player_id": 1258837,
@@ -9532,7 +11625,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 155540,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3387256,
+          "member_number": "80402117",
+          "name": "Scott Renner",
+          "first_session": 135,
+          "last_session": 139,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1365719": {
       "player_id": 1365719,
@@ -9577,7 +11683,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 170456,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3350747,
+          "member_number": "80401971",
+          "name": "Scott Kelly",
+          "first_session": 133,
+          "last_session": 133,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1379972": {
       "player_id": 1379972,
@@ -9640,7 +11759,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 22684,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3114064,
+          "member_number": "80410118",
+          "name": "Stephanie Ford",
+          "first_session": 124,
+          "last_session": 139,
+          "sessions_count": 11,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1150339": {
       "player_id": 1150339,
@@ -9658,7 +11790,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 51954,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2949272,
+          "member_number": "80430069",
+          "name": "Shiloh Schieck",
+          "first_session": 125,
+          "last_session": 133,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "663540": {
       "player_id": 663540,
@@ -9676,7 +11821,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 61661,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3210640,
+          "member_number": "80401448",
+          "name": "Shawn Schwindamann",
+          "first_session": 123,
+          "last_session": 130,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "10899": {
       "player_id": 10899,
@@ -9739,7 +11897,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 91863,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1370287,
+          "member_number": "80406104",
+          "name": "Steve Casados",
+          "first_session": 123,
+          "last_session": 132,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1374858": {
       "player_id": 1374858,
@@ -9757,7 +11928,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 98915,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3227375,
+          "member_number": "80400803",
+          "name": "Shawn Shannon",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1114089": {
       "player_id": 1114089,
@@ -9838,7 +12022,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 133491,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1676799,
+          "member_number": "80427016",
+          "name": "Steven Salazar",
+          "first_session": 136,
+          "last_session": 139,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1238681": {
       "player_id": 1238681,
@@ -9919,7 +12116,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 163542,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3410414,
+          "member_number": "80402623",
+          "name": "Stephen Roush",
+          "first_session": 136,
+          "last_session": 137,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1371917": {
       "player_id": 1371917,
@@ -9946,7 +12156,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 165062,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2552902,
+          "member_number": "80402014",
+          "name": "Steve Brookhouser",
+          "first_session": 133,
+          "last_session": 133,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1370221": {
       "player_id": 1370221,
@@ -9964,7 +12187,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 166120,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1247870,
+          "member_number": "80415304",
+          "name": "Tadd Snodgrass",
+          "first_session": 136,
+          "last_session": 139,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1095839": {
       "player_id": 1095839,
@@ -9982,7 +12218,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 6853,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3163031,
+          "member_number": "80401119",
+          "name": "Tony Piazza",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1119722": {
       "player_id": 1119722,
@@ -10180,7 +12429,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 74922,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1250017,
+          "member_number": "80415339",
+          "name": "Toby Ehrler",
+          "first_session": 123,
+          "last_session": 124,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1197427": {
       "player_id": 1197427,
@@ -10306,7 +12568,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 157477,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3349904,
+          "member_number": "80401956",
+          "name": "Tucker Grossmann",
+          "first_session": 133,
+          "last_session": 137,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1335227": {
       "player_id": 1335227,
@@ -10315,7 +12590,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 160867,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2724436,
+          "member_number": "80423093",
+          "name": "Todd Hurst",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1159136": {
       "player_id": 1159136,
@@ -10324,7 +12612,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 165780,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2995371,
+          "member_number": "80424741",
+          "name": "Tim Drake",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1349311": {
       "player_id": 1349311,
@@ -10450,7 +12751,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 22455,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2783553,
+          "member_number": "80423447",
+          "name": "Whone Johnson",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1135910": {
       "player_id": 1135910,
@@ -10459,7 +12773,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 22917,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1560870,
+          "member_number": "80417442",
+          "name": "Zach Clemons",
+          "first_session": 132,
+          "last_session": 133,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1134636": {
       "player_id": 1134636,
@@ -10513,7 +12840,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 64334,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1208597,
+          "member_number": "80400085",
+          "name": "Woody Quezada",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1228825": {
       "player_id": 1228825,
@@ -10522,7 +12862,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 64725,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3042258,
+          "member_number": "80400038",
+          "name": "Uttam Budathoki",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-06"
+        }
+      ]
     },
     "1231607": {
       "player_id": 1231607,
