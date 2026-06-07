@@ -262,5 +262,13 @@
     "membership_id": null,
     "location": "Littleton CO",
     "note": "user-confirmed pick among different same-name players"
+  },
+  {
+    "search_name": "Gregory Trujillo",
+    "player_id": 1168851,
+    "fargo_name": "Greg Trujillo Jr",
+    "membership_id": "9900006083216",
+    "location": "CO",
+    "note": "father/son; user-confirmed Jr (more active). data inconclusive, reversible."
   }
 ]
