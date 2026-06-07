@@ -6,5 +6,165 @@
     "membership_id": "9900006595597",
     "location": "Baltimore MD",
     "note": "FargoRate name 'Shirish Patel' (APA has 'Shirishkumar Patel') so the exact search missed him; moved to CO, FargoRate still shows MD. Resolved manually via membershipId."
+  },
+  {
+    "search_name": "Carmena Cruz",
+    "player_id": 1318143,
+    "fargo_name": "Carmen Cruz",
+    "membership_id": "9900007926246",
+    "location": "CT",
+    "note": "recovery single-match (query 'Carm Cruz')"
+  },
+  {
+    "search_name": "Daniel Gillespie JR",
+    "player_id": 1108136,
+    "fargo_name": "daniel gillespie",
+    "membership_id": "9900005459180",
+    "location": "CO",
+    "note": "recovery single-match (query 'Dani Gillespie')"
+  },
+  {
+    "search_name": "Darwin Grant Jr",
+    "player_id": 1324688,
+    "fargo_name": "Darwin Grant",
+    "membership_id": "9900007992418",
+    "location": "CO",
+    "note": "recovery single-match (query 'Darw Grant')"
+  },
+  {
+    "search_name": "Derek Jump it Stringer",
+    "player_id": 987285,
+    "fargo_name": "Derek Stringer",
+    "membership_id": "9900004050036",
+    "location": "CO",
+    "note": "recovery single-match (query 'Dere Stringer')"
+  },
+  {
+    "search_name": "Fred Castellano Jr",
+    "player_id": 1102834,
+    "fargo_name": "Fred Castellano",
+    "membership_id": "9900005404777",
+    "location": "CO",
+    "note": "recovery single-match (query 'Fred Castellano')"
+  },
+  {
+    "search_name": "Garrett Petrie",
+    "player_id": 1377329,
+    "fargo_name": "Garret Petrie",
+    "membership_id": "9900008667889",
+    "location": "Broomfield CO",
+    "note": "recovery single-match (query 'Garr Petrie')"
+  },
+  {
+    "search_name": "Isaiah SaucyZay Bowers",
+    "player_id": 1223769,
+    "fargo_name": "Isaiah Bowers",
+    "membership_id": "9900006846255",
+    "location": "Albuquerque NM",
+    "note": "recovery single-match (query 'Isai Bowers')"
+  },
+  {
+    "search_name": "Jason \"Spawning Salmon\" Marques",
+    "player_id": 1316306,
+    "fargo_name": "Jason Marques",
+    "membership_id": "9900007907771",
+    "location": "Littleton CO",
+    "note": "recovery single-match (query 'Jaso Marques')"
+  },
+  {
+    "search_name": "Javier Olivas",
+    "player_id": 1282463,
+    "fargo_name": "Javi Olivas",
+    "membership_id": "9900007454718",
+    "location": "Denver CO",
+    "note": "recovery single-match (query 'Javi Olivas')"
+  },
+  {
+    "search_name": "Jeffery Halvorson",
+    "player_id": 1271342,
+    "fargo_name": "Jeff Halvorson",
+    "membership_id": "9900007336632",
+    "location": "Aurora CO",
+    "note": "recovery single-match (query 'Jeff Halvorson')"
+  },
+  {
+    "search_name": "Jeffery Lashell",
+    "player_id": 1165129,
+    "fargo_name": "Jeff lashell",
+    "membership_id": "9900006042619",
+    "location": "CO",
+    "note": "recovery single-match (query 'Jeff Lashell')"
+  },
+  {
+    "search_name": "Jen Sosa Lockwood",
+    "player_id": 1106898,
+    "fargo_name": "Jen lockwood",
+    "membership_id": "9900005447194",
+    "location": "CO",
+    "note": "recovery single-match (query 'Jen Lockwood')"
+  },
+  {
+    "search_name": "John Quintana Jr.",
+    "player_id": 1369171,
+    "fargo_name": "Johnny Quintana",
+    "membership_id": "9900008587330",
+    "location": "Pheonix AZ",
+    "note": "recovery single-match (query 'John Quintana')"
+  },
+  {
+    "search_name": "Konrad Konnie Potts Johnson",
+    "player_id": 1296997,
+    "fargo_name": "Konrad Johnson",
+    "membership_id": "9900007708569",
+    "location": "Littleton CO",
+    "note": "recovery single-match (query 'Konr Johnson')"
+  },
+  {
+    "search_name": "Michael Farrell Jr",
+    "player_id": 1060038,
+    "fargo_name": "Michael R Farrell",
+    "membership_id": "9900004884433",
+    "location": "Midwest City OK",
+    "note": "recovery single-match (query 'Mich Farrell')"
+  },
+  {
+    "search_name": "Richard Cuban B Borus",
+    "player_id": 1007620,
+    "fargo_name": "Richard Borus",
+    "membership_id": "9900004277570",
+    "location": "Englewood CO",
+    "note": "recovery single-match (query 'Rich Borus')"
+  },
+  {
+    "search_name": "Taylor Anne Aviles",
+    "player_id": 1243969,
+    "fargo_name": "Taylor Aviles",
+    "membership_id": "9900007060551",
+    "location": "Arvada CO",
+    "note": "recovery single-match (query 'Tayl Aviles')"
+  },
+  {
+    "search_name": "Taylor Tay Wolf",
+    "player_id": 1114089,
+    "fargo_name": "Taylor Wolf",
+    "membership_id": "9900005519969",
+    "location": "Denver CO",
+    "note": "recovery single-match (query 'Tayl Wolf')"
+  },
+  {
+    "search_name": "Johnathan Becker",
+    "player_id": 1156046,
+    "fargo_name": "John Becker",
+    "membership_id": "9900005950090",
+    "location": "Aurora CO",
+    "note": "recovery: lone CO match among out-of-state namesakes (query 'John Becker')"
+  },
+  {
+    "search_name": "Zachariah Johnson",
+    "player_id": 1099495,
+    "fargo_name": "Zach Johnson",
+    "membership_id": "9900005371079",
+    "location": "Lakewood CO",
+    "note": "recovery: lone CO match among out-of-state namesakes (query 'Zach Johnson')"
   }
 ]
