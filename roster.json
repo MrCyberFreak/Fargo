@@ -410,7 +410,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 77871,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3288663,
+          "member_number": "80401850",
+          "name": "Alexander Burghardt",
+          "first_session": 129,
+          "last_session": 133,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
     },
     "1198234": {
       "player_id": 1198234,
@@ -419,7 +432,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 79794,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3308602,
+          "member_number": "80401749",
+          "name": "Andrew Collier",
+          "first_session": 130,
+          "last_session": 133,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
     },
     "644011": {
       "player_id": 644011,
@@ -1563,7 +1589,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 23898,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1995430,
+          "member_number": "80419159",
+          "name": "Robert Sewill",
+          "first_session": 123,
+          "last_session": 129,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
     },
     "972772": {
       "player_id": 972772,
@@ -1826,6 +1865,17 @@
           "source": "apa",
           "match_method": "name",
           "added_date": "2026-06-06"
+        },
+        {
+          "member_id": 2135241,
+          "member_number": "80423078",
+          "name": "Isabel Gutierrez",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 11,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
         }
       ]
     },
@@ -2249,6 +2299,17 @@
           "source": "apa",
           "match_method": "name",
           "added_date": "2026-06-06"
+        },
+        {
+          "member_id": 3038509,
+          "member_number": "80430116",
+          "name": "David Miller",
+          "first_session": 123,
+          "last_session": 124,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
         }
       ]
     },
@@ -2479,7 +2540,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 168663,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2854305,
+          "member_number": "80423951",
+          "name": "Charles Hicks",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
     },
     "1362857": {
       "player_id": 1362857,
@@ -3032,7 +3106,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 139948,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2894533,
+          "member_number": "80424114",
+          "name": "Christopher Frandrup",
+          "first_session": 124,
+          "last_session": 132,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
     },
     "1337878": {
       "player_id": 1337878,
@@ -4458,7 +4545,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 8420,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3036707,
+          "member_number": "80433674",
+          "name": "Douglas Conry",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
     },
     "15264": {
       "player_id": 15264,
@@ -5720,7 +5820,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 77055,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 863099,
+          "member_number": "80409051",
+          "name": "Gregory Cook",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
     },
     "689725": {
       "player_id": 689725,
@@ -6893,7 +7006,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 100318,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 2952611,
+          "member_number": "80424458",
+          "name": "Jeffrey Barnard",
+          "first_session": 123,
+          "last_session": 135,
+          "sessions_count": 9,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
     },
     "1245566": {
       "player_id": 1245566,
@@ -7824,7 +7950,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 131617,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 523222,
+          "member_number": "80425051",
+          "name": "Jose Ramirez",
+          "first_session": 132,
+          "last_session": 133,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
     },
     "1160575": {
       "player_id": 1160575,
@@ -9240,7 +9379,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 52415,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3306822,
+          "member_number": "80401596",
+          "name": "Nathan Smith",
+          "first_session": 130,
+          "last_session": 132,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
     },
     "1115595": {
       "player_id": 1115595,
@@ -11297,6 +11449,17 @@
           "source": "apa",
           "match_method": "name",
           "added_date": "2026-06-06"
+        },
+        {
+          "member_id": 2771729,
+          "member_number": "80423370",
+          "name": "Timothy Fisk",
+          "first_session": 123,
+          "last_session": 125,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
         }
       ]
     },
@@ -11584,7 +11747,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 13204,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3042461,
+          "member_number": "80433709",
+          "name": "Samuel Shelburne",
+          "first_session": 123,
+          "last_session": 130,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
     },
     "1090609": {
       "player_id": 1090609,
@@ -12168,7 +12344,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 73367,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3249187,
+          "member_number": "80400851",
+          "name": "Steven Conner",
+          "first_session": 124,
+          "last_session": 132,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
     },
     "757234": {
       "player_id": 757234,
@@ -13163,6 +13352,17 @@
           "source": "apa",
           "match_method": "name",
           "added_date": "2026-06-06"
+        },
+        {
+          "member_id": 862175,
+          "member_number": "80409313",
+          "name": "Ken Schmidt",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
         }
       ]
     },
@@ -13240,7 +13440,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 133234,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 1995358,
+          "member_number": "80419084",
+          "name": "Vincent Holloway",
+          "first_session": 123,
+          "last_session": 130,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
     },
     "995081": {
       "player_id": 995081,
@@ -17580,6 +17793,17 @@
           "first_session": 125,
           "last_session": 129,
           "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        },
+        {
+          "member_id": 1995370,
+          "member_number": "80419096",
+          "name": "Frank Leal",
+          "first_session": 123,
+          "last_session": 129,
+          "sessions_count": 4,
           "source": "apa",
           "match_method": "name",
           "added_date": "2026-06-07"
@@ -25730,6 +25954,3105 @@
           "sessions_count": 9,
           "source": "apa",
           "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1153839": {
+      "player_id": 1153839,
+      "membership_id": null,
+      "name": "Anthony Lopez",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3286095,
+          "member_number": "80401449",
+          "name": "Anthony Lopez",
+          "first_session": 129,
+          "last_session": 133,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1046164": {
+      "player_id": 1046164,
+      "membership_id": null,
+      "name": "Austin Hanshew",
+      "state": "Lakewood CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3057028,
+          "member_number": "80433800",
+          "name": "Austin Hanshew",
+          "first_session": 123,
+          "last_session": 124,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1249900": {
+      "player_id": 1249900,
+      "membership_id": null,
+      "name": "Austin Shelton",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3028975,
+          "member_number": "80401963",
+          "name": "Austin Shelton",
+          "first_session": 132,
+          "last_session": 132,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1090477": {
+      "player_id": 1090477,
+      "membership_id": null,
+      "name": "Barbara Hanson",
+      "state": "Lakewood CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3116276,
+          "member_number": "80434193",
+          "name": "Barbara Hanson",
+          "first_session": 123,
+          "last_session": 132,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1015370": {
+      "player_id": 1015370,
+      "membership_id": null,
+      "name": "Ben Whitehill",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2319228,
+          "member_number": "80421164",
+          "name": "Ben Whitehill",
+          "first_session": 129,
+          "last_session": 136,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1378974": {
+      "player_id": 1378974,
+      "membership_id": null,
+      "name": "Brian Barr",
+      "state": "Highlands Ranch CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2938521,
+          "member_number": "80401609",
+          "name": "Brian Barr",
+          "first_session": 124,
+          "last_session": 132,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1262126": {
+      "player_id": 1262126,
+      "membership_id": null,
+      "name": "Brian Hall",
+      "state": "Longmont CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3145684,
+          "member_number": "80400659",
+          "name": "Brian Hall",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "669772": {
+      "player_id": 669772,
+      "membership_id": null,
+      "name": "Bruce Reed",
+      "state": "Aurora CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1196354,
+          "member_number": "80414902",
+          "name": "Bruce Reed",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "731182": {
+      "player_id": 731182,
+      "membership_id": null,
+      "name": "Carlos Gonzalez",
+      "state": "Aurora CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 999438,
+          "member_number": "80411172",
+          "name": "Carlos Gonzalez",
+          "first_session": 123,
+          "last_session": 130,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "799719": {
+      "player_id": 799719,
+      "membership_id": null,
+      "name": "Charles Burger",
+      "state": "Louviers CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 792497,
+          "member_number": "80407701",
+          "name": "Charles Burger",
+          "first_session": 125,
+          "last_session": 130,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1117360": {
+      "player_id": 1117360,
+      "membership_id": null,
+      "name": "Charles Harris",
+      "state": "Pueblo CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3173174,
+          "member_number": "80400698",
+          "name": "Charles Harris",
+          "first_session": 125,
+          "last_session": 133,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "895795": {
+      "player_id": 895795,
+      "membership_id": null,
+      "name": "Chris Foster",
+      "state": "Centennial CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1428910,
+          "member_number": "80416654",
+          "name": "Chris Foster",
+          "first_session": 123,
+          "last_session": 136,
+          "sessions_count": 8,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1368643": {
+      "player_id": 1368643,
+      "membership_id": null,
+      "name": "Chris Gonzalez",
+      "state": "Aurora CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2814534,
+          "member_number": "80423670",
+          "name": "Chris Gonzalez",
+          "first_session": 123,
+          "last_session": 124,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1269401": {
+      "player_id": 1269401,
+      "membership_id": null,
+      "name": "Chris Gordon",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3439796,
+          "member_number": "80402691",
+          "name": "Chris Gordon",
+          "first_session": 137,
+          "last_session": 138,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "989951": {
+      "player_id": 989951,
+      "membership_id": null,
+      "name": "Chris Salazar",
+      "state": "Arvada CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2833201,
+          "member_number": "80423742",
+          "name": "Chris Salazar",
+          "first_session": 123,
+          "last_session": 132,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1203563": {
+      "player_id": 1203563,
+      "membership_id": null,
+      "name": "Christopher A Walker",
+      "state": "Pagosa Springs CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2961341,
+          "member_number": "80424553",
+          "name": "Chris Walker",
+          "first_session": 123,
+          "last_session": 134,
+          "sessions_count": 8,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        },
+        {
+          "member_id": 3012199,
+          "member_number": "80424850",
+          "name": "Christina Walker",
+          "first_session": 123,
+          "last_session": 132,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1272385": {
+      "player_id": 1272385,
+      "membership_id": null,
+      "name": "Christine Cook",
+      "state": "Aurora CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 931488,
+          "member_number": "80401373",
+          "name": "Christine Cook",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1114086": {
+      "player_id": 1114086,
+      "membership_id": null,
+      "name": "Christopher Cho",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2071549,
+          "member_number": "80422340",
+          "name": "Christopher Cho",
+          "first_session": 129,
+          "last_session": 130,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1290902": {
+      "player_id": 1290902,
+      "membership_id": null,
+      "name": "Courtney Anderson",
+      "state": "Phippsburg CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3172148,
+          "member_number": "80400671",
+          "name": "Courtney Anderson",
+          "first_session": 123,
+          "last_session": 125,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1009872": {
+      "player_id": 1009872,
+      "membership_id": null,
+      "name": "Craig Howe",
+      "state": "Littleton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2784418,
+          "member_number": "80432070",
+          "name": "Craig Howe",
+          "first_session": 124,
+          "last_session": 139,
+          "sessions_count": 12,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1301638": {
+      "player_id": 1301638,
+      "membership_id": null,
+      "name": "Daniel Quinlan",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3390522,
+          "member_number": "80435835",
+          "name": "Daniel Quinlan",
+          "first_session": 135,
+          "last_session": 135,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "737004": {
+      "player_id": 737004,
+      "membership_id": null,
+      "name": "David Bradley",
+      "state": "Aurora CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 794632,
+          "member_number": "80401743",
+          "name": "David Bradley",
+          "first_session": 125,
+          "last_session": 133,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1101049": {
+      "player_id": 1101049,
+      "membership_id": null,
+      "name": "David Brown",
+      "state": "Yampa CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2990734,
+          "member_number": "80424673",
+          "name": "David Brown",
+          "first_session": 125,
+          "last_session": 129,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1268484": {
+      "player_id": 1268484,
+      "membership_id": null,
+      "name": "David Jose Guzman",
+      "state": "Greeley CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2410119,
+          "member_number": "80421614",
+          "name": "David Guzman",
+          "first_session": 125,
+          "last_session": 125,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1047511": {
+      "player_id": 1047511,
+      "membership_id": null,
+      "name": "David Marsh",
+      "state": "Englewood CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1549643,
+          "member_number": "80418427",
+          "name": "David Marsh",
+          "first_session": 135,
+          "last_session": 139,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1009688": {
+      "player_id": 1009688,
+      "membership_id": null,
+      "name": "David Ortiz",
+      "state": "Littleton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1067036,
+          "member_number": "80413703",
+          "name": "David Ortiz",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1247358": {
+      "player_id": 1247358,
+      "membership_id": null,
+      "name": "Della Hernandez",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3248178,
+          "member_number": "80400872",
+          "name": "De Hernandez",
+          "first_session": 124,
+          "last_session": 124,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1228575": {
+      "player_id": 1228575,
+      "membership_id": null,
+      "name": "Dean Bryan",
+      "state": "Littleton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3443391,
+          "member_number": "80402719",
+          "name": "Dean Bryan",
+          "first_session": 138,
+          "last_session": 139,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1301918": {
+      "player_id": 1301918,
+      "membership_id": null,
+      "name": "Eric Johnson",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3269050,
+          "member_number": "80401000",
+          "name": "Eric Johnson",
+          "first_session": 125,
+          "last_session": 139,
+          "sessions_count": 8,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1380419": {
+      "player_id": 1380419,
+      "membership_id": null,
+      "name": "Eric Taylor",
+      "state": "Broomfield CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2195435,
+          "member_number": "80402509",
+          "name": "Eric Taylor",
+          "first_session": 124,
+          "last_session": 133,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1242283": {
+      "player_id": 1242283,
+      "membership_id": null,
+      "name": "Frank Souk",
+      "state": "Littleton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3214770,
+          "member_number": "80401370",
+          "name": "Frank Souk",
+          "first_session": 124,
+          "last_session": 138,
+          "sessions_count": 8,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1138592": {
+      "player_id": 1138592,
+      "membership_id": null,
+      "name": "Gary Brown",
+      "state": "Highlands Ranch CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2337320,
+          "member_number": "80421232",
+          "name": "Gary Brown",
+          "first_session": 125,
+          "last_session": 125,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1363086": {
+      "player_id": 1363086,
+      "membership_id": null,
+      "name": "George Young",
+      "state": "AURORA CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2896260,
+          "member_number": "80424133",
+          "name": "George Young",
+          "first_session": 124,
+          "last_session": 132,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "993392": {
+      "player_id": 993392,
+      "membership_id": null,
+      "name": "Heidi Land",
+      "state": "Englewood CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1567693,
+          "member_number": "80417582",
+          "name": "Heidi Land",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1100338": {
+      "player_id": 1100338,
+      "membership_id": null,
+      "name": "Jake Jacobson",
+      "state": "Englewood CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 643799,
+          "member_number": "80406148",
+          "name": "Jake Jacobson",
+          "first_session": 125,
+          "last_session": 125,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1354222": {
+      "player_id": 1354222,
+      "membership_id": null,
+      "name": "James Boyce",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3385158,
+          "member_number": "80402544",
+          "name": "James Boyce",
+          "first_session": 135,
+          "last_session": 139,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1332677": {
+      "player_id": 1332677,
+      "membership_id": null,
+      "name": "James Keech",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2939022,
+          "member_number": "80424421",
+          "name": "James Keech",
+          "first_session": 124,
+          "last_session": 133,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1241129": {
+      "player_id": 1241129,
+      "membership_id": null,
+      "name": "Jamie Rogers",
+      "state": "Littleton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1677777,
+          "member_number": "80410288",
+          "name": "Jamie Rogers",
+          "first_session": 123,
+          "last_session": 135,
+          "sessions_count": 8,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1154180": {
+      "player_id": 1154180,
+      "membership_id": null,
+      "name": "Jason Carroll",
+      "state": "Aurora CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2784394,
+          "member_number": "80423489",
+          "name": "Jason Carroll",
+          "first_session": 123,
+          "last_session": 132,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1130813": {
+      "player_id": 1130813,
+      "membership_id": null,
+      "name": "Jason Ford",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1677544,
+          "member_number": "80418470",
+          "name": "Jason Ford",
+          "first_session": 123,
+          "last_session": 130,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1330512": {
+      "player_id": 1330512,
+      "membership_id": null,
+      "name": "Jason Hudson",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3401695,
+          "member_number": "80402584",
+          "name": "Jason Hudson",
+          "first_session": 135,
+          "last_session": 139,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "972816": {
+      "player_id": 972816,
+      "membership_id": null,
+      "name": "Jason Valdez",
+      "state": "Colorado Springs CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3203601,
+          "member_number": "80400748",
+          "name": "Jason Valdez",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        },
+        {
+          "member_id": 3219004,
+          "member_number": "80401437",
+          "name": "Jason Valdez",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1142809": {
+      "player_id": 1142809,
+      "membership_id": null,
+      "name": "Jeff Robertson",
+      "state": "Aurora CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1359913,
+          "member_number": "80416076",
+          "name": "Jeffrey Robertson",
+          "first_session": 123,
+          "last_session": 129,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1065767": {
+      "player_id": 1065767,
+      "membership_id": null,
+      "name": "Jim Waldron",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2203171,
+          "member_number": "80420524",
+          "name": "Jim Waldron",
+          "first_session": 123,
+          "last_session": 129,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1086273": {
+      "player_id": 1086273,
+      "membership_id": null,
+      "name": "Joe Laughlin",
+      "state": "Littleton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 625090,
+          "member_number": "80480402",
+          "name": "Joe Laughlin",
+          "first_session": 123,
+          "last_session": 130,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1313550": {
+      "player_id": 1313550,
+      "membership_id": null,
+      "name": "John Earley",
+      "state": "Aurora CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1301772,
+          "member_number": "80415838",
+          "name": "John Earley",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "17798": {
+      "player_id": 17798,
+      "membership_id": null,
+      "name": "Jonathan Amo",
+      "state": "Aurora CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 999663,
+          "member_number": "80411514",
+          "name": "Jon Amo",
+          "first_session": 125,
+          "last_session": 125,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1358213": {
+      "player_id": 1358213,
+      "membership_id": null,
+      "name": "Jon Gill",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3348555,
+          "member_number": "80435548",
+          "name": "Jon Gill",
+          "first_session": 133,
+          "last_session": 138,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "976399": {
+      "player_id": 976399,
+      "membership_id": null,
+      "name": "William Jon Hall",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2960952,
+          "member_number": "80424550",
+          "name": "Jon Hall",
+          "first_session": 123,
+          "last_session": 123,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1060962": {
+      "player_id": 1060962,
+      "membership_id": null,
+      "name": "Jon Harris",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1226263,
+          "member_number": "80415037",
+          "name": "Jon Harris",
+          "first_session": 123,
+          "last_session": 136,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "868753": {
+      "player_id": 868753,
+      "membership_id": null,
+      "name": "Jose Garcia",
+      "state": "Pueblo CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 930731,
+          "member_number": "80410149",
+          "name": "Jose Garcia",
+          "first_session": 132,
+          "last_session": 133,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1361806": {
+      "player_id": 1361806,
+      "membership_id": null,
+      "name": "Josh Hamilton",
+      "state": "Oak Creek CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2995757,
+          "member_number": "80424764",
+          "name": "Josh Hamilton",
+          "first_session": 123,
+          "last_session": 124,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "782131": {
+      "player_id": 782131,
+      "membership_id": null,
+      "name": "Justin Garcia",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3232701,
+          "member_number": "80434939",
+          "name": "Justin Garcia",
+          "first_session": 137,
+          "last_session": 139,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "803216": {
+      "player_id": 803216,
+      "membership_id": null,
+      "name": "Keith Price",
+      "state": "Centennial CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2746038,
+          "member_number": "80423153",
+          "name": "Keith Price",
+          "first_session": 129,
+          "last_session": 129,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1311782": {
+      "player_id": 1311782,
+      "membership_id": null,
+      "name": "Kenny Davis Jr",
+      "state": "Aurora  CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3096572,
+          "member_number": "80400394",
+          "name": "Kenny Davis",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 11,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1086584": {
+      "player_id": 1086584,
+      "membership_id": null,
+      "name": "Kevin Taylor",
+      "state": "Littleton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1130644,
+          "member_number": "80418433",
+          "name": "Kevin Taylor",
+          "first_session": 123,
+          "last_session": 123,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1333869": {
+      "player_id": 1333869,
+      "membership_id": null,
+      "name": "Kevin Walker",
+      "state": "Littleton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3468562,
+          "member_number": "80402209",
+          "name": "Kevin Walker",
+          "first_session": 139,
+          "last_session": 139,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1296119": {
+      "player_id": 1296119,
+      "membership_id": null,
+      "name": "Kyle Adams",
+      "state": "Littleton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2222009,
+          "member_number": "80420651",
+          "name": "Kyle Adams",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1361802": {
+      "player_id": 1361802,
+      "membership_id": null,
+      "name": "Lucas Wang",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3047038,
+          "member_number": "80400110",
+          "name": "Lucas Wang",
+          "first_session": 132,
+          "last_session": 132,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1056880": {
+      "player_id": 1056880,
+      "membership_id": null,
+      "name": "Mark Fall",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3245069,
+          "member_number": "80401620",
+          "name": "Mark Fall",
+          "first_session": 124,
+          "last_session": 124,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1005213": {
+      "player_id": 1005213,
+      "membership_id": null,
+      "name": "Matt Olsen",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2407642,
+          "member_number": "80421572",
+          "name": "Matt Olsen",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1028696": {
+      "player_id": 1028696,
+      "membership_id": null,
+      "name": "Michael Broussard",
+      "state": "Englewood CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2573591,
+          "member_number": "80422283",
+          "name": "Michael Broussard",
+          "first_session": 123,
+          "last_session": 129,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1138184": {
+      "player_id": 1138184,
+      "membership_id": null,
+      "name": "Michael Brown",
+      "state": "Aurora CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3115491,
+          "member_number": "80400638",
+          "name": "Michael Brown",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1209285": {
+      "player_id": 1209285,
+      "membership_id": null,
+      "name": "Michael Palmer",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1253201,
+          "member_number": "80415367",
+          "name": "Michael Palmer",
+          "first_session": 132,
+          "last_session": 133,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1118537": {
+      "player_id": 1118537,
+      "membership_id": null,
+      "name": "Michael Phillips",
+      "state": "Parker CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3054559,
+          "member_number": "80430135",
+          "name": "Michael Phillips",
+          "first_session": 123,
+          "last_session": 132,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "993196": {
+      "player_id": 993196,
+      "membership_id": null,
+      "name": "Michael Romero",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1674185,
+          "member_number": "80418437",
+          "name": "Michael Romero",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1228568": {
+      "player_id": 1228568,
+      "membership_id": null,
+      "name": "Kris Michael Sandoval",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1599635,
+          "member_number": "80426364",
+          "name": "Michael Sandoval",
+          "first_session": 136,
+          "last_session": 139,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1117380": {
+      "player_id": 1117380,
+      "membership_id": null,
+      "name": "Michael Weaver",
+      "state": "Aurora CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 792813,
+          "member_number": "80408029",
+          "name": "Michael Weaver",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "16126": {
+      "player_id": 16126,
+      "membership_id": null,
+      "name": "Miguel Martinez",
+      "state": "Ft Lupton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3307141,
+          "member_number": "80401748",
+          "name": "Miguel Martinez",
+          "first_session": 130,
+          "last_session": 130,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1245221": {
+      "player_id": 1245221,
+      "membership_id": null,
+      "name": "Mike Jones",
+      "state": "Arvada CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3426480,
+          "member_number": "80402666",
+          "name": "Mike Jones",
+          "first_session": 137,
+          "last_session": 137,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "993219": {
+      "player_id": 993219,
+      "membership_id": null,
+      "name": "Mike Myers",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1635079,
+          "member_number": "80417997",
+          "name": "Mike Myers",
+          "first_session": 123,
+          "last_session": 129,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1249856": {
+      "player_id": 1249856,
+      "membership_id": null,
+      "name": "Nicholas Miller",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3234553,
+          "member_number": "80434953",
+          "name": "Nicholas Miller",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1242861": {
+      "player_id": 1242861,
+      "membership_id": null,
+      "name": "Nicole Howell",
+      "state": "Boulder CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3244789,
+          "member_number": "80401657",
+          "name": "Nicole Howell",
+          "first_session": 125,
+          "last_session": 129,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1366133": {
+      "player_id": 1366133,
+      "membership_id": null,
+      "name": "Pamela Brown",
+      "state": "Aurora CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2330053,
+          "member_number": "80421205",
+          "name": "Pam Brown",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "625612": {
+      "player_id": 625612,
+      "membership_id": null,
+      "name": "Patrick Roy",
+      "state": "Littleton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2715813,
+          "member_number": "80422999",
+          "name": "Patrick Roy",
+          "first_session": 123,
+          "last_session": 135,
+          "sessions_count": 8,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1005216": {
+      "player_id": 1005216,
+      "membership_id": null,
+      "name": "Pedro Santos",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2041558,
+          "member_number": "80419480",
+          "name": "Pedro Santos",
+          "first_session": 136,
+          "last_session": 139,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1202476": {
+      "player_id": 1202476,
+      "membership_id": null,
+      "name": "Richard Alcala",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3042275,
+          "member_number": "80400163",
+          "name": "Richard Alcala",
+          "first_session": 123,
+          "last_session": 124,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1342981": {
+      "player_id": 1342981,
+      "membership_id": null,
+      "name": "Rick Leyba",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3005239,
+          "member_number": "80400012",
+          "name": "Rick Leyba",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "828284": {
+      "player_id": 828284,
+      "membership_id": null,
+      "name": "Rob Ballard",
+      "state": "Aurora CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2707972,
+          "member_number": "80422984",
+          "name": "Robert Ballard",
+          "first_session": 130,
+          "last_session": 133,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1364333": {
+      "player_id": 1364333,
+      "membership_id": null,
+      "name": "Rodney Bryant",
+      "state": "Littleton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1964156,
+          "member_number": "80418823",
+          "name": "Rodney Bryant",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1202491": {
+      "player_id": 1202491,
+      "membership_id": null,
+      "name": "Ron Bush",
+      "state": "Aurora CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3025248,
+          "member_number": "80424957",
+          "name": "Ron Bush",
+          "first_session": 123,
+          "last_session": 129,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1086272": {
+      "player_id": 1086272,
+      "membership_id": null,
+      "name": "Ron Troeger",
+      "state": "Littleton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1177546,
+          "member_number": "80400494",
+          "name": "Ronald Troeger",
+          "first_session": 123,
+          "last_session": 134,
+          "sessions_count": 8,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "14972": {
+      "player_id": 14972,
+      "membership_id": null,
+      "name": "Ryan Brown",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 930312,
+          "member_number": "80409717",
+          "name": "Ryan Brown",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "849847": {
+      "player_id": 849847,
+      "membership_id": null,
+      "name": "Ryan Moore",
+      "state": "Colorado Springs CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3384377,
+          "member_number": "80402539",
+          "name": "Ryan Moore",
+          "first_session": 135,
+          "last_session": 135,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1332668": {
+      "player_id": 1332668,
+      "membership_id": null,
+      "name": "Sarah Webb",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3328599,
+          "member_number": "80401818",
+          "name": "Sarah Webb",
+          "first_session": 132,
+          "last_session": 133,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1120551": {
+      "player_id": 1120551,
+      "membership_id": null,
+      "name": "Scott Fisher",
+      "state": "Aurora CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2484225,
+          "member_number": "80424795",
+          "name": "Scott Fisher",
+          "first_session": 129,
+          "last_session": 129,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "668777": {
+      "player_id": 668777,
+      "membership_id": null,
+      "name": "Michelle Beck",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3250653,
+          "member_number": "80400854",
+          "name": "Shelly Beck",
+          "first_session": 124,
+          "last_session": 124,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1380275": {
+      "player_id": 1380275,
+      "membership_id": null,
+      "name": "Steve Decker",
+      "state": "Littleton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3426724,
+          "member_number": "80402670",
+          "name": "Steve Decker",
+          "first_session": 137,
+          "last_session": 139,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "727654": {
+      "player_id": 727654,
+      "membership_id": null,
+      "name": "Tim Currie",
+      "state": "Littleton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3355872,
+          "member_number": "80402045",
+          "name": "Tim Currie",
+          "first_session": 133,
+          "last_session": 136,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        },
+        {
+          "member_id": 793245,
+          "member_number": "80408509",
+          "name": "Timothy Currie",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "647217": {
+      "player_id": 647217,
+      "membership_id": null,
+      "name": "Travis Jones",
+      "state": "Colorado Springs CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3238486,
+          "member_number": "80400829",
+          "name": "Travis Jones",
+          "first_session": 123,
+          "last_session": 123,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "name",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1123467": {
+      "player_id": 1123467,
+      "membership_id": "9900005615043",
+      "name": "ALEX COOPER",
+      "state": "MN",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3278417,
+          "member_number": "80401783",
+          "name": "Alexander Cooper",
+          "first_session": 125,
+          "last_session": 133,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1191823": {
+      "player_id": 1191823,
+      "membership_id": "9900006517490",
+      "name": "Andy bacon",
+      "state": "Englewood CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2782446,
+          "member_number": "80401668",
+          "name": "Andrew Bacon",
+          "first_session": 125,
+          "last_session": 132,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1376717": {
+      "player_id": 1376717,
+      "membership_id": "9900008661320",
+      "name": "Andy Harvey",
+      "state": "WI",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3307003,
+          "member_number": "80401597",
+          "name": "Andrew Harvey",
+          "first_session": 130,
+          "last_session": 130,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1012642": {
+      "player_id": 1012642,
+      "membership_id": "9900004330985",
+      "name": "Angie Vaughn",
+      "state": "Shreveport LA",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3031474,
+          "member_number": "80425082",
+          "name": "Angela Vaughn",
+          "first_session": 123,
+          "last_session": 124,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1023036": {
+      "player_id": 1023036,
+      "membership_id": "9900004453264",
+      "name": "Benny Cooper",
+      "state": "Carrolton TX",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3254904,
+          "member_number": "80400863",
+          "name": "Benjamin Cooper",
+          "first_session": 125,
+          "last_session": 125,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1255763": {
+      "player_id": 1255763,
+      "membership_id": "9900007177204",
+      "name": "ROBERT APODACA",
+      "state": "Salem OR",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3278415,
+          "member_number": "80401685",
+          "name": "Bob Apodaca",
+          "first_session": 125,
+          "last_session": 133,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1243494": {
+      "player_id": 1243494,
+      "membership_id": "9900007055588",
+      "name": "Chuck Cannon",
+      "state": "Poplar Bluff MO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3459848,
+          "member_number": "80402783",
+          "name": "Charles Cannon",
+          "first_session": 138,
+          "last_session": 139,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "751240": {
+      "player_id": 751240,
+      "membership_id": "0068602",
+      "name": "Charlie Williamson",
+      "state": "Thornton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 644754,
+          "member_number": "80419972",
+          "name": "Charles Williamson",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 12,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1093531": {
+      "player_id": 1093531,
+      "membership_id": "9900005310061",
+      "name": "Christy Swart",
+      "state": "CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1152618,
+          "member_number": "80400572",
+          "name": "Christina Swart",
+          "first_session": 129,
+          "last_session": 130,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "876176": {
+      "player_id": 876176,
+      "membership_id": "0316831",
+      "name": "Chrissie Garritano",
+      "state": "Littleton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1066584,
+          "member_number": "80413125",
+          "name": "Christine Garritano",
+          "first_session": 136,
+          "last_session": 139,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1288357": {
+      "player_id": 1288357,
+      "membership_id": "9900007517369",
+      "name": "Chris Eynon",
+      "state": "CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3249580,
+          "member_number": "80400868",
+          "name": "Christopher Eynon",
+          "first_session": 124,
+          "last_session": 125,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1124935": {
+      "player_id": 1124935,
+      "membership_id": "9900005629798",
+      "name": "Chris Lewe",
+      "state": "CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3172638,
+          "member_number": "80434584",
+          "name": "Christopher Lewe",
+          "first_session": 129,
+          "last_session": 133,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1132884": {
+      "player_id": 1132884,
+      "membership_id": "9900005714333",
+      "name": "Chris McCarthy",
+      "state": "Ardmore OK",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3212658,
+          "member_number": "80400769",
+          "name": "Christopher McCarthy",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "629728": {
+      "player_id": 629728,
+      "membership_id": "9900003796836",
+      "name": "Chris Rivers",
+      "state": "Rapid City SD",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1293805,
+          "member_number": "80401804",
+          "name": "Christopher Rivers",
+          "first_session": 129,
+          "last_session": 130,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1147070": {
+      "player_id": 1147070,
+      "membership_id": "9900005859195",
+      "name": "Dan Frey",
+      "state": "Westland MI",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3189929,
+          "member_number": "80400710",
+          "name": "Daniel Frey",
+          "first_session": 124,
+          "last_session": 132,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1170440": {
+      "player_id": 1170440,
+      "membership_id": "9900006100166",
+      "name": "Daniel Hayes Jr",
+      "state": "CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3350965,
+          "member_number": "80401973",
+          "name": "Danny Hayes Jr",
+          "first_session": 133,
+          "last_session": 133,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1138185": {
+      "player_id": 1138185,
+      "membership_id": "9900005768114",
+      "name": "Dave Eubanks",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1378413,
+          "member_number": "80401177",
+          "name": "David Eubanks",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "731079": {
+      "player_id": 731079,
+      "membership_id": "0244678",
+      "name": "Dave Frankovic",
+      "state": "Highlands Ranch CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3060971,
+          "member_number": "80400182",
+          "name": "David Frankovic",
+          "first_session": 123,
+          "last_session": 124,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1244165": {
+      "player_id": 1244165,
+      "membership_id": "9900007062432",
+      "name": "Andrew Fisher",
+      "state": "Ashley OH",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3232314,
+          "member_number": "80401537",
+          "name": "Drew Fisher",
+          "first_session": 123,
+          "last_session": 125,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1386601": {
+      "player_id": 1386601,
+      "membership_id": "9900008758181",
+      "name": "Andy Lindsey",
+      "state": "La Grande OR",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2624362,
+          "member_number": "80422486",
+          "name": "Drew Lindsey",
+          "first_session": 130,
+          "last_session": 130,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1250424": {
+      "player_id": 1250424,
+      "membership_id": "9900007120729",
+      "name": "Andrew Salazar",
+      "state": "ID",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3264722,
+          "member_number": "80401697",
+          "name": "Drew Salazar",
+          "first_session": 125,
+          "last_session": 125,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "958329": {
+      "player_id": 958329,
+      "membership_id": "0376786",
+      "name": "Jake Lawson",
+      "state": "Manchester MD",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3180062,
+          "member_number": "80401767",
+          "name": "Jacob Lawson",
+          "first_session": 129,
+          "last_session": 137,
+          "sessions_count": 8,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1272172": {
+      "player_id": 1272172,
+      "membership_id": "9900007345665",
+      "name": "Jim Ruppel",
+      "state": "Littleton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2067326,
+          "member_number": "80402174",
+          "name": "James Ruppel",
+          "first_session": 138,
+          "last_session": 139,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1379673": {
+      "player_id": 1379673,
+      "membership_id": "9900008691075",
+      "name": "Jeff Kakac",
+      "state": "CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3251049,
+          "member_number": "80400857",
+          "name": "Jeffrey Kakac",
+          "first_session": 124,
+          "last_session": 138,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1136606": {
+      "player_id": 1136606,
+      "membership_id": "9900005751659",
+      "name": "Jeff Shirk",
+      "state": "CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2691938,
+          "member_number": "80412862",
+          "name": "Jeffrey Shirk",
+          "first_session": 123,
+          "last_session": 124,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1265652": {
+      "player_id": 1265652,
+      "membership_id": "9900007278321",
+      "name": "Jesse Blair",
+      "state": "St. Louis MO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1666629,
+          "member_number": "80418349",
+          "name": "Jessica Blair",
+          "first_session": 125,
+          "last_session": 133,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1150336": {
+      "player_id": 1150336,
+      "membership_id": "9900005892192",
+      "name": "Jess Rappoport",
+      "state": "CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3084056,
+          "member_number": "80400279",
+          "name": "Jessica Rappoport",
+          "first_session": 130,
+          "last_session": 130,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1343006": {
+      "player_id": 1343006,
+      "membership_id": "9900008175377",
+      "name": "James Neff",
+      "state": "Westminster CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2782764,
+          "member_number": "80402082",
+          "name": "Jim Neff",
+          "first_session": 136,
+          "last_session": 139,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1363343": {
+      "player_id": 1363343,
+      "membership_id": "9900008530183",
+      "name": "JAMES DYSART",
+      "state": "FT WORTH TX",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3440946,
+          "member_number": "80402703",
+          "name": "Jimmy Dysart",
+          "first_session": 138,
+          "last_session": 138,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1105788": {
+      "player_id": 1105788,
+      "membership_id": "9900005435320",
+      "name": "James Kinney",
+      "state": "Blue Springs MO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1258969,
+          "member_number": "80415430",
+          "name": "Jimmy Kinney",
+          "first_session": 124,
+          "last_session": 124,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "815184": {
+      "player_id": 815184,
+      "membership_id": "0239651",
+      "name": "james Moranor",
+      "state": "Littleton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2553362,
+          "member_number": "80422040",
+          "name": "Jimmy Moranor",
+          "first_session": 125,
+          "last_session": 129,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1160138": {
+      "player_id": 1160138,
+      "membership_id": "9900005991079",
+      "name": "Jonatan Delgado",
+      "state": "Liberal KS",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3343420,
+          "member_number": "80435538",
+          "name": "Jonathan Delgado",
+          "first_session": 133,
+          "last_session": 133,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1123838": {
+      "player_id": 1123838,
+      "membership_id": "9900005620597",
+      "name": "Joe Conway",
+      "state": "The Villages FL",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3229377,
+          "member_number": "80400820",
+          "name": "Joseph Conway",
+          "first_session": 123,
+          "last_session": 123,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1031038": {
+      "player_id": 1031038,
+      "membership_id": "9900004546638",
+      "name": "Josh Daigle",
+      "state": "Dundas ON",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3087733,
+          "member_number": "80400350",
+          "name": "Joshua Daigle",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1118021": {
+      "player_id": 1118021,
+      "membership_id": "9900005559224",
+      "name": "Josh Ullstrom",
+      "state": "CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3259398,
+          "member_number": "80400874",
+          "name": "Joshua Ullstrom",
+          "first_session": 124,
+          "last_session": 130,
+          "sessions_count": 4,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "653712": {
+      "player_id": 653712,
+      "membership_id": "0297166",
+      "name": "Ken Binder",
+      "state": "ID",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2792031,
+          "member_number": "80423550",
+          "name": "Kenneth Binder",
+          "first_session": 135,
+          "last_session": 135,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "813997": {
+      "player_id": 813997,
+      "membership_id": "0158882",
+      "name": "Ken Byrd",
+      "state": "Englewood CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2307333,
+          "member_number": "80417691",
+          "name": "Kenneth Byrd",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "625028": {
+      "player_id": 625028,
+      "membership_id": "0313372",
+      "name": "Lawrence Ybarra",
+      "state": "AZ",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3309995,
+          "member_number": "80435315",
+          "name": "Larry Ybarra",
+          "first_session": 130,
+          "last_session": 130,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1104529": {
+      "player_id": 1104529,
+      "membership_id": "9900005421453",
+      "name": "Matt Cogburn",
+      "state": "TX",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3228207,
+          "member_number": "80401684",
+          "name": "Matthew Cogburn",
+          "first_session": 123,
+          "last_session": 123,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "948699": {
+      "player_id": 948699,
+      "membership_id": "0266392",
+      "name": "Matt McKee",
+      "state": "Stillwater OK",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2668504,
+          "member_number": "80402007",
+          "name": "Matthew McKEE",
+          "first_session": 133,
+          "last_session": 133,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1035740": {
+      "player_id": 1035740,
+      "membership_id": "9900004610070",
+      "name": "Matt Milan",
+      "state": "CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3390278,
+          "member_number": "80402114",
+          "name": "Matthew Milan",
+          "first_session": 135,
+          "last_session": 139,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1238492": {
+      "player_id": 1238492,
+      "membership_id": "9900007006061",
+      "name": "Matt Roybal",
+      "state": "Lakewood CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3122125,
+          "member_number": "80400547",
+          "name": "Matthew Roybal",
+          "first_session": 123,
+          "last_session": 138,
+          "sessions_count": 12,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1259396": {
+      "player_id": 1259396,
+      "membership_id": "9900007214480",
+      "name": "Mike Harman",
+      "state": "Thornton CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3026086,
+          "member_number": "80424984",
+          "name": "Michael Harman",
+          "first_session": 123,
+          "last_session": 125,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "722340": {
+      "player_id": 722340,
+      "membership_id": "0230693",
+      "name": "Mike Hinrichs",
+      "state": "Englewood CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3342806,
+          "member_number": "80401898",
+          "name": "Michael Hinrichs",
+          "first_session": 132,
+          "last_session": 136,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "629936": {
+      "player_id": 629936,
+      "membership_id": "0378218",
+      "name": "Shelly Murphy",
+      "state": "Groveport OH",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2811630,
+          "member_number": "80423635",
+          "name": "Michelle Murphy",
+          "first_session": 123,
+          "last_session": 132,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1238587": {
+      "player_id": 1238587,
+      "membership_id": "9900007007266",
+      "name": "Michael Anaya",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3326626,
+          "member_number": "80401927",
+          "name": "Mike Anaya",
+          "first_session": 132,
+          "last_session": 139,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1235281": {
+      "player_id": 1235281,
+      "membership_id": "9900006969268",
+      "name": "Nathan Cleveland",
+      "state": "New Orleans LA",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3026668,
+          "member_number": "80400103",
+          "name": "Nate Cleveland",
+          "first_session": 123,
+          "last_session": 124,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1321120": {
+      "player_id": 1321120,
+      "membership_id": "9900007956656",
+      "name": "NATHAN TOWNSEND",
+      "state": "IA",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1679763,
+          "member_number": "80418487",
+          "name": "Nate Townsend",
+          "first_session": 123,
+          "last_session": 132,
+          "sessions_count": 6,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "750643": {
+      "player_id": 750643,
+      "membership_id": "0133631",
+      "name": "Nick Dittmar",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1365365,
+          "member_number": "80418171",
+          "name": "Nicholas Dittmar",
+          "first_session": 130,
+          "last_session": 132,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1296727": {
+      "player_id": 1296727,
+      "membership_id": "9900007705681",
+      "name": "Pat McClure",
+      "state": "Casselberry FL",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 999294,
+          "member_number": "80411013",
+          "name": "Patrick McClure",
+          "first_session": 124,
+          "last_session": 125,
+          "sessions_count": 2,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1161785": {
+      "player_id": 1161785,
+      "membership_id": "9900006008059",
+      "name": "Phil Hahn",
+      "state": "Highlands Ranch CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3304907,
+          "member_number": "80401575",
+          "name": "Philip Hahn",
+          "first_session": 130,
+          "last_session": 139,
+          "sessions_count": 9,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1125076": {
+      "player_id": 1125076,
+      "membership_id": "9900005634297",
+      "name": "Bobby Yang",
+      "state": "Manifee CA",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2898361,
+          "member_number": "80424160",
+          "name": "Robert Yang",
+          "first_session": 123,
+          "last_session": 123,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1363061": {
+      "player_id": 1363061,
+      "membership_id": "9900008527404",
+      "name": "Steve Ebele",
+      "state": "AURORA CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 1000904,
+          "member_number": "80416075",
+          "name": "Steven Ebele",
+          "first_session": 123,
+          "last_session": 130,
+          "sessions_count": 5,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1244686": {
+      "player_id": 1244686,
+      "membership_id": "9900007067383",
+      "name": "Tom Forster",
+      "state": "CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3335474,
+          "member_number": "80435465",
+          "name": "Thomas Forster",
+          "first_session": 133,
+          "last_session": 133,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1186713": {
+      "player_id": 1186713,
+      "membership_id": "9900006466415",
+      "name": "CHRIS FORDE",
+      "state": "WI",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 2834695,
+          "member_number": "80423776",
+          "name": "Tina Forde",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 3,
+          "source": "apa",
+          "match_method": "variant",
+          "added_date": "2026-06-07"
+        }
+      ]
+    },
+    "1135629": {
+      "player_id": 1135629,
+      "membership_id": "9900005742633",
+      "name": "Tori Russick",
+      "state": "Denver CO",
+      "source": "apa",
+      "added_date": "2026-06-07",
+      "apa": [
+        {
+          "member_id": 3341957,
+          "member_number": "80401882",
+          "name": "Victoria Russick",
+          "first_session": 132,
+          "last_session": 132,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "variant",
           "added_date": "2026-06-07"
         }
       ]
