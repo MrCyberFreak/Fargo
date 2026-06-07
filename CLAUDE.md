@@ -42,7 +42,7 @@ Three identifiers exist and the API's names are confusing (see `docs/api.md`):
   `date_found, player_id, readable_id, name, rating, robustness, rating_quality, entry_type`
   (`entry_type` ∈ `baseline | change`). Never rewrite or reorder existing rows.
 - `roster.json` — keyed on `player_id`; **append-only by player_id** (re-running
-  any importer/resolver only adds new ids; existing entries are never rewritten).
+  any importer/resolver only adds new ids; existing player_ids are never removed).
   Entry shape varies by how the id was added, and that's fine — the pull only
   reads `player_id` (+ `name` as a log hint) and re-fetches everything live:
   - resolved via the API (`resolve.py`) → stores the full FargoRate `record`.
@@ -50,6 +50,14 @@ Three identifiers exist and the API's names are confusing (see `docs/api.md`):
     `{player_id, membership_id, name, state, source, <source>_id, added_date}`,
     no `record` block. Source ndjson is **never committed** (it carries PII —
     emails/phones); only the non-PII Fargo fields are extracted.
+  - **Additive cross-links are allowed** (the one exception to "don't touch
+    existing entries"): an importer may *add a new field* to an existing entry to
+    record a cross-system link — e.g. `import_apa.py` attaches an `apa` list of
+    APA memberships to a matched player. The rule is strictly additive: existing
+    fields are never modified or reordered, and the link itself is append-only
+    (re-running adds new memberships, never rewrites). One human can hold several
+    APA memberships ("skill levels"); all are kept on the one player, never
+    collapsed.
 
 ## Admission vs tracking (core invariant — do not break)
 Location/league filters gate **admission only** — *which* player_ids get added
@@ -68,11 +76,28 @@ above — they never cause an existing player to stop being tracked:
   Ignore the top-level `fargo_id` — it's the membership number with leading
   zeros stripped, NOT the id. Filtered to `fargo_data.state == "CO"` (local).
   No network needed; the daily pull validates each id on first fetch.
-- **NAPA / APA** (planned) — own rating systems, no Fargo id; resolved by
-  name+state via `/api/indexsearch`. Their role is the *team override* (include
-  a local-league player regardless of FargoRate location) and gap-fill.
+- **APA** (`import_apa.py`) — APA runs its own rating system, so its master
+  export carries **no FargoRate id and no state**, only APA ids + names. The
+  bridge is therefore name-based and runs in two steps:
+  - `crossref` (no network) — buckets each APA name against the roster:
+    *matched* (one rostered id → attach an `apa` cross-link, see above),
+    *ambiguous* (rostered name held by >1 id → reported, never auto-linked),
+    *new* (not in roster → queued to `docs/resolve/apa_to_resolve.json`).
+  - `resolve` (network, `.github/workflows/resolve-apa.yml`) — searches FargoRate
+    for each queued name and keeps only `State == CO` candidates (CO is how we
+    disambiguate, since the file has no state). Writes
+    `docs/resolve/apa_resolution.json` with `resolved` (exactly one CO match) /
+    `ambiguous` (>1) / `unfound` (0). It **stages for review and adds nothing to
+    roster.json** — a human confirms before any id is added (names collide; the
+    roster is never pruned, so a wrong name-match would track the wrong person
+    forever). The raw APA file lives under git-ignored `basket/`.
+- **NAPA** (planned) — same shape as APA (own rating system, name+state resolve);
+  role is the *team override* (include a local-league player regardless of
+  FargoRate location) and gap-fill.
 - **Scale note:** ~1,182 ids means ~1,182 fetches/run at ~1s each (~20 min on
   the Actions runner). Acceptable for a daily job; revisit if the roster grows.
+  The APA resolve is a one-off batch of ~2,000+ searches (~35–40 min), separate
+  from the daily pull.
 
 ## Partial-failure policy
 If a player's fetch fails, log it, skip it, and continue. Successful players are
@@ -88,9 +113,9 @@ is the date the change was **detected**, accurate to within one run interval
 ## Where things run
 The build sandbox **cannot reach fargorate.com** (allowlist). Every FargoRate
 call runs on a **GitHub Actions runner** (open internet): the scheduled pull
-(`.github/workflows/pull.yml`) and name resolution
-(`.github/workflows/resolve.yml`). Claude Code only needs `github.com`. No LLM
-runs inside any scheduled job.
+(`.github/workflows/pull.yml`), name resolution (`.github/workflows/resolve.yml`),
+and the APA batch resolve (`.github/workflows/resolve-apa.yml`). Claude Code only
+needs `github.com`. No LLM runs inside any scheduled job.
 
 ## Source of truth for the API
 `docs/api.md` — verified endpoints, field mapping, and the known-answer fixture
@@ -105,5 +130,9 @@ deferred — the importer keeps the hook but v1 is Colorado-only.
 
 ## Tests
 `tests/test_pull.py` covers the recording rules; `tests/test_import_digitalpool.py`
-covers the importer (id extraction, state filter, dedup, idempotent merge). Both
-use temp files with no network. Run: `pip install -r requirements-dev.txt && pytest -q`.
+covers the DigitalPool importer (id extraction, state filter, dedup, idempotent
+merge); `tests/test_import_apa.py` covers the APA cross-reference (fee-prefix
+cleaning, name norming, matched/ambiguous/new bucketing, and the strictly
+additive + idempotent cross-link). All use temp files with no network — the APA
+`resolve` step (which hits FargoRate) is exercised on a runner, not in tests.
+Run: `pip install -r requirements-dev.txt && pytest -q`.

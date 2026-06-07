@@ -1,0 +1,150 @@
+{
+  "generated_at": "2026-06-06",
+  "source_file": "players_master.json",
+  "apa_players": 2364,
+  "unique_apa_names": 2361,
+  "matched_single": 181,
+  "matched_crosslinks_written": 181,
+  "ambiguous_existing": 8,
+  "new_to_resolve": 2172,
+  "ambiguous_detail": [
+    {
+      "name": "Alvin Cox",
+      "roster_player_ids": [
+        1236055,
+        1348811,
+        1327132
+      ],
+      "memberships": [
+        {
+          "member_id": 2783991,
+          "member_number": "80401851",
+          "name": "Alvin Cox",
+          "first_session": 129,
+          "last_session": 129,
+          "sessions_count": 1
+        }
+      ]
+    },
+    {
+      "name": "David Jones",
+      "roster_player_ids": [
+        993198,
+        1262936,
+        1186389
+      ],
+      "memberships": [
+        {
+          "member_id": 1230103,
+          "member_number": "80423826",
+          "name": "David Jones",
+          "first_session": 123,
+          "last_session": 138,
+          "sessions_count": 7
+        }
+      ]
+    },
+    {
+      "name": "Donivan Montoya",
+      "roster_player_ids": [
+        1126379,
+        1333726
+      ],
+      "memberships": [
+        {
+          "member_id": 3187039,
+          "member_number": "80400700",
+          "name": "Donivan Montoya",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7
+        }
+      ]
+    },
+    {
+      "name": "Greg Kingsbury",
+      "roster_player_ids": [
+        18986,
+        1306184
+      ],
+      "memberships": [
+        {
+          "member_id": 1634354,
+          "member_number": "80426659",
+          "name": "Greg Kingsbury",
+          "first_session": 137,
+          "last_session": 139,
+          "sessions_count": 3
+        }
+      ]
+    },
+    {
+      "name": "Jaime Rech",
+      "roster_player_ids": [
+        1121246,
+        1140018
+      ],
+      "memberships": [
+        {
+          "member_id": 1542243,
+          "member_number": "80425916",
+          "name": "Jaime Rech",
+          "first_session": 124,
+          "last_session": 133,
+          "sessions_count": 6
+        }
+      ]
+    },
+    {
+      "name": "James Carlan",
+      "roster_player_ids": [
+        1282295,
+        1143742
+      ],
+      "memberships": [
+        {
+          "member_id": 3075030,
+          "member_number": "80400211",
+          "name": "James Carlan",
+          "first_session": 123,
+          "last_session": 123,
+          "sessions_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Kevin Gendill",
+      "roster_player_ids": [
+        1301139,
+        712234
+      ],
+      "memberships": [
+        {
+          "member_id": 1538972,
+          "member_number": "80417340",
+          "name": "Kevin Gendill",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7
+        }
+      ]
+    },
+    {
+      "name": "Travis Thorsten",
+      "roster_player_ids": [
+        972895,
+        1309684
+      ],
+      "memberships": [
+        {
+          "member_id": 3253150,
+          "member_number": "80401637",
+          "name": "Travis Thorsten",
+          "first_session": 125,
+          "last_session": 125,
+          "sessions_count": 1
+        }
+      ]
+    }
+  ]
+}
