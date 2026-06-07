@@ -1,0 +1,1513 @@
+{
+  "generated_at": "2026-06-07",
+  "unfound_scanned": 1174,
+  "recovered": [
+    {
+      "search_name": "Anthony Tacchia Jr",
+      "query": "Anth Jr",
+      "candidates": [
+        {
+          "player_id": 1131608,
+          "name": "ANTHONY ADDISON Jr",
+          "location": "WY",
+          "rating": 351,
+          "robustness": 162,
+          "membership_id": "9900005698770"
+        },
+        {
+          "player_id": 1123188,
+          "name": "Anthony Armijo Jr",
+          "location": "Las Vegas NM",
+          "rating": 377,
+          "robustness": 787,
+          "membership_id": "9900005613285"
+        },
+        {
+          "player_id": 983368,
+          "name": "Anthony Begay Jr",
+          "location": "Flagstaff AZ",
+          "rating": 512,
+          "robustness": 5774,
+          "membership_id": "9900003488977"
+        },
+        {
+          "player_id": 611306,
+          "name": "Anthony Costanzo Jr",
+          "location": "St Paul MN",
+          "rating": 525,
+          "robustness": 0,
+          "membership_id": "0040131"
+        },
+        {
+          "player_id": 970904,
+          "name": "Anthony Davison Jr",
+          "location": "Paducah KY",
+          "rating": 543,
+          "robustness": 714,
+          "membership_id": "9900003466494"
+        },
+        {
+          "player_id": 1320536,
+          "name": "Anthony Depardo Jr",
+          "location": "IA",
+          "rating": 496,
+          "robustness": 107,
+          "membership_id": "9900007950296"
+        },
+        {
+          "player_id": 930197,
+          "name": "Anthony Lembo Jr.",
+          "location": "Worcester MA",
+          "rating": 525,
+          "robustness": 0,
+          "membership_id": "9900008290315"
+        },
+        {
+          "player_id": 844050,
+          "name": "Anthony Mahurin Jr",
+          "location": "Pocatello ID",
+          "rating": 448,
+          "robustness": 794,
+          "membership_id": "9900001708329"
+        },
+        {
+          "player_id": 1008441,
+          "name": "Anthony Martin Jr",
+          "location": "Kenosha WI",
+          "rating": 510,
+          "robustness": 1166,
+          "membership_id": "9900004286640"
+        },
+        {
+          "player_id": 1289515,
+          "name": "Anthony Summerville Jr",
+          "location": "Lagrange GA",
+          "rating": 218,
+          "robustness": 25,
+          "membership_id": "9900007529874"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 2373307,
+          "member_number": "80421371",
+          "name": "Anthony Tacchia Jr",
+          "first_session": 123,
+          "last_session": 129,
+          "sessions_count": 3
+        }
+      ]
+    },
+    {
+      "search_name": "Bobby Brown II",
+      "query": "Bobb II",
+      "candidates": [
+        {
+          "player_id": 16273,
+          "name": "Bobby Pacheco II",
+          "location": "Pasadena MD",
+          "rating": 678,
+          "robustness": 7690,
+          "membership_id": "9900000628611"
+        },
+        {
+          "player_id": 625440,
+          "name": "Bobby Wright II",
+          "location": "Atlanta GA",
+          "rating": 616,
+          "robustness": 1436,
+          "membership_id": "0204342"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 2330051,
+          "member_number": "80421203",
+          "name": "Bobby Brown II",
+          "first_session": 123,
+          "last_session": 134,
+          "sessions_count": 8
+        }
+      ]
+    },
+    {
+      "search_name": "Carmena Cruz",
+      "query": "Carm Cruz",
+      "candidates": [
+        {
+          "player_id": 1318143,
+          "name": "Carmen Cruz",
+          "location": "CT",
+          "rating": 265,
+          "robustness": 24,
+          "membership_id": "9900007926246"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 3317430,
+          "member_number": "80401717",
+          "name": "Carmena Cruz",
+          "first_session": 130,
+          "last_session": 132,
+          "sessions_count": 2
+        }
+      ]
+    },
+    {
+      "search_name": "Christa Drake",
+      "query": "Chri Drake",
+      "candidates": [
+        {
+          "player_id": 1157036,
+          "name": "Chris Drake",
+          "location": "Preston ID",
+          "rating": 397,
+          "robustness": 52,
+          "membership_id": "9900005961607"
+        },
+        {
+          "player_id": 1280787,
+          "name": "Chris Drake",
+          "location": "Concord CA",
+          "rating": 397,
+          "robustness": 5,
+          "membership_id": "9900007435151"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 1067167,
+          "member_number": "80413843",
+          "name": "Christa Drake",
+          "first_session": 130,
+          "last_session": 130,
+          "sessions_count": 1
+        }
+      ]
+    },
+    {
+      "search_name": "Christa May",
+      "query": "Chri May",
+      "candidates": [
+        {
+          "player_id": 1297508,
+          "name": "CHRIS MAY",
+          "location": "MO",
+          "rating": 534,
+          "robustness": 66,
+          "membership_id": "9900007714300"
+        },
+        {
+          "player_id": 1268667,
+          "name": "Chris May",
+          "location": "IA",
+          "rating": 397,
+          "robustness": 32,
+          "membership_id": "9900007308165"
+        },
+        {
+          "player_id": 1345280,
+          "name": "Chris May",
+          "location": "HAMILTON ON",
+          "rating": 318,
+          "robustness": 344,
+          "membership_id": "9900008198413"
+        },
+        {
+          "player_id": 1039820,
+          "name": "Chris May",
+          "location": "Washingto PA",
+          "rating": 435,
+          "robustness": 133,
+          "membership_id": "9900004656801"
+        },
+        {
+          "player_id": 1218675,
+          "name": "Chris May",
+          "location": "FL",
+          "rating": 254,
+          "robustness": 7,
+          "membership_id": "9900006791159"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 794547,
+          "member_number": "80401592",
+          "name": "Christa May",
+          "first_session": 124,
+          "last_session": 133,
+          "sessions_count": 6
+        }
+      ]
+    },
+    {
+      "search_name": "Daniel Gillespie JR",
+      "query": "Dani JR",
+      "candidates": [
+        {
+          "player_id": 1092076,
+          "name": "Daniel Alvarez Jr",
+          "location": "CA",
+          "rating": 470,
+          "robustness": 3509,
+          "membership_id": "9900005294545"
+        },
+        {
+          "player_id": 1380127,
+          "name": "Daniel Baker Jr",
+          "location": "Mount Vernon OH",
+          "rating": 276,
+          "robustness": 60,
+          "membership_id": "9900008694694"
+        },
+        {
+          "player_id": 1376365,
+          "name": "Daniel Bulatko Jr",
+          "location": "Youngstown OH",
+          "rating": 439,
+          "robustness": 15,
+          "membership_id": "9900008658351"
+        },
+        {
+          "player_id": 1181664,
+          "name": "Daniel Devos Jr",
+          "location": "ON",
+          "rating": 655,
+          "robustness": 376,
+          "membership_id": "9900006315539"
+        },
+        {
+          "player_id": 1071810,
+          "name": "Daniel Dorrett Jr",
+          "location": "Baltimore MD",
+          "rating": 432,
+          "robustness": 30,
+          "membership_id": "9900005078015"
+        },
+        {
+          "player_id": 1260840,
+          "name": "Daniel Dougherty Jr",
+          "location": "PA",
+          "rating": 204,
+          "robustness": 11,
+          "membership_id": "9900007229378"
+        },
+        {
+          "player_id": 761704,
+          "name": "Daniel Evans Jr",
+          "location": "Burton MI",
+          "rating": 452,
+          "robustness": 50,
+          "membership_id": "0277458"
+        },
+        {
+          "player_id": 771139,
+          "name": "Daniel Friel Jr",
+          "location": "Bensalem PA",
+          "rating": 525,
+          "robustness": 0,
+          "membership_id": "0121693"
+        },
+        {
+          "player_id": 1258510,
+          "name": "Daniel Friel, Jr.",
+          "location": "Benaalem PA",
+          "rating": 350,
+          "robustness": 0,
+          "membership_id": "9900007205440"
+        },
+        {
+          "player_id": 1033990,
+          "name": "Daniel Gallagher jr",
+          "location": "Bayonne NJ",
+          "rating": 489,
+          "robustness": 133,
+          "membership_id": "9900004589000"
+        },
+        {
+          "player_id": 925211,
+          "name": "Daniel Gonzalez Jr",
+          "location": "Philadelphia PA",
+          "rating": 657,
+          "robustness": 325,
+          "membership_id": "9900006823591"
+        },
+        {
+          "player_id": 869826,
+          "name": "Daniel Gotwalt Jr",
+          "location": "York PA",
+          "rating": 494,
+          "robustness": 60,
+          "membership_id": "0328370"
+        },
+        {
+          "player_id": 1380433,
+          "name": "Daniel Granot Jr",
+          "location": "Billings MT",
+          "rating": 488,
+          "robustness": 0,
+          "membership_id": "9900008697664"
+        },
+        {
+          "player_id": 679830,
+          "name": "Daniel Grochowski Jr",
+          "location": "OH",
+          "rating": 525,
+          "robustness": 0,
+          "membership_id": "0305669"
+        },
+        {
+          "player_id": 1170440,
+          "name": "Daniel Hayes Jr",
+          "location": "CO",
+          "rating": 414,
+          "robustness": 27,
+          "membership_id": "9900006100166"
+        },
+        {
+          "player_id": 1150580,
+          "name": "Daniel Hinojosa Jr",
+          "location": "Corpus Christi TX",
+          "rating": 427,
+          "robustness": 232,
+          "membership_id": "9900005895162"
+        },
+        {
+          "player_id": 1284885,
+          "name": "Daniel Karsjens Jr",
+          "location": "MN",
+          "rating": 454,
+          "robustness": 175,
+          "membership_id": "9900007480120"
+        },
+        {
+          "player_id": 1008473,
+          "name": "Daniel Kuchinski Jr",
+          "location": "WI",
+          "rating": 443,
+          "robustness": 284,
+          "membership_id": "9900004286138"
+        },
+        {
+          "player_id": 885319,
+          "name": "Daniel LeCompte Jr",
+          "location": "Chauvin LA",
+          "rating": 525,
+          "robustness": 0,
+          "membership_id": "0222158"
+        },
+        {
+          "player_id": 1183253,
+          "name": "Daniel Leon Jr",
+          "location": null,
+          "rating": 485,
+          "robustness": 17,
+          "membership_id": "9900006430393"
+        },
+        {
+          "player_id": 997433,
+          "name": "Daniel Lopez Jr",
+          "location": "West Palm Beach FL",
+          "rating": 478,
+          "robustness": 1409,
+          "membership_id": "9900004181327"
+        },
+        {
+          "player_id": 760062,
+          "name": "Daniel Marshman Jr",
+          "location": "Strasburg PA",
+          "rating": 525,
+          "robustness": 0,
+          "membership_id": "0085786"
+        },
+        {
+          "player_id": 783410,
+          "name": "Daniel A Montijo Jr",
+          "location": "Ventura CA",
+          "rating": 525,
+          "robustness": 0,
+          "membership_id": "0218407"
+        },
+        {
+          "player_id": 1028487,
+          "name": "Daniel Spatz Jr",
+          "location": "Bernville PA",
+          "rating": 615,
+          "robustness": 1197,
+          "membership_id": "9900004519786"
+        },
+        {
+          "player_id": 1082603,
+          "name": "Daniel Vanderstappen Jr",
+          "location": null,
+          "rating": 339,
+          "robustness": 12,
+          "membership_id": "9900005191493"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 3246397,
+          "member_number": "80400873",
+          "name": "Daniel Gillespie JR",
+          "first_session": 124,
+          "last_session": 129,
+          "sessions_count": 2
+        }
+      ]
+    },
+    {
+      "search_name": "Derek Jump it Stringer",
+      "query": "Dere Stringer",
+      "candidates": [
+        {
+          "player_id": 987285,
+          "name": "Derek Stringer",
+          "location": "CO",
+          "rating": 605,
+          "robustness": 1052,
+          "membership_id": "9900004050036"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 2669196,
+          "member_number": "80441978",
+          "name": "Derek Jump it Stringer",
+          "first_session": 135,
+          "last_session": 137,
+          "sessions_count": 3
+        }
+      ]
+    },
+    {
+      "search_name": "Fred Castellano Jr",
+      "query": "Fred Jr",
+      "candidates": [
+        {
+          "player_id": 680639,
+          "name": "Fred Beatty Jr",
+          "location": "Greenfield OH",
+          "rating": 518,
+          "robustness": 11,
+          "membership_id": "0192455"
+        },
+        {
+          "player_id": 1168006,
+          "name": "Fred Blake Jr",
+          "location": "Mechanicsville MD",
+          "rating": 398,
+          "robustness": 501,
+          "membership_id": "9900006072289"
+        },
+        {
+          "player_id": 860877,
+          "name": "Fred Brooks Jr",
+          "location": "MA",
+          "rating": 466,
+          "robustness": 1486,
+          "membership_id": "0249864"
+        },
+        {
+          "player_id": 829051,
+          "name": "Fred Cortez Jr",
+          "location": "Toledo OH",
+          "rating": 615,
+          "robustness": 563,
+          "membership_id": "0301129"
+        },
+        {
+          "player_id": 797795,
+          "name": "Freddy Engel Jr",
+          "location": "West Branch MI",
+          "rating": 525,
+          "robustness": 0,
+          "membership_id": "0277636"
+        },
+        {
+          "player_id": 748723,
+          "name": "Freddy Fore Jr",
+          "location": "Groves TX",
+          "rating": 525,
+          "robustness": 0,
+          "membership_id": "0062111"
+        },
+        {
+          "player_id": 1010912,
+          "name": "Fred Gillis Jr",
+          "location": "Danforth ME",
+          "rating": 491,
+          "robustness": 571,
+          "membership_id": "9900004311540"
+        },
+        {
+          "player_id": 1074690,
+          "name": "Fred Hill Jr",
+          "location": "Okeechobee FL",
+          "rating": 504,
+          "robustness": 1865,
+          "membership_id": "9900005108330"
+        },
+        {
+          "player_id": 698648,
+          "name": "Fredrick Howe Jr",
+          "location": "Rochester NY",
+          "rating": 412,
+          "robustness": 63,
+          "membership_id": "0234010"
+        },
+        {
+          "player_id": 898013,
+          "name": "Fred Kaufman Jr",
+          "location": "Wichita KS",
+          "rating": 403,
+          "robustness": 330,
+          "membership_id": "0255712"
+        },
+        {
+          "player_id": 1197716,
+          "name": "Frederick Knaub Jr",
+          "location": "Belleville MI",
+          "rating": 506,
+          "robustness": 366,
+          "membership_id": "9900006579078"
+        },
+        {
+          "player_id": 903400,
+          "name": "Fredrick Long Jr",
+          "location": "Kearns UT",
+          "rating": 514,
+          "robustness": 24,
+          "membership_id": "0042183"
+        },
+        {
+          "player_id": 712967,
+          "name": "Fred S Martinez Jr",
+          "location": "Lakewood CO",
+          "rating": 497,
+          "robustness": 367,
+          "membership_id": "0233568"
+        },
+        {
+          "player_id": 714424,
+          "name": "Fred Sanchez Jr",
+          "location": "San Antonio TX",
+          "rating": 485,
+          "robustness": 40,
+          "membership_id": "0321174"
+        },
+        {
+          "player_id": 1263136,
+          "name": "Frederick (Fred) Schnee Jr",
+          "location": "Columbus OH",
+          "rating": 380,
+          "robustness": 80,
+          "membership_id": "9900007252062"
+        },
+        {
+          "player_id": 667472,
+          "name": "Fred Smitley Jr",
+          "location": "Pasadena MD",
+          "rating": 525,
+          "robustness": 0,
+          "membership_id": "0164859"
+        },
+        {
+          "player_id": 884507,
+          "name": "Fred Topous Jr",
+          "location": "Kewadin MI",
+          "rating": 267,
+          "robustness": 156,
+          "membership_id": "0231951"
+        },
+        {
+          "player_id": 1222009,
+          "name": "Fred Veney Jr",
+          "location": "Mullica Hill NJ",
+          "rating": 383,
+          "robustness": 45,
+          "membership_id": "9900006828534"
+        },
+        {
+          "player_id": 1252908,
+          "name": "Fredrick Wolf Jr",
+          "location": "Warren MI",
+          "rating": 420,
+          "robustness": 622,
+          "membership_id": "9900007149379"
+        },
+        {
+          "player_id": 811026,
+          "name": "Fred Yates Jr",
+          "location": "Riverview FL",
+          "rating": 547,
+          "robustness": 53,
+          "membership_id": "0253094"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 2203170,
+          "member_number": "80420523",
+          "name": "Fred Castellano Jr",
+          "first_session": 123,
+          "last_session": 123,
+          "sessions_count": 1
+        }
+      ]
+    },
+    {
+      "search_name": "Garrett Petrie",
+      "query": "Garr Petrie",
+      "candidates": [
+        {
+          "player_id": 1377329,
+          "name": "Garret Petrie",
+          "location": "Broomfield CO",
+          "rating": 315,
+          "robustness": 40,
+          "membership_id": "9900008667889"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 3286484,
+          "member_number": "80435231",
+          "name": "Garrett Petrie",
+          "first_session": 129,
+          "last_session": 133,
+          "sessions_count": 4
+        }
+      ]
+    },
+    {
+      "search_name": "Isaiah SaucyZay Bowers",
+      "query": "Isai Bowers",
+      "candidates": [
+        {
+          "player_id": 1223769,
+          "name": "Isaiah Bowers",
+          "location": "Albuquerque NM",
+          "rating": 332,
+          "robustness": 157,
+          "membership_id": "9900006846255"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 3392890,
+          "member_number": "80402139",
+          "name": "Isaiah SaucyZay Bowers",
+          "first_session": 135,
+          "last_session": 137,
+          "sessions_count": 3
+        }
+      ]
+    },
+    {
+      "search_name": "Jason \"Spawning Salmon\" Marques",
+      "query": "Jaso Marques",
+      "candidates": [
+        {
+          "player_id": 1316306,
+          "name": "Jason Marques",
+          "location": "Littleton CO",
+          "rating": 450,
+          "robustness": 5,
+          "membership_id": "9900007907771"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 2987766,
+          "member_number": "80430079",
+          "name": "Jason \"Spawning Salmon\" Marques",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 13
+        }
+      ]
+    },
+    {
+      "search_name": "Javier Olivas",
+      "query": "Javi Olivas",
+      "candidates": [
+        {
+          "player_id": 1282463,
+          "name": "Javi Olivas",
+          "location": "Denver CO",
+          "rating": 374,
+          "robustness": 348,
+          "membership_id": "9900007454718"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 3399403,
+          "member_number": "80435900",
+          "name": "Javier Olivas",
+          "first_session": 135,
+          "last_session": 139,
+          "sessions_count": 5
+        }
+      ]
+    },
+    {
+      "search_name": "Jeffery Halvorson",
+      "query": "Jeff Halvorson",
+      "candidates": [
+        {
+          "player_id": 1271342,
+          "name": "Jeff Halvorson",
+          "location": "Aurora CO",
+          "rating": 248,
+          "robustness": 215,
+          "membership_id": "9900007336632"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 3254724,
+          "member_number": "80435006",
+          "name": "Jeffery Halvorson",
+          "first_session": 130,
+          "last_session": 133,
+          "sessions_count": 3
+        }
+      ]
+    },
+    {
+      "search_name": "Jeffery Lashell",
+      "query": "Jeff Lashell",
+      "candidates": [
+        {
+          "player_id": 1165129,
+          "name": "Jeff lashell",
+          "location": "CO",
+          "rating": 433,
+          "robustness": 32,
+          "membership_id": "9900006042619"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 861806,
+          "member_number": "80408915",
+          "name": "Jeffery Lashell",
+          "first_session": 124,
+          "last_session": 132,
+          "sessions_count": 5
+        }
+      ]
+    },
+    {
+      "search_name": "Jen Sosa Lockwood",
+      "query": "Jen Lockwood",
+      "candidates": [
+        {
+          "player_id": 1106898,
+          "name": "Jen lockwood",
+          "location": "CO",
+          "rating": 361,
+          "robustness": 34,
+          "membership_id": "9900005447194"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 3019402,
+          "member_number": "80424940",
+          "name": "Jen Sosa Lockwood",
+          "first_session": 123,
+          "last_session": 132,
+          "sessions_count": 6
+        }
+      ]
+    },
+    {
+      "search_name": "Jesus Sanchez Jr",
+      "query": "Jesu Jr",
+      "candidates": [
+        {
+          "player_id": 1325421,
+          "name": "Jesus Hernandez Jr",
+          "location": "Dayton OH",
+          "rating": 387,
+          "robustness": 28,
+          "membership_id": "9900008000730"
+        },
+        {
+          "player_id": 1354524,
+          "name": "Jesus Perez Jr",
+          "location": "Chula Vista CA",
+          "rating": 470,
+          "robustness": 42,
+          "membership_id": "9900008443483"
+        },
+        {
+          "player_id": 743881,
+          "name": "Jesus Vasquez Jr",
+          "location": "Grand Prairie TX",
+          "rating": 525,
+          "robustness": 0,
+          "membership_id": "0303298"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 3233471,
+          "member_number": "80401531",
+          "name": "Jesus Sanchez Jr",
+          "first_session": 123,
+          "last_session": 125,
+          "sessions_count": 3
+        }
+      ]
+    },
+    {
+      "search_name": "Johnathan Becker",
+      "query": "John Becker",
+      "candidates": [
+        {
+          "player_id": 1065577,
+          "name": "John Becker",
+          "location": "Victorville CA",
+          "rating": 428,
+          "robustness": 8,
+          "membership_id": "9900005018387"
+        },
+        {
+          "player_id": 1074122,
+          "name": "John Becker",
+          "location": "WI",
+          "rating": 348,
+          "robustness": 12,
+          "membership_id": "9900005102352"
+        },
+        {
+          "player_id": 1156046,
+          "name": "John Becker",
+          "location": "Aurora CO",
+          "rating": 482,
+          "robustness": 883,
+          "membership_id": "9900005950090"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 3218379,
+          "member_number": "80400787",
+          "name": "Johnathan Becker",
+          "first_session": 123,
+          "last_session": 129,
+          "sessions_count": 4
+        }
+      ]
+    },
+    {
+      "search_name": "Justine Lewis",
+      "query": "Just Lewis",
+      "candidates": [
+        {
+          "player_id": 933442,
+          "name": "Justin Lewis",
+          "location": "NH",
+          "rating": 458,
+          "robustness": 29,
+          "membership_id": "0376933"
+        },
+        {
+          "player_id": 1348567,
+          "name": "Justin Lewis",
+          "location": "KS",
+          "rating": 545,
+          "robustness": 22,
+          "membership_id": "9900008382706"
+        },
+        {
+          "player_id": 1295712,
+          "name": "Justin Lewis",
+          "location": "KY",
+          "rating": 374,
+          "robustness": 75,
+          "membership_id": "9900007594308"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 2346653,
+          "member_number": "80402090",
+          "name": "Justine Lewis",
+          "first_session": 135,
+          "last_session": 135,
+          "sessions_count": 1
+        }
+      ]
+    },
+    {
+      "search_name": "Konrad Konnie Potts Johnson",
+      "query": "Konr Johnson",
+      "candidates": [
+        {
+          "player_id": 1296997,
+          "name": "Konrad Johnson",
+          "location": "Littleton CO",
+          "rating": 344,
+          "robustness": 168,
+          "membership_id": "9900007708569"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 3284480,
+          "member_number": "80401765",
+          "name": "Konrad Konnie Potts Johnson",
+          "first_session": 129,
+          "last_session": 139,
+          "sessions_count": 10
+        }
+      ]
+    },
+    {
+      "search_name": "Michael Farrell Jr",
+      "query": "Mich Jr",
+      "candidates": [
+        {
+          "player_id": 1238169,
+          "name": "Michael R Barnhart Jr",
+          "location": "OH",
+          "rating": 274,
+          "robustness": 29,
+          "membership_id": "9900007002070"
+        },
+        {
+          "player_id": 965776,
+          "name": "Michael Bezezekoff Jr",
+          "location": "Anchorage AK",
+          "rating": 294,
+          "robustness": 84,
+          "membership_id": "0369682"
+        },
+        {
+          "player_id": 1066344,
+          "name": "Michael Jr Boozer Jr",
+          "location": "Decatur AL",
+          "rating": 382,
+          "robustness": 644,
+          "membership_id": "9900005026993"
+        },
+        {
+          "player_id": 1344246,
+          "name": "Michael Brooks Jr",
+          "location": "NH",
+          "rating": 454,
+          "robustness": 39,
+          "membership_id": "9900008186960"
+        },
+        {
+          "player_id": 1318413,
+          "name": "Michael Butler Jr",
+          "location": "FL",
+          "rating": 431,
+          "robustness": 19,
+          "membership_id": "9900007928660"
+        },
+        {
+          "player_id": 627459,
+          "name": "Michael Caseman Jr",
+          "location": "Las Vegas NV",
+          "rating": 546,
+          "robustness": 1197,
+          "membership_id": "0303819"
+        },
+        {
+          "player_id": 980485,
+          "name": "Michael Closser Jr",
+          "location": "Bainvridge Island WA",
+          "rating": 540,
+          "robustness": 94,
+          "membership_id": "9900003942516"
+        },
+        {
+          "player_id": 977192,
+          "name": "Michael Cochran Jr",
+          "location": "LA",
+          "rating": 404,
+          "robustness": 9,
+          "membership_id": "9900008240389"
+        },
+        {
+          "player_id": 1235878,
+          "name": "Michael Cole Jr",
+          "location": "CA",
+          "rating": 401,
+          "robustness": 17,
+          "membership_id": "9900006979250"
+        },
+        {
+          "player_id": 624099,
+          "name": "Michael Conway Jr",
+          "location": "Virginia Beach VA",
+          "rating": 601,
+          "robustness": 526,
+          "membership_id": "0093638"
+        },
+        {
+          "player_id": 1179070,
+          "name": "Michael Crayton JR",
+          "location": "LA",
+          "rating": 512,
+          "robustness": 453,
+          "membership_id": "9900006288666"
+        },
+        {
+          "player_id": 1186878,
+          "name": "Michael Dick Jr",
+          "location": "PA",
+          "rating": 424,
+          "robustness": 17,
+          "membership_id": "9900006467443"
+        },
+        {
+          "player_id": 926070,
+          "name": "Michael Dorsey Jr",
+          "location": "Palm Bay FL",
+          "rating": 531,
+          "robustness": 17,
+          "membership_id": "0337579"
+        },
+        {
+          "player_id": 1160317,
+          "name": "Michael Flores Jr",
+          "location": "Corpus Christi TX",
+          "rating": 450,
+          "robustness": 1438,
+          "membership_id": "9900005992984"
+        },
+        {
+          "player_id": 1321086,
+          "name": "Michael Foster Jr",
+          "location": "IA",
+          "rating": 467,
+          "robustness": 208,
+          "membership_id": "9900007955543"
+        },
+        {
+          "player_id": 1166009,
+          "name": "Michael Fraser Jr",
+          "location": "DE",
+          "rating": 532,
+          "robustness": 350,
+          "membership_id": "9900006051642"
+        },
+        {
+          "player_id": 929505,
+          "name": "Michael Galinat Jr",
+          "location": "Manchester NH",
+          "rating": 472,
+          "robustness": 1750,
+          "membership_id": "9900003318021"
+        },
+        {
+          "player_id": 1011916,
+          "name": "Michael Gouthro Jr",
+          "location": "AB",
+          "rating": 605,
+          "robustness": 698,
+          "membership_id": "9900004322690"
+        },
+        {
+          "player_id": 1337789,
+          "name": "Michael Gunderson Jr",
+          "location": "Canajoharie NY",
+          "rating": 403,
+          "robustness": 102,
+          "membership_id": "9900008130000"
+        },
+        {
+          "player_id": 1302179,
+          "name": "MICHAEL HALLIGAN JR",
+          "location": "IA",
+          "rating": 515,
+          "robustness": 484,
+          "membership_id": "9900007763780"
+        },
+        {
+          "player_id": 715191,
+          "name": "Michael Hamilton Jr",
+          "location": "Asheboro NC",
+          "rating": 499,
+          "robustness": 36,
+          "membership_id": "0208779"
+        },
+        {
+          "player_id": 1256644,
+          "name": "Michael Herron Jr",
+          "location": "TX",
+          "rating": 461,
+          "robustness": 237,
+          "membership_id": "9900007186206"
+        },
+        {
+          "player_id": 1257917,
+          "name": "Michael Hood Jr",
+          "location": "AR",
+          "rating": 415,
+          "robustness": 42,
+          "membership_id": "9900007199756"
+        },
+        {
+          "player_id": 980484,
+          "name": "Michael Marlatt Jr",
+          "location": "Portland OR",
+          "rating": 419,
+          "robustness": 165,
+          "membership_id": "9900003941427"
+        },
+        {
+          "player_id": 1181098,
+          "name": "Michael McCann Jr",
+          "location": "OH",
+          "rating": 499,
+          "robustness": 54,
+          "membership_id": "9900006309132"
+        },
+        {
+          "player_id": 1090167,
+          "name": "Michael O'Rourke Jr",
+          "location": "Pacific MO",
+          "rating": 350,
+          "robustness": 375,
+          "membership_id": "9900005275308"
+        },
+        {
+          "player_id": 625925,
+          "name": "Michael Owens Jr",
+          "location": "Alvin TX",
+          "rating": 610,
+          "robustness": 1029,
+          "membership_id": "0011434"
+        },
+        {
+          "player_id": 631455,
+          "name": "Michael Patton Jr",
+          "location": "WI",
+          "rating": 357,
+          "robustness": 55,
+          "membership_id": "0378882"
+        },
+        {
+          "player_id": 12078,
+          "name": "Michael Perron Jr",
+          "location": "Eagan MN",
+          "rating": 718,
+          "robustness": 8190,
+          "membership_id": "0111368"
+        },
+        {
+          "player_id": 773028,
+          "name": "Michael Powell Jr",
+          "location": "Paducah KY",
+          "rating": 525,
+          "robustness": 0,
+          "membership_id": "0319387"
+        },
+        {
+          "player_id": 360497,
+          "name": "Michael Rankin Jr",
+          "location": "Lancaster PA",
+          "rating": 424,
+          "robustness": 259,
+          "membership_id": "0308189"
+        },
+        {
+          "player_id": 1329820,
+          "name": "Michael S Riley Jr",
+          "location": "OK",
+          "rating": 468,
+          "robustness": 347,
+          "membership_id": "9900008043812"
+        },
+        {
+          "player_id": 1258031,
+          "name": "Michael Smith Jr",
+          "location": "MA",
+          "rating": 279,
+          "robustness": 26,
+          "membership_id": "9900007200964"
+        },
+        {
+          "player_id": 1028423,
+          "name": "Michael Stanley Jr",
+          "location": "Youngstown OH",
+          "rating": 504,
+          "robustness": 200,
+          "membership_id": "9900004518567"
+        },
+        {
+          "player_id": 625511,
+          "name": "Michael Ward Jr",
+          "location": "Huntington WV",
+          "rating": 518,
+          "robustness": 1052,
+          "membership_id": "9900001511264"
+        },
+        {
+          "player_id": 897143,
+          "name": "Michael Waskahat Jr",
+          "location": "Frog Lake AB",
+          "rating": 596,
+          "robustness": 465,
+          "membership_id": "0301991"
+        },
+        {
+          "player_id": 1220428,
+          "name": "Michael Williams Jr",
+          "location": "NH",
+          "rating": 360,
+          "robustness": 37,
+          "membership_id": "9900006809052"
+        },
+        {
+          "player_id": 1314753,
+          "name": "Michael Wingo Jr",
+          "location": "Batesville AR",
+          "rating": 450,
+          "robustness": 130,
+          "membership_id": "9900007892145"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 3355295,
+          "member_number": "80435573",
+          "name": "Michael Farrell Jr",
+          "first_session": 136,
+          "last_session": 137,
+          "sessions_count": 2
+        }
+      ]
+    },
+    {
+      "search_name": "Premchand Koru",
+      "query": "Prem Koru",
+      "candidates": [
+        {
+          "player_id": 1368535,
+          "name": "Prem Koru",
+          "location": "Englewood CO",
+          "rating": 364,
+          "robustness": 44,
+          "membership_id": "9900008581109"
+        },
+        {
+          "player_id": 1356604,
+          "name": "Prem Koru",
+          "location": "CO",
+          "rating": 382,
+          "robustness": 98,
+          "membership_id": "9900008463849"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 3354732,
+          "member_number": "80402109",
+          "name": "Premchand Koru",
+          "first_session": 133,
+          "last_session": 133,
+          "sessions_count": 1
+        }
+      ]
+    },
+    {
+      "search_name": "Richard Cuban B Borus",
+      "query": "Rich Borus",
+      "candidates": [
+        {
+          "player_id": 1007620,
+          "name": "Richard Borus",
+          "location": "Englewood CO",
+          "rating": 427,
+          "robustness": 410,
+          "membership_id": "9900004277570"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 2931955,
+          "member_number": "80424355",
+          "name": "Richard Cuban B Borus",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 12
+        }
+      ]
+    },
+    {
+      "search_name": "Shirishkumar Patel",
+      "query": "Shir Patel",
+      "candidates": [
+        {
+          "player_id": 1199370,
+          "name": "Shirish Patel",
+          "location": "Baltimore MD",
+          "rating": 508,
+          "robustness": 192,
+          "membership_id": "9900006595597"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 3201934,
+          "member_number": "80444097",
+          "name": "Shirishkumar Patel",
+          "first_session": 135,
+          "last_session": 138,
+          "sessions_count": 4
+        }
+      ]
+    },
+    {
+      "search_name": "Taylor Anne Aviles",
+      "query": "Tayl Aviles",
+      "candidates": [
+        {
+          "player_id": 1243969,
+          "name": "Taylor Aviles",
+          "location": "Arvada CO",
+          "rating": 212,
+          "robustness": 474,
+          "membership_id": "9900007060551"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 3402988,
+          "member_number": "80402534",
+          "name": "Taylor Anne Aviles",
+          "first_session": 135,
+          "last_session": 136,
+          "sessions_count": 2
+        }
+      ]
+    },
+    {
+      "search_name": "Taylor Tay Wolf",
+      "query": "Tayl Wolf",
+      "candidates": [
+        {
+          "player_id": 1114089,
+          "name": "Taylor Wolf",
+          "location": "Denver CO",
+          "rating": 534,
+          "robustness": 679,
+          "membership_id": "9900005519969"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 2645251,
+          "member_number": "80424340",
+          "name": "Taylor Tay Wolf",
+          "first_session": 123,
+          "last_session": 135,
+          "sessions_count": 9
+        }
+      ]
+    },
+    {
+      "search_name": "Zachariah Johnson",
+      "query": "Zach Johnson",
+      "candidates": [
+        {
+          "player_id": 932867,
+          "name": "Zach Johnson",
+          "location": "FL",
+          "rating": 214,
+          "robustness": 15,
+          "membership_id": "0375988"
+        },
+        {
+          "player_id": 631681,
+          "name": "Zach Johnson",
+          "location": "WI",
+          "rating": 376,
+          "robustness": 90,
+          "membership_id": "0375987"
+        },
+        {
+          "player_id": 1324245,
+          "name": "Zach Johnson",
+          "location": "Spring Hill TN",
+          "rating": 410,
+          "robustness": 0,
+          "membership_id": "9900007988237"
+        },
+        {
+          "player_id": 1305089,
+          "name": "Zach Johnson",
+          "location": "IN",
+          "rating": 272,
+          "robustness": 6,
+          "membership_id": "9900007793053"
+        },
+        {
+          "player_id": 1094389,
+          "name": "Zach Johnson",
+          "location": "MO",
+          "rating": 156,
+          "robustness": 15,
+          "membership_id": "9900005319040"
+        },
+        {
+          "player_id": 1171315,
+          "name": "Zach Johnson",
+          "location": "Couer D'Alene ID",
+          "rating": 506,
+          "robustness": 43,
+          "membership_id": "9900006108889"
+        },
+        {
+          "player_id": 1095055,
+          "name": "Zach Johnson",
+          "location": "Norman OK",
+          "rating": 440,
+          "robustness": 328,
+          "membership_id": "9900005325812"
+        },
+        {
+          "player_id": 1373690,
+          "name": "Zach Johnson",
+          "location": "Fuquay Varina NC",
+          "rating": 525,
+          "robustness": 16,
+          "membership_id": "9900008631903"
+        },
+        {
+          "player_id": 1099495,
+          "name": "Zach Johnson",
+          "location": "Lakewood CO",
+          "rating": -90,
+          "robustness": 0,
+          "membership_id": "9900005371079"
+        }
+      ],
+      "memberships": [
+        {
+          "member_id": 3215760,
+          "member_number": "80400777",
+          "name": "Zachariah Johnson",
+          "first_session": 123,
+          "last_session": 123,
+          "sessions_count": 1
+        }
+      ]
+    }
+  ],
+  "still_unfound": 1148,
+  "unique_queries": 1174,
+  "errors": 0
+}
