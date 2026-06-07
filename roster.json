@@ -5895,7 +5895,20 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 81671,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "apa": [
+        {
+          "member_id": 3309374,
+          "member_number": "80401643",
+          "name": "Gregory Trujillo",
+          "first_session": 132,
+          "last_session": 132,
+          "sessions_count": 1,
+          "source": "apa",
+          "match_method": "manual",
+          "added_date": "2026-06-07"
+        }
+      ]
     },
     "1286280": {
       "player_id": 1286280,
