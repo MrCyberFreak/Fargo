@@ -129,9 +129,21 @@ def norm(name: str | None) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
+# Generational suffixes are not surnames — "Anthony Tacchia Jr" must key on
+# "tacchia", not "jr" (otherwise a surname search matches every "...Jr").
+_SUFFIXES = {"jr", "jnr", "sr", "snr", "ii", "iii", "iv", "v"}
+
+
+def _strip_suffixes(tokens: list[str]) -> list[str]:
+    out = list(tokens)
+    while len(out) > 1 and out[-1].lower().strip(".") in _SUFFIXES:
+        out = out[:-1]
+    return out
+
+
 def surname(name: str | None) -> str:
-    """Last token of the normalized name (used to guard nickname variants)."""
-    parts = norm(name).split()
+    """Surname for matching: last token, ignoring generational suffixes."""
+    parts = _strip_suffixes(norm(name).split())
     return parts[-1] if parts else ""
 
 
@@ -178,8 +190,9 @@ def first_compatible(a: str, c: str) -> bool:
 def recover_query(name: str) -> str | None:
     """A surname search qualified by a short first-name prefix — avoids the broad
     'surname alone' queries that FargoRate 500s on, while still prefix-matching a
-    truncated FargoRate first name. 'Shirishkumar Patel' -> 'Shir Patel'."""
-    parts = clean_name(name).split()
+    truncated FargoRate first name. 'Shirishkumar Patel' -> 'Shir Patel'.
+    Generational suffixes are dropped so 'Anthony Tacchia Jr' -> 'Anth Tacchia'."""
+    parts = _strip_suffixes(clean_name(name).split())
     if len(parts) < 2:
         return None
     return f"{parts[0][:4]} {parts[-1]}"
