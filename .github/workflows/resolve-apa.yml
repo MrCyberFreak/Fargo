@@ -1,14 +1,18 @@
 name: fargo-resolve-apa
 
 # Batch resolver for the APA roster source. Reads the name queue produced by
-# `import_apa.py crossref` (committed at docs/resolve/apa_to_resolve.json) and
-# searches FargoRate for each name, keeping only CO matches. Writes a review file
-# (docs/resolve/apa_resolution.json) and commits it — it adds NOTHING to
-# roster.json. Resolved matches are reviewed by a human before any are added.
+# `import_apa.py crossref` (committed at docs/resolve/apa_to_resolve.json),
+# searches FargoRate for each name (CO-preferred, single out-of-state matches
+# admitted, nickname-variant fallback for zero-hit names), then auto-adds the
+# exact-name single matches to roster.json. Writes the review file
+# docs/resolve/apa_resolution.json (resolved / variant_candidates / ambiguous /
+# unfound); variant + ambiguous matches are staged there for human review, NOT
+# auto-added. Commits both files.
 #
 # This is the network half of the APA import; the sandbox can't reach
 # fargorate.com (see CLAUDE.md "Where things run"), so it runs on a runner.
-# ~2,000+ names at ~1s each -> allow plenty of wall-clock.
+# ~2,000+ base searches plus variant retries on the zero-hit names, ~1s each
+# -> allow plenty of wall-clock.
 
 on:
   workflow_dispatch:
@@ -23,7 +27,7 @@ concurrency:
 jobs:
   resolve-apa:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -31,16 +35,19 @@ jobs:
           python-version: '3.12'
       - run: pip install -r requirements.txt
 
-      - name: Resolve APA names to FargoRate ids (CO only)
+      - name: Resolve APA names to FargoRate ids (CO-preferred + variants)
         run: python src/import_apa.py resolve
 
-      - name: Commit resolution review file
+      - name: Add exact-name single matches to roster.json
+        run: python src/import_apa.py add
+
+      - name: Commit resolution review file + roster additions
         run: |
-          git add docs/resolve/apa_resolution.json
+          git add docs/resolve/apa_resolution.json roster.json
           if ! git diff --cached --quiet; then
             git config user.name  "fargo-tracker[bot]"
             git config user.email "actions@users.noreply.github.com"
-            git commit -m "resolve(apa): stage FargoRate resolution for review"
+            git commit -m "resolve(apa): auto-add exact matches; stage variant/ambiguous for review"
             git push
           else
             echo "Nothing to commit."

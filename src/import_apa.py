@@ -11,18 +11,27 @@ APA's own ids and the player's name. So the identity bridge is name-based:
        - ambiguous   : APA name matches a rostered name held by >1 player_id.
                        Cannot pick safely → reported, not written.
        - new         : APA name not in the roster → queued for resolution.
-     Writes the new-name queue to docs/resolve/apa_to_resolve.json and a summary
-     to docs/resolve/apa_crossref_report.json.
+     Writes the new-name queue to docs/resolve/apa_to_resolve.json.
   2. `resolve` (network, runs on a GitHub Actions runner) — for each queued name,
-     search FargoRate and keep only `State == CO` candidates (the file has no
-     state, so CO is how we disambiguate). Classify into resolved (exactly one CO
-     match) / ambiguous (>1) / unfound (0) and write the review file
-     docs/resolve/apa_resolution.json. **Nothing is added to roster.json here** —
-     resolved matches are staged for human review (see CLAUDE.md decision).
+     search FargoRate. A single unambiguous match is accepted regardless of state
+     (CO is *preferred* when both a CO and out-of-state player share the name, so
+     clean local matches are never lost). Names that return zero matches are
+     retried with first-name nickname variations (Andy<->Andrew, Mike<->Michael,
+     ...) guarded by a surname match. A name with >1 distinct match is
+     **ambiguous** and flagged, never auto-picked — without a state the wrong
+     same-name player would be tracked forever (the roster is never pruned).
+     Transient API errors (HTTP 500) are retried. Writes the review file
+     docs/resolve/apa_resolution.json with four buckets: `resolved` (exact-name
+     single match), `variant_candidates` (single match found only via a nickname
+     variant), `ambiguous` (>1 match), `unfound`.
+  3. `add` (no network) — append every `resolved` (exact) match to roster.json
+     (slim entry + APA cross-link), or attach the cross-link if the id already
+     exists. variant_candidates / ambiguous / unfound are left for manual review.
 
 Name collisions are real (the roster already has 40), which is exactly why the
-project keys on player_id, never name. Every name-based link records
-`match_method: "name"` so it stays auditable.
+project keys on player_id, never name. Every name-based link records its
+`match_method` ("name" or "variant") so it stays auditable. Only exact-name
+single matches are auto-added; variant + ambiguous matches are staged for review.
 
 A single human can hold several APA memberships ("multiple skill levels"); all of
 them are kept on the one resolved player rather than collapsed to one.
@@ -34,6 +43,7 @@ Usage:
   python src/import_apa.py crossref                      # default basket/ path
   python src/import_apa.py crossref --path <file> --dry-run
   python src/import_apa.py resolve                       # network; runner only
+  python src/import_apa.py add                           # apply resolved -> roster
 """
 
 from __future__ import annotations
@@ -43,6 +53,7 @@ import datetime as dt
 import json
 import re
 import sys
+import time
 from pathlib import Path
 
 from resolve import load_roster, save_roster
@@ -57,6 +68,45 @@ RESOLUTION_PATH = RESOLVE_DIR / "apa_resolution.json"
 # League-fee annotations get prepended to some names, e.g. "Owes $150 Anna Byrd",
 # "OWES$130 Jordan Freeman", "Owes $180Aaron Knobloch". Strip them off the front.
 _FEE_PREFIX = re.compile(r"(?i)^\s*owes?\s*\$?\s*\d+\s*")
+
+# Common English given-name <-> nickname groups. Each line is one equivalence
+# class; every member maps to all the others. Used only to retry names that
+# returned zero FargoRate matches (a surname match is still required), so a wider
+# net here costs a few extra searches, not false roster adds.
+_NICKNAME_GROUPS = [
+    {"andrew", "andy", "drew"}, {"anthony", "tony"}, {"benjamin", "ben"},
+    {"bradley", "brad"}, {"charles", "charlie", "chuck"},
+    {"christopher", "chris"}, {"daniel", "dan", "danny"},
+    {"david", "dave", "davey"}, {"donald", "don", "donnie"},
+    {"douglas", "doug"}, {"edward", "ed", "eddie", "ted"},
+    {"frederick", "fred"}, {"gregory", "greg"}, {"jacob", "jake"},
+    {"james", "jim", "jimmy", "jamie"}, {"jeffrey", "jeff"},
+    {"jonathan", "jon"}, {"john", "johnny", "jack"}, {"joseph", "joe", "joey"},
+    {"joshua", "josh"}, {"kenneth", "ken", "kenny"}, {"lawrence", "larry"},
+    {"matthew", "matt"}, {"michael", "mike", "mick"}, {"nathan", "nate"},
+    {"nathaniel", "nate", "nathan"}, {"nicholas", "nick", "nik"},
+    {"patrick", "pat"}, {"peter", "pete"}, {"philip", "phillip", "phil"},
+    {"raymond", "ray"}, {"richard", "rick", "rich", "dick", "richie"},
+    {"robert", "rob", "bob", "bobby"}, {"ronald", "ron", "ronnie"},
+    {"samuel", "sam", "sammy"}, {"stephen", "steven", "steve"},
+    {"thomas", "tom", "tommy"}, {"timothy", "tim", "timmy"},
+    {"vincent", "vince", "vinny"}, {"william", "will", "bill", "billy", "liam"},
+    {"zachary", "zach", "zack"}, {"alexander", "alex", "alexandra", "lexi"},
+    {"abigail", "abby"}, {"amanda", "mandy"}, {"angela", "angie"},
+    {"barbara", "barb"}, {"catherine", "katherine", "kate", "katie", "kathy", "cathy", "kat"},
+    {"christina", "christine", "chris", "tina"}, {"cynthia", "cindy"},
+    {"deborah", "deb", "debbie"}, {"elizabeth", "liz", "beth", "lizzie", "betty"},
+    {"jennifer", "jen", "jenny"}, {"jessica", "jess"}, {"kimberly", "kim"},
+    {"margaret", "maggie", "meg", "peggy", "marge"}, {"michelle", "shelly"},
+    {"nicole", "nikki"}, {"pamela", "pam"}, {"patricia", "pat", "patty", "tricia"},
+    {"rebecca", "becca", "becky", "reba"}, {"samantha", "sam", "sammy"},
+    {"sandra", "sandy"}, {"stephanie", "steph"}, {"susan", "sue", "susie"},
+    {"theresa", "teresa", "terry", "tess"}, {"victoria", "vicky", "tori"},
+]
+_NICKNAMES: dict[str, set[str]] = {}
+for _grp in _NICKNAME_GROUPS:
+    for _n in _grp:
+        _NICKNAMES.setdefault(_n, set()).update(_grp - {_n})
 
 
 def clean_name(raw: str | None) -> str:
@@ -75,6 +125,23 @@ def norm(name: str | None) -> str:
     s = s.replace("'", "")            # O'Neill -> oneill (drop, don't split)
     s = re.sub(r"[.\-]", " ", s)      # hyphens/periods -> space
     return re.sub(r"\s+", " ", s).strip()
+
+
+def surname(name: str | None) -> str:
+    """Last token of the normalized name (used to guard nickname variants)."""
+    parts = norm(name).split()
+    return parts[-1] if parts else ""
+
+
+def variant_queries(full_name: str) -> list[str]:
+    """First-name nickname variations of a full name, surname kept intact.
+    'Andy Carroll' -> ['andrew carroll', 'drew carroll']. Empty if no mapping."""
+    parts = clean_name(full_name).split()
+    if len(parts) < 2:
+        return []
+    first = parts[0].lower()
+    tail = parts[1:]
+    return [" ".join([alt, *tail]) for alt in sorted(_NICKNAMES.get(first, ()))]
 
 
 def membership_of(rec: dict) -> dict:
@@ -166,7 +233,8 @@ def crossref(path: Path, dry_run: bool, today: str) -> dict:
     return report
 
 
-def _attach_crosslink(roster: dict, pid: str, memberships: list[dict], today: str) -> int:
+def _attach_crosslink(roster: dict, pid: str, memberships: list[dict], today: str,
+                      method: str = "name") -> int:
     """Add an `apa` cross-link list to one roster entry. Strictly additive:
     existing fields are never touched; re-running only adds new member_ids.
     Returns the number of memberships newly linked."""
@@ -177,7 +245,7 @@ def _attach_crosslink(roster: dict, pid: str, memberships: list[dict], today: st
     for m in memberships:
         if m["member_id"] in have:
             continue
-        existing.append({**m, "source": "apa", "match_method": "name", "added_date": today})
+        existing.append({**m, "source": "apa", "match_method": method, "added_date": today})
         have.add(m["member_id"])
         added += 1
     if not existing:                      # nothing to keep — drop the empty key
@@ -185,9 +253,55 @@ def _attach_crosslink(roster: dict, pid: str, memberships: list[dict], today: st
     return added
 
 
+def pick_match(candidates: list) -> tuple[str, object]:
+    """Choose a single FargoRate match from search candidates, CO-preferred.
+
+    Returns ("resolved", record) when exactly one CO match exists (extra
+    out-of-state namesakes are ignored), else exactly one out-of-state match;
+    ("ambiguous", [records]) when a state bucket has >1; ("none", []) for no
+    candidates. Candidates are deduped by player_id first."""
+    seen: dict = {}
+    for r in candidates:
+        seen.setdefault(r.player_id, r)
+    cands = list(seen.values())
+    co = [r for r in cands if (r.location or "").upper() == "CO"]
+    noco = [r for r in cands if (r.location or "").upper() != "CO"]
+    if len(co) == 1:
+        return ("resolved", co[0])
+    if len(co) > 1:
+        return ("ambiguous", co)
+    if len(noco) == 1:
+        return ("resolved", noco[0])
+    if len(noco) > 1:
+        return ("ambiguous", noco)
+    return ("none", [])
+
+
+def _search_with_retry(fargo_api, name: str, session, attempts: int = 3) -> list:
+    """Search, retrying transient failures (e.g. HTTP 500) with a short backoff."""
+    last = None
+    for k in range(attempts):
+        try:
+            return fargo_api.search(name, session=session)
+        except Exception as exc:  # FargoApiError + any network hiccup
+            last = exc
+            if k < attempts - 1:
+                time.sleep(1.5 * (k + 1))
+    raise last
+
+
+def _resolved_row(item: dict, rec, method: str) -> dict:
+    return {"search_name": item["search_name"], "matched_via": method,
+            "player_id": rec.player_id, "fargo_name": rec.name,
+            "membership_id": rec.membership_id, "rating": rec.rating,
+            "robustness": rec.robustness, "rating_quality": rec.rating_quality,
+            "location": rec.location, "memberships": item["memberships"]}
+
+
 def resolve(today: str) -> dict:
-    """Search FargoRate for each queued name; classify by CO matches. Network."""
-    import fargo_api  # imported lazily — crossref must run without network
+    """Search FargoRate for each queued name (CO-preferred, nickname fallback,
+    retry on transient errors). Network; runs on a runner."""
+    import fargo_api  # imported lazily — crossref/add must run without network
 
     if not TO_RESOLVE_PATH.exists():
         print(f"No resolve queue at {TO_RESOLVE_PATH}; run crossref first.", file=sys.stderr)
@@ -195,46 +309,68 @@ def resolve(today: str) -> dict:
     queue = json.loads(TO_RESOLVE_PATH.read_text(encoding="utf-8"))
     session = fargo_api.new_session()
 
-    resolved: list[dict] = []
-    ambiguous: list[dict] = []
+    resolved: list[dict] = []           # exact-name single matches — auto-added
+    variant_candidates: list[dict] = []  # found only via a nickname variant — review
+    ambiguous: list[dict] = []          # >1 distinct match — review, never picked
     unfound: list[dict] = []
     errors = 0
 
     for i, item in enumerate(queue, 1):
         name = item["search_name"]
         try:
-            results = fargo_api.search(name, session=session)
+            base = _search_with_retry(fargo_api, name, session)
         except Exception as exc:  # one bad name must not sink the batch
             errors += 1
             print(f"  [{i}/{len(queue)}] ERROR {name!r}: {exc}", file=sys.stderr)
             unfound.append({**item, "error": str(exc)})
             continue
-        co = [r for r in results if (r.location or "").upper() == "CO"]
-        if len(co) == 1:
-            r = co[0]
-            resolved.append({"search_name": name, "player_id": r.player_id,
-                             "fargo_name": r.name, "membership_id": r.membership_id,
-                             "rating": r.rating, "robustness": r.robustness,
-                             "rating_quality": r.rating_quality, "location": r.location,
-                             "memberships": item["memberships"]})
-        elif len(co) > 1:
-            ambiguous.append({"search_name": name,
+
+        status, hit = pick_match(base)
+        method = "name"
+        tried: list[str] = []
+
+        if status == "none":
+            # Zero direct matches — retry with first-name nickname variants,
+            # accepting only candidates whose surname matches.
+            want = surname(name)
+            vcands = []
+            for vq in variant_queries(name):
+                tried.append(vq)
+                try:
+                    for r in _search_with_retry(fargo_api, vq, session):
+                        if surname(r.name) == want:
+                            vcands.append(r)
+                except Exception:
+                    continue
+            if vcands:
+                status, hit = pick_match(vcands)
+                method = "variant"
+
+        if status == "resolved" and method == "name":
+            resolved.append(_resolved_row(item, hit, method))
+        elif status == "resolved":  # variant single match — staged, NOT auto-added
+            row = _resolved_row(item, hit, method)
+            row["variants_tried"] = tried
+            variant_candidates.append(row)
+        elif status == "ambiguous":
+            ambiguous.append({"search_name": name, "matched_via": method,
                               "candidates": [{"player_id": r.player_id, "name": r.name,
                                               "rating": r.rating, "robustness": r.robustness,
-                                              "location": r.location} for r in co],
+                                              "location": r.location} for r in hit],
                               "memberships": item["memberships"]})
         else:
-            unfound.append({"search_name": name,
-                            "other_state_matches": len(results),
-                            "memberships": item["memberships"]})
+            unfound.append({"search_name": name, "memberships": item["memberships"]})
+
         if i % 100 == 0:
-            print(f"  ...{i}/{len(queue)} searched "
-                  f"(resolved={len(resolved)} ambiguous={len(ambiguous)} unfound={len(unfound)})")
+            print(f"  ...{i}/{len(queue)} searched (resolved={len(resolved)} "
+                  f"variant={len(variant_candidates)} ambiguous={len(ambiguous)} "
+                  f"unfound={len(unfound)})")
 
     out = {
         "generated_at": today,
         "queue_size": len(queue),
         "resolved": resolved,
+        "variant_candidates": variant_candidates,
         "ambiguous": ambiguous,
         "unfound": unfound,
         "errors": errors,
@@ -243,6 +379,45 @@ def resolve(today: str) -> dict:
     RESOLUTION_PATH.write_text(
         json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     return out
+
+
+def add(today: str) -> dict:
+    """Append every resolved match to roster.json (no network). Idempotent:
+    new ids create a slim entry; existing ids just gain the APA cross-link."""
+    if not RESOLUTION_PATH.exists():
+        print(f"No resolution file at {RESOLUTION_PATH}; run resolve first.", file=sys.stderr)
+        raise SystemExit(1)
+    res = json.loads(RESOLUTION_PATH.read_text(encoding="utf-8"))
+    roster = load_roster()
+    players = roster.setdefault("players", {})
+    summary = {"created": 0, "crosslinked_existing": 0, "already_present": 0}
+
+    for x in res.get("resolved", []):
+        key = str(x["player_id"])
+        method = x.get("matched_via", "name")
+        memberships = x.get("memberships", [])
+        if key in players:
+            n = _attach_crosslink(roster, key, memberships, today, method)
+            if n:
+                summary["crosslinked_existing"] += 1
+            else:
+                summary["already_present"] += 1
+        else:
+            players[key] = {
+                "player_id": x["player_id"],
+                "membership_id": x.get("membership_id"),
+                "name": x.get("fargo_name"),
+                "state": x.get("location"),
+                "source": "apa",
+                "added_date": today,
+                "apa": [{**m, "source": "apa", "match_method": method, "added_date": today}
+                        for m in memberships],
+            }
+            summary["created"] += 1
+
+    save_roster(roster)
+    summary["roster_total"] = len(players)
+    return summary
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -254,6 +429,7 @@ def build_parser() -> argparse.ArgumentParser:
     c.add_argument("--dry-run", action="store_true", help="report only; write nothing")
 
     sub.add_parser("resolve", help="search FargoRate for queued names (network; runner)")
+    sub.add_parser("add", help="append resolved matches to roster.json (no network)")
     return p
 
 
@@ -278,9 +454,17 @@ def main(argv=None) -> int:
 
     if args.command == "resolve":
         out = resolve(today)
-        print(f"\nresolved={len(out['resolved'])} ambiguous={len(out['ambiguous'])} "
+        print(f"\nresolved={len(out['resolved'])} (auto-add) "
+              f"variant_candidates={len(out['variant_candidates'])} (review) "
+              f"ambiguous={len(out['ambiguous'])} (review) "
               f"unfound={len(out['unfound'])} errors={out['errors']}")
         print(f"wrote {RESOLUTION_PATH.relative_to(ROOT)}")
+        return 0
+
+    if args.command == "add":
+        s = add(today)
+        print(f"created={s['created']} crosslinked_existing={s['crosslinked_existing']} "
+              f"already_present={s['already_present']} roster_total={s['roster_total']}")
         return 0
     return 2
 
