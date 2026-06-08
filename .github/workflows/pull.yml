@@ -31,8 +31,8 @@ jobs:
     # ones). Was 15; raised with headroom for roster growth (NAPA/APA imports).
     timeout-minutes: 45
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - run: pip install -r requirements.txt
@@ -50,5 +50,17 @@ jobs:
             git config user.name  "fargo-tracker[bot]"
             git config user.email "actions@users.noreply.github.com"
             git commit -m "data: rating/robustness changes $(date -u +%F)"
-            git push
+            # The pull runs ~30 min; `main` can advance during that window (PR
+            # merges, other workflows), making a bare push non-fast-forward and
+            # throwing away the run's data. Rebase our single data commit onto
+            # the latest remote and retry. history.csv is append-only and the
+            # competing commits are code/docs/roster, so the rebase won't conflict.
+            for attempt in 1 2 3 4 5; do
+              if git push; then
+                break
+              fi
+              echo "push rejected (attempt $attempt) — rebasing onto origin/main"
+              git pull --rebase origin "${GITHUB_REF_NAME}"
+              sleep 5
+            done
           fi
