@@ -29,8 +29,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - run: pip install -r requirements.txt
@@ -50,7 +50,16 @@ jobs:
             git config user.name  "fargo-tracker[bot]"
             git config user.email "actions@users.noreply.github.com"
             git commit -m "resolve: update roster / candidates"
-            git push
+            # main can advance during the run; rebase-and-retry so a
+            # non-fast-forward push doesn't discard the work (see pull.yml).
+            for attempt in 1 2 3 4 5; do
+              if git push; then
+                break
+              fi
+              echo "push rejected (attempt $attempt) — rebasing onto origin/${GITHUB_REF_NAME}"
+              git pull --rebase origin "${GITHUB_REF_NAME}"
+              sleep 5
+            done
           else
             echo "Nothing to commit."
           fi
