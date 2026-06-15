@@ -61,6 +61,15 @@ def _to_int(value: Any, fieldname: str) -> int:
         raise FargoApiError(f"non-numeric {fieldname!r}: {value!r}") from exc
 
 
+def _robustness(value: Any) -> int:
+    """FargoRate returns an empty Robustness for accounts with no games played
+    yet; treat that (and a missing field) as 0 rather than a fetch failure. Any
+    other non-numeric value is still a real error and is left to _to_int."""
+    if value is None or str(value).strip() == "":
+        return 0
+    return _to_int(value, "Robustness")
+
+
 def new_session() -> requests.Session:
     s = requests.Session()
     s.headers.update({"User-Agent": USER_AGENT, "Accept": "application/json"})
@@ -87,7 +96,7 @@ def get_player(player_id: int | str, session: requests.Session | None = None) ->
     if not isinstance(data, dict) or "Id" not in data:
         raise FargoApiError(f"empty/unexpected record for player {player_id}: {data!r}")
 
-    robustness = _to_int(data.get("Robustness"), "Robustness")
+    robustness = _robustness(data.get("Robustness"))
     name = data.get("FullName") or f"{data.get('FirstName', '')} {data.get('LastName', '')}".strip()
     return PlayerRecord(
         player_id=_to_int(data.get("Id"), "Id"),
@@ -115,7 +124,7 @@ def search(name: str, session: requests.Session | None = None) -> list[PlayerRec
     records: list[PlayerRecord] = []
     for item in candidates:
         try:
-            robustness = _to_int(item.get("robustness"), "robustness")
+            robustness = _robustness(item.get("robustness"))
             rating_src = item.get("effectiveRating") or item.get("rating")
             records.append(
                 PlayerRecord(
