@@ -204,42 +204,12 @@ no network —
 person_id, source union + membership dedup, chained merges, profile rendering with
 history). Run: `pip install -r requirements-dev.txt && pytest -q`.
 
-## Agents (global)
+## Capabilities — see the global index
 
-Delegate to these named global agents (in `$CLAUDE_CONFIG_DIR/agents/`) instead of
-answering from memory. The docs-experts FETCH each product's current official docs
-and answer from what they read, with source URLs — so responses reflect today's real
-capabilities, not stale training knowledge.
-
-- **code-explainer** — map how a subsystem works ("how does X work / where is Y
-  handled / trace this flow") across many files. Read-only; returns a tight map.
-- **obsidian-expert** — anything Obsidian (app, plugins, themes, Plugin/Developer API).
-- **claude-expert** — Claude/Anthropic API & models (ids, pricing, tool use, SDKs).
-- **claude-code-expert** — the Claude Code CLI/harness (hooks, skills, subagents, settings, MCP).
-- **claude-design-expert** — Claude Design (claude.ai/design canvas, exports, `/design-sync`).
-- **grok-expert** — xAI Grok models & API (docs.x.ai).
-- **grok-build-expert** — Grok Build, xAI's terminal coding CLI.
-- **notion-expert** — Notion app & API; uses the connected Notion MCP for live workspace data.
-- **mcp-expert** — the Model Context Protocol itself (spec + building MCP servers/clients & SDKs; distinct from how Claude Code *configures* MCP).
-
-**Rule:** when a request involves one of these products/tools, hand off to the matching
-agent **before** answering — never guess at current features or API shapes.
-
-## Doc libraries (offline mirrors)
-
-Each docs-expert above also maintains a big OFFLINE mirror of its tool's help/dev
-docs — one Markdown file under `$CLAUDE_CONFIG_DIR/library/<tool>/<tool>.md`
-(gitignored; a regenerable cache). When a request involves one of these tools:
-
-1. **Read the local mirror FIRST** — `library/<tool>/<tool>.md` (instant, offline).
-   For big files, GREP it rather than reading the whole thing.
-2. **Check freshness** — `library/<tool>/_meta.json` `last_updated`. If it's older
-   than ~30 days, missing, or the page you need is listed as `pending`, run the
-   matching `<tool>-expert` agent to refresh/extend the mirror, then answer.
-3. Only go to the live web (via the agent) when the mirror can't answer it.
-
-**Never** inline or `@`-import these files — they can be huge and would bloat every
-session's context; they load on demand only.
-
-Live mirrors: **obsidian** (`library/obsidian/obsidian.md`). The rest are built on
-the same pattern as they're needed.
+The full inventory of available **agents, skills, plugins, MCP servers, CLI tools,
+and offline doc-libraries** lives in **`$CLAUDE_CONFIG_DIR/AGENTS.md`** — a plain
+reference (NOT auto-loaded; read it on demand, never `@`-import it). Consult it when a
+task could use a capability. In particular, for anything about **Obsidian, Claude /
+Claude Code / Claude Design, Grok / Grok Build, Notion, or MCP**, delegate to the
+matching `*-expert` agent — it reads that tool's offline doc-mirror first and refreshes
+from official docs if stale. Never guess at current product features or API shapes.
