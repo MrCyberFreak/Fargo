@@ -204,12 +204,70 @@ no network —
 person_id, source union + membership dedup, chained merges, profile rendering with
 history). Run: `pip install -r requirements-dev.txt && pytest -q`.
 
-## Capabilities — see the global index
+## Capabilities — what's available & when to reach for it
+<!--
+  The live, authoritative list is injected into every session automatically; this is a
+  curated WHEN-TO-USE guide for the currently-active set, so the right tool gets picked
+  reliably. It can drift as capabilities change — reconcile with `/sync-capabilities`.
+  Full canonical inventory (incl. disabled plugin hundreds): $CLAUDE_CONFIG_DIR/AGENTS.md.
+-->
 
-The full inventory of available **agents, skills, plugins, MCP servers, CLI tools,
-and offline doc-libraries** lives in **`$CLAUDE_CONFIG_DIR/AGENTS.md`** — a plain
-reference (NOT auto-loaded; read it on demand, never `@`-import it). Consult it when a
-task could use a capability. In particular, for anything about **Obsidian, Claude /
-Claude Code / Claude Design, Grok / Grok Build, Notion, or MCP**, delegate to the
-matching `*-expert` agent — it reads that tool's offline doc-mirror first and refreshes
-from official docs if stale. Never guess at current product features or API shapes.
+### Expert agents (delegate via the Agent tool)
+Docs-backed — they FETCH current docs, so delegate tool questions instead of guessing:
+- `claude-code-expert` — Claude Code CLI/harness: hooks, slash commands, skills, subagents, settings.json, MCP config, permissions, CLI flags, SDK.
+- `claude-expert` — Claude/Anthropic API & models: model ids, pricing, context windows, Messages API, tool use, prompt caching, batches, SDKs.
+- `claude-design-expert` — Claude Design (claude.ai/design): canvas, prototypes, presentations, exports, `/design-sync`.
+- `grok-expert` — xAI Grok models & API (docs.x.ai).
+- `grok-build-expert` — Grok Build (xAI terminal coding CLI).
+- `notion-expert` — Notion app & API (+ live workspace data via the Notion MCP).
+- `mcp-expert` — Model Context Protocol itself: spec, building servers/clients, SDKs.
+- `agile-expert` — Agile/Scrum/Kanban/Sprint methodology, estimation, flow metrics, scaling (SAFe/LeSS/Nexus).
+- `obsidian-expert` - Obsidian app, plugins, themes, vault, Plugin/Dev API (active; kept + documented).
+
+Persona advisors — documented philosophy, source-cited:
+- `boris-expert` — "What Would Boris Do?" (Boris Cherny, creator of Claude Code); agentic-coding/harness/engineering taste. Drives `/wwbd`.
+- `karpathy-expert` — "What Would Karpathy Do?" (Andrej Karpathy); ML/LLM/agent/learning philosophy. Drives `/wwkd`.
+
+Creator-monetization domain experts (TikTok; source-cited tracked libraries, promoted from the TikTokMonetize project):
+- `tiktok-platform-monetization` — native TikTok money (Creator Rewards, Shop/Affiliate, Subscriptions, LIVE, Series): eligibility, payouts, RPM, faceless-fit.
+- `faceless-content-strategy` — faceless formats, monetizable niche selection, audience-pivot mechanics, format→offer mapping.
+- `brand-deals-sponsorship` — sponsorship rates, brand evaluation, deal sourcing/structures, FTC/ASA disclosure.
+- `digital-products-passive-income` — build-once-sell-many offers (digital/software/affiliate/POD), unit economics, the TikTok→sale funnel.
+- `audience-analytics-growth` — reading real analytics: audience liveness, pivot-transfer risk, engagement baselines, reactivation.
+- `creator-legal-compliance` — TikTok policy, copyright/strikes/DMCA, FTC/ASA disclosure, refund/tax basics (not legal advice).
+
+System & data critics (read-only - pressure-test your OWN AI/data systems):
+- `agentic-systems-architect` - architecture critic for multi-agent / LLM-orchestration systems: topology, fan-out/fan-in, determinism, partial-failure/idempotency, cost/latency, observability, prompt-injection.
+- `agent-eval-strategist` - evaluation & epistemics for LLM/agent pipelines with no ground truth: grounding/faithfulness, hallucinated-source detection, judge circularity, gold sets, calibration, drift.
+- `opportunity-discovery-strategist` - whether an opportunity-discovery / idea-generation ENGINE creates real conviction vs manufacturing plausible volume.
+- `predictive-model-critic` - read-only critic for TABULAR/STATISTICAL predictors (PoolPredict-style): data leakage, calibration (Brier/log-loss, Platt vs isotonic), train/test/backtest design, baseline-beating. The non-LLM sibling of `agent-eval-strategist`.
+
+Domain experts (corpus-backed; read the live project first):
+- `pool-rating-systems-expert` - cue-sports rating/handicap systems + cross-league pool data semantics for the PoolPredict cluster (FargoRate anchor/robustness, APA skill levels, NAPA CSR/rack grain, handicap->rack-level modeling, CSR/SL->Fargo crosswalks, per-source quirks). Grounds modeling/data choices, not coding.
+
+Execution & roster:
+- `roster-steward` - read-only capability-gap analyst for the whole agent/skill roster (gaps + redundant overlap vs your live projects; proposes a tiered shortlist, never builds).
+- `windows-delivery-engineer` - package / schedule / headless-harden local apps + tools on Windows + PowerShell (Scheduled Tasks, encoding, unattended-run reliability).
+- `sales-outreach-closer` - solo outbound sales for an already-chosen/priced offer (cold email/DM sequences, discovery scripts, proposals, follow-up cadence).
+
+Code / project / built-in:
+- `code-explainer` — map how a subsystem works / trace a flow across many files (read-only).
+- `skill-scout` — spot where a new/existing skill could streamline a repeated process.
+- `skill-builder` — build a skill from an APPROVED spec.
+- `Explore` — broad read-only multi-file search. `Plan` — implementation planning.
+- `general-purpose` — open-ended multi-step research/search. `claude-code-guide` — Q&A on Claude Code / Agent SDK / Claude API.
+- `claude` — catch-all default. `statusline-setup` — configure the status line.
+
+### Skills (invoke via the Skill tool / `/name`)
+- **Session flow:** `handoff` (write end-of-session handoff), `handon` (resume from latest handoff), `oneprompt` (distill session into one prompt), `distill` (turn this session's corrections/mistakes into proposed durable rules — memories, CLAUDE.md rules, or checks).
+- **Research / prior-art:** `deep-research` (multi-source cited report), `already-solved` (find existing libs/tools before building), `claude-api` (Claude API/SDK reference).
+- **Thinking / planning:** `grill-me` (interrogate YOU one question at a time to pressure-test an idea/plan/decision), `council` (autonomous multi-persona panel + synthesized go/no-go verdict, for a second opinion before committing).
+- **Code quality:** `code-review` (bugs + cleanups on the diff), `simplify` (quality cleanups only), `verify` (run the app to confirm a change), `run` (launch the app), `review` (review a PR), `security-review` (security pass on the branch), `init` (generate a CLAUDE.md).
+- **Harness / config:** `update-config` (settings.json, hooks, permissions), `keybindings-help`, `fewer-permission-prompts`, `loop` (run a prompt on an interval), `schedule` (cron cloud agents), `scaffold` (lay the standard project template), `sync-capabilities` (reconcile this list vs disk), `backup-config` (commit+push the global config).
+- **Security:** `untrusted-repo-static-audit` (read-only audit of an untrusted clone).
+- **Agile / delivery:** `user-stories`, `sprint-plan`, `retro`, `backlog-refine`, `kanban-flow` — methodology questions delegate to `agile-expert`.
+- **Persona advisors:** `wwbd`, `wwkd` (see the matching agents above).
+
+
+
+
