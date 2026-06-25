@@ -29722,6 +29722,50 @@
           "added_date": "2026-06-07"
         }
       ]
+    },
+    "1116151": {
+      "player_id": 1116151,
+      "membership_id": "9900005540529",
+      "name": "Andy Tran",
+      "added_date": "2026-06-25",
+      "record": {
+        "RowId": "b247e8f7-e2b4-4c52-9301-adc7011a7755",
+        "Id": 1116151,
+        "FirstName": "Andy",
+        "LastName": "Tran",
+        "Suffix": null,
+        "Nickname": null,
+        "City": "",
+        "State": "CO",
+        "Country": "USA",
+        "FargoRating": "377",
+        "Robustness": "268",
+        "RecentRobustness": null,
+        "Gender": "M",
+        "Staged": false,
+        "ProvisionalRating": "375",
+        "CSI": null,
+        "BBMId": null,
+        "BBMMembershipId": "9900005540529",
+        "InLMS": false,
+        "ActiveInLMS": null,
+        "Ratings": null,
+        "Links": [
+          {
+            "Rel": "self",
+            "Href": "/api/players/1116151",
+            "Title": "self",
+            "Type": null
+          },
+          {
+            "Rel": "ratings",
+            "Href": "/api/ratings/1116151",
+            "Title": "Ratings",
+            "Type": null
+          }
+        ],
+        "FullName": "Andy Tran"
+      }
     }
   }
 }
