@@ -1,0 +1,9 @@
+# data/history.csv is append-only (new rows only, never reordered). The
+# committing workflows rebase-and-retry their push when main advances mid-run
+# (see the loops in .github/workflows/*.yml). Across different workflows the
+# competing commits touch different files, so those rebases don't conflict — but
+# two runs that both append to history.csv (e.g. a manual re-run racing the
+# scheduled pull) would collide on the trailing rows. The `union` driver resolves
+# that by keeping BOTH sides' lines, which is exactly the append-only semantics
+# we want, so the rebase never deadlocks on this file.
+data/history.csv merge=union
