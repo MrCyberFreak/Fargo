@@ -314,6 +314,13 @@ def test_resolve_routes_into_four_buckets(tmp_path, monkeypatch):
     assert out["errors"] == 0
 
 
+def test_resolve_base_surname_guard_rejects_near_miss(tmp_path, monkeypatch):
+    # a single fuzzy near-miss on the BASE search (different surname) is not auto-added
+    queue = [_q("Nick Gill", 1)]
+    out = _run_resolve(tmp_path, monkeypatch, queue, {"Nick Gill": [rec(55, "Nick Gillespie", "OK")]})
+    assert out["resolved"] == [] and [u["search_name"] for u in out["unfound"]] == ["Nick Gill"]
+
+
 def test_resolve_variant_surname_guard_rejects_wrong_surname(tmp_path, monkeypatch):
     queue = [_q("Andy Carroll", 1)]
     search_map = {

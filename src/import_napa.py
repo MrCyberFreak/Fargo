@@ -265,12 +265,17 @@ def resolve(today: str) -> dict:
             unfound.append({**item, "error": str(exc)})
             continue
 
+        # Guard the base search: FargoRate's fuzzy search can return a single
+        # near-miss with a DIFFERENT surname (e.g. 'Nick Gill' -> 'Nick Gillespie',
+        # 'Andrew Lent' -> 'Andrew Lentz'); require a surname match before accepting,
+        # exactly like the variant retry below. Precision over recall.
+        want = surname(name)
+        base = [r for r in base if surname(r.name) == want]
         status, hit = pick_match(base)
         method = "name"
         tried: list[str] = []
 
         if status == "none":
-            want = surname(name)
             vcands = []
             for vq in variant_queries(name):
                 tried.append(vq)

@@ -200,6 +200,15 @@ def _run_resolve(tmp_path, monkeypatch, queue, search_map):
     return imp.resolve(today="2026-06-27")
 
 
+def test_resolve_base_search_surname_guard_rejects_near_miss(tmp_path, monkeypatch):
+    # FargoRate's fuzzy search returns a single DIFFERENT-surname near-miss; it must
+    # NOT auto-resolve (the bug that mis-added 'Nick Gill' -> 'Nick Gillespie' etc.).
+    queue = [{"search_name": "Nick Gill", "norm": "nick gill", "memberships": [npl(10000020, "Nick Gill")]}]
+    out = _run_resolve(tmp_path, monkeypatch, queue, {"Nick Gill": [rec(55, "Nick Gillespie", "OK")]})
+    assert out["resolved"] == []
+    assert [u["search_name"] for u in out["unfound"]] == ["Nick Gill"]
+
+
 def test_resolve_carries_napa_membership_and_routes(tmp_path, monkeypatch):
     queue = [
         {"search_name": "Clean Match", "norm": "clean match", "memberships": [npl(10000009, "Clean Match")]},
