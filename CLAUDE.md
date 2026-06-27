@@ -265,6 +265,28 @@ does not list them.
   Read-only diagnosis by default;
   clears a verified-stale lock and re-triggers only with `--recover`. Retires with
   the local stopgap once GitHub Actions billing is restored.
+- `fargo-link-cleanup` - clean up wrong/divergent FargoRate cross-links the
+  cross-league identity audit flagged: classify each `audit_name_divergence` flag
+  against FargoRate, fix mislabeled roster names (preserving the original as
+  `<source>_name`), suppress links hung on the wrong id via the
+  `docs/resolve/<source>_unlink.json` ledger, then re-resolve and re-audit
+  (`src/audit.py all`) until name-divergence and collisions are clean. Read-first:
+  classify + propose by default, mutate only with `--apply`; optional `--source
+  <apa|napa|bca>` scope. Precision-first; never guess a link, never auto-merge two
+  humans (`people_merges.json` stays manual).
+- `fargo-resolve-local` - run a roster source's full FargoRate resolve pipeline
+  LOCALLY (NAPA/APA/BCA) when Actions is unavailable: read the matching
+  `resolve-<source>.yml` as the step spec, `sync_ref` the sibling `_ref` clone
+  (clone-only `dangerouslyDisableSandbox`; FargoRate calls run locally per the
+  `sandbox-reaches-fargorate` memory), `crossref` -> `resolve` -> `add` (auto-adds
+  only the exact-name `resolved` bucket; variant/ambiguous/recovery stay staged),
+  rebuild `people.json` + crosswalk, run `src/audit.py all` then `collisions` as a
+  hard gate, secret-scan and STAGE the workflow's file set - STOPPING before
+  commit/push for review. `--source <napa|apa|bca>` (req), `--ref-token`/env
+  `REF_TOKEN`, `--no-network`. Hands off a dirty audit to `fargo-link-cleanup`; not
+  the daily pull (`fargo-pull-doctor`). Retires once Actions billing is restored
+  and the runner can clone the siblings (then `resolve-<source>.yml` is the single
+  source of truth again).
 
 ## Capabilities — what's available & when to reach for it
 <!--
