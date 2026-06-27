@@ -258,7 +258,11 @@ does not list them.
 - `fargo-pull-doctor` - diagnose and recover the LOCAL FargoRate daily pull
   (Scheduled Task `FargoDailyPull` / `Fargo-local-runner\run-pull.ps1`) when it
   stopped producing data: checks task Last Result, `pull.log`, a stale
-  `.git\index.lock`, and battery/sleep stops. Read-only diagnosis by default;
+  `.git\index.lock`, and battery/sleep stops. The task runs **3x/day**
+  (07:20 / 13:20 / 19:20 local; daily trigger + `PT6H` repetition over a 12h
+  window, reduced 2026-06-27 from every ~2h / `PT2H` after analysis showed
+  FargoRate batches overnight so the morning run captures ~the whole day).
+  Read-only diagnosis by default;
   clears a verified-stale lock and re-triggers only with `--recover`. Retires with
   the local stopgap once GitHub Actions billing is restored.
 
