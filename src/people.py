@@ -30,12 +30,18 @@ import datetime as dt
 import json
 from pathlib import Path
 
+from namematch import norm
+
 ROOT = Path(__file__).resolve().parent.parent
 ROSTER_PATH = ROOT / "roster.json"
 MERGES_PATH = ROOT / "people_merges.json"
 PEOPLE_PATH = ROOT / "people.json"
 HISTORY_PATH = ROOT / "data" / "history.csv"
 PROFILES_PATH = ROOT / "docs" / "profiles.md"
+CROSSWALK_PATH = ROOT / "docs" / "crosswalk.json"
+
+# Source-tagged league cross-link lists that hang on a roster entry.
+_CROSSLINK_SOURCES = ("apa", "napa", "bca")
 
 
 def _load(path: Path, default):
@@ -49,19 +55,38 @@ def _sources_of(entry: dict) -> set[str]:
         s.add(entry["source"])
     if entry.get("record") and not entry.get("source"):
         s.add("resolve")          # added via resolve.py (full API record, no source tag)
-    if entry.get("apa"):
-        s.add("apa")
+    for src in _CROSSLINK_SOURCES:
+        if entry.get(src):
+            s.add(src)
     return s or {"unknown"}
 
 
+def _bca_member_id(m: dict) -> str:
+    """BCA carries NO per-player id, so synthesize a stable key from division + name.
+    Without this, build()'s `(source, member_id)` dedup would collapse every BCA
+    division of one person to a single `(bca, None)` (verified bug)."""
+    return f"{m.get('bca_division_id')}:{norm(m.get('name'))}"
+
+
 def _memberships_of(entry: dict) -> list[dict]:
-    """Source-tagged league memberships from a roster entry (APA today; future
-    leagues add their own list and a branch here)."""
+    """Source-tagged league memberships from a roster entry. Each source emits a
+    stable `member_id` so build()'s `(source, member_id)` dedup is correct: APA uses
+    its member_id, NAPA the napa_player_id, BCA a synthetic division+name key."""
     out = []
     for m in entry.get("apa", []) or []:
         out.append({"source": m.get("source", "apa"), "member_id": m.get("member_id"),
                     "member_number": m.get("member_number"), "name": m.get("name"),
                     "match_method": m.get("match_method")})
+    for m in entry.get("napa", []) or []:
+        out.append({"source": "napa", "member_id": m.get("napa_player_id"),
+                    "member_number": None, "name": m.get("name"),
+                    "division_id": m.get("division_id"),
+                    "match_method": m.get("match_method"), "confidence": m.get("confidence")})
+    for m in entry.get("bca", []) or []:
+        out.append({"source": "bca", "member_id": _bca_member_id(m),
+                    "member_number": None, "name": m.get("name"),
+                    "division_id": m.get("bca_division_id"),
+                    "match_method": m.get("match_method"), "confidence": m.get("confidence")})
     return out
 
 
@@ -158,8 +183,11 @@ def _render_profile(p: dict, latest: dict) -> list[str]:
         rating = f"rating {r[0]}, robustness {r[1]} (as of {r[2]})" if r else "pending first pull"
         lines.append(f"- FargoRate `{fid}` — {rating}")
     for m in p["memberships"]:
-        lines.append(f"- {m['source'].upper()} member {m.get('member_number')} "
-                     f"({m.get('match_method') or 'n/a'})")
+        # APA shows its public member number; NAPA/BCA have none, so show the id +
+        # division (BCA's member_id is a synthetic division:name key).
+        ident = m.get("member_number") or m.get("member_id")
+        div = f" div {m['division_id']}" if m.get("division_id") else ""
+        lines.append(f"- {m['source'].upper()} {ident}{div} ({m.get('match_method') or 'n/a'})")
     lines.append(f"- sources: {', '.join(p['sources'])}")
     if p.get("notes"):
         lines.append(f"- note: {p['notes']}")
@@ -186,12 +214,58 @@ def profiles(today: str, all_people: bool) -> int:
     return len(chosen)
 
 
+def _confidence(m: dict) -> str:
+    """A cross-link's confidence: its own field if set (NAPA/BCA), else derived from
+    match_method (APA has none -- variant is medium, everything else high)."""
+    return m.get("confidence") or ("medium" if m.get("match_method") == "variant" else "high")
+
+
+def crosswalk(today: str) -> dict:
+    """Publish docs/crosswalk.json -- the slim, PII-free source-id -> FargoRate map
+    PoolPredict consumes instead of joining by name+state (see
+    docs/cross-league-identity.md section 6). Each source id maps to its
+    fargo_player_id (rating grain), person_id (the human, for pooling accounts),
+    confidence, and match_method."""
+    roster = _load(ROSTER_PATH, {"players": {}}).get("players", {})
+    people = _load(PEOPLE_PATH, {"people": {}}).get("people", {})
+
+    fargo_to_person: dict[int, int] = {}
+    for person in people.values():
+        for fid in person["fargo_player_ids"]:
+            fargo_to_person[int(fid)] = person["person_id"]
+
+    out: dict[str, dict] = {"apa": {}, "napa": {}, "bca": {}}
+    for pid_str, entry in roster.items():
+        fid = int(entry.get("player_id", pid_str))
+        person_id = fargo_to_person.get(fid)
+        for m in entry.get("apa", []) or []:
+            if m.get("member_id") is not None:
+                out["apa"][str(m["member_id"])] = {
+                    "fargo_player_id": fid, "person_id": person_id,
+                    "confidence": _confidence(m), "match_method": m.get("match_method")}
+        for m in entry.get("napa", []) or []:
+            if m.get("napa_player_id") is not None:
+                out["napa"][str(m["napa_player_id"])] = {
+                    "fargo_player_id": fid, "person_id": person_id,
+                    "confidence": _confidence(m), "match_method": m.get("match_method")}
+        for m in entry.get("bca", []) or []:
+            out["bca"][_bca_member_id(m)] = {
+                "fargo_player_id": fid, "person_id": person_id,
+                "confidence": _confidence(m), "match_method": m.get("match_method")}
+
+    payload = {"generated_at": today,
+               "counts": {src: len(rows) for src, rows in out.items()}, **out}
+    CROSSWALK_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return payload
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Build the person/profile layer (people.json).")
     sub = p.add_subparsers(dest="command", required=True)
     sub.add_parser("build", help="regenerate people.json from roster + merges")
     pr = sub.add_parser("profiles", help="render docs/profiles.md")
     pr.add_argument("--all", action="store_true", help="render every person, not just merged/multi-source")
+    sub.add_parser("crosswalk", help="publish docs/crosswalk.json (source-id -> fargo/person map)")
     return p
 
 
@@ -206,6 +280,12 @@ def main(argv=None) -> int:
     if args.command == "profiles":
         n = profiles(today, all_people=args.all)
         print(f"rendered {n} profile(s) -> {PROFILES_PATH.relative_to(ROOT)}")
+        return 0
+    if args.command == "crosswalk":
+        out = crosswalk(today)
+        c = out["counts"]
+        print(f"crosswalk apa={c['apa']} napa={c['napa']} bca={c['bca']} "
+              f"-> {CROSSWALK_PATH.relative_to(ROOT)}")
         return 0
     return 2
 

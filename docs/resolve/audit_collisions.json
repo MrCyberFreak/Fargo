@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-06-27",
+  "collision_count": 0,
+  "collisions": [],
+  "redundant_same_person_count": 6,
+  "redundant_same_person": [
+    {
+      "source": "apa",
+      "member_key": "1304934",
+      "fargo_ids": [
+        1228568,
+        1249922
+      ],
+      "person_id": 1228568
+    },
+    {
+      "source": "apa",
+      "member_key": "3231406",
+      "fargo_ids": [
+        1015017,
+        1058794
+      ],
+      "person_id": 1015017
+    },
+    {
+      "source": "apa",
+      "member_key": "3308080",
+      "fargo_ids": [
+        1164869,
+        1380955
+      ],
+      "person_id": 1164869
+    },
+    {
+      "source": "apa",
+      "member_key": "3334455",
+      "fargo_ids": [
+        1164869,
+        1380955
+      ],
+      "person_id": 1164869
+    },
+    {
+      "source": "apa",
+      "member_key": "3354732",
+      "fargo_ids": [
+        1356604,
+        1368535
+      ],
+      "person_id": 1356604
+    },
+    {
+      "source": "apa",
+      "member_key": "643515",
+      "fargo_ids": [
+        1009701,
+        1120801
+      ],
+      "person_id": 1009701
+    }
+  ]
+}
