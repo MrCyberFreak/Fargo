@@ -1,0 +1,115 @@
+{
+  "generated_at": "2026-06-27",
+  "candidate_count": 6,
+  "note": "evidence only -- confirm by hand into people_merges.json; never auto-merged",
+  "candidates": [
+    {
+      "norm": "bryson ford",
+      "name": "Bryson Ford",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 1362854,
+          "sources": [
+            "apa"
+          ]
+        },
+        {
+          "fargo_player_id": 1363082,
+          "sources": [
+            "napa"
+          ]
+        }
+      ]
+    },
+    {
+      "norm": "greg brown",
+      "name": "Greg Brown",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 1015017,
+          "sources": [
+            "apa"
+          ]
+        },
+        {
+          "fargo_player_id": 1058794,
+          "sources": [
+            "apa"
+          ]
+        }
+      ]
+    },
+    {
+      "norm": "jeff lang",
+      "name": "Jeff Lang",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 1009701,
+          "sources": [
+            "apa"
+          ]
+        },
+        {
+          "fargo_player_id": 1120801,
+          "sources": [
+            "apa"
+          ]
+        }
+      ]
+    },
+    {
+      "norm": "kris sandoval",
+      "name": "Kris Sandoval",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 1228568,
+          "sources": [
+            "apa"
+          ]
+        },
+        {
+          "fargo_player_id": 1249922,
+          "sources": [
+            "apa"
+          ]
+        }
+      ]
+    },
+    {
+      "norm": "premchand koru",
+      "name": "Premchand Koru",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 1356604,
+          "sources": [
+            "apa"
+          ]
+        },
+        {
+          "fargo_player_id": 1368535,
+          "sources": [
+            "apa"
+          ]
+        }
+      ]
+    },
+    {
+      "norm": "tim brown",
+      "name": "Tim Brown",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 1164869,
+          "sources": [
+            "apa"
+          ]
+        },
+        {
+          "fargo_player_id": 1380955,
+          "sources": [
+            "apa"
+          ]
+        }
+      ]
+    }
+  ]
+}

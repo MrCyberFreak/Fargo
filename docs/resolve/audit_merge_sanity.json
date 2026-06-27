@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-06-27",
+  "flag_count": 4,
+  "flags": [
+    {
+      "states": [
+        "Denver CO",
+        "Hartsel CO"
+      ],
+      "person_id": 1015017,
+      "fargo_player_ids": [
+        1015017,
+        1058794
+      ]
+    },
+    {
+      "states": [
+        "Commerce City CO",
+        "Louisville CO"
+      ],
+      "person_id": 1009701,
+      "fargo_player_ids": [
+        1009701,
+        1120801
+      ]
+    },
+    {
+      "states": [
+        "Centennial CO",
+        "Colorado Springs CO"
+      ],
+      "person_id": 1164869,
+      "fargo_player_ids": [
+        1164869,
+        1380955
+      ]
+    },
+    {
+      "states": [
+        "CO",
+        "Englewood CO"
+      ],
+      "person_id": 1356604,
+      "fargo_player_ids": [
+        1356604,
+        1368535
+      ]
+    }
+  ]
+}

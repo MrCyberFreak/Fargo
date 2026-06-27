@@ -1,0 +1,282 @@
+{
+  "generated_at": "2026-06-27",
+  "source": "_ref\\NAPA",
+  "napa_players": 1279,
+  "unique_napa_names": 1277,
+  "matched_single": 299,
+  "matched_crosslinks_written": 299,
+  "ambiguous_existing": 10,
+  "name_collisions_quarantined": 2,
+  "new_to_resolve": 966,
+  "ambiguous_detail": [
+    {
+      "name": "Aaron Hara",
+      "roster_player_ids": [
+        1041504,
+        1134616
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10075964,
+          "name": "Aaron Hara",
+          "division_id": "10992",
+          "division_name": "Friday \"Piazza Friday DP\" 8-ball League",
+          "divisions": [
+            "10992",
+            "10993",
+            "11552",
+            "11553"
+          ],
+          "csr": {
+            "csr_9": 91,
+            "csr_10": 93,
+            "csr_8": 107
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "name": "Alvin Cox",
+      "roster_player_ids": [
+        1236055,
+        1348811,
+        1327132
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10086089,
+          "name": "Alvin Cox",
+          "division_id": "14022",
+          "division_name": "Wednesday \"Paradise\" No Limit LC League",
+          "divisions": [
+            "13135",
+            "13337",
+            "14022"
+          ],
+          "csr": {
+            "csr_8": 74,
+            "csr_9": 69,
+            "csr_10": 61,
+            "csr_10bp": 67
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "name": "David Jones",
+      "roster_player_ids": [
+        993198,
+        1262936,
+        1186389
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10054308,
+          "name": "David Jones",
+          "division_id": "13077",
+          "division_name": "Thursday \"Big Table Felt\" No Limit LC League",
+          "divisions": [
+            "10972",
+            "11396",
+            "11910",
+            "12148",
+            "12399",
+            "13077"
+          ],
+          "csr": {
+            "csr_8": 58,
+            "csr_9": 43,
+            "csr_10": 35
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "name": "James Carlan",
+      "roster_player_ids": [
+        1282295,
+        1143742
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10065593,
+          "name": "James Carlan",
+          "division_id": "13986",
+          "division_name": "Tuesday \"Zoosters Laggers\" No Limit LC League",
+          "divisions": [
+            "13986"
+          ],
+          "csr": {
+            "csr_8": 85,
+            "csr_9": 62,
+            "csr_10": 73,
+            "csr_10bp": 78
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "name": "Jason Mott",
+      "roster_player_ids": [
+        1377108,
+        1319453
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10082612,
+          "name": "Jason Mott",
+          "division_id": "12148",
+          "division_name": "Tuesday \"Felt Laggers\" No Limit LC League",
+          "divisions": [
+            "12148"
+          ],
+          "csr": {
+            "csr_8": 81,
+            "csr_9": 75,
+            "csr_10": 81
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "name": "John Kolb",
+      "roster_player_ids": [
+        971834,
+        1295505
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10070377,
+          "name": "John Kolb",
+          "division_id": "13205",
+          "division_name": "Monday \"Greeley\" No Limit LC League",
+          "divisions": [
+            "11314",
+            "11920",
+            "12466",
+            "13205",
+            "14064"
+          ],
+          "csr": {
+            "csr_8": 107,
+            "csr_9": 88,
+            "csr_10": 94
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "name": "Jolena Thompson",
+      "roster_player_ids": [
+        1059297,
+        1310532
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10084730,
+          "name": "Jolena Thompson",
+          "division_id": "13937",
+          "division_name": "Wednesday \"Pharaoh's\" No Limit LC League",
+          "divisions": [
+            "12759",
+            "13247",
+            "13937"
+          ],
+          "csr": {
+            "csr_8": 33,
+            "csr_9": 43,
+            "csr_10": 47
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "name": "Kevin Gendill",
+      "roster_player_ids": [
+        1301139,
+        712234
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10060722,
+          "name": "Kevin Gendill",
+          "division_id": "10972",
+          "division_name": "Thursday \"Big Table Felt\" LC League",
+          "divisions": [
+            "10972",
+            "11396",
+            "11910"
+          ],
+          "csr": {
+            "csr_8": 70,
+            "csr_9": 85,
+            "csr_10": 83
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "name": "Mark Avery",
+      "roster_player_ids": [
+        1169913,
+        1124939
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10070479,
+          "name": "Mark Avery",
+          "division_id": "13077",
+          "division_name": "Thursday \"Big Table Felt\" No Limit LC League",
+          "divisions": [
+            "10972",
+            "11396",
+            "11910",
+            "12399",
+            "13077"
+          ],
+          "csr": {
+            "csr_8": 136,
+            "csr_9": 107,
+            "csr_10": 108
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "name": "Travis Thorsten",
+      "roster_player_ids": [
+        972895,
+        1309684
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10054520,
+          "name": "Travis Thorsten",
+          "division_id": "11296",
+          "division_name": "Tuesday \"Piazzas Tuesday\" No Limit 8-ball League",
+          "divisions": [
+            "11296",
+            "11297",
+            "12159"
+          ],
+          "csr": {
+            "csr_9": 91,
+            "csr_10": 106,
+            "csr_7": 102,
+            "csr_8": 112
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    }
+  ]
+}
