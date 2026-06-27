@@ -13,5 +13,11 @@ venv/
 # Only the curated, non-PII extraction (names + ids) is committed downstream.
 basket/
 
+# Sibling pool-data repos are shallow-cloned here at run time (CI + local dev) so
+# Fargo reads their COMMITTED data without ever touching a sibling's local working
+# copy (the hard project boundary). Nothing under _ref/ is ever committed; upstream
+# code is never executed (see docs/cross-league-identity.md).
+_ref/
+
 # Session handoff docs are local-only — never committed.
 handoffs/

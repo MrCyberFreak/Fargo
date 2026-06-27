@@ -145,9 +145,14 @@ above â€” they never cause an existing player to stop being tracked:
     APA players moved to CO while FargoRate still shows their old state, so a
     single out-of-state match is a real player. The raw APA file lives under
     git-ignored `basket/`.
-- **NAPA** (planned) â€” same shape as APA (own rating system, name+state resolve);
-  role is the *team override* (include a local-league player regardless of
-  FargoRate location) and gap-fill.
+- **NAPA** (BUILT 2026-06-27 — see "Cross-league identity" below and
+  `docs/cross-league-identity.md`) — NAPA runs its own rating system (CueSpeed),
+  and its repo commits RAW roster-grid HTML (not a clean export; `napa.db` is
+  gitignored/regenerable and never rebuilt). `src/napa_grid.py` parses the committed
+  grids out of `_ref/NAPA`; `src/import_napa.py` mirrors the APA
+  crossref/resolve/add/manual shape (name-only, CO-imputed; CSR advisory, never a
+  gate). All committed NoCo divisions are admitted (~1,279 players across 58
+  divisions). Same admission-vs-tracking invariant as APA.
 - **Scale note:** ~1,182 ids means ~1,182 fetches/run at ~1s each (~20 min on
   the Actions runner). Acceptable for a daily job; revisit if the roster grows.
   The APA resolve is a one-off batch of ~2,000+ searches (~35â€“40 min), separate
@@ -165,16 +170,51 @@ is the date the change was **detected**, accurate to within one run interval
 (~1 day on a daily schedule).
 
 ## Where things run
-The build sandbox **cannot reach fargorate.com** (allowlist). Every FargoRate
-call runs on a **GitHub Actions runner** (open internet): the scheduled pull
+FargoRate's read API (`dashboard.fargorate.com/api`) IS reachable from the build
+sandbox directly (content-verified 2026-06-27 against the `docs/api.md` fixture --
+player 1310533: robustness 63 / CO / membership 9900007849538), so resolution can be
+developed and tested locally. But every **scheduled** job still runs on a **GitHub
+Actions runner** (open internet) for automation -- and sandbox reachability has been
+inconsistent across environments, so do NOT depend on it for an unattended run and do
+NOT dismantle the local-pull stopgap on this basis: the scheduled pull
 (`.github/workflows/pull.yml`), name resolution (`.github/workflows/resolve.yml`),
-the APA batch resolve (`.github/workflows/resolve-apa.yml`), and the APA recovery
-pass (`.github/workflows/recover-apa.yml`). Claude Code only needs `github.com`.
+the APA batch resolve (`.github/workflows/resolve-apa.yml`), the APA recovery
+pass (`.github/workflows/recover-apa.yml`), and the NAPA batch resolve
+(`.github/workflows/resolve-napa.yml`, which clones `_ref/NAPA` first). Claude Code
+only needs `github.com`.
 No LLM runs inside any scheduled job.
 
 ## Source of truth for the API
 `docs/api.md` â€” verified endpoints, field mapping, and the known-answer fixture
 (`player_id 1310533 â†’ rating 438 / robustness 63 / CO / membership 9900007849538`).
+
+## Cross-league identity (NAPA built; BCA deferred)
+Fargo is the cross-league **identity hub**: each league importer resolves players
+to a stable FargoRate `player_id` and writes an additive, append-only cross-link
+(`apa[]` / `napa[]` / `bca[]`) onto the matching `roster.json` entry. The full
+design contract is `docs/cross-league-identity.md`.
+- **Shared name matching** lives in `src/namematch.py` (norm/surname/is_co/
+  variant_queries/pick_match/...), imported by every importer so they cannot drift.
+- **`_ref/` mechanism:** sibling repos are shallow-cloned into the git-ignored
+  `_ref/` at run time (`scripts/sync_ref.{sh,ps1}`); Fargo reads their COMMITTED data
+  there and NEVER touches a sibling's local working copy or runs upstream code. APA
+  now auto-sources its master from `_ref/APA-Scraper/data/master/players_master.json`
+  (the manual `basket/` drop is the fallback).
+- **Person layer + crosswalk:** `src/people.py` aggregates all of one human's
+  cross-links into `people.json`; `python src/people.py crosswalk` publishes the
+  PII-free `docs/crosswalk.json` (`{source_id -> fargo_player_id, person_id,
+  confidence, match_method}`) that PoolPredict consumes instead of joining by
+  name+state. BCA's id-less links use a synthetic `<division>:<norm name>` key.
+- **Safety:** `src/audit.py` runs read-only audits (inverted-index collision — the
+  HARD invariant, must be empty; cross-source `people_merge_candidates.json`;
+  name-divergence; merge-sanity). `src/ledger.py` + `<source>_unlink.json` make a
+  wrong-link correction replayable instead of a silent roster hand-edit.
+- **Cross-linking is NOT merging:** one human across leagues = many cross-link lists
+  on ONE `player_id` (automatic, safe). Two different `player_id`s for one human stay
+  MANUAL via `people_merges.json`; the audit only emits candidates, never auto-merges.
+- **BCA is deferred (M6):** the schema, people.py, crosswalk, and audits already
+  account for it, but the importer ships once the sibling `bca` project publishes its
+  resolved roster (interface scenario in the design doc).
 
 ## Out of scope (do not build without instruction)
 Comparing the *ratings* of another system vs FargoRate (e.g. NAPA rating vs
@@ -202,7 +242,15 @@ no network â€”
 `resolve`'s real FargoRate calls are exercised on a runner, not in tests.
 `tests/test_people.py` covers the person/profile layer (merge grouping, smallest-id
 person_id, source union + membership dedup, chained merges, profile rendering with
-history). Run: `pip install -r requirements-dev.txt && pytest -q`.
+history). `tests/test_import_napa.py` covers the NAPA importer + grid parser
+(roster-grid HTML id/name/CSR extraction, cross-division master aggregation,
+crossref bucketing + NAPA-internal name-collision quarantine, additive/idempotent
+`napa[]` links, resolve routing, `add` upsert); `tests/test_audit.py` covers the
+read-only audits (inverted-index collisions, cross-source merge-candidates,
+name-divergence, merge-sanity); `tests/test_ledger.py` covers the
+`<source>_unlink.json` correction ledger and its importer wiring. Run:
+`pip install -r requirements-dev.txt && pytest -q` (`pytest.ini` scopes collection
+to `tests/`, so a bare `pytest` does NOT recurse into the `_ref/` sibling clones).
 
 ## Local skills (project-scoped, in `.claude/skills/`)
 These live in this repo, not the global config; the global capability index below
@@ -278,6 +326,7 @@ Execution & roster:
 Data acquisition & identity (pool stack):
 - `scrape-resilience-engineer` - keep scrapers running through bot-challenges / throttles / selector-drift (NAPA's HTTP-200 "one moment" interstitial, sticky-context + retry-the-first-goto); owns scrape RUNTIME robustness. Executor.
 - `entity-resolution-engineer` - cross-source identity resolution / record linkage / de-dup (one person across Fargo/NAPA/APA/Digital Pool): blocking, precision-first auto-merge, union-find + merge-ledger, idempotent rebuild. Executor.
+- `python-data-engineer` - general Python / data-pipeline EXECUTOR for the pool stack + any ETL/scraper-adjacent code: writes + fixes ETL/ELT transforms, pandas/SQLite/sqlalchemy IO, idempotent re-runnable pipelines, schema/dtype + encoding (UTF-8/cp1252) + CSV/JSON parsing bugs - the everyday buggy_code that stalls a scraper-to-database flow. Executor. NOT scrape runtime (`scrape-resilience-engineer`), identity de-dup (`entity-resolution-engineer`), model leakage/calibration (`predictive-model-critic`), scheduling/packaging (`windows-delivery-engineer`), or read-only mapping (`code-explainer`).
 - `data-acquisition-legal-risk-expert` - legal RISK of scraping + warehousing real-player PII (ToS/CFAA, robots, copyright/database rights, data minimization/retention). Flags what needs a real lawyer; not legal advice.
 
 Build-to-revenue (indie products):
@@ -289,7 +338,7 @@ Code / project / built-in:
 - `skill-scout` â€” spot where a new/existing skill could streamline a repeated process.
 - `skill-builder` â€” build a skill from an APPROVED spec.
 - `Explore` â€” broad read-only multi-file search. `Plan` â€” implementation planning.
-- `general-purpose` â€” open-ended multi-step research/search. `claude-code-guide` â€” Q&A on Claude Code / Agent SDK / Claude API.
+- `general-purpose` â€” open-ended multi-step research/search. `claude-code-guide` â€” built-in FALLBACK only; for anything version-sensitive (model ids, pricing, CLI flags, current Claude Code / Agent SDK / API behavior) prefer the live-docs experts `claude-code-expert` / `claude-expert`, which fetch current docs instead of answering from memory.
 - `claude` â€” catch-all default. `statusline-setup` â€” configure the status line.
 
 ### Skills (invoke via the Skill tool / `/name`)
@@ -297,10 +346,13 @@ Code / project / built-in:
 - **Research / prior-art:** `deep-research` (multi-source cited report), `already-solved` (find existing libs/tools before building), `claude-api` (Claude API/SDK reference).
 - **Thinking / planning:** `grill-me` (interrogate YOU one question at a time to pressure-test an idea/plan/decision), `council` (autonomous multi-persona panel + synthesized go/no-go verdict, for a second opinion before committing).
 - **Code quality:** `code-review` (bugs + cleanups on the diff), `simplify` (quality cleanups only), `verify` (run the app to confirm a change), `run` (launch the app), `review` (review a PR), `security-review` (security pass on the branch), `init` (generate a CLAUDE.md).
-- **Harness / config:** `update-config` (settings.json, hooks, permissions), `keybindings-help`, `fewer-permission-prompts`, `loop` (run a prompt on an interval), `schedule` (cron cloud agents), `scaffold` (lay the standard project template), `scaffold-expert` (stand up a new docs-backed/persona expert end-to-end â€” library + agent + optional /ww<x> skill + wire/validate), `insight-amplify` (deep swarm-built insights report â€” derives its own judgments from the same raw data `/insights` reads + maps the agent/skill/expert/library relationships, subtracts what you already built, adversarially verifies, writes an auto-opening HTML report, then offers a Boris/Karpathy persona read; proposes only, no score), `sync-capabilities` (reconcile this list vs disk), `backup-config` (commit+push the global config).
+- **Harness / config:** `update-config` (settings.json, hooks, permissions), `keybindings-help`, `fewer-permission-prompts`, `loop` (run a prompt on an interval), `schedule` (cron cloud agents), `scaffold` (lay the standard project template), `scaffold-expert` (stand up a new docs-backed/persona expert end-to-end â€” library + agent + optional /ww<x> skill + wire/validate), `vendor-corpus` (vendor primary web/PDF sources into an EXISTING `library/<x>/` at integrity grade - raw bytes + SHA256 provenance + verify-vs-raw + pending-not-fabricate + push-protection-safe gitignore - then delegate source-cited corpus prose to a general-purpose agent and a hallucination audit to `agent-eval-strategist`; reusable standalone AND as scaffold-expert's corpus-phase delegate; NOT for creating a new expert (`scaffold-expert`) or the weekly doc-mirror currency refresh (`refresh_libraries`)), `insight-amplify` (deep swarm-built insights report â€” derives its own judgments from the same raw data `/insights` reads + maps the agent/skill/expert/library relationships, subtracts what you already built, adversarially verifies, writes an auto-opening HTML report, then offers a Boris/Karpathy persona read; proposes only, no score), `sync-capabilities` (reconcile this list vs disk), `backup-config` (commit+push the global config), `swarm-build` (multi-stream parallel build with subagents in isolated git worktrees, gated merge-back/verify/push).
 - **Security:** `untrusted-repo-static-audit` (read-only audit of an untrusted clone).
 - **Agile / delivery:** `user-stories`, `sprint-plan`, `retro`, `backlog-refine`, `kanban-flow` â€” methodology questions route through `agile-expert` to the specialists (`scrum-expert`, `sprint-expert`, `kanban-expert`, `agile-scaling-expert`, `agile-metrics-expert`, `agile-backlog-expert`).
 - **Persona advisors:** `wwbd`, `wwkd`, `wwgd` (see the matching agents above).
+
+
+
 
 
 

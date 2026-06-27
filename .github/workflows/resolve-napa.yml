@@ -1,0 +1,87 @@
+name: fargo-resolve-napa
+
+# Batch resolver for the NAPA (Northern Colorado) roster source. Clones the committed
+# NAPA archive into _ref/, parses its roster grids (src/napa_grid.py), buckets each
+# name vs roster.json (attaching a napa[] cross-link to already-rostered players and
+# queueing the rest), searches FargoRate for the queue (CO-preferred, nickname-variant
+# fallback), auto-adds only the exact-name single matches, then rebuilds people.json +
+# the PoolPredict crosswalk and runs the read-only audits. Variant/ambiguous/recovery
+# stay staged for human review. See docs/cross-league-identity.md.
+#
+# NAPA resolution needs the open internet (FargoRate); the build sandbox is not a
+# reliable place for an unattended run, so it runs on a runner. ~1,000+ new-name
+# searches, ~1s each -> allow plenty of wall-clock.
+#
+# REF_TOKEN: a GitHub token (repo-scoped PAT in secrets) used by scripts/sync_ref.sh to
+# clone the sibling MrCyberFreak/NAPA repo. The job's own GITHUB_TOKEN does NOT grant
+# access to other repos, so set the REF_TOKEN secret if NAPA is private.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fargo-resolve-napa
+  cancel-in-progress: false
+
+jobs:
+  resolve-napa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+
+      - name: Clone NAPA committed data into _ref/
+        env:
+          REF_TOKEN: ${{ secrets.REF_TOKEN }}
+        run: bash scripts/sync_ref.sh NAPA
+
+      - name: Crossref NAPA names vs roster (cross-link existing, queue new)
+        run: python src/import_napa.py crossref
+
+      - name: Resolve queued NAPA names to FargoRate ids (CO-preferred + variants)
+        run: python src/import_napa.py resolve
+
+      - name: Add exact-name single matches to roster.json
+        run: python src/import_napa.py add
+
+      - name: Rebuild people.json + publish crosswalk.json
+        run: |
+          python src/people.py build
+          python src/people.py crosswalk
+
+      - name: Generate read-only identity audits
+        run: python src/audit.py all || true   # files generated; collision is asserted below
+
+      - name: Commit NAPA resolution + roster + people + crosswalk + audits
+        run: |
+          git add docs/resolve/napa_resolution.json docs/resolve/napa_to_resolve.json \
+                  docs/resolve/napa_name_collisions.json docs/resolve/audit_*.json \
+                  docs/resolve/people_merge_candidates.json \
+                  roster.json people.json docs/crosswalk.json
+          if ! git diff --cached --quiet; then
+            git config user.name  "fargo-tracker[bot]"
+            git config user.email "actions@users.noreply.github.com"
+            git commit -m "resolve(napa): auto-add exact matches; cross-link existing; rebuild people/crosswalk"
+            # main can advance during the long resolve run; rebase-and-retry so a
+            # non-fast-forward push doesn't discard the work (see pull.yml).
+            for attempt in 1 2 3 4 5; do
+              if git push; then
+                break
+              fi
+              echo "push rejected (attempt $attempt) — rebasing onto origin/${GITHUB_REF_NAME}"
+              git pull --rebase origin "${GITHUB_REF_NAME}"
+              sleep 5
+            done
+          else
+            echo "Nothing to commit."
+          fi
+
+      - name: Assert no cross-link collisions (hard invariant)
+        run: python src/audit.py collisions

@@ -57,6 +57,17 @@ def test_norm_matches_across_punctuation_and_case():
     assert imp.norm("Mary-Jane Smith") == "mary jane smith"
 
 
+def test_resolve_source_prefers_explicit_then_ref_then_basket(tmp_path, monkeypatch):
+    explicit = tmp_path / "explicit.json"
+    assert imp.resolve_source(explicit) == explicit          # explicit --path wins
+    ref, basket = tmp_path / "ref.json", tmp_path / "basket.json"
+    monkeypatch.setattr(imp, "REF_PATH", ref)
+    monkeypatch.setattr(imp, "DEFAULT_PATH", basket)
+    assert imp.resolve_source(None) == basket                # ref absent -> basket fallback
+    ref.write_text("{}", encoding="utf-8")
+    assert imp.resolve_source(None) == ref                   # ref present -> automated source
+
+
 def _setup(tmp_path, monkeypatch, roster_players, apa_players):
     roster_path = tmp_path / "roster.json"
     roster_path.write_text(json.dumps({"players": roster_players}), encoding="utf-8")
