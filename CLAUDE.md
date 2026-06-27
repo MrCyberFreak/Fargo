@@ -1,4 +1,4 @@
-﻿# CLAUDE.md â€” FargoRate Rating Tracker
+# CLAUDE.md â€” FargoRate Rating Tracker
 
 Contract for future Claude Code sessions. Keep it accurate; downstream behavior
 depends on it.
@@ -262,11 +262,11 @@ does not list them.
   clears a verified-stale lock and re-triggers only with `--recover`. Retires with
   the local stopgap once GitHub Actions billing is restored.
 
-## Capabilities â€” what's available & when to reach for it
+## Capabilities — what's available & when to reach for it
 <!--
   The live, authoritative list is injected into every session automatically; this is a
   curated WHEN-TO-USE guide for the currently-active set, so the right tool gets picked
-  reliably. It can drift as capabilities change â€” reconcile with `/sync-capabilities`.
+  reliably. It can drift as capabilities change — reconcile with `/sync-capabilities`.
   Full canonical inventory (incl. disabled plugin hundreds): $CLAUDE_CONFIG_DIR/AGENTS.md.
 -->
 
@@ -277,37 +277,37 @@ when-to-use map. Prefer the most specific expert, and let the parenthetical "NOT
 boundaries disambiguate when two could fire.
 
 ### Expert agents (delegate via the Agent tool)
-Docs-backed â€” they FETCH current docs, so delegate tool questions instead of guessing:
-- `claude-code-expert` â€” Claude Code CLI/harness: hooks, slash commands, skills, subagents, settings.json, MCP config, permissions, CLI flags, SDK.
-- `claude-expert` â€” Claude/Anthropic API & models: model ids, pricing, context windows, Messages API, tool use, prompt caching, batches, SDKs.
-- `claude-design-expert` â€” Claude Design (claude.ai/design): canvas, prototypes, presentations, exports, `/design-sync`.
-- `grok-expert` â€” xAI Grok models & API (docs.x.ai).
-- `grok-build-expert` â€” Grok Build (xAI terminal coding CLI).
-- `notion-expert` â€” Notion app & API (+ live workspace data via the Notion MCP).
-- `mcp-expert` â€” Model Context Protocol itself: spec, building servers/clients, SDKs.
-- `agile-expert` â€” UMBRELLA Agile: Manifesto/12 principles, mindset, Lean, XP, framework-selection; ROUTES framework-deep questions to the specialists below.
+Docs-backed — they FETCH current docs, so delegate tool questions instead of guessing:
+- `claude-code-expert` — Claude Code CLI/harness: hooks, slash commands, skills, subagents, settings.json, MCP config, permissions, CLI flags, SDK.
+- `claude-expert` — Claude/Anthropic API & models: model ids, pricing, context windows, Messages API, tool use, prompt caching, batches, SDKs.
+- `claude-design-expert` — Claude Design (claude.ai/design): canvas, prototypes, presentations, exports, `/design-sync`.
+- `grok-expert` — xAI Grok models & API (docs.x.ai).
+- `grok-build-expert` — Grok Build (xAI terminal coding CLI).
+- `notion-expert` — Notion app & API (+ live workspace data via the Notion MCP).
+- `mcp-expert` — Model Context Protocol itself: spec, building servers/clients, SDKs.
+- `agile-expert` — UMBRELLA Agile: Manifesto/12 principles, mindset, Lean, XP, framework-selection; ROUTES framework-deep questions to the specialists below.
 - `obsidian-expert` - Obsidian app, plugins, themes, vault, Plugin/Dev API (active; kept + documented).
 
 Agile methodology experts (split 2026-06-22 from agile-expert; each docs-backed + its own curated, tracked library):
-- `scrum-expert` â€” the Scrum framework (Scrum Guide 2020): theory/values, roles/accountabilities, events + artifacts + commitments, certs, antipatterns. NOT facilitation (use `sprint-expert`).
-- `sprint-expert` â€” running/facilitating the Sprint: planning, daily, review, retro (formats), Sprint Goal, capacity, antipatterns. NOT Scrum definitions (use `scrum-expert`).
-- `kanban-expert` â€” Kanban (both canons): flow/WIP/pull, the flow metrics, CFD, STATIK, classes of service, Kanban-for-Scrum.
-- `agile-scaling-expert` â€” SAFe, LeSS, Nexus, Scrum@Scale, Disciplined Agile + how to choose.
-- `agile-metrics-expert` â€” EBM, velocity/estimation/#NoEstimates, cycle/lead time/throughput, Monte Carlo, Flow Framework, DORA.
-- `agile-backlog-expert` â€” user stories/INVEST, Gherkin AC, story splitting, refinement, prioritization (MoSCoW/WSJF/RICE/Kano), story/impact mapping.
+- `scrum-expert` — the Scrum framework (Scrum Guide 2020): theory/values, roles/accountabilities, events + artifacts + commitments, certs, antipatterns. NOT facilitation (use `sprint-expert`).
+- `sprint-expert` — running/facilitating the Sprint: planning, daily, review, retro (formats), Sprint Goal, capacity, antipatterns. NOT Scrum definitions (use `scrum-expert`).
+- `kanban-expert` — Kanban (both canons): flow/WIP/pull, the flow metrics, CFD, STATIK, classes of service, Kanban-for-Scrum.
+- `agile-scaling-expert` — SAFe, LeSS, Nexus, Scrum@Scale, Disciplined Agile + how to choose.
+- `agile-metrics-expert` — EBM, velocity/estimation/#NoEstimates, cycle/lead time/throughput, Monte Carlo, Flow Framework, DORA.
+- `agile-backlog-expert` — user stories/INVEST, Gherkin AC, story splitting, refinement, prioritization (MoSCoW/WSJF/RICE/Kano), story/impact mapping.
 
-Persona advisors â€” documented philosophy, source-cited:
-- `boris-expert` â€” "What Would Boris Do?" (Boris Cherny, creator of Claude Code); agentic-coding/harness/engineering taste. Drives `/wwbd`.
-- `karpathy-expert` â€” "What Would Karpathy Do?" (Andrej Karpathy); ML/LLM/agent/learning philosophy. Drives `/wwkd`.
-- `garyvee-expert` â€” "What Would Gary Vee Do?" (Gary Vaynerchuk); attention/content/personal-brand/entrepreneurial-mindset philosophy. Drives `/wwgd`. NOT platform mechanics/pricing (use the creator-monetization experts).
+Persona advisors — documented philosophy, source-cited:
+- `boris-expert` — "What Would Boris Do?" (Boris Cherny, creator of Claude Code); agentic-coding/harness/engineering taste. Drives `/wwbd`.
+- `karpathy-expert` — "What Would Karpathy Do?" (Andrej Karpathy); ML/LLM/agent/learning philosophy. Drives `/wwkd`.
+- `garyvee-expert` — "What Would Gary Vee Do?" (Gary Vaynerchuk); attention/content/personal-brand/entrepreneurial-mindset philosophy. Drives `/wwgd`. NOT platform mechanics/pricing (use the creator-monetization experts).
 
 Creator-monetization domain experts (TikTok; source-cited tracked libraries, promoted from the TikTokMonetize project):
-- `tiktok-platform-monetization` â€” native TikTok money (Creator Rewards, Shop/Affiliate, Subscriptions, LIVE, Series): eligibility, payouts, RPM, faceless-fit.
-- `faceless-content-strategy` â€” faceless formats, monetizable niche selection, audience-pivot mechanics, formatâ†’offer mapping.
-- `brand-deals-sponsorship` â€” sponsorship rates, brand evaluation, deal sourcing/structures, FTC/ASA disclosure.
-- `digital-products-passive-income` â€” build-once-sell-many offers (digital/software/affiliate/POD), unit economics, the TikTokâ†’sale funnel.
-- `audience-analytics-growth` â€” reading real analytics: audience liveness, pivot-transfer risk, engagement baselines, reactivation.
-- `creator-legal-compliance` â€” TikTok policy, copyright/strikes/DMCA, FTC/ASA disclosure, refund/tax basics (not legal advice).
+- `tiktok-platform-monetization` — native TikTok money (Creator Rewards, Shop/Affiliate, Subscriptions, LIVE, Series): eligibility, payouts, RPM, faceless-fit.
+- `faceless-content-strategy` — faceless formats, monetizable niche selection, audience-pivot mechanics, format→offer mapping.
+- `brand-deals-sponsorship` — sponsorship rates, brand evaluation, deal sourcing/structures, FTC/ASA disclosure.
+- `digital-products-passive-income` — build-once-sell-many offers (digital/software/affiliate/POD), unit economics, the TikTok→sale funnel.
+- `audience-analytics-growth` — reading real analytics: audience liveness, pivot-transfer risk, engagement baselines, reactivation.
+- `creator-legal-compliance` — TikTok policy, copyright/strikes/DMCA, FTC/ASA disclosure, refund/tax basics (not legal advice).
 
 System & data critics (read-only - pressure-test your OWN AI/data systems):
 - `agentic-systems-architect` - architecture critic for multi-agent / LLM-orchestration systems: topology, fan-out/fan-in, determinism, partial-failure/idempotency, cost/latency, observability, prompt-injection.
@@ -334,22 +334,23 @@ Build-to-revenue (indie products):
 - `product-monetization-validator` - pre-build demand validation of ONE concrete idea (cheap smoke / fake-door / pre-sale tests, kill-or-continue criteria) before you build it.
 
 Code / project / built-in:
-- `code-explainer` â€” map how a subsystem works / trace a flow across many files (read-only).
-- `skill-scout` â€” spot where a new/existing skill could streamline a repeated process.
-- `skill-builder` â€” build a skill from an APPROVED spec.
-- `Explore` â€” broad read-only multi-file search. `Plan` â€” implementation planning.
-- `general-purpose` â€” open-ended multi-step research/search. `claude-code-guide` â€” built-in FALLBACK only; for anything version-sensitive (model ids, pricing, CLI flags, current Claude Code / Agent SDK / API behavior) prefer the live-docs experts `claude-code-expert` / `claude-expert`, which fetch current docs instead of answering from memory.
-- `claude` â€” catch-all default. `statusline-setup` â€” configure the status line.
+- `code-explainer` — map how a subsystem works / trace a flow across many files (read-only).
+- `skill-scout` — spot where a new/existing skill could streamline a repeated process.
+- `skill-builder` — build a skill from an APPROVED spec.
+- `Explore` — broad read-only multi-file search. `Plan` — implementation planning.
+- `general-purpose` — open-ended multi-step research/search. `claude-code-guide` — built-in FALLBACK only; for anything version-sensitive (model ids, pricing, CLI flags, current Claude Code / Agent SDK / API behavior) prefer the live-docs experts `claude-code-expert` / `claude-expert`, which fetch current docs instead of answering from memory.
+- `claude` — catch-all default. `statusline-setup` — configure the status line.
 
 ### Skills (invoke via the Skill tool / `/name`)
-- **Session flow:** `handoff` (write end-of-session handoff), `handon` (resume from latest handoff), `oneprompt` (distill session into one prompt), `distill` (turn this session's corrections/mistakes into proposed durable rules â€” memories, CLAUDE.md rules, or checks).
+- **Session flow:** `handoff` (write end-of-session handoff), `handon` (resume from latest handoff), `oneprompt` (distill session into one prompt), `distill` (turn this session's corrections/mistakes into proposed durable rules — memories, CLAUDE.md rules, or checks).
 - **Research / prior-art:** `deep-research` (multi-source cited report), `already-solved` (find existing libs/tools before building), `claude-api` (Claude API/SDK reference).
 - **Thinking / planning:** `grill-me` (interrogate YOU one question at a time to pressure-test an idea/plan/decision), `council` (autonomous multi-persona panel + synthesized go/no-go verdict, for a second opinion before committing).
 - **Code quality:** `code-review` (bugs + cleanups on the diff), `simplify` (quality cleanups only), `verify` (run the app to confirm a change), `run` (launch the app), `review` (review a PR), `security-review` (security pass on the branch), `init` (generate a CLAUDE.md).
-- **Harness / config:** `update-config` (settings.json, hooks, permissions), `keybindings-help`, `fewer-permission-prompts`, `loop` (run a prompt on an interval), `schedule` (cron cloud agents), `scaffold` (lay the standard project template), `scaffold-expert` (stand up a new docs-backed/persona expert end-to-end â€” library + agent + optional /ww<x> skill + wire/validate), `vendor-corpus` (vendor primary web/PDF sources into an EXISTING `library/<x>/` at integrity grade - raw bytes + SHA256 provenance + verify-vs-raw + pending-not-fabricate + push-protection-safe gitignore - then delegate source-cited corpus prose to a general-purpose agent and a hallucination audit to `agent-eval-strategist`; reusable standalone AND as scaffold-expert's corpus-phase delegate; NOT for creating a new expert (`scaffold-expert`) or the weekly doc-mirror currency refresh (`refresh_libraries`)), `insight-amplify` (deep swarm-built insights report â€” derives its own judgments from the same raw data `/insights` reads + maps the agent/skill/expert/library relationships, subtracts what you already built, adversarially verifies, writes an auto-opening HTML report, then offers a Boris/Karpathy persona read; proposes only, no score), `sync-capabilities` (reconcile this list vs disk), `backup-config` (commit+push the global config), `swarm-build` (multi-stream parallel build with subagents in isolated git worktrees, gated merge-back/verify/push).
+- **Harness / config:** `update-config` (settings.json, hooks, permissions), `keybindings-help`, `fewer-permission-prompts`, `loop` (run a prompt on an interval), `schedule` (cron cloud agents), `scaffold` (lay the standard project template), `scaffold-expert` (stand up a new docs-backed/persona expert end-to-end — library + agent + optional /ww<x> skill + wire/validate), `vendor-corpus` (vendor primary web/PDF sources into an EXISTING `library/<x>/` at integrity grade - raw bytes + SHA256 provenance + verify-vs-raw + pending-not-fabricate + push-protection-safe gitignore - then delegate source-cited corpus prose to a general-purpose agent and a hallucination audit to `agent-eval-strategist`; reusable standalone AND as scaffold-expert's corpus-phase delegate; NOT for creating a new expert (`scaffold-expert`) or the weekly doc-mirror currency refresh (`refresh_libraries`)), `insight-amplify` (deep swarm-built insights report — derives its own judgments from the same raw data `/insights` reads + maps the agent/skill/expert/library relationships, subtracts what you already built, adversarially verifies, writes an auto-opening HTML report, then offers a Boris/Karpathy persona read; proposes only, no score), `sync-capabilities` (reconcile this list vs disk), `backup-config` (commit+push the global config), `swarm-build` (multi-stream parallel build with subagents in isolated git worktrees, gated merge-back/verify/push).
 - **Security:** `untrusted-repo-static-audit` (read-only audit of an untrusted clone).
-- **Agile / delivery:** `user-stories`, `sprint-plan`, `retro`, `backlog-refine`, `kanban-flow` â€” methodology questions route through `agile-expert` to the specialists (`scrum-expert`, `sprint-expert`, `kanban-expert`, `agile-scaling-expert`, `agile-metrics-expert`, `agile-backlog-expert`).
+- **Agile / delivery:** `user-stories`, `sprint-plan`, `retro`, `backlog-refine`, `kanban-flow` — methodology questions route through `agile-expert` to the specialists (`scrum-expert`, `sprint-expert`, `kanban-expert`, `agile-scaling-expert`, `agile-metrics-expert`, `agile-backlog-expert`).
 - **Persona advisors:** `wwbd`, `wwkd`, `wwgd` (see the matching agents above).
+
 
 
 
