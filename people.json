@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-06-27",
-  "person_count": 2329,
+  "person_count": 2346,
   "merged_count": 5,
   "people": {
     "568": {
@@ -92,13 +92,24 @@
     },
     "10310": {
       "person_id": 10310,
-      "display_name": "Vancurt Quezada",
+      "display_name": "Woody Quezada",
       "fargo_player_ids": [
         10310
       ],
-      "memberships": [],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10061335,
+          "member_number": null,
+          "name": "Woody Quezada",
+          "division_id": "10102",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
       "sources": [
-        "digitalpool"
+        "digitalpool",
+        "napa"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -1253,20 +1264,11 @@
     },
     "18996": {
       "person_id": 18996,
-      "display_name": "David Rusch",
+      "display_name": "Dave Howell",
       "fargo_player_ids": [
         18996
       ],
       "memberships": [
-        {
-          "source": "napa",
-          "member_id": 10076874,
-          "member_number": null,
-          "name": "David Rusch",
-          "division_id": "13205",
-          "match_method": "name",
-          "confidence": "high"
-        },
         {
           "source": "napa",
           "member_id": 10054340,
@@ -2638,6 +2640,29 @@
       ],
       "notes": "",
       "added_date": "2026-06-07"
+    },
+    "666351": {
+      "person_id": 666351,
+      "display_name": "Kent Hoffman",
+      "fargo_player_ids": [
+        666351
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10068553,
+          "member_number": null,
+          "name": "Kent Hoffman",
+          "division_id": "13985",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-06-27"
     },
     "667568": {
       "person_id": 667568,
@@ -4112,21 +4137,11 @@
           "member_number": "80423085",
           "name": "Dustin Sterling",
           "match_method": "name"
-        },
-        {
-          "source": "napa",
-          "member_id": 10046117,
-          "member_number": null,
-          "name": "Dustin Sterling",
-          "division_id": "10243",
-          "match_method": "name",
-          "confidence": "high"
         }
       ],
       "sources": [
         "apa",
-        "digitalpool",
-        "napa"
+        "digitalpool"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -4234,21 +4249,11 @@
           "member_number": "80409313",
           "name": "Ken Schmidt",
           "match_method": "name"
-        },
-        {
-          "source": "napa",
-          "member_id": 10061335,
-          "member_number": null,
-          "name": "Woody Quezada",
-          "division_id": "10102",
-          "match_method": "name",
-          "confidence": "high"
         }
       ],
       "sources": [
         "apa",
-        "digitalpool",
-        "napa"
+        "digitalpool"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -4320,7 +4325,7 @@
     },
     "749606": {
       "person_id": 749606,
-      "display_name": "Pam Rundquist",
+      "display_name": "Rodney Rodriguez",
       "fargo_player_ids": [
         749606
       ],
@@ -4925,13 +4930,24 @@
     },
     "786167": {
       "person_id": 786167,
-      "display_name": "Dustin Sterling/ Austin",
+      "display_name": "Dustin Sterling",
       "fargo_player_ids": [
         786167
       ],
-      "memberships": [],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10046117,
+          "member_number": null,
+          "name": "Dustin Sterling",
+          "division_id": "10243",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
       "sources": [
-        "digitalpool"
+        "digitalpool",
+        "napa"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -5392,20 +5408,9 @@
       "fargo_player_ids": [
         810552
       ],
-      "memberships": [
-        {
-          "source": "napa",
-          "member_id": 10068940,
-          "member_number": null,
-          "name": "Nick Leblanc",
-          "division_id": "13985",
-          "match_method": "name",
-          "confidence": "high"
-        }
-      ],
+      "memberships": [],
       "sources": [
-        "digitalpool",
-        "napa"
+        "digitalpool"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -5803,7 +5808,7 @@
     },
     "831378": {
       "person_id": 831378,
-      "display_name": "Dave Pappas",
+      "display_name": "Josh Thomashefsky",
       "fargo_player_ids": [
         831378
       ],
@@ -7984,20 +7989,9 @@
       "fargo_player_ids": [
         972795
       ],
-      "memberships": [
-        {
-          "source": "napa",
-          "member_id": 10083613,
-          "member_number": null,
-          "name": "Conn Hall",
-          "division_id": "13205",
-          "match_method": "name",
-          "confidence": "high"
-        }
-      ],
+      "memberships": [],
       "sources": [
-        "digitalpool",
-        "napa"
+        "digitalpool"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -8030,7 +8024,7 @@
     },
     "972803": {
       "person_id": 972803,
-      "display_name": "Deo Basnet",
+      "display_name": "Fernando Corona",
       "fargo_player_ids": [
         972803
       ],
@@ -8041,15 +8035,6 @@
           "member_number": "80400137",
           "name": "Deo Basnet",
           "match_method": "name"
-        },
-        {
-          "source": "napa",
-          "member_id": 10063723,
-          "member_number": null,
-          "name": "Deo Basnet",
-          "division_id": "13299",
-          "match_method": "name",
-          "confidence": "high"
         },
         {
           "source": "napa",
@@ -8215,7 +8200,7 @@
     },
     "972848": {
       "person_id": 972848,
-      "display_name": "Manuel Gonzales & Damian",
+      "display_name": "Manuel Gonzales IV",
       "fargo_player_ids": [
         972848
       ],
@@ -8388,13 +8373,24 @@
     },
     "972873": {
       "person_id": 972873,
-      "display_name": "Elliot Abraham",
+      "display_name": "Ryan Ocelnik",
       "fargo_player_ids": [
         972873
       ],
-      "memberships": [],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10061307,
+          "member_number": null,
+          "name": "Ryan Ocelnik",
+          "division_id": "13711",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
       "sources": [
-        "digitalpool"
+        "digitalpool",
+        "napa"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -8437,20 +8433,11 @@
     },
     "972883": {
       "person_id": 972883,
-      "display_name": "Tina Payne",
+      "display_name": "Tiffany Haas",
       "fargo_player_ids": [
         972883
       ],
       "memberships": [
-        {
-          "source": "napa",
-          "member_id": 10041728,
-          "member_number": null,
-          "name": "Tina Payne",
-          "division_id": "11901",
-          "match_method": "name",
-          "confidence": "high"
-        },
         {
           "source": "napa",
           "member_id": 10065583,
@@ -8516,6 +8503,29 @@
       ],
       "notes": "",
       "added_date": "2026-06-06"
+    },
+    "972889": {
+      "person_id": 972889,
+      "display_name": "Tina Payne",
+      "fargo_player_ids": [
+        972889
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10041728,
+          "member_number": null,
+          "name": "Tina Payne",
+          "division_id": "11901",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-06-27"
     },
     "972895": {
       "person_id": 972895,
@@ -9413,7 +9423,7 @@
     },
     "992921": {
       "person_id": 992921,
-      "display_name": "David \"Puff\" Phomoshyma",
+      "display_name": "Pom Rai",
       "fargo_player_ids": [
         992921
       ],
@@ -11241,21 +11251,11 @@
           "member_number": "80400415",
           "name": "Miguel Anariba",
           "match_method": "name"
-        },
-        {
-          "source": "napa",
-          "member_id": 10050311,
-          "member_number": null,
-          "name": "Miguel Anariba",
-          "division_id": "13299",
-          "match_method": "name",
-          "confidence": "high"
         }
       ],
       "sources": [
         "apa",
-        "digitalpool",
-        "napa"
+        "digitalpool"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -12036,6 +12036,29 @@
       "notes": "",
       "added_date": "2026-06-07"
     },
+    "1028707": {
+      "person_id": 1028707,
+      "display_name": "Gina Trujillo",
+      "fargo_player_ids": [
+        1028707
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10065664,
+          "member_number": null,
+          "name": "Gina Trujillo",
+          "division_id": "11480",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-06-27"
+    },
     "1028713": {
       "person_id": 1028713,
       "display_name": "Ernest Castillo",
@@ -12083,7 +12106,7 @@
     },
     "1028717": {
       "person_id": 1028717,
-      "display_name": "Brian Roybal",
+      "display_name": "Isabel Gutierrez",
       "fargo_player_ids": [
         1028717
       ],
@@ -13088,7 +13111,7 @@
     },
     "1051056": {
       "person_id": 1051056,
-      "display_name": "Charles Hix",
+      "display_name": "Charles Hicks",
       "fargo_player_ids": [
         1051056
       ],
@@ -13490,7 +13513,7 @@
     },
     "1057634": {
       "person_id": 1057634,
-      "display_name": "Gina Trujillo",
+      "display_name": "Kathy Chane",
       "fargo_player_ids": [
         1057634
       ],
@@ -13508,15 +13531,6 @@
           "member_number": "80423407",
           "name": "Kathy Chane",
           "match_method": "name"
-        },
-        {
-          "source": "napa",
-          "member_id": 10065664,
-          "member_number": null,
-          "name": "Gina Trujillo",
-          "division_id": "11480",
-          "match_method": "name",
-          "confidence": "high"
         },
         {
           "source": "napa",
@@ -15001,7 +15015,7 @@
     },
     "1088315": {
       "person_id": 1088315,
-      "display_name": "Matt Kotin & Sean Knapp",
+      "display_name": "Matt Kotin",
       "fargo_player_ids": [
         1088315
       ],
@@ -16195,7 +16209,7 @@
     },
     "1098099": {
       "person_id": 1098099,
-      "display_name": "Curly Mansfield & Marissa Campos",
+      "display_name": "Curly Mansfield",
       "fargo_player_ids": [
         1098099
       ],
@@ -16507,6 +16521,29 @@
           "member_number": null,
           "name": "Tommy Martin",
           "division_id": "12466",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-06-27"
+    },
+    "1100225": {
+      "person_id": 1100225,
+      "display_name": "Miguel Anariba",
+      "fargo_player_ids": [
+        1100225
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10050311,
+          "member_number": null,
+          "name": "Miguel Anariba",
+          "division_id": "13299",
           "match_method": "name",
           "confidence": "high"
         }
@@ -17644,6 +17681,29 @@
       "notes": "",
       "added_date": "2026-06-06"
     },
+    "1105180": {
+      "person_id": 1105180,
+      "display_name": "Jenny Laney",
+      "fargo_player_ids": [
+        1105180
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10068291,
+          "member_number": null,
+          "name": "Jenny Laney",
+          "division_id": "13722",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-06-27"
+    },
     "1105181": {
       "person_id": 1105181,
       "display_name": "Jessica Knapp",
@@ -18150,7 +18210,7 @@
     },
     "1106906": {
       "person_id": 1106906,
-      "display_name": "Joe Tsirlin",
+      "display_name": "Shawn pavlovich",
       "fargo_player_ids": [
         1106906
       ],
@@ -18779,6 +18839,29 @@
       "notes": "",
       "added_date": "2026-06-06"
     },
+    "1113412": {
+      "person_id": 1113412,
+      "display_name": "DENISE TENORIO",
+      "fargo_player_ids": [
+        1113412
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10067208,
+          "member_number": null,
+          "name": "Denise Tenorio",
+          "division_id": "13205",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-06-27"
+    },
     "1113419": {
       "person_id": 1113419,
       "display_name": "Jenny Laney",
@@ -18799,21 +18882,11 @@
           "member_number": "80400123",
           "name": "Roland Graham",
           "match_method": "name"
-        },
-        {
-          "source": "napa",
-          "member_id": 10068291,
-          "member_number": null,
-          "name": "Jenny Laney",
-          "division_id": "13722",
-          "match_method": "name",
-          "confidence": "high"
         }
       ],
       "sources": [
         "apa",
-        "digitalpool",
-        "napa"
+        "digitalpool"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -19820,7 +19893,7 @@
     },
     "1118923": {
       "person_id": 1118923,
-      "display_name": "John Baca & Jones",
+      "display_name": "John Baca",
       "fargo_player_ids": [
         1118923
       ],
@@ -20098,7 +20171,7 @@
     },
     "1121051": {
       "person_id": 1121051,
-      "display_name": "Art Pelletier",
+      "display_name": "Bobby Neues",
       "fargo_player_ids": [
         1121051
       ],
@@ -20283,6 +20356,29 @@
       ],
       "notes": "",
       "added_date": "2026-06-06"
+    },
+    "1122645": {
+      "person_id": 1122645,
+      "display_name": "deo basnet",
+      "fargo_player_ids": [
+        1122645
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10063723,
+          "member_number": null,
+          "name": "Deo Basnet",
+          "division_id": "13299",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-06-27"
     },
     "1122646": {
       "person_id": 1122646,
@@ -20884,7 +20980,7 @@
     },
     "1127996": {
       "person_id": 1127996,
-      "display_name": "Chris Linnen/Ronnie",
+      "display_name": "Jarred Lewis",
       "fargo_player_ids": [
         1127996
       ],
@@ -20944,6 +21040,29 @@
       ],
       "notes": "",
       "added_date": "2026-06-07"
+    },
+    "1128444": {
+      "person_id": 1128444,
+      "display_name": "Ashleigh Skoworn",
+      "fargo_player_ids": [
+        1128444
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10054616,
+          "member_number": null,
+          "name": "Ashleigh Skoworn",
+          "division_id": "13985",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-06-27"
     },
     "1128445": {
       "person_id": 1128445,
@@ -21345,6 +21464,29 @@
       ],
       "notes": "",
       "added_date": "2026-06-06"
+    },
+    "1131331": {
+      "person_id": 1131331,
+      "display_name": "Kurt Schmidt",
+      "fargo_player_ids": [
+        1131331
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10079184,
+          "member_number": null,
+          "name": "Kurt Schmidt",
+          "division_id": "13205",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-06-27"
     },
     "1132303": {
       "person_id": 1132303,
@@ -22054,11 +22196,21 @@
           "member_number": "80417442",
           "name": "Zach Clemons",
           "match_method": "name"
+        },
+        {
+          "source": "napa",
+          "member_id": 10071236,
+          "member_number": null,
+          "name": "Zacharia Clemons",
+          "division_id": "13744",
+          "match_method": "manual",
+          "confidence": "high"
         }
       ],
       "sources": [
         "apa",
-        "digitalpool"
+        "digitalpool",
+        "napa"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -22784,7 +22936,7 @@
     },
     "1142974": {
       "person_id": 1142974,
-      "display_name": "Greg Santorno",
+      "display_name": "Marissa Campos",
       "fargo_player_ids": [
         1142974
       ],
@@ -22927,6 +23079,29 @@
       "notes": "",
       "added_date": "2026-06-06"
     },
+    "1144651": {
+      "person_id": 1144651,
+      "display_name": "Nick Leblanc",
+      "fargo_player_ids": [
+        1144651
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10068940,
+          "member_number": null,
+          "name": "Nick Leblanc",
+          "division_id": "13985",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-06-27"
+    },
     "1144683": {
       "person_id": 1144683,
       "display_name": "Jack Laney",
@@ -22997,20 +23172,11 @@
     },
     "1146323": {
       "person_id": 1146323,
-      "display_name": "Denise Tenorio",
+      "display_name": "David P Pappas",
       "fargo_player_ids": [
         1146323
       ],
       "memberships": [
-        {
-          "source": "napa",
-          "member_id": 10067208,
-          "member_number": null,
-          "name": "Denise Tenorio",
-          "division_id": "13205",
-          "match_method": "name",
-          "confidence": "high"
-        },
         {
           "source": "napa",
           "member_id": 10072157,
@@ -23459,7 +23625,7 @@
     },
     "1152950": {
       "person_id": 1152950,
-      "display_name": "Esmeralda Roybal",
+      "display_name": "Catherine Romero",
       "fargo_player_ids": [
         1152950
       ],
@@ -23809,21 +23975,11 @@
           "member_number": "80435314",
           "name": "Matthew Cox",
           "match_method": "name"
-        },
-        {
-          "source": "napa",
-          "member_id": 10083213,
-          "member_number": null,
-          "name": "Matthew Cox",
-          "division_id": "12148",
-          "match_method": "name",
-          "confidence": "high"
         }
       ],
       "sources": [
         "apa",
-        "digitalpool",
-        "napa"
+        "digitalpool"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -23884,6 +24040,29 @@
           "member_number": null,
           "name": "Rachael Nadeau",
           "division_id": "11480",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-06-27"
+    },
+    "1156272": {
+      "person_id": 1156272,
+      "display_name": "Allan Sease",
+      "fargo_player_ids": [
+        1156272
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10076556,
+          "member_number": null,
+          "name": "Allan Sease",
+          "division_id": "13937",
           "match_method": "name",
           "confidence": "high"
         }
@@ -25746,6 +25925,29 @@
       "notes": "",
       "added_date": "2026-06-06"
     },
+    "1183340": {
+      "person_id": 1183340,
+      "display_name": "Chantelle Schuckman",
+      "fargo_player_ids": [
+        1183340
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10088967,
+          "member_number": null,
+          "name": "Chantelle Schuckman",
+          "division_id": "13722",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-06-27"
+    },
     "1183657": {
       "person_id": 1183657,
       "display_name": "Sam Fritzinger",
@@ -25863,6 +26065,29 @@
       ],
       "notes": "",
       "added_date": "2026-06-06"
+    },
+    "1185591": {
+      "person_id": 1185591,
+      "display_name": "David Rusch",
+      "fargo_player_ids": [
+        1185591
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10076874,
+          "member_number": null,
+          "name": "David Rusch",
+          "division_id": "13205",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-06-27"
     },
     "1185596": {
       "person_id": 1185596,
@@ -26338,7 +26563,7 @@
     },
     "1190543": {
       "person_id": 1190543,
-      "display_name": "Ryan Ocelnik",
+      "display_name": "Jennifer Harding",
       "fargo_player_ids": [
         1190543
       ],
@@ -26356,15 +26581,6 @@
           "member_number": "80432778",
           "name": "Jennifer Harding",
           "match_method": "name"
-        },
-        {
-          "source": "napa",
-          "member_id": 10061307,
-          "member_number": null,
-          "name": "Ryan Ocelnik",
-          "division_id": "13711",
-          "match_method": "name",
-          "confidence": "high"
         },
         {
           "source": "napa",
@@ -27533,21 +27749,11 @@
           "member_number": "80430116",
           "name": "David Miller",
           "match_method": "name"
-        },
-        {
-          "source": "napa",
-          "member_id": 10088967,
-          "member_number": null,
-          "name": "Chantelle Schuckman",
-          "division_id": "13722",
-          "match_method": "name",
-          "confidence": "high"
         }
       ],
       "sources": [
         "apa",
-        "digitalpool",
-        "napa"
+        "digitalpool"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -29032,13 +29238,24 @@
     },
     "1223409": {
       "person_id": 1223409,
-      "display_name": "Demetrio Najera",
+      "display_name": "jose nevarez",
       "fargo_player_ids": [
         1223409
       ],
-      "memberships": [],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10060432,
+          "member_number": null,
+          "name": "Jose \"Skinny\" Nevarez",
+          "division_id": "13299",
+          "match_method": "manual",
+          "confidence": "high"
+        }
+      ],
       "sources": [
-        "digitalpool"
+        "digitalpool",
+        "napa"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -29816,20 +30033,9 @@
       "fargo_player_ids": [
         1232310
       ],
-      "memberships": [
-        {
-          "source": "napa",
-          "member_id": 10079184,
-          "member_number": null,
-          "name": "Kurt Schmidt",
-          "division_id": "13205",
-          "match_method": "name",
-          "confidence": "high"
-        }
-      ],
+      "memberships": [],
       "sources": [
-        "digitalpool",
-        "napa"
+        "digitalpool"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -30987,10 +31193,20 @@
           "member_number": "80400709",
           "name": "Truman McElroy",
           "match_method": "name"
+        },
+        {
+          "source": "napa",
+          "member_id": 10086642,
+          "member_number": null,
+          "name": "Shawn \"Truman\" McElroy",
+          "division_id": "13985",
+          "match_method": "manual",
+          "confidence": "high"
         }
       ],
       "sources": [
-        "apa"
+        "apa",
+        "napa"
       ],
       "notes": "",
       "added_date": "2026-06-07"
@@ -31781,7 +31997,7 @@
     },
     "1245237": {
       "person_id": 1245237,
-      "display_name": "Misty Mitchell",
+      "display_name": "Maya Briggs",
       "fargo_player_ids": [
         1245237
       ],
@@ -32572,7 +32788,7 @@
     },
     "1254035": {
       "person_id": 1254035,
-      "display_name": "Jeff Kakac",
+      "display_name": "Prahlad Kannojoo",
       "fargo_player_ids": [
         1254035
       ],
@@ -32631,9 +32847,20 @@
       "fargo_player_ids": [
         1254514
       ],
-      "memberships": [],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10075537,
+          "member_number": null,
+          "name": "James \"Chewi\" Ghaffari",
+          "division_id": "13722",
+          "match_method": "manual",
+          "confidence": "high"
+        }
+      ],
       "sources": [
-        "digitalpool"
+        "digitalpool",
+        "napa"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -32822,20 +33049,9 @@
       "fargo_player_ids": [
         1256345
       ],
-      "memberships": [
-        {
-          "source": "napa",
-          "member_id": 10068553,
-          "member_number": null,
-          "name": "Kent Hoffman",
-          "division_id": "13985",
-          "match_method": "name",
-          "confidence": "high"
-        }
-      ],
+      "memberships": [],
       "sources": [
-        "digitalpool",
-        "napa"
+        "digitalpool"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -33349,6 +33565,29 @@
       "notes": "",
       "added_date": "2026-06-06"
     },
+    "1259343": {
+      "person_id": 1259343,
+      "display_name": "Daryl-Lynne Cousins",
+      "fargo_player_ids": [
+        1259343
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10089003,
+          "member_number": null,
+          "name": "Daryllynne Cousins",
+          "division_id": "13711",
+          "match_method": "manual",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-06-27"
+    },
     "1259396": {
       "person_id": 1259396,
       "display_name": "Mike Harman",
@@ -33450,7 +33689,7 @@
     },
     "1260549": {
       "person_id": 1260549,
-      "display_name": "Marty Wilczewski",
+      "display_name": "Jamie Caron",
       "fargo_player_ids": [
         1260549
       ],
@@ -33575,9 +33814,20 @@
       "fargo_player_ids": [
         1262933
       ],
-      "memberships": [],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10081129,
+          "member_number": null,
+          "name": "Abhinay Edake",
+          "division_id": "13299",
+          "match_method": "manual",
+          "confidence": "high"
+        }
+      ],
       "sources": [
-        "digitalpool"
+        "digitalpool",
+        "napa"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -34352,6 +34602,29 @@
       "notes": "",
       "added_date": "2026-06-07"
     },
+    "1272169": {
+      "person_id": 1272169,
+      "display_name": "Matthew R Cox",
+      "fargo_player_ids": [
+        1272169
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10083213,
+          "member_number": null,
+          "name": "Matthew Cox",
+          "division_id": "12148",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-06-27"
+    },
     "1272172": {
       "person_id": 1272172,
       "display_name": "Jim Ruppel",
@@ -34496,20 +34769,9 @@
       "fargo_player_ids": [
         1274330
       ],
-      "memberships": [
-        {
-          "source": "napa",
-          "member_id": 10076556,
-          "member_number": null,
-          "name": "Allan Sease",
-          "division_id": "13937",
-          "match_method": "name",
-          "confidence": "high"
-        }
-      ],
+      "memberships": [],
       "sources": [
-        "digitalpool",
-        "napa"
+        "digitalpool"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -34819,6 +35081,29 @@
       ],
       "notes": "",
       "added_date": "2026-06-07"
+    },
+    "1280171": {
+      "person_id": 1280171,
+      "display_name": "Conn Hall",
+      "fargo_player_ids": [
+        1280171
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10083613,
+          "member_number": null,
+          "name": "Conn Hall",
+          "division_id": "13205",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-06-27"
     },
     "1280299": {
       "person_id": 1280299,
@@ -35644,7 +35929,7 @@
     },
     "1295505": {
       "person_id": 1295505,
-      "display_name": "John Kolb",
+      "display_name": "Karla Travis",
       "fargo_player_ids": [
         1295505
       ],
@@ -35789,7 +36074,7 @@
     },
     "1296844": {
       "person_id": 1296844,
-      "display_name": "Jose Ramirez & Eva",
+      "display_name": "Jose Ramirez",
       "fargo_player_ids": [
         1296844
       ],
@@ -35856,7 +36141,7 @@
     },
     "1298074": {
       "person_id": 1298074,
-      "display_name": "Dino (Dean) Devost",
+      "display_name": "Joel Rodriguez",
       "fargo_player_ids": [
         1298074
       ],
@@ -36308,7 +36593,7 @@
     },
     "1304470": {
       "person_id": 1304470,
-      "display_name": "Brijesh Vangala Doraisamy",
+      "display_name": "Brijesh Vangaladoraisamy",
       "fargo_player_ids": [
         1304470
       ],
@@ -36484,6 +36769,29 @@
           "name": "Ruben Trujillo",
           "division_id": "13711",
           "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-06-27"
+    },
+    "1306841": {
+      "person_id": 1306841,
+      "display_name": "Monique Mo Santistevan",
+      "fargo_player_ids": [
+        1306841
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10090080,
+          "member_number": null,
+          "name": "Monique \"Mo\" Santistevan",
+          "division_id": "13711",
+          "match_method": "manual",
           "confidence": "high"
         }
       ],
@@ -37616,9 +37924,20 @@
       "fargo_player_ids": [
         1315457
       ],
-      "memberships": [],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10082769,
+          "member_number": null,
+          "name": "Harley Jr Ohlinger",
+          "division_id": "13722",
+          "match_method": "manual",
+          "confidence": "high"
+        }
+      ],
       "sources": [
-        "digitalpool"
+        "digitalpool",
+        "napa"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -39664,21 +39983,11 @@
           "member_number": "80425053",
           "name": "Ashleigh Skoworn",
           "match_method": "name"
-        },
-        {
-          "source": "napa",
-          "member_id": 10054616,
-          "member_number": null,
-          "name": "Ashleigh Skoworn",
-          "division_id": "13985",
-          "match_method": "name",
-          "confidence": "high"
         }
       ],
       "sources": [
         "apa",
-        "digitalpool",
-        "napa"
+        "digitalpool"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -42428,7 +42737,7 @@
     },
     "1364565": {
       "person_id": 1364565,
-      "display_name": "Chris Slindee",
+      "display_name": "Kurt Funk",
       "fargo_player_ids": [
         1364565
       ],
@@ -43623,7 +43932,7 @@
     },
     "1370210": {
       "person_id": 1370210,
-      "display_name": "Jeff Ambs",
+      "display_name": "Olman Quiros",
       "fargo_player_ids": [
         1370210
       ],

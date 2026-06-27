@@ -1,8 +1,26 @@
 {
   "generated_at": "2026-06-27",
-  "candidate_count": 6,
+  "candidate_count": 16,
   "note": "evidence only -- confirm by hand into people_merges.json; never auto-merged",
   "candidates": [
+    {
+      "norm": "ashleigh skoworn",
+      "name": "Ashleigh Skoworn",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 1128444,
+          "sources": [
+            "napa"
+          ]
+        },
+        {
+          "fargo_player_id": 1338676,
+          "sources": [
+            "apa"
+          ]
+        }
+      ]
+    },
     {
       "norm": "bryson ford",
       "name": "Bryson Ford",
@@ -17,6 +35,78 @@
           "fargo_player_id": 1363082,
           "sources": [
             "napa"
+          ]
+        }
+      ]
+    },
+    {
+      "norm": "chantelle schuckman",
+      "name": "Chantelle Schuckman",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 1183340,
+          "sources": [
+            "napa"
+          ]
+        },
+        {
+          "fargo_player_id": 1202475,
+          "sources": [
+            "apa"
+          ]
+        }
+      ]
+    },
+    {
+      "norm": "deo basnet",
+      "name": "Deo Basnet",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 972803,
+          "sources": [
+            "apa"
+          ]
+        },
+        {
+          "fargo_player_id": 1122645,
+          "sources": [
+            "napa"
+          ]
+        }
+      ]
+    },
+    {
+      "norm": "dustin sterling",
+      "name": "Dustin Sterling",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 740271,
+          "sources": [
+            "apa"
+          ]
+        },
+        {
+          "fargo_player_id": 786167,
+          "sources": [
+            "napa"
+          ]
+        }
+      ]
+    },
+    {
+      "norm": "gina trujillo",
+      "name": "Gina Trujillo",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 1028707,
+          "sources": [
+            "napa"
+          ]
+        },
+        {
+          "fargo_player_id": 1057634,
+          "sources": [
+            "apa"
           ]
         }
       ]
@@ -58,6 +148,24 @@
       ]
     },
     {
+      "norm": "jenny laney",
+      "name": "Jenny Laney",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 1105180,
+          "sources": [
+            "napa"
+          ]
+        },
+        {
+          "fargo_player_id": 1113419,
+          "sources": [
+            "apa"
+          ]
+        }
+      ]
+    },
+    {
       "norm": "kris sandoval",
       "name": "Kris Sandoval",
       "fargo_ids": [
@@ -71,6 +179,42 @@
           "fargo_player_id": 1249922,
           "sources": [
             "apa"
+          ]
+        }
+      ]
+    },
+    {
+      "norm": "matthew cox",
+      "name": "Matthew Cox",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 1155789,
+          "sources": [
+            "apa"
+          ]
+        },
+        {
+          "fargo_player_id": 1272169,
+          "sources": [
+            "napa"
+          ]
+        }
+      ]
+    },
+    {
+      "norm": "miguel anariba",
+      "name": "Miguel Anariba",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 1014394,
+          "sources": [
+            "apa"
+          ]
+        },
+        {
+          "fargo_player_id": 1100225,
+          "sources": [
+            "napa"
           ]
         }
       ]
@@ -94,6 +238,24 @@
       ]
     },
     {
+      "norm": "ryan ocelnik",
+      "name": "Ryan Ocelnik",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 972873,
+          "sources": [
+            "napa"
+          ]
+        },
+        {
+          "fargo_player_id": 1190543,
+          "sources": [
+            "apa"
+          ]
+        }
+      ]
+    },
+    {
       "norm": "tim brown",
       "name": "Tim Brown",
       "fargo_ids": [
@@ -105,6 +267,24 @@
         },
         {
           "fargo_player_id": 1380955,
+          "sources": [
+            "apa"
+          ]
+        }
+      ]
+    },
+    {
+      "norm": "woody quezada",
+      "name": "Woody Quezada",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 10310,
+          "sources": [
+            "napa"
+          ]
+        },
+        {
+          "fargo_player_id": 745183,
           "sources": [
             "apa"
           ]

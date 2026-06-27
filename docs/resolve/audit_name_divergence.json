@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-06-27",
-  "flag_count": 97,
+  "flag_count": 65,
   "flags": [
     {
       "fargo_player_id": 1041504,
@@ -27,34 +27,16 @@
       "link_name": "Asher Doty"
     },
     {
-      "fargo_player_id": 1121051,
-      "fargo_name": "Art Pelletier",
-      "source": "napa",
-      "link_name": "Bobby Neues"
-    },
-    {
       "fargo_player_id": 1242862,
       "fargo_name": "Arjun Suri",
       "source": "apa",
       "link_name": "Dakota Roach"
     },
     {
-      "fargo_player_id": 1304470,
-      "fargo_name": "Brijesh Vangala Doraisamy",
-      "source": "napa",
-      "link_name": "Brijesh Vangaladoraisamy"
-    },
-    {
       "fargo_player_id": 1028717,
-      "fargo_name": "Brian Roybal",
+      "fargo_name": "Isabel Gutierrez",
       "source": "apa",
-      "link_name": "Isabel Gutierrez"
-    },
-    {
-      "fargo_player_id": 1028717,
-      "fargo_name": "Brian Roybal",
-      "source": "napa",
-      "link_name": "Isabel Gutierrez"
+      "link_name": "Brian Roybal"
     },
     {
       "fargo_player_id": 1202475,
@@ -63,52 +45,10 @@
       "link_name": "David Miller"
     },
     {
-      "fargo_player_id": 1051056,
-      "fargo_name": "Charles Hix",
-      "source": "apa",
-      "link_name": "Charles Hicks"
-    },
-    {
-      "fargo_player_id": 1051056,
-      "fargo_name": "Charles Hix",
-      "source": "napa",
-      "link_name": "Charles Hicks"
-    },
-    {
-      "fargo_player_id": 1127996,
-      "fargo_name": "Chris Linnen/Ronnie",
-      "source": "apa",
-      "link_name": "Jarred Lewis"
-    },
-    {
-      "fargo_player_id": 1127996,
-      "fargo_name": "Chris Linnen/Ronnie",
-      "source": "napa",
-      "link_name": "Jarred Lewis"
-    },
-    {
-      "fargo_player_id": 1364565,
-      "fargo_name": "Chris Slindee",
-      "source": "napa",
-      "link_name": "Kurt Funk"
-    },
-    {
-      "fargo_player_id": 1098099,
-      "fargo_name": "Curly Mansfield & Marissa Campos",
-      "source": "napa",
-      "link_name": "Curly Mansfield"
-    },
-    {
       "fargo_player_id": 1140021,
       "fargo_name": "Dale Rodgers",
       "source": "apa",
       "link_name": "Esperanza Garza"
-    },
-    {
-      "fargo_player_id": 831378,
-      "fargo_name": "Dave Pappas",
-      "source": "napa",
-      "link_name": "Josh Thomashefsky"
     },
     {
       "fargo_player_id": 1256872,
@@ -117,34 +57,10 @@
       "link_name": "Travis Villiere"
     },
     {
-      "fargo_player_id": 1298074,
-      "fargo_name": "Dino (Dean) Devost",
-      "source": "napa",
-      "link_name": "Joel Rodriguez"
-    },
-    {
-      "fargo_player_id": 1146323,
-      "fargo_name": "Denise Tenorio",
-      "source": "napa",
-      "link_name": "David Pappas"
-    },
-    {
       "fargo_player_id": 972803,
-      "fargo_name": "Deo Basnet",
-      "source": "napa",
-      "link_name": "Fernando Corona"
-    },
-    {
-      "fargo_player_id": 18996,
-      "fargo_name": "David Rusch",
-      "source": "napa",
-      "link_name": "Dave Howell"
-    },
-    {
-      "fargo_player_id": 992921,
-      "fargo_name": "David \"Puff\" Phomoshyma",
-      "source": "napa",
-      "link_name": "Pom Rai"
+      "fargo_name": "Fernando Corona",
+      "source": "apa",
+      "link_name": "Deo Basnet"
     },
     {
       "fargo_player_id": 1156046,
@@ -159,22 +75,10 @@
       "link_name": "Earl Cooley"
     },
     {
-      "fargo_player_id": 1152950,
-      "fargo_name": "Esmeralda Roybal",
-      "source": "napa",
-      "link_name": "Catherine Romero"
-    },
-    {
       "fargo_player_id": 1057634,
-      "fargo_name": "Gina Trujillo",
+      "fargo_name": "Kathy Chane",
       "source": "apa",
-      "link_name": "Kathy Chane"
-    },
-    {
-      "fargo_player_id": 1057634,
-      "fargo_name": "Gina Trujillo",
-      "source": "napa",
-      "link_name": "Kathy Chane"
+      "link_name": "Gina Trujillo"
     },
     {
       "fargo_player_id": 667568,
@@ -183,58 +87,16 @@
       "link_name": "Tyler Olds"
     },
     {
-      "fargo_player_id": 1142974,
-      "fargo_name": "Greg Santorno",
-      "source": "napa",
-      "link_name": "Marissa Campos"
-    },
-    {
       "fargo_player_id": 1113419,
       "fargo_name": "Jenny Laney",
       "source": "apa",
       "link_name": "Roland Graham"
     },
     {
-      "fargo_player_id": 1254035,
-      "fargo_name": "Jeff Kakac",
-      "source": "napa",
-      "link_name": "Prahlad Kannojoo"
-    },
-    {
-      "fargo_player_id": 1370210,
-      "fargo_name": "Jeff Ambs",
-      "source": "napa",
-      "link_name": "Olman Quiros"
-    },
-    {
-      "fargo_player_id": 1106906,
-      "fargo_name": "Joe Tsirlin",
-      "source": "apa",
-      "link_name": "Shawn Pavlovich"
-    },
-    {
-      "fargo_player_id": 1106906,
-      "fargo_name": "Joe Tsirlin",
-      "source": "napa",
-      "link_name": "Shawn Pavlovich"
-    },
-    {
-      "fargo_player_id": 1118923,
-      "fargo_name": "John Baca & Jones",
-      "source": "napa",
-      "link_name": "John Baca"
-    },
-    {
       "fargo_player_id": 1341583,
       "fargo_name": "John",
       "source": "apa",
       "link_name": "Joe Johnson"
-    },
-    {
-      "fargo_player_id": 1295505,
-      "fargo_name": "John Kolb",
-      "source": "napa",
-      "link_name": "Karla Travis"
     },
     {
       "fargo_player_id": 1059297,
@@ -249,18 +111,6 @@
       "link_name": "Joseph Elliott"
     },
     {
-      "fargo_player_id": 1296844,
-      "fargo_name": "Jose Ramirez & Eva",
-      "source": "apa",
-      "link_name": "Jose Ramirez"
-    },
-    {
-      "fargo_player_id": 1296844,
-      "fargo_name": "Jose Ramirez & Eva",
-      "source": "napa",
-      "link_name": "Jose Ramirez"
-    },
-    {
       "fargo_player_id": 1202498,
       "fargo_name": "Marco Tony Caballeros",
       "source": "apa",
@@ -271,12 +121,6 @@
       "fargo_name": "Marco Tony Caballeros",
       "source": "napa",
       "link_name": "Tony Caballeros"
-    },
-    {
-      "fargo_player_id": 972848,
-      "fargo_name": "Manuel Gonzales & Damian",
-      "source": "napa",
-      "link_name": "Manuel Gonzales IV"
     },
     {
       "fargo_player_id": 1134629,
@@ -285,34 +129,10 @@
       "link_name": "Mark Lubischer"
     },
     {
-      "fargo_player_id": 1088315,
-      "fargo_name": "Matt Kotin & Sean Knapp",
-      "source": "napa",
-      "link_name": "Matt Kotin"
-    },
-    {
-      "fargo_player_id": 1260549,
-      "fargo_name": "Marty Wilczewski",
-      "source": "napa",
-      "link_name": "Jamie Caron"
-    },
-    {
       "fargo_player_id": 1073700,
       "fargo_name": "Marie Judd",
       "source": "apa",
       "link_name": "Nathan Smith"
-    },
-    {
-      "fargo_player_id": 1245237,
-      "fargo_name": "Misty Mitchell",
-      "source": "napa",
-      "link_name": "Maya Briggs"
-    },
-    {
-      "fargo_player_id": 749606,
-      "fargo_name": "Pam Rundquist",
-      "source": "napa",
-      "link_name": "Rodney Rodriguez"
     },
     {
       "fargo_player_id": 1236065,
@@ -322,15 +142,9 @@
     },
     {
       "fargo_player_id": 1190543,
-      "fargo_name": "Ryan Ocelnik",
+      "fargo_name": "Jennifer Harding",
       "source": "apa",
-      "link_name": "Jennifer Harding"
-    },
-    {
-      "fargo_player_id": 1190543,
-      "fargo_name": "Ryan Ocelnik",
-      "source": "napa",
-      "link_name": "Jennifer Harding"
+      "link_name": "Ryan Ocelnik"
     },
     {
       "fargo_player_id": 1068476,
@@ -343,12 +157,6 @@
       "fargo_name": "Sandra Padilla/Amanda Trich",
       "source": "apa",
       "link_name": "Sandra Padilla"
-    },
-    {
-      "fargo_player_id": 972883,
-      "fargo_name": "Tina Payne",
-      "source": "napa",
-      "link_name": "Tiffany Haas"
     },
     {
       "fargo_player_id": 745183,

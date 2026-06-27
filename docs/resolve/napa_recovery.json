@@ -1,0 +1,1182 @@
+{
+  "generated_at": "2026-06-27",
+  "unfound_scanned": 420,
+  "recovered": [
+    {
+      "search_name": "Abhinay Edake",
+      "query": "Abhi Edake",
+      "candidates": [
+        {
+          "player_id": 1262933,
+          "name": "Abhi edake",
+          "location": "CO",
+          "rating": 643,
+          "robustness": 1569,
+          "membership_id": "9900007249789"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10081129,
+          "name": "Abhinay Edake",
+          "division_id": "13299",
+          "division_name": "Tuesday \"Piazzas Tuesday\" No Limit LC League",
+          "divisions": [
+            "12159",
+            "13160",
+            "13161",
+            "13299"
+          ],
+          "csr": {
+            "csr_8": 108,
+            "csr_9": 95,
+            "csr_10": 95,
+            "csr_10bp": 95
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Bob z Ernst",
+      "query": "Bob Ernst",
+      "candidates": [
+        {
+          "player_id": 715148,
+          "name": "Bob Ernst",
+          "location": "Butler PA",
+          "rating": 436,
+          "robustness": 701,
+          "membership_id": "0308255"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10072154,
+          "name": "Bob z Ernst",
+          "division_id": "11050",
+          "division_name": "Wednesday \"Pharaoh's\" No Limit LC League",
+          "divisions": [
+            "11050"
+          ],
+          "csr": {
+            "csr_8": 37,
+            "csr_9": 52,
+            "csr_10": 50
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Daniel f Lopez",
+      "query": "Dani Lopez",
+      "candidates": [
+        {
+          "player_id": 987313,
+          "name": "Danielle Farmer-Lopez",
+          "location": "Las Vegas NV",
+          "rating": 454,
+          "robustness": 15,
+          "membership_id": "9900004050821"
+        },
+        {
+          "player_id": 1272723,
+          "name": "DANIEL LOPEZ",
+          "location": "KY",
+          "rating": 342,
+          "robustness": 57,
+          "membership_id": "9900007351376"
+        },
+        {
+          "player_id": 1146212,
+          "name": "Daniel Lopez",
+          "location": "TX",
+          "rating": 518,
+          "robustness": 2190,
+          "membership_id": "9900005850475"
+        },
+        {
+          "player_id": 1109619,
+          "name": "Daniel Lopez",
+          "location": "Las Vegas NM",
+          "rating": 321,
+          "robustness": 443,
+          "membership_id": "9900005474749"
+        },
+        {
+          "player_id": 1290278,
+          "name": "Daniel Lopez",
+          "location": "OR",
+          "rating": 284,
+          "robustness": 5,
+          "membership_id": "9900007537442"
+        },
+        {
+          "player_id": 1114204,
+          "name": "Daniel Lopez",
+          "location": "Oakland CA",
+          "rating": 480,
+          "robustness": 20,
+          "membership_id": "9900005521122"
+        },
+        {
+          "player_id": 1371270,
+          "name": "Daniel Lopez",
+          "location": "Fort Lauderdale FL",
+          "rating": 400,
+          "robustness": 0,
+          "membership_id": "9900008608226"
+        },
+        {
+          "player_id": 1192330,
+          "name": "Daniel Lez Lopez",
+          "location": "Platteville CO",
+          "rating": 300,
+          "robustness": 135,
+          "membership_id": "9900006525112"
+        },
+        {
+          "player_id": 997433,
+          "name": "Daniel Lopez Jr",
+          "location": "West Palm Beach FL",
+          "rating": 478,
+          "robustness": 1409,
+          "membership_id": "9900004181327"
+        },
+        {
+          "player_id": 653063,
+          "name": "Daniel Lopez Sr",
+          "location": "W Palm Beach FL",
+          "rating": 472,
+          "robustness": 2785,
+          "membership_id": "9900001335013"
+        },
+        {
+          "player_id": 1299119,
+          "name": "DANIEL VAZQUEZ LOPEZ",
+          "location": null,
+          "rating": 367,
+          "robustness": 0,
+          "membership_id": "9900007729175"
+        },
+        {
+          "player_id": 1208435,
+          "name": "daniel lopez",
+          "location": "AZ",
+          "rating": 421,
+          "robustness": 859,
+          "membership_id": "9900006686578"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10087413,
+          "name": "Daniel f Lopez",
+          "division_id": "13985",
+          "division_name": "Tuesday \"Felt Laggers\" No Limit LC League",
+          "divisions": [
+            "13985"
+          ],
+          "csr": {
+            "csr_8": 33,
+            "csr_9": 40,
+            "csr_10": 40
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Daryllynne Cousins",
+      "query": "Dary Cousins",
+      "candidates": [
+        {
+          "player_id": 1259343,
+          "name": "Daryl-Lynne Cousins",
+          "location": "Thornton CO",
+          "rating": 257,
+          "robustness": 618,
+          "membership_id": "9900007213933"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10089003,
+          "name": "Daryllynne Cousins",
+          "division_id": "13711",
+          "division_name": "Sunday \"Wreckroom Sunday\" No Limit LC League",
+          "divisions": [
+            "13711"
+          ],
+          "csr": {
+            "csr_8": 24,
+            "csr_9": 22,
+            "csr_10": 27
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Ed (peaches) Powers",
+      "query": "Ed Powers",
+      "candidates": [
+        {
+          "player_id": 1105175,
+          "name": "Ed Powers",
+          "location": "CO",
+          "rating": 491,
+          "robustness": 1160,
+          "membership_id": "9900005429022"
+        },
+        {
+          "player_id": 677420,
+          "name": "Ed Powers",
+          "location": "Boston MA",
+          "rating": 400,
+          "robustness": 0,
+          "membership_id": "0061841"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10069862,
+          "name": "Ed (peaches) Powers",
+          "division_id": "10992",
+          "division_name": "Friday \"Piazza Friday DP\" 8-ball League",
+          "divisions": [
+            "10992",
+            "10993",
+            "11297",
+            "11552",
+            "11553",
+            "12732",
+            "12733",
+            "13160",
+            "13161"
+          ],
+          "csr": {
+            "csr_9": 77,
+            "csr_10": 67,
+            "csr_8": 91,
+            "csr_7": 80
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Freddie Carroll",
+      "query": "Fred Carroll",
+      "candidates": [
+        {
+          "player_id": 1143776,
+          "name": "Fred Carroll",
+          "location": "NY",
+          "rating": 18,
+          "robustness": 0,
+          "membership_id": "9900005825572"
+        },
+        {
+          "player_id": 856187,
+          "name": "Fred Carroll",
+          "location": "Lufkin TX",
+          "rating": 559,
+          "robustness": 1106,
+          "membership_id": "0178204"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10074935,
+          "name": "Freddie Carroll",
+          "division_id": "11314",
+          "division_name": "Monday \"Greeley\" No Limit LC League",
+          "divisions": [
+            "11314",
+            "11920"
+          ],
+          "csr": {
+            "csr_8": 50,
+            "csr_9": 61,
+            "csr_10": 57
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Gerardo Gonzales",
+      "query": "Gera Gonzales",
+      "candidates": [
+        {
+          "player_id": 1131291,
+          "name": "Gerard Gonzales",
+          "location": "WA",
+          "rating": 490,
+          "robustness": 20,
+          "membership_id": "9900005695823"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10079754,
+          "name": "Gerardo Gonzales",
+          "division_id": "13985",
+          "division_name": "Tuesday \"Felt Laggers\" No Limit LC League",
+          "divisions": [
+            "13985"
+          ],
+          "csr": {
+            "csr_8": 87,
+            "csr_9": 77,
+            "csr_10": 72
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Harley Jr Ohlinger",
+      "query": "Harl Ohlinger",
+      "candidates": [
+        {
+          "player_id": 1315457,
+          "name": "Harley Ohlinger",
+          "location": "CO",
+          "rating": 240,
+          "robustness": 8,
+          "membership_id": "9900007899113"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10082769,
+          "name": "Harley Jr Ohlinger",
+          "division_id": "13722",
+          "division_name": "Friday \"Piazza Friday DP\" No Limit 8-ball League",
+          "divisions": [
+            "12732",
+            "12733",
+            "13722",
+            "13723"
+          ],
+          "csr": {
+            "csr_9": 28,
+            "csr_10": 38
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Jacob mauriece Graham",
+      "query": "Jaco Graham",
+      "candidates": [
+        {
+          "player_id": 1213321,
+          "name": "Jacob Graham",
+          "location": "TX",
+          "rating": 493,
+          "robustness": 1921,
+          "membership_id": "9900006734194"
+        },
+        {
+          "player_id": 723389,
+          "name": "Jacob Graham",
+          "location": "Boise ID",
+          "rating": 596,
+          "robustness": 152,
+          "membership_id": "0317724"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10085900,
+          "name": "Jacob mauriece Graham",
+          "division_id": "13985",
+          "division_name": "Tuesday \"Felt Laggers\" No Limit LC League",
+          "divisions": [
+            "13985"
+          ],
+          "csr": {
+            "csr_8": 46,
+            "csr_9": 47,
+            "csr_10": 53
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "James \"Chewi\" Ghaffari",
+      "query": "Jame Ghaffari",
+      "candidates": [
+        {
+          "player_id": 1254514,
+          "name": "James Ghaffari",
+          "location": "CO",
+          "rating": 463,
+          "robustness": 69,
+          "membership_id": "9900007164761"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10075537,
+          "name": "James \"Chewi\" Ghaffari",
+          "division_id": "13722",
+          "division_name": "Friday \"Piazza Friday DP\" No Limit 8-ball League",
+          "divisions": [
+            "10992",
+            "10993",
+            "11552",
+            "11553",
+            "12732",
+            "12733",
+            "13722",
+            "13723"
+          ],
+          "csr": {
+            "csr_9": 58,
+            "csr_10": 65,
+            "csr_8": 80
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Jeffery Robertson",
+      "query": "Jeff Robertson",
+      "candidates": [
+        {
+          "player_id": 1142809,
+          "name": "Jeff Robertson",
+          "location": "Aurora CO",
+          "rating": 355,
+          "robustness": 694,
+          "membership_id": "9900005816068"
+        },
+        {
+          "player_id": 1237767,
+          "name": "Jeff Robertson",
+          "location": "TX",
+          "rating": 582,
+          "robustness": 14,
+          "membership_id": "9900006998664"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10089048,
+          "name": "Jeffery Robertson",
+          "division_id": "13722",
+          "division_name": "Friday \"Piazza Friday DP\" No Limit 8-ball League",
+          "divisions": [
+            "13722",
+            "13723"
+          ],
+          "csr": {
+            "csr_9": 37,
+            "csr_10": 47
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Jose \"Skinny\" Nevarez",
+      "query": "Jose Nevarez",
+      "candidates": [
+        {
+          "player_id": 1223409,
+          "name": "jose nevarez",
+          "location": "CO",
+          "rating": 493,
+          "robustness": 244,
+          "membership_id": "9900006843001"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10060432,
+          "name": "Jose \"Skinny\" Nevarez",
+          "division_id": "13299",
+          "division_name": "Tuesday \"Piazzas Tuesday\" No Limit LC League",
+          "divisions": [
+            "11296",
+            "11297",
+            "12159",
+            "13160",
+            "13161",
+            "13298",
+            "13299"
+          ],
+          "csr": {
+            "csr_9": 61,
+            "csr_10": 70,
+            "csr_7": 72,
+            "csr_8": 72,
+            "csr_10bp": 65
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Michelle Medina",
+      "query": "Mich Medina",
+      "candidates": [
+        {
+          "player_id": 1296661,
+          "name": "Michel Medina",
+          "location": "Hollywood FL",
+          "rating": 556,
+          "robustness": 159,
+          "membership_id": "9900007704684"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10072423,
+          "name": "Michelle Medina",
+          "division_id": "10518",
+          "division_name": "Tuesday \"Zoosters Laggers\" Lagger's Choice League",
+          "divisions": [
+            "10518"
+          ],
+          "csr": {
+            "csr_8": 37,
+            "csr_9": 41,
+            "csr_10": 38
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Monique \"Mo\" Santistevan",
+      "query": "Moni Santistevan",
+      "candidates": [
+        {
+          "player_id": 1306841,
+          "name": "Monique Mo Santistevan",
+          "location": "Denver CO",
+          "rating": 403,
+          "robustness": 195,
+          "membership_id": "9900007816769"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10090080,
+          "name": "Monique \"Mo\" Santistevan",
+          "division_id": "13711",
+          "division_name": "Sunday \"Wreckroom Sunday\" No Limit LC League",
+          "divisions": [
+            "13711"
+          ],
+          "csr": {
+            "csr_8": 34,
+            "csr_9": 40,
+            "csr_10": 43
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Nick Dela Cruz",
+      "query": "Nick Cruz",
+      "candidates": [
+        {
+          "player_id": 1179853,
+          "name": "Nick Cruz",
+          "location": "PA",
+          "rating": 551,
+          "robustness": 647,
+          "membership_id": "9900006297606"
+        },
+        {
+          "player_id": 627603,
+          "name": "Nick Cruz",
+          "location": "Odessa TX",
+          "rating": 525,
+          "robustness": 0,
+          "membership_id": "0103316"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10083536,
+          "name": "Nick Dela Cruz",
+          "division_id": "13722",
+          "division_name": "Friday \"Piazza Friday DP\" No Limit 8-ball League",
+          "divisions": [
+            "12732",
+            "12733",
+            "13722",
+            "13723"
+          ],
+          "csr": {
+            "csr_9": 71,
+            "csr_10": 81
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Richard Tyler Miles",
+      "query": "Rich Miles",
+      "candidates": [
+        {
+          "player_id": 1092136,
+          "name": "Rich Miles",
+          "location": "KS",
+          "rating": 357,
+          "robustness": 29,
+          "membership_id": "9900005295078"
+        },
+        {
+          "player_id": 989098,
+          "name": "Richard Miles",
+          "location": "OH",
+          "rating": 411,
+          "robustness": 64,
+          "membership_id": "9900004079846"
+        },
+        {
+          "player_id": 1032068,
+          "name": "Richard Mason Miles",
+          "location": "Knoxville TN",
+          "rating": 525,
+          "robustness": 146,
+          "membership_id": "9900004559362"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10076672,
+          "name": "Richard Tyler Miles",
+          "division_id": "13985",
+          "division_name": "Tuesday \"Felt Laggers\" No Limit LC League",
+          "divisions": [
+            "10669",
+            "11112",
+            "11564",
+            "12148",
+            "12653",
+            "13985"
+          ],
+          "csr": {
+            "csr_8": 8,
+            "csr_9": 28,
+            "csr_10": 32
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Robert \"RJ\" Williams",
+      "query": "Robe Williams",
+      "candidates": [
+        {
+          "player_id": 1068010,
+          "name": "ROBERT WILLIAMS",
+          "location": "Aberdeen SD",
+          "rating": 544,
+          "robustness": 78,
+          "membership_id": "9900005041743"
+        },
+        {
+          "player_id": 949193,
+          "name": "Robert Williams",
+          "location": "CT",
+          "rating": 375,
+          "robustness": 22,
+          "membership_id": "0382267"
+        },
+        {
+          "player_id": 1095744,
+          "name": "Robert Williams",
+          "location": "Kankakee IL",
+          "rating": 419,
+          "robustness": 30,
+          "membership_id": "9900005333046"
+        },
+        {
+          "player_id": 1271567,
+          "name": "Robert Williams",
+          "location": "CO",
+          "rating": 476,
+          "robustness": 21,
+          "membership_id": "9900007338858"
+        },
+        {
+          "player_id": 1024444,
+          "name": "Robert Williams",
+          "location": "AZ",
+          "rating": 399,
+          "robustness": 1945,
+          "membership_id": "9900004469128"
+        },
+        {
+          "player_id": 1064324,
+          "name": "Robert Williams",
+          "location": "Anderson SC",
+          "rating": 514,
+          "robustness": 108,
+          "membership_id": "9900005006056"
+        },
+        {
+          "player_id": 1172174,
+          "name": "Robert Williams",
+          "location": "TN",
+          "rating": 510,
+          "robustness": 54,
+          "membership_id": "9900006117096"
+        },
+        {
+          "player_id": 1084265,
+          "name": "Robert Williams",
+          "location": "Alabaster AL",
+          "rating": 417,
+          "robustness": 5,
+          "membership_id": "9900005208238"
+        },
+        {
+          "player_id": 926193,
+          "name": "Robert Williams",
+          "location": "Kingston St Catherine (ACE)",
+          "rating": 525,
+          "robustness": 0,
+          "membership_id": "0338300"
+        },
+        {
+          "player_id": 710883,
+          "name": "Robert Williams",
+          "location": "Houston TX",
+          "rating": 520,
+          "robustness": 4,
+          "membership_id": "0279315"
+        },
+        {
+          "player_id": 859803,
+          "name": "Robert Williams",
+          "location": "Broken Arrow OK",
+          "rating": 488,
+          "robustness": 47,
+          "membership_id": "0053220"
+        },
+        {
+          "player_id": 1194095,
+          "name": "Robert Williams",
+          "location": "Wichita Falls TX",
+          "rating": 303,
+          "robustness": 90,
+          "membership_id": "9900006539492"
+        },
+        {
+          "player_id": 1343516,
+          "name": "Robert Williams",
+          "location": "AK",
+          "rating": 271,
+          "robustness": 20,
+          "membership_id": "9900008180425"
+        },
+        {
+          "player_id": 1370419,
+          "name": "Robert Williams",
+          "location": "Amarillo TX",
+          "rating": 401,
+          "robustness": 30,
+          "membership_id": "9900008599777"
+        },
+        {
+          "player_id": 858770,
+          "name": "Robert Williams",
+          "location": "Arlington TX",
+          "rating": 343,
+          "robustness": 74,
+          "membership_id": "0130779"
+        },
+        {
+          "player_id": 933755,
+          "name": "Robert Williams",
+          "location": "Halifax NS",
+          "rating": 609,
+          "robustness": 3720,
+          "membership_id": "0382266"
+        },
+        {
+          "player_id": 1004344,
+          "name": "Robert Williams",
+          "location": "Metairie LA",
+          "rating": 436,
+          "robustness": 82,
+          "membership_id": "9900004240970"
+        },
+        {
+          "player_id": 1133896,
+          "name": "Robert \"Robbie\" Williams",
+          "location": "Anchorage AK",
+          "rating": 378,
+          "robustness": 286,
+          "membership_id": "9900005724967"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10080484,
+          "name": "Robert \"RJ\" Williams",
+          "division_id": "11552",
+          "division_name": "Friday \"Piazza Friday DP\" No Limit 8-ball League",
+          "divisions": [
+            "11552",
+            "11553"
+          ],
+          "csr": {
+            "csr_8": 70,
+            "csr_9": 55,
+            "csr_10": 66
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Shawn \"Truman\" McElroy",
+      "query": "Shaw McElroy",
+      "candidates": [
+        {
+          "player_id": 1239761,
+          "name": "Shawn (Truman) McElroy",
+          "location": "Littleton CO",
+          "rating": 492,
+          "robustness": 205,
+          "membership_id": "9900007018903"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10086642,
+          "name": "Shawn \"Truman\" McElroy",
+          "division_id": "13985",
+          "division_name": "Tuesday \"Felt Laggers\" No Limit LC League",
+          "divisions": [
+            "13985"
+          ],
+          "csr": {
+            "csr_8": 57,
+            "csr_9": 70,
+            "csr_10": 70
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Spencer k Smith",
+      "query": "Spen Smith",
+      "candidates": [
+        {
+          "player_id": 1342900,
+          "name": "Spencer Smith",
+          "location": "Escondido  CA",
+          "rating": 352,
+          "robustness": 4,
+          "membership_id": "9900008174257"
+        },
+        {
+          "player_id": 1379678,
+          "name": "Spencer Smith",
+          "location": "CO",
+          "rating": 482,
+          "robustness": 0,
+          "membership_id": "9900008690672"
+        },
+        {
+          "player_id": 1132773,
+          "name": "Spencer Smith",
+          "location": "New York NY",
+          "rating": 454,
+          "robustness": 103,
+          "membership_id": "9900005713091"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10086821,
+          "name": "Spencer k Smith",
+          "division_id": "13937",
+          "division_name": "Wednesday \"Pharaoh's\" No Limit LC League",
+          "divisions": [
+            "13247",
+            "13937"
+          ],
+          "csr": {
+            "csr_8": 84,
+            "csr_9": 84,
+            "csr_10": 78
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Steven D. Williams",
+      "query": "Stev Williams",
+      "candidates": [
+        {
+          "player_id": 760468,
+          "name": "Steve Williams",
+          "location": "Oklahoma City OK",
+          "rating": 515,
+          "robustness": 859,
+          "membership_id": "0019813"
+        },
+        {
+          "player_id": 944215,
+          "name": "Steve Williams",
+          "location": "MA",
+          "rating": 158,
+          "robustness": 36,
+          "membership_id": "0258881"
+        },
+        {
+          "player_id": 1113106,
+          "name": "Steve Williams",
+          "location": "Blue Springs MO",
+          "rating": 262,
+          "robustness": 490,
+          "membership_id": "9900005509915"
+        },
+        {
+          "player_id": 925566,
+          "name": "Steve Williams",
+          "location": "MA",
+          "rating": 525,
+          "robustness": 0,
+          "membership_id": "9900008363262"
+        },
+        {
+          "player_id": 971508,
+          "name": "Steve Williams",
+          "location": null,
+          "rating": 515,
+          "robustness": 863,
+          "membership_id": "9900008311478"
+        },
+        {
+          "player_id": 1361398,
+          "name": "Steve Williams",
+          "location": "AZ",
+          "rating": 469,
+          "robustness": 8,
+          "membership_id": "9900008511670"
+        },
+        {
+          "player_id": 868454,
+          "name": "Steve Williams",
+          "location": "Springs TX",
+          "rating": 525,
+          "robustness": 0,
+          "membership_id": "0285430"
+        },
+        {
+          "player_id": 989312,
+          "name": "Steve Williams",
+          "location": "Arlington TX",
+          "rating": 525,
+          "robustness": 545,
+          "membership_id": "9900004085038"
+        },
+        {
+          "player_id": 732468,
+          "name": "Steve Williams",
+          "location": "AK",
+          "rating": 495,
+          "robustness": 10,
+          "membership_id": "0308585"
+        },
+        {
+          "player_id": 1172192,
+          "name": "Steve Williams",
+          "location": "KY",
+          "rating": 503,
+          "robustness": 1064,
+          "membership_id": "9900006118024"
+        },
+        {
+          "player_id": 741078,
+          "name": "Steve Williams",
+          "location": "FL",
+          "rating": 446,
+          "robustness": 472,
+          "membership_id": "0328253"
+        },
+        {
+          "player_id": 1238681,
+          "name": "Steve D Williams",
+          "location": "Denver CO",
+          "rating": 449,
+          "robustness": 363,
+          "membership_id": "9900007007808"
+        },
+        {
+          "player_id": 1131259,
+          "name": "Steven Williams",
+          "location": "LA",
+          "rating": 632,
+          "robustness": 63,
+          "membership_id": "9900005695137"
+        },
+        {
+          "player_id": 1213580,
+          "name": "Steven Williams",
+          "location": "SC",
+          "rating": 427,
+          "robustness": 822,
+          "membership_id": "9900006737409"
+        },
+        {
+          "player_id": 1295998,
+          "name": "Steven Williams",
+          "location": "Lapeer MI",
+          "rating": 358,
+          "robustness": 118,
+          "membership_id": "9900007597101"
+        },
+        {
+          "player_id": 1251040,
+          "name": "Steven Williams",
+          "location": "Irmo SC",
+          "rating": 367,
+          "robustness": 8,
+          "membership_id": "9900007127575"
+        },
+        {
+          "player_id": 1261186,
+          "name": "Steven Dean Williams",
+          "location": "Kingston OK",
+          "rating": 428,
+          "robustness": 159,
+          "membership_id": "9900007232910"
+        },
+        {
+          "player_id": 1367811,
+          "name": "Steven E Williams",
+          "location": "Muskogee OK",
+          "rating": 377,
+          "robustness": 121,
+          "membership_id": "9900008574040"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10069685,
+          "name": "Steven D. Williams",
+          "division_id": "13722",
+          "division_name": "Friday \"Piazza Friday DP\" No Limit 8-ball League",
+          "divisions": [
+            "10992",
+            "10993",
+            "11552",
+            "11553",
+            "12732",
+            "12733",
+            "13722",
+            "13723"
+          ],
+          "csr": {
+            "csr_9": 54,
+            "csr_10": 61,
+            "csr_8": 56
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Thori Nelson",
+      "query": "Thor Nelson",
+      "candidates": [
+        {
+          "player_id": 1232076,
+          "name": "Thor Nelson",
+          "location": "Malden MA",
+          "rating": 312,
+          "robustness": 359,
+          "membership_id": "9900006929552"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10076936,
+          "name": "Thori Nelson",
+          "division_id": "11050",
+          "division_name": "Wednesday \"Pharaoh's\" No Limit LC League",
+          "divisions": [
+            "11050",
+            "11493",
+            "11975"
+          ],
+          "csr": {
+            "csr_8": 41,
+            "csr_9": 37,
+            "csr_10": 49
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "search_name": "Zacharia Clemons",
+      "query": "Zach Clemons",
+      "candidates": [
+        {
+          "player_id": 1135910,
+          "name": "Zach Clemons",
+          "location": "CO",
+          "rating": 428,
+          "robustness": 339,
+          "membership_id": "9900005745450"
+        }
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10071236,
+          "name": "Zacharia Clemons",
+          "division_id": "13744",
+          "division_name": "Friday \"DP Broomfield Westminster\" LC League",
+          "divisions": [
+            "10243",
+            "10992",
+            "10993",
+            "11112",
+            "11552",
+            "11553",
+            "13337",
+            "13743",
+            "13744",
+            "14022"
+          ],
+          "csr": {
+            "csr_8": 68,
+            "csr_9": 63,
+            "csr_10": 56,
+            "csr_10bp": 59
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    }
+  ],
+  "still_unfound": 398,
+  "unique_queries": 419,
+  "errors": 1
+}

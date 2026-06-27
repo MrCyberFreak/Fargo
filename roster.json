@@ -167,7 +167,32 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 2508,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "napa": [
+        {
+          "napa_player_id": 10081129,
+          "name": "Abhinay Edake",
+          "division_id": "13299",
+          "division_name": "Tuesday \"Piazzas Tuesday\" No Limit LC League",
+          "divisions": [
+            "12159",
+            "13160",
+            "13161",
+            "13299"
+          ],
+          "csr": {
+            "csr_8": 108,
+            "csr_9": 95,
+            "csr_10": 95,
+            "csr_10bp": 95
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "manual",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
     },
     "360339": {
       "player_id": 360339,
@@ -535,35 +560,7 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 71164,
-      "added_date": "2026-06-06",
-      "napa": [
-        {
-          "napa_player_id": 10076556,
-          "name": "Allan Sease",
-          "division_id": "13937",
-          "division_name": "Wednesday \"Pharaoh's\" No Limit LC League",
-          "divisions": [
-            "11480",
-            "11493",
-            "11975",
-            "12759",
-            "13247",
-            "13937",
-            "13986"
-          ],
-          "csr": {
-            "csr_8": 114,
-            "csr_9": 92,
-            "csr_10": 92,
-            "csr_10bp": 87
-          },
-          "imputed_state": "CO",
-          "source": "napa",
-          "match_method": "name",
-          "confidence": "high",
-          "added_date": "2026-06-27"
-        }
-      ]
+      "added_date": "2026-06-06"
     },
     "1196579": {
       "player_id": 1196579,
@@ -1367,32 +1364,6 @@
           "match_method": "name",
           "added_date": "2026-06-06"
         }
-      ],
-      "napa": [
-        {
-          "napa_player_id": 10054616,
-          "name": "Ashleigh Skoworn",
-          "division_id": "13985",
-          "division_name": "Tuesday \"Felt Laggers\" No Limit LC League",
-          "divisions": [
-            "10992",
-            "10993",
-            "11564",
-            "12148",
-            "12653",
-            "13985"
-          ],
-          "csr": {
-            "csr_9": 52,
-            "csr_10": 49,
-            "csr_8": 59
-          },
-          "imputed_state": "CO",
-          "source": "napa",
-          "match_method": "name",
-          "confidence": "high",
-          "added_date": "2026-06-27"
-        }
       ]
     },
     "13732": {
@@ -1545,7 +1516,7 @@
     "1121051": {
       "player_id": 1121051,
       "membership_id": "9900005591675",
-      "name": "Art Pelletier",
+      "name": "Bobby Neues",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 60829,
@@ -1578,7 +1549,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Art Pelletier"
     },
     "931269": {
       "player_id": 931269,
@@ -2683,7 +2655,7 @@
     "1304470": {
       "player_id": 1304470,
       "membership_id": "9900007787526",
-      "name": "Brijesh Vangala Doraisamy",
+      "name": "Brijesh Vangaladoraisamy",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 141426,
@@ -2718,7 +2690,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Brijesh Vangala Doraisamy"
     },
     "1255223": {
       "player_id": 1255223,
@@ -2758,7 +2731,7 @@
     "1028717": {
       "player_id": 1028717,
       "membership_id": "9900004525947",
-      "name": "Brian Roybal",
+      "name": "Isabel Gutierrez",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 143526,
@@ -2814,7 +2787,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Brian Roybal"
     },
     "1370176": {
       "player_id": 1370176,
@@ -3418,27 +3392,6 @@
           "match_method": "name",
           "added_date": "2026-06-07"
         }
-      ],
-      "napa": [
-        {
-          "napa_player_id": 10088967,
-          "name": "Chantelle Schuckman",
-          "division_id": "13722",
-          "division_name": "Friday \"Piazza Friday DP\" No Limit 8-ball League",
-          "divisions": [
-            "13722",
-            "13723"
-          ],
-          "csr": {
-            "csr_9": 46,
-            "csr_10": 37
-          },
-          "imputed_state": "CO",
-          "source": "napa",
-          "match_method": "name",
-          "confidence": "high",
-          "added_date": "2026-06-27"
-        }
       ]
     },
     "13613": {
@@ -3752,7 +3705,7 @@
     "1051056": {
       "player_id": 1051056,
       "membership_id": "9900004786775",
-      "name": "Charles Hix",
+      "name": "Charles Hicks",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 168663,
@@ -3790,7 +3743,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Charles Hix"
     },
     "1362857": {
       "player_id": 1362857,
@@ -4289,7 +4243,7 @@
     "1127996": {
       "player_id": 1127996,
       "membership_id": "9900005662269",
-      "name": "Chris Linnen/Ronnie",
+      "name": "Jarred Lewis",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 98551,
@@ -4335,7 +4289,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Chris Linnen/Ronnie"
     },
     "1347080": {
       "player_id": 1347080,
@@ -4406,30 +4361,7 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 113449,
-      "added_date": "2026-06-06",
-      "napa": [
-        {
-          "napa_player_id": 10083613,
-          "name": "Conn Hall",
-          "division_id": "13205",
-          "division_name": "Monday \"Greeley\" No Limit LC League",
-          "divisions": [
-            "12466",
-            "13205",
-            "14064"
-          ],
-          "csr": {
-            "csr_8": 51,
-            "csr_9": 54,
-            "csr_10": 58
-          },
-          "imputed_state": "CO",
-          "source": "napa",
-          "match_method": "name",
-          "confidence": "high",
-          "added_date": "2026-06-27"
-        }
-      ]
+      "added_date": "2026-06-06"
     },
     "1014203": {
       "player_id": 1014203,
@@ -4700,7 +4632,7 @@
     "1364565": {
       "player_id": 1364565,
       "membership_id": "9900008542209",
-      "name": "Chris Slindee",
+      "name": "Kurt Funk",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 160788,
@@ -4737,7 +4669,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Chris Slindee"
     },
     "1367712": {
       "player_id": 1367712,
@@ -4860,7 +4793,7 @@
     "1098099": {
       "player_id": 1098099,
       "membership_id": "9900005356601",
-      "name": "Curly Mansfield & Marissa Campos",
+      "name": "Curly Mansfield",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 1742,
@@ -4885,7 +4818,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Curly Mansfield & Marissa Campos"
     },
     "1106261": {
       "player_id": 1106261,
@@ -5127,7 +5061,7 @@
     "831378": {
       "player_id": 831378,
       "membership_id": "0030481",
-      "name": "Dave Pappas",
+      "name": "Josh Thomashefsky",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 42343,
@@ -5157,7 +5091,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Dave Pappas"
     },
     "1246023": {
       "player_id": 1246023,
@@ -5742,7 +5677,7 @@
     "1298074": {
       "player_id": 1298074,
       "membership_id": "9900007719077",
-      "name": "Dino (Dean) Devost",
+      "name": "Joel Rodriguez",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 1075,
@@ -5768,7 +5703,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Dino (Dean) Devost"
     },
     "1107447": {
       "player_id": 1107447,
@@ -5782,34 +5718,12 @@
     "1146323": {
       "player_id": 1146323,
       "membership_id": "9900005851526",
-      "name": "Denise Tenorio",
+      "name": "David P Pappas",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 1452,
       "added_date": "2026-06-06",
       "napa": [
-        {
-          "napa_player_id": 10067208,
-          "name": "Denise Tenorio",
-          "division_id": "13205",
-          "division_name": "Monday \"Greeley\" No Limit LC League",
-          "divisions": [
-            "11314",
-            "11920",
-            "12466",
-            "13205"
-          ],
-          "csr": {
-            "csr_8": 61,
-            "csr_9": 54,
-            "csr_10": 58
-          },
-          "imputed_state": "CO",
-          "source": "napa",
-          "match_method": "name",
-          "confidence": "high",
-          "added_date": "2026-06-27"
-        },
         {
           "napa_player_id": 10072157,
           "name": "David Pappas",
@@ -5829,7 +5743,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Denise Tenorio"
     },
     "1031686": {
       "player_id": 1031686,
@@ -5922,7 +5837,7 @@
     "972803": {
       "player_id": 972803,
       "membership_id": "9900006672434",
-      "name": "Deo Basnet",
+      "name": "Fernando Corona",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 14543,
@@ -5942,33 +5857,6 @@
       ],
       "napa": [
         {
-          "napa_player_id": 10063723,
-          "name": "Deo Basnet",
-          "division_id": "13299",
-          "division_name": "Tuesday \"Piazzas Tuesday\" No Limit LC League",
-          "divisions": [
-            "11296",
-            "11297",
-            "12159",
-            "13160",
-            "13161",
-            "13298",
-            "13299"
-          ],
-          "csr": {
-            "csr_9": 80,
-            "csr_10": 80,
-            "csr_7": 96,
-            "csr_8": 93,
-            "csr_10bp": 67
-          },
-          "imputed_state": "CO",
-          "source": "napa",
-          "match_method": "name",
-          "confidence": "high",
-          "added_date": "2026-06-27"
-        },
-        {
           "napa_player_id": 10082896,
           "name": "Fernando Corona",
           "division_id": "11920",
@@ -5987,7 +5875,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Deo Basnet"
     },
     "1130380": {
       "player_id": 1130380,
@@ -6050,35 +5939,12 @@
     "18996": {
       "player_id": 18996,
       "membership_id": "0006922",
-      "name": "David Rusch",
+      "name": "Dave Howell",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 57026,
       "added_date": "2026-06-06",
       "napa": [
-        {
-          "napa_player_id": 10076874,
-          "name": "David Rusch",
-          "division_id": "13205",
-          "division_name": "Monday \"Greeley\" No Limit LC League",
-          "divisions": [
-            "11314",
-            "11920",
-            "12466",
-            "13205",
-            "14064"
-          ],
-          "csr": {
-            "csr_8": 105,
-            "csr_9": 76,
-            "csr_10": 79
-          },
-          "imputed_state": "CO",
-          "source": "napa",
-          "match_method": "name",
-          "confidence": "high",
-          "added_date": "2026-06-27"
-        },
         {
           "napa_player_id": 10054340,
           "name": "Dave Howell",
@@ -6102,7 +5968,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "David Rusch"
     },
     "1182419": {
       "player_id": 1182419,
@@ -6152,16 +6019,46 @@
     "1223409": {
       "player_id": 1223409,
       "membership_id": "9900006843001",
-      "name": "Demetrio Najera",
+      "name": "jose nevarez",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 83842,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "napa": [
+        {
+          "napa_player_id": 10060432,
+          "name": "Jose \"Skinny\" Nevarez",
+          "division_id": "13299",
+          "division_name": "Tuesday \"Piazzas Tuesday\" No Limit LC League",
+          "divisions": [
+            "11296",
+            "11297",
+            "12159",
+            "13160",
+            "13161",
+            "13298",
+            "13299"
+          ],
+          "csr": {
+            "csr_9": 61,
+            "csr_10": 70,
+            "csr_7": 72,
+            "csr_8": 72,
+            "csr_10bp": 65
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "manual",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ],
+      "digitalpool_name": "Demetrio Najera"
     },
     "992921": {
       "player_id": 992921,
       "membership_id": "9900004135627",
-      "name": "David \"Puff\" Phomoshyma",
+      "name": "Pom Rai",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 87953,
@@ -6188,7 +6085,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "David \"Puff\" Phomoshyma"
     },
     "993198": {
       "player_id": 993198,
@@ -6599,11 +6497,38 @@
     "786167": {
       "player_id": 786167,
       "membership_id": "0243497",
-      "name": "Dustin Sterling/ Austin",
+      "name": "Dustin Sterling",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 3414,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "napa": [
+        {
+          "napa_player_id": 10046117,
+          "name": "Dustin Sterling",
+          "division_id": "10243",
+          "division_name": "Tuesday \"Felt Laggers\" Lagger's Choice League",
+          "divisions": [
+            "10243",
+            "10669",
+            "11112",
+            "12399",
+            "12653"
+          ],
+          "csr": {
+            "csr_8": 86,
+            "csr_9": 70,
+            "csr_10": 80,
+            "csr_4": 86
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "name",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ],
+      "digitalpool_name": "Dustin Sterling/ Austin"
     },
     "1105175": {
       "player_id": 1105175,
@@ -6922,32 +6847,6 @@
           "source": "apa",
           "match_method": "name",
           "added_date": "2026-06-06"
-        }
-      ],
-      "napa": [
-        {
-          "napa_player_id": 10046117,
-          "name": "Dustin Sterling",
-          "division_id": "10243",
-          "division_name": "Tuesday \"Felt Laggers\" Lagger's Choice League",
-          "divisions": [
-            "10243",
-            "10669",
-            "11112",
-            "12399",
-            "12653"
-          ],
-          "csr": {
-            "csr_8": 86,
-            "csr_9": 70,
-            "csr_10": 80,
-            "csr_4": 86
-          },
-          "imputed_state": "CO",
-          "source": "napa",
-          "match_method": "name",
-          "confidence": "high",
-          "added_date": "2026-06-27"
         }
       ]
     },
@@ -7426,11 +7325,36 @@
     "972873": {
       "player_id": 972873,
       "membership_id": "9900006742045",
-      "name": "Elliot Abraham",
+      "name": "Ryan Ocelnik",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 154116,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "napa": [
+        {
+          "napa_player_id": 10061307,
+          "name": "Ryan Ocelnik",
+          "division_id": "13711",
+          "division_name": "Sunday \"Wreckroom Sunday\" No Limit LC League",
+          "divisions": [
+            "11296",
+            "11297",
+            "13711"
+          ],
+          "csr": {
+            "csr_9": 62,
+            "csr_10": 54,
+            "csr_7": 66,
+            "csr_8": 77
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "name",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ],
+      "digitalpool_name": "Elliot Abraham"
     },
     "1210493": {
       "player_id": 1210493,
@@ -7877,7 +7801,7 @@
     "1152950": {
       "player_id": 1152950,
       "membership_id": "9900005921021",
-      "name": "Esmeralda Roybal",
+      "name": "Catherine Romero",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 113248,
@@ -7903,7 +7827,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Esmeralda Roybal"
     },
     "1116921": {
       "player_id": 1116921,
@@ -8229,7 +8154,7 @@
     "1057634": {
       "player_id": 1057634,
       "membership_id": "9900004851398",
-      "name": "Gina Trujillo",
+      "name": "Kathy Chane",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 3286,
@@ -8260,25 +8185,6 @@
       ],
       "napa": [
         {
-          "napa_player_id": 10065664,
-          "name": "Gina Trujillo",
-          "division_id": "11480",
-          "division_name": "Monday \"Broomfield Westminster Laggers\" No Limit LC League",
-          "divisions": [
-            "11480"
-          ],
-          "csr": {
-            "csr_8": 43,
-            "csr_9": 34,
-            "csr_10": 38
-          },
-          "imputed_state": "CO",
-          "source": "napa",
-          "match_method": "name",
-          "confidence": "high",
-          "added_date": "2026-06-27"
-        },
-        {
           "napa_player_id": 10072530,
           "name": "Kathy Chane",
           "division_id": "10992",
@@ -8305,7 +8211,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Gina Trujillo"
     },
     "1124938": {
       "player_id": 1124938,
@@ -8837,7 +8744,30 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 130624,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "napa": [
+        {
+          "napa_player_id": 10082769,
+          "name": "Harley Jr Ohlinger",
+          "division_id": "13722",
+          "division_name": "Friday \"Piazza Friday DP\" No Limit 8-ball League",
+          "divisions": [
+            "12732",
+            "12733",
+            "13722",
+            "13723"
+          ],
+          "csr": {
+            "csr_9": 28,
+            "csr_10": 38
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "manual",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
     },
     "1257700": {
       "player_id": 1257700,
@@ -9062,7 +8992,7 @@
     "1142974": {
       "player_id": 1142974,
       "membership_id": "9900005817430",
-      "name": "Greg Santorno",
+      "name": "Marissa Campos",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 172379,
@@ -9092,7 +9022,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Greg Santorno"
     },
     "1381771": {
       "player_id": 1381771,
@@ -9499,7 +9430,35 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 102937,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "napa": [
+        {
+          "napa_player_id": 10075537,
+          "name": "James \"Chewi\" Ghaffari",
+          "division_id": "13722",
+          "division_name": "Friday \"Piazza Friday DP\" No Limit 8-ball League",
+          "divisions": [
+            "10992",
+            "10993",
+            "11552",
+            "11553",
+            "12732",
+            "12733",
+            "13722",
+            "13723"
+          ],
+          "csr": {
+            "csr_9": 58,
+            "csr_10": 65,
+            "csr_8": 80
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "manual",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
     },
     "1143742": {
       "player_id": 1143742,
@@ -9904,32 +9863,6 @@
           "source": "apa",
           "match_method": "name",
           "added_date": "2026-06-07"
-        }
-      ],
-      "napa": [
-        {
-          "napa_player_id": 10068291,
-          "name": "Jenny Laney",
-          "division_id": "13722",
-          "division_name": "Friday \"Piazza Friday DP\" No Limit 8-ball League",
-          "divisions": [
-            "11552",
-            "11553",
-            "12732",
-            "12733",
-            "13722",
-            "13723"
-          ],
-          "csr": {
-            "csr_8": 38,
-            "csr_9": 43,
-            "csr_10": 56
-          },
-          "imputed_state": "CO",
-          "source": "napa",
-          "match_method": "name",
-          "confidence": "high",
-          "added_date": "2026-06-27"
         }
       ]
     },
@@ -10455,7 +10388,7 @@
     "1254035": {
       "player_id": 1254035,
       "membership_id": "9900007159842",
-      "name": "Jeff Kakac",
+      "name": "Prahlad Kannojoo",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 172693,
@@ -10484,12 +10417,13 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Jeff Kakac"
     },
     "1370210": {
       "player_id": 1370210,
       "membership_id": "9900008598008",
-      "name": "Jeff Ambs",
+      "name": "Olman Quiros",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 175592,
@@ -10516,7 +10450,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Jeff Ambs"
     },
     "1111138": {
       "player_id": 1111138,
@@ -10530,7 +10465,7 @@
     "1106906": {
       "player_id": 1106906,
       "membership_id": "9900005447552",
-      "name": "Joe Tsirlin",
+      "name": "Shawn pavlovich",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 4485,
@@ -10575,7 +10510,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Joe Tsirlin"
     },
     "971834": {
       "player_id": 971834,
@@ -10619,7 +10555,7 @@
     "1118923": {
       "player_id": 1118923,
       "membership_id": "9900005569339",
-      "name": "John Baca & Jones",
+      "name": "John Baca",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 6253,
@@ -10651,7 +10587,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "John Baca & Jones"
     },
     "1236046": {
       "player_id": 1236046,
@@ -10754,7 +10691,7 @@
     "1295505": {
       "player_id": 1295505,
       "membership_id": "9900007592236",
-      "name": "John Kolb",
+      "name": "Karla Travis",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 34310,
@@ -10782,7 +10719,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "John Kolb"
     },
     "1308631": {
       "player_id": 1308631,
@@ -11688,7 +11626,7 @@
     "1296844": {
       "player_id": 1296844,
       "membership_id": "9900007706947",
-      "name": "Jose Ramirez & Eva",
+      "name": "Jose Ramirez",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 131617,
@@ -11735,7 +11673,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Jose Ramirez & Eva"
     },
     "1160575": {
       "player_id": 1160575,
@@ -12643,32 +12582,7 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 130839,
-      "added_date": "2026-06-06",
-      "napa": [
-        {
-          "napa_player_id": 10079184,
-          "name": "Kurt Schmidt",
-          "division_id": "13205",
-          "division_name": "Monday \"Greeley\" No Limit LC League",
-          "divisions": [
-            "11314",
-            "11920",
-            "12466",
-            "13205",
-            "14064"
-          ],
-          "csr": {
-            "csr_8": 64,
-            "csr_9": 67,
-            "csr_10": 63
-          },
-          "imputed_state": "CO",
-          "source": "napa",
-          "match_method": "name",
-          "confidence": "high",
-          "added_date": "2026-06-27"
-        }
-      ]
+      "added_date": "2026-06-06"
     },
     "1308630": {
       "player_id": 1308630,
@@ -12775,40 +12689,7 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 157001,
-      "added_date": "2026-06-06",
-      "napa": [
-        {
-          "napa_player_id": 10068553,
-          "name": "Kent Hoffman",
-          "division_id": "13985",
-          "division_name": "Tuesday \"Felt Laggers\" No Limit LC League",
-          "divisions": [
-            "10243",
-            "10669",
-            "10992",
-            "10993",
-            "11112",
-            "11552",
-            "11553",
-            "11564",
-            "12148",
-            "12653",
-            "12732",
-            "12733",
-            "13985"
-          ],
-          "csr": {
-            "csr_8": 87,
-            "csr_9": 74,
-            "csr_10": 64
-          },
-          "imputed_state": "CO",
-          "source": "napa",
-          "match_method": "name",
-          "confidence": "high",
-          "added_date": "2026-06-27"
-        }
-      ]
+      "added_date": "2026-06-06"
     },
     "789066": {
       "player_id": 789066,
@@ -13273,7 +13154,7 @@
     "972848": {
       "player_id": 972848,
       "membership_id": "9900004550789",
-      "name": "Manuel Gonzales & Damian",
+      "name": "Manuel Gonzales IV",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 68318,
@@ -13300,7 +13181,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Manuel Gonzales & Damian"
     },
     "1023816": {
       "player_id": 1023816,
@@ -13762,7 +13644,7 @@
     "1088315": {
       "player_id": 1088315,
       "membership_id": "9900005255706",
-      "name": "Matt Kotin & Sean Knapp",
+      "name": "Matt Kotin",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 47401,
@@ -13787,7 +13669,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Matt Kotin & Sean Knapp"
     },
     "1189040": {
       "player_id": 1189040,
@@ -13801,7 +13684,7 @@
     "1260549": {
       "player_id": 1260549,
       "membership_id": "9900007226278",
-      "name": "Marty Wilczewski",
+      "name": "Jamie Caron",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 50402,
@@ -13829,7 +13712,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Marty Wilczewski"
     },
     "1073700": {
       "player_id": 1073700,
@@ -14100,27 +13984,6 @@
           "match_method": "name",
           "added_date": "2026-06-06"
         }
-      ],
-      "napa": [
-        {
-          "napa_player_id": 10083213,
-          "name": "Matthew Cox",
-          "division_id": "12148",
-          "division_name": "Tuesday \"Felt Laggers\" No Limit LC League",
-          "divisions": [
-            "12148"
-          ],
-          "csr": {
-            "csr_8": 39,
-            "csr_9": 46,
-            "csr_10": 45
-          },
-          "imputed_state": "CO",
-          "source": "napa",
-          "match_method": "name",
-          "confidence": "high",
-          "added_date": "2026-06-27"
-        }
       ]
     },
     "1085426": {
@@ -14187,37 +14050,6 @@
           "source": "apa",
           "match_method": "name",
           "added_date": "2026-06-06"
-        }
-      ],
-      "napa": [
-        {
-          "napa_player_id": 10050311,
-          "name": "Miguel Anariba",
-          "division_id": "13299",
-          "division_name": "Tuesday \"Piazzas Tuesday\" No Limit LC League",
-          "divisions": [
-            "11296",
-            "11297",
-            "12159",
-            "12732",
-            "12733",
-            "13160",
-            "13161",
-            "13298",
-            "13299"
-          ],
-          "csr": {
-            "csr_9": 87,
-            "csr_10": 88,
-            "csr_7": 87,
-            "csr_8": 110,
-            "csr_10bp": 87
-          },
-          "imputed_state": "CO",
-          "source": "napa",
-          "match_method": "name",
-          "confidence": "high",
-          "added_date": "2026-06-27"
         }
       ]
     },
@@ -14515,7 +14347,7 @@
     "1245237": {
       "player_id": 1245237,
       "membership_id": "9900007072752",
-      "name": "Misty Mitchell",
+      "name": "Maya Briggs",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 94642,
@@ -14540,7 +14372,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Misty Mitchell"
     },
     "1215152": {
       "player_id": 1215152,
@@ -14932,38 +14765,7 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 20385,
-      "added_date": "2026-06-06",
-      "napa": [
-        {
-          "napa_player_id": 10068940,
-          "name": "Nick Leblanc",
-          "division_id": "13985",
-          "division_name": "Tuesday \"Felt Laggers\" No Limit LC League",
-          "divisions": [
-            "10243",
-            "10669",
-            "10992",
-            "10993",
-            "11112",
-            "11552",
-            "11553",
-            "11564",
-            "12148",
-            "12653",
-            "13985"
-          ],
-          "csr": {
-            "csr_8": 109,
-            "csr_9": 73,
-            "csr_10": 74
-          },
-          "imputed_state": "CO",
-          "source": "napa",
-          "match_method": "name",
-          "confidence": "high",
-          "added_date": "2026-06-27"
-        }
-      ]
+      "added_date": "2026-06-06"
     },
     "1153870": {
       "player_id": 1153870,
@@ -15461,7 +15263,7 @@
     "749606": {
       "player_id": 749606,
       "membership_id": "0157292",
-      "name": "Pam Rundquist",
+      "name": "Rodney Rodriguez",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 118323,
@@ -15486,7 +15288,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Pam Rundquist"
     },
     "1308633": {
       "player_id": 1308633,
@@ -16614,7 +16417,7 @@
     "1190543": {
       "player_id": 1190543,
       "membership_id": "9900006504087",
-      "name": "Ryan Ocelnik",
+      "name": "Jennifer Harding",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 74498,
@@ -16645,28 +16448,6 @@
       ],
       "napa": [
         {
-          "napa_player_id": 10061307,
-          "name": "Ryan Ocelnik",
-          "division_id": "13711",
-          "division_name": "Sunday \"Wreckroom Sunday\" No Limit LC League",
-          "divisions": [
-            "11296",
-            "11297",
-            "13711"
-          ],
-          "csr": {
-            "csr_9": 62,
-            "csr_10": 54,
-            "csr_7": 66,
-            "csr_8": 77
-          },
-          "imputed_state": "CO",
-          "source": "napa",
-          "match_method": "name",
-          "confidence": "high",
-          "added_date": "2026-06-27"
-        },
-        {
           "napa_player_id": 10047426,
           "name": "Jennifer Harding",
           "division_id": "13986",
@@ -16690,7 +16471,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Ryan Ocelnik"
     },
     "1104146": {
       "player_id": 1104146,
@@ -18594,31 +18376,12 @@
     "972883": {
       "player_id": 972883,
       "membership_id": "9900005636581",
-      "name": "Tina Payne",
+      "name": "Tiffany Haas",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 12303,
       "added_date": "2026-06-06",
       "napa": [
-        {
-          "napa_player_id": 10041728,
-          "name": "Tina Payne",
-          "division_id": "11901",
-          "division_name": "Tuesday \"Zoosters Laggers\" No Limit LC League",
-          "divisions": [
-            "11901"
-          ],
-          "csr": {
-            "csr_8": 87,
-            "csr_9": 68,
-            "csr_10": 66
-          },
-          "imputed_state": "CO",
-          "source": "napa",
-          "match_method": "name",
-          "confidence": "high",
-          "added_date": "2026-06-27"
-        },
         {
           "napa_player_id": 10065583,
           "name": "Tiffany Haas",
@@ -18640,7 +18403,8 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
-      ]
+      ],
+      "digitalpool_name": "Tina Payne"
     },
     "1090614": {
       "player_id": 1090614,
@@ -19407,6 +19171,37 @@
           "match_method": "name",
           "added_date": "2026-06-06"
         }
+      ],
+      "napa": [
+        {
+          "napa_player_id": 10071236,
+          "name": "Zacharia Clemons",
+          "division_id": "13744",
+          "division_name": "Friday \"DP Broomfield Westminster\" LC League",
+          "divisions": [
+            "10243",
+            "10992",
+            "10993",
+            "11112",
+            "11552",
+            "11553",
+            "13337",
+            "13743",
+            "13744",
+            "14022"
+          ],
+          "csr": {
+            "csr_8": 68,
+            "csr_9": 63,
+            "csr_10": 56,
+            "csr_10bp": 59
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "manual",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
       ]
     },
     "1134636": {
@@ -19430,11 +19225,36 @@
     "10310": {
       "player_id": 10310,
       "membership_id": "9900002364685",
-      "name": "Vancurt Quezada",
+      "name": "Woody Quezada",
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 50465,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "napa": [
+        {
+          "napa_player_id": 10061335,
+          "name": "Woody Quezada",
+          "division_id": "10102",
+          "division_name": "Tuesday \"Zoosters Laggers\" Lagger's Choice League",
+          "divisions": [
+            "10102",
+            "10669",
+            "10972",
+            "11441"
+          ],
+          "csr": {
+            "csr_8": 100,
+            "csr_9": 85,
+            "csr_10": 67
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "name",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ],
+      "digitalpool_name": "Vancurt Quezada"
     },
     "1314581": {
       "player_id": 1314581,
@@ -19497,30 +19317,6 @@
           "source": "apa",
           "match_method": "name",
           "added_date": "2026-06-07"
-        }
-      ],
-      "napa": [
-        {
-          "napa_player_id": 10061335,
-          "name": "Woody Quezada",
-          "division_id": "10102",
-          "division_name": "Tuesday \"Zoosters Laggers\" Lagger's Choice League",
-          "divisions": [
-            "10102",
-            "10669",
-            "10972",
-            "11441"
-          ],
-          "csr": {
-            "csr_8": 100,
-            "csr_9": 85,
-            "csr_10": 67
-          },
-          "imputed_state": "CO",
-          "source": "napa",
-          "match_method": "name",
-          "confidence": "high",
-          "added_date": "2026-06-27"
         }
       ]
     },
@@ -33466,6 +33262,27 @@
           "source": "apa",
           "match_method": "name",
           "added_date": "2026-06-07"
+        }
+      ],
+      "napa": [
+        {
+          "napa_player_id": 10086642,
+          "name": "Shawn \"Truman\" McElroy",
+          "division_id": "13985",
+          "division_name": "Tuesday \"Felt Laggers\" No Limit LC League",
+          "divisions": [
+            "13985"
+          ],
+          "csr": {
+            "csr_8": 57,
+            "csr_9": 70,
+            "csr_10": 70
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "manual",
+          "confidence": "high",
+          "added_date": "2026-06-27"
         }
       ]
     },
@@ -50498,6 +50315,569 @@
             "csr_8": 64,
             "csr_9": 50,
             "csr_10": 50
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "name",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
+    },
+    "1259343": {
+      "player_id": 1259343,
+      "membership_id": "9900007213933",
+      "name": "Daryl-Lynne Cousins",
+      "state": "Thornton CO",
+      "source": "napa",
+      "added_date": "2026-06-27",
+      "napa": [
+        {
+          "napa_player_id": 10089003,
+          "name": "Daryllynne Cousins",
+          "division_id": "13711",
+          "division_name": "Sunday \"Wreckroom Sunday\" No Limit LC League",
+          "divisions": [
+            "13711"
+          ],
+          "csr": {
+            "csr_8": 24,
+            "csr_9": 22,
+            "csr_10": 27
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "manual",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
+    },
+    "1306841": {
+      "player_id": 1306841,
+      "membership_id": "9900007816769",
+      "name": "Monique Mo Santistevan",
+      "state": "Denver CO",
+      "source": "napa",
+      "added_date": "2026-06-27",
+      "napa": [
+        {
+          "napa_player_id": 10090080,
+          "name": "Monique \"Mo\" Santistevan",
+          "division_id": "13711",
+          "division_name": "Sunday \"Wreckroom Sunday\" No Limit LC League",
+          "divisions": [
+            "13711"
+          ],
+          "csr": {
+            "csr_8": 34,
+            "csr_9": 40,
+            "csr_10": 43
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "manual",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
+    },
+    "1156272": {
+      "player_id": 1156272,
+      "membership_id": "9900005952131",
+      "name": "Allan Sease",
+      "state": "Boulder CO",
+      "source": "napa",
+      "added_date": "2026-06-27",
+      "napa": [
+        {
+          "napa_player_id": 10076556,
+          "name": "Allan Sease",
+          "division_id": "13937",
+          "division_name": "Wednesday \"Pharaoh's\" No Limit LC League",
+          "divisions": [
+            "11480",
+            "11493",
+            "11975",
+            "12759",
+            "13247",
+            "13937",
+            "13986"
+          ],
+          "csr": {
+            "csr_8": 114,
+            "csr_9": 92,
+            "csr_10": 92,
+            "csr_10bp": 87
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "name",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
+    },
+    "1128444": {
+      "player_id": 1128444,
+      "membership_id": "9900005666557",
+      "name": "Ashleigh Skoworn",
+      "state": "CO",
+      "source": "napa",
+      "added_date": "2026-06-27",
+      "napa": [
+        {
+          "napa_player_id": 10054616,
+          "name": "Ashleigh Skoworn",
+          "division_id": "13985",
+          "division_name": "Tuesday \"Felt Laggers\" No Limit LC League",
+          "divisions": [
+            "10992",
+            "10993",
+            "11564",
+            "12148",
+            "12653",
+            "13985"
+          ],
+          "csr": {
+            "csr_9": 52,
+            "csr_10": 49,
+            "csr_8": 59
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "name",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
+    },
+    "1183340": {
+      "player_id": 1183340,
+      "membership_id": "9900006431789",
+      "name": "Chantelle Schuckman",
+      "state": "Aurora CO",
+      "source": "napa",
+      "added_date": "2026-06-27",
+      "napa": [
+        {
+          "napa_player_id": 10088967,
+          "name": "Chantelle Schuckman",
+          "division_id": "13722",
+          "division_name": "Friday \"Piazza Friday DP\" No Limit 8-ball League",
+          "divisions": [
+            "13722",
+            "13723"
+          ],
+          "csr": {
+            "csr_9": 46,
+            "csr_10": 37
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "name",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
+    },
+    "1280171": {
+      "player_id": 1280171,
+      "membership_id": "9900007427576",
+      "name": "Conn Hall",
+      "state": "Greeley CO",
+      "source": "napa",
+      "added_date": "2026-06-27",
+      "napa": [
+        {
+          "napa_player_id": 10083613,
+          "name": "Conn Hall",
+          "division_id": "13205",
+          "division_name": "Monday \"Greeley\" No Limit LC League",
+          "divisions": [
+            "12466",
+            "13205",
+            "14064"
+          ],
+          "csr": {
+            "csr_8": 51,
+            "csr_9": 54,
+            "csr_10": 58
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "name",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
+    },
+    "1113412": {
+      "player_id": 1113412,
+      "membership_id": "9900005512250",
+      "name": "DENISE TENORIO",
+      "state": "CO",
+      "source": "napa",
+      "added_date": "2026-06-27",
+      "napa": [
+        {
+          "napa_player_id": 10067208,
+          "name": "Denise Tenorio",
+          "division_id": "13205",
+          "division_name": "Monday \"Greeley\" No Limit LC League",
+          "divisions": [
+            "11314",
+            "11920",
+            "12466",
+            "13205"
+          ],
+          "csr": {
+            "csr_8": 61,
+            "csr_9": 54,
+            "csr_10": 58
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "name",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
+    },
+    "1122645": {
+      "player_id": 1122645,
+      "membership_id": "9900005607772",
+      "name": "deo basnet",
+      "state": "CO",
+      "source": "napa",
+      "added_date": "2026-06-27",
+      "napa": [
+        {
+          "napa_player_id": 10063723,
+          "name": "Deo Basnet",
+          "division_id": "13299",
+          "division_name": "Tuesday \"Piazzas Tuesday\" No Limit LC League",
+          "divisions": [
+            "11296",
+            "11297",
+            "12159",
+            "13160",
+            "13161",
+            "13298",
+            "13299"
+          ],
+          "csr": {
+            "csr_9": 80,
+            "csr_10": 80,
+            "csr_7": 96,
+            "csr_8": 93,
+            "csr_10bp": 67
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "name",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
+    },
+    "1185591": {
+      "player_id": 1185591,
+      "membership_id": "9900006454252",
+      "name": "David Rusch",
+      "state": "CO",
+      "source": "napa",
+      "added_date": "2026-06-27",
+      "napa": [
+        {
+          "napa_player_id": 10076874,
+          "name": "David Rusch",
+          "division_id": "13205",
+          "division_name": "Monday \"Greeley\" No Limit LC League",
+          "divisions": [
+            "11314",
+            "11920",
+            "12466",
+            "13205",
+            "14064"
+          ],
+          "csr": {
+            "csr_8": 105,
+            "csr_9": 76,
+            "csr_10": 79
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "name",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
+    },
+    "1028707": {
+      "player_id": 1028707,
+      "membership_id": "9900004525886",
+      "name": "Gina Trujillo",
+      "state": "Denver CO",
+      "source": "napa",
+      "added_date": "2026-06-27",
+      "napa": [
+        {
+          "napa_player_id": 10065664,
+          "name": "Gina Trujillo",
+          "division_id": "11480",
+          "division_name": "Monday \"Broomfield Westminster Laggers\" No Limit LC League",
+          "divisions": [
+            "11480"
+          ],
+          "csr": {
+            "csr_8": 43,
+            "csr_9": 34,
+            "csr_10": 38
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "name",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
+    },
+    "1105180": {
+      "player_id": 1105180,
+      "membership_id": "9900005428391",
+      "name": "Jenny Laney",
+      "state": "CO",
+      "source": "napa",
+      "added_date": "2026-06-27",
+      "napa": [
+        {
+          "napa_player_id": 10068291,
+          "name": "Jenny Laney",
+          "division_id": "13722",
+          "division_name": "Friday \"Piazza Friday DP\" No Limit 8-ball League",
+          "divisions": [
+            "11552",
+            "11553",
+            "12732",
+            "12733",
+            "13722",
+            "13723"
+          ],
+          "csr": {
+            "csr_8": 38,
+            "csr_9": 43,
+            "csr_10": 56
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "name",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
+    },
+    "1131331": {
+      "player_id": 1131331,
+      "membership_id": "9900005696066",
+      "name": "Kurt Schmidt",
+      "state": "CO",
+      "source": "napa",
+      "added_date": "2026-06-27",
+      "napa": [
+        {
+          "napa_player_id": 10079184,
+          "name": "Kurt Schmidt",
+          "division_id": "13205",
+          "division_name": "Monday \"Greeley\" No Limit LC League",
+          "divisions": [
+            "11314",
+            "11920",
+            "12466",
+            "13205",
+            "14064"
+          ],
+          "csr": {
+            "csr_8": 64,
+            "csr_9": 67,
+            "csr_10": 63
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "name",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
+    },
+    "666351": {
+      "player_id": 666351,
+      "membership_id": "0222501",
+      "name": "Kent Hoffman",
+      "state": "Denver CO",
+      "source": "napa",
+      "added_date": "2026-06-27",
+      "napa": [
+        {
+          "napa_player_id": 10068553,
+          "name": "Kent Hoffman",
+          "division_id": "13985",
+          "division_name": "Tuesday \"Felt Laggers\" No Limit LC League",
+          "divisions": [
+            "10243",
+            "10669",
+            "10992",
+            "10993",
+            "11112",
+            "11552",
+            "11553",
+            "11564",
+            "12148",
+            "12653",
+            "12732",
+            "12733",
+            "13985"
+          ],
+          "csr": {
+            "csr_8": 87,
+            "csr_9": 74,
+            "csr_10": 64
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "name",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
+    },
+    "1272169": {
+      "player_id": 1272169,
+      "membership_id": "9900007345658",
+      "name": "Matthew R Cox",
+      "state": "Littleton CO",
+      "source": "napa",
+      "added_date": "2026-06-27",
+      "napa": [
+        {
+          "napa_player_id": 10083213,
+          "name": "Matthew Cox",
+          "division_id": "12148",
+          "division_name": "Tuesday \"Felt Laggers\" No Limit LC League",
+          "divisions": [
+            "12148"
+          ],
+          "csr": {
+            "csr_8": 39,
+            "csr_9": 46,
+            "csr_10": 45
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "name",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
+    },
+    "1100225": {
+      "player_id": 1100225,
+      "membership_id": "9900005378047",
+      "name": "Miguel Anariba",
+      "state": "Aurora CO",
+      "source": "napa",
+      "added_date": "2026-06-27",
+      "napa": [
+        {
+          "napa_player_id": 10050311,
+          "name": "Miguel Anariba",
+          "division_id": "13299",
+          "division_name": "Tuesday \"Piazzas Tuesday\" No Limit LC League",
+          "divisions": [
+            "11296",
+            "11297",
+            "12159",
+            "12732",
+            "12733",
+            "13160",
+            "13161",
+            "13298",
+            "13299"
+          ],
+          "csr": {
+            "csr_9": 87,
+            "csr_10": 88,
+            "csr_7": 87,
+            "csr_8": 110,
+            "csr_10bp": 87
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "name",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
+    },
+    "1144651": {
+      "player_id": 1144651,
+      "membership_id": "9900005834598",
+      "name": "Nick Leblanc",
+      "state": "CO",
+      "source": "napa",
+      "added_date": "2026-06-27",
+      "napa": [
+        {
+          "napa_player_id": 10068940,
+          "name": "Nick Leblanc",
+          "division_id": "13985",
+          "division_name": "Tuesday \"Felt Laggers\" No Limit LC League",
+          "divisions": [
+            "10243",
+            "10669",
+            "10992",
+            "10993",
+            "11112",
+            "11552",
+            "11553",
+            "11564",
+            "12148",
+            "12653",
+            "13985"
+          ],
+          "csr": {
+            "csr_8": 109,
+            "csr_9": 73,
+            "csr_10": 74
+          },
+          "imputed_state": "CO",
+          "source": "napa",
+          "match_method": "name",
+          "confidence": "high",
+          "added_date": "2026-06-27"
+        }
+      ]
+    },
+    "972889": {
+      "player_id": 972889,
+      "membership_id": "9900003913448",
+      "name": "Tina Payne",
+      "state": "CO",
+      "source": "napa",
+      "added_date": "2026-06-27",
+      "napa": [
+        {
+          "napa_player_id": 10041728,
+          "name": "Tina Payne",
+          "division_id": "11901",
+          "division_name": "Tuesday \"Zoosters Laggers\" No Limit LC League",
+          "divisions": [
+            "11901"
+          ],
+          "csr": {
+            "csr_8": 87,
+            "csr_9": 68,
+            "csr_10": 66
           },
           "imputed_state": "CO",
           "source": "napa",
