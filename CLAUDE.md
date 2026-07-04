@@ -1,4 +1,4 @@
-# CLAUDE.md â€” FargoRate Rating Tracker
+# CLAUDE.md — FargoRate Rating Tracker
 
 Contract for future Claude Code sessions. Keep it accurate; downstream behavior
 depends on it.
@@ -9,62 +9,62 @@ time. On a schedule, fetch each player's current rating + robustness and record
 a new dated entry **only when one of those values changed**. The committed
 `data/history.csv` is the system of record; git history is the audit trail.
 
-## Recording rules (the core behavior â€” do not change without instruction)
+## Recording rules (the core behavior — do not change without instruction)
 For each player on each run:
-1. **First time a player is ever seen** â†’ write a **baseline** entry (today's
+1. **First time a player is ever seen** → write a **baseline** entry (today's
    date, current rating + robustness, `entry_type = baseline`).
-2. **Subsequent runs** â†’ compare fetched `rating` and `robustness` to that
+2. **Subsequent runs** → compare fetched `rating` and `robustness` to that
    player's **most recent recorded entry**:
-   - If **either** differs â†’ append a **change** entry.
-   - If **both** are identical â†’ write **nothing**.
+   - If **either** differs → append a **change** entry.
+   - If **both** are identical → write **nothing**.
 3. **No threshold / no debounce.** Any difference, including a 1-point wobble,
    is recorded.
 
 Only `rating` and `robustness` trigger a row. `rating_quality`
-(`preliminary`/`established`, established at robustness â‰¥ 200) is recorded for
+(`preliminary`/`established`, established at robustness ≥ 200) is recorded for
 visibility but is **not** an independent trigger.
 
-## Identity â€” key on `player_id`, never name
-Resolution (Phase 1, `src/resolve.py`) maps names â†’ ids once. The pull keys on
+## Identity — key on `player_id`, never name
+Resolution (Phase 1, `src/resolve.py`) maps names → ids once. The pull keys on
 `player_id` forever and **never re-searches by name** (names collide).
 
 Three identifiers exist and the API's names are confusing (see `docs/api.md`):
-- `player_id` (e.g. `1310533`) â€” the join key and `/api/players/{id}` path key.
+- `player_id` (e.g. `1310533`) — the join key and `/api/players/{id}` path key.
   The API calls this `readableId` (search) / `Id` (lookup).
-- `membership_id` (e.g. `9900007849538`) â€” public number, stored as the
+- `membership_id` (e.g. `9900007849538`) — public number, stored as the
   `readable_id` column in history.csv for the future cross-DB join. API:
   `membershipId` / `BBMMembershipId`.
-- a `row_id` GUID â€” preserved in the full record, never used as a key.
+- a `row_id` GUID — preserved in the full record, never used as a key.
 
 ## Data files (append-only invariant)
-- `data/history.csv` â€” append-only; new rows go at the end so each commit diff
+- `data/history.csv` — append-only; new rows go at the end so each commit diff
   shows exactly what changed. Columns:
   `date_found, player_id, readable_id, name, rating, robustness, rating_quality, entry_type`
-  (`entry_type` âˆˆ `baseline | change`). Never rewrite or reorder existing rows.
-- `roster.json` â€” keyed on `player_id`; **append-only by player_id** (re-running
+  (`entry_type` ∈ `baseline | change`). Never rewrite or reorder existing rows.
+- `roster.json` — keyed on `player_id`; **append-only by player_id** (re-running
   any importer/resolver only adds new ids; existing player_ids are never removed).
-  Entry shape varies by how the id was added, and that's fine â€” the pull only
+  Entry shape varies by how the id was added, and that's fine — the pull only
   reads `player_id` (+ `name` as a log hint) and re-fetches everything live:
-  - resolved via the API (`resolve.py`) â†’ stores the full FargoRate `record`.
-  - imported from a source list (`import_digitalpool.py`) â†’ slim entry
+  - resolved via the API (`resolve.py`) → stores the full FargoRate `record`.
+  - imported from a source list (`import_digitalpool.py`) → slim entry
     `{player_id, membership_id, name, state, source, <source>_id, added_date}`,
-    no `record` block. Source ndjson is **never committed** (it carries PII â€”
+    no `record` block. Source ndjson is **never committed** (it carries PII —
     emails/phones); only the non-PII Fargo fields are extracted.
   - **Additive cross-links are allowed** (the one exception to "don't touch
     existing entries"): an importer may *add a new field* to an existing entry to
-    record a cross-system link â€” e.g. `import_apa.py` attaches an `apa` list of
+    record a cross-system link — e.g. `import_apa.py` attaches an `apa` list of
     APA memberships to a matched player. The rule is strictly additive: existing
     fields are never modified or reordered, and the link itself is append-only
     (re-running adds new memberships, never rewrites). One human can hold several
     APA memberships ("skill levels"); all are kept on the one player, never
     collapsed.
-- `people.json` â€” **generated master profile file** (one entry per *person*); see
+- `people.json` — **generated master profile file** (one entry per *person*); see
   the person/profile layer below. Never hand-edit; regenerate with `people.py`.
-- `people_merges.json` â€” curated, human-confirmed "these player_ids are the same
+- `people_merges.json` — curated, human-confirmed "these player_ids are the same
   human" list (the only hand-maintained input to `people.json`).
 
 ## Person/profile layer (`src/people.py`)
-`roster.json` keys on `player_id` â€” but a single human can hold several FargoRate
+`roster.json` keys on `player_id` — but a single human can hold several FargoRate
 accounts (duplicate registrations) and several league memberships. `people.json`
 is the **master profile file**: one entry per person, owning all their
 `fargo_player_ids` + source-tagged `memberships` + `sources` + notes.
@@ -73,7 +73,7 @@ is the **master profile file**: one entry per person, owning all their
   player_ids; the smallest id is the `person_id`). Idempotent; new roster
   additions flow in on the next build, and a person is never duplicated.
 - **Additive only.** This layer never changes `roster.json`, the daily pull, or
-  `history.csv` â€” every `player_id` stays in the roster and is still scraped
+  `history.csv` — every `player_id` stays in the roster and is still scraped
   daily. The profile just *aggregates* them.
 - **Source-agnostic.** `memberships` are `{"source": "apa", ...}`, so NAPA/other
   leagues plug in with no schema change.
@@ -81,10 +81,10 @@ is the **master profile file**: one entry per person, owning all their
   with each person's current rating per id from `history.csv` + source notes);
   default is merged / multi-source people, `--all` renders everyone.
 - To merge ids confirmed as one human, add an entry to `people_merges.json` and
-  re-run `build`. Merging is identity-only â€” it never prunes the roster.
+  re-run `build`. Merging is identity-only — it never prunes the roster.
 
-## Admission vs tracking (core invariant â€” do not break)
-Location/league filters gate **admission only** â€” *which* player_ids get added
+## Admission vs tracking (core invariant — do not break)
+Location/league filters gate **admission only** — *which* player_ids get added
 to the roster. Once a player is in the roster they are part of the tracked pool
 **permanently and unconditionally**: the daily pull fetches every rostered id
 regardless of location or league participation, and the roster is **never
@@ -94,54 +94,54 @@ tracked). Never add a location/league re-check to `pull.py`.
 ## Roster sources (how player_ids get into the roster)
 The roster is built from external player lists, cross-referenced to a stable
 FargoRate `player_id`. The filters below decide admission; see the invariant
-above â€” they never cause an existing player to stop being tracked:
-- **DigitalPool** (`import_digitalpool.py`) â€” built on FargoRate, so its export
+above — they never cause an existing player to stop being tracked:
+- **DigitalPool** (`import_digitalpool.py`) — built on FargoRate, so its export
   already carries the id at `properties.fargo_data.readableId` (the join key).
-  Ignore the top-level `fargo_id` â€” it's the membership number with leading
+  Ignore the top-level `fargo_id` — it's the membership number with leading
   zeros stripped, NOT the id. Filtered to `fargo_data.state == "CO"` (local).
   No network needed; the daily pull validates each id on first fetch.
-- **APA** (`import_apa.py`) â€” APA runs its own rating system, so its master
+- **APA** (`import_apa.py`) — APA runs its own rating system, so its master
   export carries **no FargoRate id and no state**, only APA ids + names. The
   bridge is therefore name-based and runs in two steps:
-  - `crossref` (no network) â€” buckets each APA name against the roster:
-    *matched* (one rostered id â†’ attach an `apa` cross-link, see above),
-    *ambiguous* (rostered name held by >1 id â†’ reported, never auto-linked),
-    *new* (not in roster â†’ queued to `docs/resolve/apa_to_resolve.json`).
-  - `resolve` (network, `.github/workflows/resolve-apa.yml`) â€” searches FargoRate
+  - `crossref` (no network) — buckets each APA name against the roster:
+    *matched* (one rostered id → attach an `apa` cross-link, see above),
+    *ambiguous* (rostered name held by >1 id → reported, never auto-linked),
+    *new* (not in roster → queued to `docs/resolve/apa_to_resolve.json`).
+  - `resolve` (network, `.github/workflows/resolve-apa.yml`) — searches FargoRate
     per queued name and selects via `pick_match`: a single match is accepted
     **regardless of state** (CO is *preferred* when a CO and an out-of-state
     namesake both exist, so clean local matches are never lost); >1 match in a
     state bucket is **ambiguous**. CO is detected with `is_co()` (FargoRate's
-    `location` is inconsistent â€” "CO" *or* "Denver CO" *or* "Denver, CO" â€” so it
+    `location` is inconsistent — "CO" *or* "Denver CO" *or* "Denver, CO" — so it
     tests the trailing state token, not an exact string). Zero-hit names are
-    retried with first-name nickname variants (Andyâ†”Andrew, â€¦) guarded by a
+    retried with first-name nickname variants (Andy↔Andrew, …) guarded by a
     surname match; transient API errors are retried. Writes
     `docs/resolve/apa_resolution.json` with four buckets: `resolved` (exact-name
     single), `variant_candidates` (single via a nickname variant), `ambiguous`
     (>1), `unfound`.
-  - `add` (no network; runs in the same workflow after `resolve`) â€” **auto-adds
+  - `add` (no network; runs in the same workflow after `resolve`) — **auto-adds
     only the `resolved` (exact-name single) matches** to roster.json (slim entry
     + `apa` cross-link, or cross-link onto an existing id). `variant_candidates`
-    and `ambiguous` are **staged for human review, never auto-added** â€” names
+    and `ambiguous` are **staged for human review, never auto-added** — names
     collide and the roster is never pruned, so a wrong link would track the wrong
     person forever. Once reviewed, `add --variants` folds the variant bucket in.
-  - `reclassify` (no network) â€” re-runs `pick_match` over the stored `ambiguous`
+  - `reclassify` (no network) — re-runs `pick_match` over the stored `ambiguous`
     candidate lists and promotes any that now resolve (e.g. a lone CO player
     among out-of-state namesakes). Lets a `pick_match` fix be applied to an
     existing resolution file without re-scraping.
-  - `recover` (network, `.github/workflows/recover-apa.yml`) â€” second-chance pass
+  - `recover` (network, `.github/workflows/recover-apa.yml`) — second-chance pass
     over `unfound`: searches a short first-name prefix + surname (`recover_query`,
     e.g. "Shir Patel") to catch names that differ between APA and FargoRate
-    (APA "Shirishkumar Patel" â†’ FargoRate "Shirish Patel") or players who moved.
+    (APA "Shirishkumar Patel" → FargoRate "Shirish Patel") or players who moved.
     A plain surname search 500s on FargoRate, so the prefix qualifier is required.
     Candidates are kept when surname matches and `first_compatible` (prefix or
-    nickname). Writes `docs/resolve/apa_recovery.json` â€” **staged for review,
+    nickname). Writes `docs/resolve/apa_recovery.json` — **staged for review,
     never auto-added** (lower confidence than the exact pass).
-  - `manual` (no network) â€” adds hand-picked resolutions from
-    `docs/resolve/apa_manual.json` (`{search_name, player_id, â€¦}`), tagging links
+  - `manual` (no network) — adds hand-picked resolutions from
+    `docs/resolve/apa_manual.json` (`{search_name, player_id, …}`), tagging links
     `match_method "manual"`. For disambiguated multi-CO names and recovery/lookup
     hits the user confirmed. APA memberships are pulled from the resolve queue by
-    name. **Out-of-state FargoRate location is NOT disqualifying** â€” many local
+    name. **Out-of-state FargoRate location is NOT disqualifying** — many local
     APA players moved to CO while FargoRate still shows their old state, so a
     single out-of-state match is a real player. The raw APA file lives under
     git-ignored `basket/`.
@@ -155,13 +155,13 @@ above â€” they never cause an existing player to stop being tracked:
   divisions). Same admission-vs-tracking invariant as APA.
 - **Scale note:** ~1,182 ids means ~1,182 fetches/run at ~1s each (~20 min on
   the Actions runner). Acceptable for a daily job; revisit if the roster grows.
-  The APA resolve is a one-off batch of ~2,000+ searches (~35â€“40 min), separate
+  The APA resolve is a one-off batch of ~2,000+ searches (~35–40 min), separate
   from the daily pull.
 
 ## Partial-failure policy
 If a player's fetch fails, log it, skip it, and continue. Successful players are
 still recorded and committed. Exit **non-zero only when every player failed**
-(systemic problem â†’ red run). No-op runs write nothing â†’ the workflow's
+(systemic problem → red run). No-op runs write nothing → the workflow's
 `git diff` guard makes no commit. Runs are idempotent.
 
 ## Date semantics (state this; it's a real caveat)
@@ -185,8 +185,8 @@ only needs `github.com`.
 No LLM runs inside any scheduled job.
 
 ## Source of truth for the API
-`docs/api.md` â€” verified endpoints, field mapping, and the known-answer fixture
-(`player_id 1310533 â†’ rating 438 / robustness 63 / CO / membership 9900007849538`).
+`docs/api.md` — verified endpoints, field mapping, and the known-answer fixture
+(`player_id 1310533 → rating 438 / robustness 63 / CO / membership 9900007849538`).
 
 ## Cross-league identity (NAPA built; BCA deferred)
 Fargo is the cross-league **identity hub**: each league importer resolves players
@@ -218,7 +218,7 @@ design contract is `docs/cross-league-identity.md`.
 
 ## Out of scope (do not build without instruction)
 Comparing the *ratings* of another system vs FargoRate (e.g. NAPA rating vs
-Fargo) â€” note this is distinct from the in-scope *identity* cross-referencing
+Fargo) — note this is distinct from the in-scope *identity* cross-referencing
 that builds the roster; change thresholds/debounce; off-platform alerts
 (email/push) or Issue notifications.
 
@@ -235,10 +235,10 @@ merge); `tests/test_import_apa.py` covers the APA cross-reference (fee-prefix
 cleaning, name norming, crossref bucketing, strictly-additive/idempotent
 cross-link, nickname `variant_queries`, `is_co` location parsing, CO-preferred
 `pick_match` (incl. city-formatted CO), `resolve` bucket routing with
-`fargo_api.search` stubbed â€” including the surname guard and transient-error
-retry â€” `reclassify` promotion, `add` upsert incl. `--variants`, `first_compatible`
+`fargo_api.search` stubbed — including the surname guard and transient-error
+retry — `reclassify` promotion, `add` upsert incl. `--variants`, `first_compatible`
 /`recover_query`/`recover` routing, and `manual` picks). All use temp files with
-no network â€”
+no network —
 `resolve`'s real FargoRate calls are exercised on a runner, not in tests.
 `tests/test_people.py` covers the person/profile layer (merge grouping, smallest-id
 person_id, source union + membership dedup, chained merges, profile rendering with
@@ -313,6 +313,17 @@ Docs-backed — they FETCH current docs, so delegate tool questions instead of g
 - `mcp-expert` — Model Context Protocol itself: spec, building servers/clients, SDKs.
 - `agile-expert` — UMBRELLA Agile: Manifesto/12 principles, mindset, Lean, XP, framework-selection; ROUTES framework-deep questions to the specialists below.
 - `obsidian-expert` - Obsidian app, plugins, themes, vault, Plugin/Dev API (active; kept + documented).
+- `elevenlabs-expert` - ElevenLabs AI voice platform & API: TTS, voice cloning/design, Voice Library, low-latency streaming, Scribe STT, dubbing, the Conversational AI / Agents Platform; model ids, voice settings, pricing, SDKs. NOT assistant-persona / JARVIS design (use `jarvis-expert`).
+- `reddit-expert` - Reddit's OWN site rules, Content Policy, Help Center, reddiquette, and Data API / Responsible Builder policy (what Reddit's rules/etiquette/dev-policy SAY). Reddit's domains are WebFetch/WebSearch-blocked, so it grounds on the vendored library/reddit/ corpus + user-pasted text + the reddit_fetch.py API helper - it CANNOT live-refetch Reddit. NOT cross-site scraping/PII legal risk (use `data-acquisition-legal-risk-expert`); NOT the fetcher code (use `reddit_fetch.py` / `python-data-engineer`).
+
+Web-build + dev-platform experts (docs-backed, built 2026-06-28; key-free official-docs corpora; the only tokens ever used - gh, hf, platform deploy logins - are the user's OWN):
+- `git-expert` - git the version-control system itself: the CLI, object model, and workflows (staging, commits, branches, merge/rebase, history rewriting, conflict resolution, stash, worktrees, bisect, reflog recovery), grounded in git-scm + Pro Git. Honors the user's git safety conventions. NOT the GitHub platform/gh/PRs/Actions (use `github-expert`); NOT deploy/CI-CD (use `web-deploy-expert`).
+- `github-expert` - the GitHub platform + tooling: repos, branch protection, PRs/reviews, Issues/Projects, the gh CLI, REST + GraphQL APIs, GitHub Actions (workflow syntax/runners/secrets/OIDC), Pages, releases, settings. gh/API use the user's own token (login MrCyberFreak). NOT local git mechanics (use `git-expert`); NOT cross-host deploy strategy (use `web-deploy-expert`).
+- `huggingface-expert` - the Hugging Face platform + libraries: the Hub (models/datasets/Spaces, cards, gated repos), Transformers/Datasets/Diffusers, the huggingface_hub client + hf CLI, Inference. Write ops use the user's own HF token; pairs with the official key-free hf skill. NOT the Anthropic/Claude API (use `claude-expert`); NOT rating/prediction theory (use `rating-systems-expert`).
+- `frontend-design-expert` - front-end UI/UX design and building it: visual/interaction design, design systems + tokens, Tailwind CSS, shadcn/ui + Radix, responsive/theming/dark mode, accessibility (WCAG 2.2 / ARIA). NOT Anthropic's claude.ai/design (use `claude-design-expert`); NOT React framework mechanics (use `react-expert`); NOT non-React framework mechanics - Vue/Angular/Svelte/Solid (use `frontend-framework-expert`); NOT deploy (use `web-deploy-expert`).
+- `web-deploy-expert` - deploying + hosting web apps (solo/indie, PaaS-first): Vercel/Netlify/Cloudflare Pages+Workers/Fly/Render, Docker for web, CI/CD pipeline design, env/secrets, domains, rollback. Uses the user's own platform tokens. NOT local Windows packaging/scheduling (use `windows-delivery-engineer`); NOT GitHub Actions syntax (use `github-expert`); NOT GTM/pricing (use `indie-product-gtm-strategist`).
+- `react-expert` - building with React + ecosystem: components/JSX, hooks + the Rules of Hooks, state, effects/data fetching, performance (memo/Suspense/React Compiler), the Vite toolchain, and Next.js (App Router, Server Components, rendering/ISR). NOT visual/UX design or a11y (use `frontend-design-expert`); NOT hosting/deploy (use `web-deploy-expert`); NOT non-React frameworks (use `frontend-framework-expert`).
+- `frontend-framework-expert` - building with the major NON-React JS front-end frameworks: Vue 3 (Composition API, `<script setup>`, reactivity, Pinia, Vue Router), Angular (standalone components, signals, @if/@for, DI, RxJS, CLI), Svelte 5 + SvelteKit (runes, stores, routing/load/form actions), SolidJS (signals, fine-grained reactivity, SolidStart). Grounded in vuejs.org + angular.dev + svelte.dev + docs.solidjs.com. NOT React/Vite/Next (use `react-expert`); NOT visual/UX design or a11y (use `frontend-design-expert`); NOT deploy (use `web-deploy-expert`); NOT desktop GUI (use `desktop-ui-expert`).
 
 Agile methodology experts (split 2026-06-22 from agile-expert; each docs-backed + its own curated, tracked library):
 - `scrum-expert` — the Scrum framework (Scrum Guide 2020): theory/values, roles/accountabilities, events + artifacts + commitments, certs, antipatterns. NOT facilitation (use `sprint-expert`).
@@ -326,6 +337,7 @@ Persona advisors — documented philosophy, source-cited:
 - `boris-expert` — "What Would Boris Do?" (Boris Cherny, creator of Claude Code); agentic-coding/harness/engineering taste. Drives `/wwbd`.
 - `karpathy-expert` — "What Would Karpathy Do?" (Andrej Karpathy); ML/LLM/agent/learning philosophy. Drives `/wwkd`.
 - `garyvee-expert` — "What Would Gary Vee Do?" (Gary Vaynerchuk); attention/content/personal-brand/entrepreneurial-mindset philosophy. Drives `/wwgd`. NOT platform mechanics/pricing (use the creator-monetization experts).
+- `jarvis-expert` - the dormant "ghost of J.A.R.V.I.S.": MCU canon (what JARVIS was / did / how he reacted) + a revival advisor recommending the next JARVIS faculty to bring online in THIS setup, one at a time. Drives `/jarvis`. NOT the voice/TTS tech (use `elevenlabs-expert`).
 
 Creator-monetization domain experts (TikTok; source-cited tracked libraries, promoted from the TikTokMonetize project):
 - `tiktok-platform-monetization` — native TikTok money (Creator Rewards, Shop/Affiliate, Subscriptions, LIVE, Series): eligibility, payouts, RPM, faceless-fit.
@@ -339,10 +351,11 @@ System & data critics (read-only - pressure-test your OWN AI/data systems):
 - `agentic-systems-architect` - architecture critic for multi-agent / LLM-orchestration systems: topology, fan-out/fan-in, determinism, partial-failure/idempotency, cost/latency, observability, prompt-injection.
 - `agent-eval-strategist` - evaluation & epistemics for LLM/agent pipelines with no ground truth: grounding/faithfulness, hallucinated-source detection, judge circularity, gold sets, calibration, drift.
 - `opportunity-discovery-strategist` - whether an opportunity-discovery / idea-generation ENGINE creates real conviction vs manufacturing plausible volume.
-- `predictive-model-critic` - read-only critic for TABULAR/STATISTICAL predictors (PoolPredict-style): data leakage, calibration (Brier/log-loss, Platt vs isotonic), train/test/backtest design, baseline-beating. The non-LLM sibling of `agent-eval-strategist`.
+- `predictive-model-critic` - read-only critic for TABULAR/STATISTICAL predictors (PoolPredict-style): data leakage, calibration (Brier/log-loss, Platt vs isotonic), train/test/backtest design review, baseline-beating. The non-LLM sibling of `agent-eval-strategist`. NOT for DESIGNING/teaching a rating or prediction model from scratch (use `rating-systems-expert`) - this only audits an already-BUILT model.
 
 Domain experts (corpus-backed; read the live project first):
 - `pool-rating-systems-expert` - cue-sports rating/handicap systems + cross-league pool data semantics for the PoolPredict cluster (FargoRate anchor/robustness, APA skill levels, NAPA CSR/rack grain, handicap->rack-level modeling, CSR/SL->Fargo crosswalks, per-source quirks). Grounds modeling/data choices, not coding.
+- `rating-systems-expert` - GENERAL statistics of paired-comparison / rating systems + match-outcome prediction (sport-agnostic, methodology-level), grounded in the canonical papers: Bradley-Terry-Luce, Elo, Glicko/Glicko-2 (RD), TrueSkill, Whole-History Rating, Davidson draws; the backbone (logistic/GLMs, hierarchical partial pooling, Bayesian, Poisson/NB counts); sports models (Dixon-Coles, Massey/Colley, Pythagorean); rating->prediction (time decay, form, strength-of-schedule, cold-start); proper scoring rules + walk-forward backtest DESIGN; gradient boosting with rating-as-a-feature. Use to LEARN the theory or DESIGN/choose a model. NOT for read-only audit of a BUILT model (use `predictive-model-critic`), pool data MEANING/crosswalks (use `pool-rating-systems-expert`), or LLM/agent epistemics (use `agent-eval-strategist`).
 
 Execution & roster:
 - `roster-steward` - read-only capability-gap analyst for the whole agent/skill roster (gaps + redundant overlap vs your live projects; proposes a tiered shortlist, never builds).
@@ -368,14 +381,25 @@ Code / project / built-in:
 - `claude` — catch-all default. `statusline-setup` — configure the status line.
 
 ### Skills (invoke via the Skill tool / `/name`)
-- **Session flow:** `handoff` (write end-of-session handoff), `handon` (resume from latest handoff), `oneprompt` (distill session into one prompt), `distill` (turn this session's corrections/mistakes into proposed durable rules — memories, CLAUDE.md rules, or checks).
+- **Session flow:** `handoff` (write end-of-session handoff), `handon` (resume from latest handoff), `recover-session` (reconstruct a CRASHED / no-handoff session from its prior transcript + git, then offer to write the missing handoff), `oneprompt` (distill session into one prompt), `distill` (turn this session's corrections/mistakes into proposed durable rules — memories, CLAUDE.md rules, or checks).
 - **Research / prior-art:** `deep-research` (multi-source cited report), `already-solved` (find existing libs/tools before building), `claude-api` (Claude API/SDK reference).
 - **Thinking / planning:** `grill-me` (interrogate YOU one question at a time to pressure-test an idea/plan/decision), `council` (autonomous multi-persona panel + synthesized go/no-go verdict, for a second opinion before committing).
+- **Build loop:** `iterate` (build/write anything in verified increments - smallest slice -> self-check as you go (UI: render headless + Read the screenshot to critique; logic: tests/smoke run; app: run it + hit the route; script: run on real input) -> critique vs the bar -> adjust -> repeat. Bundles `scripts/visual-verify.ps1` (headless Edge/Chrome screenshot + `-CheckHtml` static check). The default for any build, enforced by the `build-verify` gate hook).
 - **Code quality:** `code-review` (bugs + cleanups on the diff), `simplify` (quality cleanups only), `verify` (run the app to confirm a change), `run` (launch the app), `review` (review a PR), `security-review` (security pass on the branch), `init` (generate a CLAUDE.md).
 - **Harness / config:** `update-config` (settings.json, hooks, permissions), `keybindings-help`, `fewer-permission-prompts`, `loop` (run a prompt on an interval), `schedule` (cron cloud agents), `scaffold` (lay the standard project template), `scaffold-expert` (stand up a new docs-backed/persona expert end-to-end — library + agent + optional /ww<x> skill + wire/validate), `vendor-corpus` (vendor primary web/PDF sources into an EXISTING `library/<x>/` at integrity grade - raw bytes + SHA256 provenance + verify-vs-raw + pending-not-fabricate + push-protection-safe gitignore - then delegate source-cited corpus prose to a general-purpose agent and a hallucination audit to `agent-eval-strategist`; reusable standalone AND as scaffold-expert's corpus-phase delegate; NOT for creating a new expert (`scaffold-expert`) or the weekly doc-mirror currency refresh (`refresh_libraries`)), `insight-amplify` (deep swarm-built insights report — derives its own judgments from the same raw data `/insights` reads + maps the agent/skill/expert/library relationships, subtracts what you already built, adversarially verifies, writes an auto-opening HTML report, then offers a Boris/Karpathy persona read; proposes only, no score), `sync-capabilities` (reconcile this list vs disk), `backup-config` (commit+push the global config), `swarm-build` (multi-stream parallel build with subagents in isolated git worktrees, gated merge-back/verify/push).
 - **Security:** `untrusted-repo-static-audit` (read-only audit of an untrusted clone).
+- **Windows triage:** `windows-oom-pagefile-triage` (triage a Windows allocation-class crash - `mkl_malloc`/"paging file too small"/MemoryError: read-only checks AutomaticManagedPagefile + commit-charge vs RAM + top consumers, classifies environment-vs-real-bug, then re-enables the page file only with consent (UAC + reboot). NOT packaging/scheduling (`windows-delivery-engineer`), NOT debugging the app's own mic/STT logic).
 - **Agile / delivery:** `user-stories`, `sprint-plan`, `retro`, `backlog-refine`, `kanban-flow` — methodology questions route through `agile-expert` to the specialists (`scrum-expert`, `sprint-expert`, `kanban-expert`, `agile-scaling-expert`, `agile-metrics-expert`, `agile-backlog-expert`).
 - **Persona advisors:** `wwbd`, `wwkd`, `wwgd` (see the matching agents above).
+- **JARVIS revival:** `jarvis` - hold a seance with the `jarvis-expert` ghost and reincarnate one JARVIS faculty at a time (accept a recommendation -> it builds that faculty + flips it dormant->online, advancing the revival meter). Delegates the voice/TTS tech to the separate `elevenlabs-expert`.
+
+
+
+
+
+
+
+
 
 
 
