@@ -2813,6 +2813,16 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
+      ],
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 307,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
       ]
     },
     "1028717": {
@@ -3385,7 +3395,17 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 62219,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 582,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
     },
     "654295": {
       "player_id": 654295,
@@ -3478,6 +3498,16 @@
           "source": "apa",
           "match_method": "name",
           "added_date": "2026-06-07"
+        }
+      ],
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 391,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
         }
       ]
     },
@@ -5092,6 +5122,16 @@
           "confidence": "high",
           "added_date": "2026-06-27"
         }
+      ],
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 601,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
       ]
     },
     "626812": {
@@ -6008,7 +6048,17 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 2695,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 355,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
     },
     "857943": {
       "player_id": 857943,
@@ -11288,6 +11338,16 @@
           "match_method": "name",
           "added_date": "2026-06-06"
         }
+      ],
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 632,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
       ]
     },
     "1145387": {
@@ -13475,7 +13535,17 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 34954,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 448,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
     },
     "1008294": {
       "player_id": 1008294,
@@ -13902,7 +13972,17 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 127744,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 506,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
     },
     "1324695": {
       "player_id": 1324695,
@@ -13947,7 +14027,17 @@
       "state": "CO",
       "source": "digitalpool",
       "digitalpool_id": 152494,
-      "added_date": "2026-06-06"
+      "added_date": "2026-06-06",
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 461,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
     },
     "1239086": {
       "player_id": 1239086,
@@ -105929,6 +106019,1126 @@
             "5280-billiards"
           ],
           "lms_rating": 352,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1365541": {
+      "player_id": 1365541,
+      "membership_id": "9900008551713",
+      "name": "AJ` Bohl",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "E4A625ED-88BE-4936-B8A3-0939036C9762",
+        "readableId": "1365541",
+        "membershipId": "9900008551713",
+        "firstName": "AJ`",
+        "lastName": "Bohl",
+        "location": "Littleton  CO",
+        "rating": "173",
+        "robustness": "30",
+        "provisionalRating": "300",
+        "effectiveRating": "281",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 281,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1234205": {
+      "player_id": 1234205,
+      "membership_id": "9900006951256",
+      "name": "Benjamin Rivera",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "B096BA2B-C17D-4591-83C7-65287D0D20AF",
+        "readableId": "1234205",
+        "membershipId": "9900006951256",
+        "firstName": "Benjamin",
+        "lastName": "Rivera",
+        "location": "Brighton CO",
+        "rating": "565",
+        "robustness": "450",
+        "provisionalRating": "575",
+        "effectiveRating": "565",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 565,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1383400": {
+      "player_id": 1383400,
+      "membership_id": "9900008727033",
+      "name": "Bill Murry",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "6CFED3CC-A479-48DD-9C31-9B4067E20521",
+        "readableId": "1383400",
+        "membershipId": "9900008727033",
+        "firstName": "Bill",
+        "lastName": "Murry",
+        "location": "Denver CO",
+        "rating": "256",
+        "robustness": "35",
+        "provisionalRating": "425",
+        "effectiveRating": "395",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 396,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "11841": {
+      "player_id": 11841,
+      "membership_id": "0031888",
+      "name": "Billy Joe Stephenson",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "4640C57B-E18C-432C-8F19-B2E0BA7BC44C",
+        "readableId": "11841",
+        "membershipId": "0031888",
+        "firstName": "Billy Joe",
+        "lastName": "Stephenson",
+        "location": "Colorado Springs CO",
+        "rating": "351",
+        "robustness": "139",
+        "provisionalRating": "405",
+        "effectiveRating": "367",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 368,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1190535": {
+      "player_id": 1190535,
+      "membership_id": "9900006504537",
+      "name": "Bruce 'Bear' Hahn",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "75AA6718-0114-42E9-BB17-29C749847623",
+        "readableId": "1190535",
+        "membershipId": "9900006504537",
+        "firstName": "Bruce 'Bear'",
+        "lastName": "Hahn",
+        "location": "Lakewood CO",
+        "rating": "375",
+        "robustness": "588",
+        "provisionalRating": "400",
+        "effectiveRating": "375",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 375,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1276154": {
+      "player_id": 1276154,
+      "membership_id": "9900007387580",
+      "name": "Casey Baca",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "0A9AB597-1977-4030-B044-1C630EE85A7F",
+        "readableId": "1276154",
+        "membershipId": "9900007387580",
+        "firstName": "Casey",
+        "lastName": "Baca",
+        "location": "Sheridan CO",
+        "rating": "483",
+        "robustness": "70",
+        "provisionalRating": "385",
+        "effectiveRating": "420",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 420,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1093526": {
+      "player_id": 1093526,
+      "membership_id": "9900005310023",
+      "name": "Chris R Graves",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "8DED7F24-1225-439C-861A-ACD8014495E5",
+        "readableId": "1093526",
+        "membershipId": "9900005310023",
+        "firstName": "Chris R",
+        "lastName": "Graves",
+        "location": ". CO",
+        "rating": "526",
+        "robustness": "403",
+        "provisionalRating": "520",
+        "effectiveRating": "526",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 527,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1249800": {
+      "player_id": 1249800,
+      "membership_id": "9900007115121",
+      "name": "Chris S Tuttle",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "49820175-318D-4515-AE8E-F469F48EFE37",
+        "readableId": "1249800",
+        "membershipId": "9900007115121",
+        "firstName": "Chris S",
+        "lastName": "Tuttle",
+        "location": "Frederick CO",
+        "rating": "286",
+        "robustness": "418",
+        "provisionalRating": "350",
+        "effectiveRating": "286",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 286,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1259342": {
+      "player_id": 1259342,
+      "membership_id": "9900007213810",
+      "name": "Christopher Shane WIlson",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "44C8098F-2737-4C22-BCB9-498B93E196F5",
+        "readableId": "1259342",
+        "membershipId": "9900007213810",
+        "firstName": "Christopher Shane",
+        "lastName": "WIlson",
+        "location": "Thornton CO",
+        "rating": "429",
+        "robustness": "285",
+        "provisionalRating": "275",
+        "effectiveRating": "429",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 429,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1394707": {
+      "player_id": 1394707,
+      "membership_id": "9900008835455",
+      "name": "Crystal M. Gonzales",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "F7D90EE0-409E-4F71-AD21-61F1F6DAD600",
+        "readableId": "1394707",
+        "membershipId": "9900008835455",
+        "firstName": "Crystal M.",
+        "lastName": "Gonzales",
+        "location": "Thornton CO",
+        "rating": "281",
+        "robustness": "12",
+        "provisionalRating": "300",
+        "effectiveRating": "299",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 299,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1192330": {
+      "player_id": 1192330,
+      "membership_id": "9900006525112",
+      "name": "Daniel Lez Lopez",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "B4111BF6-77C0-4148-A873-196B831FE338",
+        "readableId": "1192330",
+        "membershipId": "9900006525112",
+        "firstName": "Daniel Lez",
+        "lastName": "Lopez",
+        "location": "Platteville CO",
+        "rating": "191",
+        "robustness": "135",
+        "provisionalRating": "525",
+        "effectiveRating": "300",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 301,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1342841": {
+      "player_id": 1342841,
+      "membership_id": "9900008173533",
+      "name": "David Torres-Schroeder",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "AAD6A973-4F6F-446E-BE63-B37C01484230",
+        "readableId": "1342841",
+        "membershipId": "9900008173533",
+        "firstName": "David",
+        "lastName": "Torres-Schroeder",
+        "location": "Colorado Springs CO",
+        "rating": "159",
+        "robustness": "5",
+        "provisionalRating": "0",
+        "effectiveRating": "160",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 160,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1202059": {
+      "player_id": 1202059,
+      "membership_id": "9900006622323",
+      "name": "Ernest Carabajal",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "405390B0-ADB6-489A-AF92-505772B9F2BD",
+        "readableId": "1202059",
+        "membershipId": "9900006622323",
+        "firstName": "Ernest",
+        "lastName": "Carabajal",
+        "location": "Westminster CO",
+        "rating": "431",
+        "robustness": "280",
+        "provisionalRating": "425",
+        "effectiveRating": "432",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 432,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1160337": {
+      "player_id": 1160337,
+      "membership_id": "9900005993332",
+      "name": "Howard Popejoy",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "393A538B-6096-4754-B893-7D3634074D4D",
+        "readableId": "1160337",
+        "membershipId": "9900005993332",
+        "firstName": "Howard",
+        "lastName": "Popejoy",
+        "location": "Arvada CO",
+        "rating": "427",
+        "robustness": "459",
+        "provisionalRating": "300",
+        "effectiveRating": "427",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 427,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1306787": {
+      "player_id": 1306787,
+      "membership_id": "9900007811566",
+      "name": "Jade Kimberly Gragg",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "472C23C5-186B-4382-9743-AD312FC99A2F",
+        "readableId": "1306787",
+        "membershipId": "9900007811566",
+        "firstName": "Jade Kimberly",
+        "lastName": "Gragg",
+        "location": "Auora CO",
+        "rating": "293",
+        "robustness": "102",
+        "provisionalRating": "350",
+        "effectiveRating": "321",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 321,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1169226": {
+      "player_id": 1169226,
+      "membership_id": "9900006087849",
+      "name": "James Unger",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "E67A2484-C2ED-4551-B6E5-3EC3AA6F5D28",
+        "readableId": "1169226",
+        "membershipId": "9900006087849",
+        "firstName": "James",
+        "lastName": "Unger",
+        "location": "Elizabeth CO",
+        "rating": "473",
+        "robustness": "219",
+        "provisionalRating": "400",
+        "effectiveRating": "473",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 474,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "861549": {
+      "player_id": 861549,
+      "membership_id": "0296094",
+      "name": "John L Lawrence Jr",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "FA931EB9-C1B1-496F-AE0F-D3B587B7A716",
+        "readableId": "861549",
+        "membershipId": "0296094",
+        "firstName": "John L",
+        "lastName": "Lawrence Jr",
+        "location": "Colorado Springs CO",
+        "rating": "289",
+        "robustness": "72",
+        "provisionalRating": "516",
+        "effectiveRating": "435",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 435,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1233546": {
+      "player_id": 1233546,
+      "membership_id": "9900006944050",
+      "name": "John T Young",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "257ED278-FE3C-4E1E-B0D7-3E0543F2AE8E",
+        "readableId": "1233546",
+        "membershipId": "9900006944050",
+        "firstName": "John T",
+        "lastName": "Young",
+        "location": "Thornton CO",
+        "rating": "477",
+        "robustness": "348",
+        "provisionalRating": "450",
+        "effectiveRating": "477",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 477,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1341426": {
+      "player_id": 1341426,
+      "membership_id": "9900008159575",
+      "name": "Josh J Stewart",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "1FA5EADF-B010-4AB7-9AC8-420BA588CE79",
+        "readableId": "1341426",
+        "membershipId": "9900008159575",
+        "firstName": "Josh J",
+        "lastName": "Stewart",
+        "location": "denver CO",
+        "rating": "367",
+        "robustness": "139",
+        "provisionalRating": "425",
+        "effectiveRating": "385",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 385,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1375476": {
+      "player_id": 1375476,
+      "membership_id": "9900008649526",
+      "name": "Kaelin Nicole Castro",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "DC18CEB0-45A0-49DB-92E9-A7F8B439A4A5",
+        "readableId": "1375476",
+        "membershipId": "9900008649526",
+        "firstName": "Kaelin Nicole",
+        "lastName": "Castro",
+        "location": "Aurora  CO",
+        "rating": "189",
+        "robustness": "44",
+        "provisionalRating": "300",
+        "effectiveRating": "276",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 276,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1245226": {
+      "player_id": 1245226,
+      "membership_id": "9900007072660",
+      "name": "Leo Lucero",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "D3450E6A-CD18-4B8C-BB91-FF35F6908853",
+        "readableId": "1245226",
+        "membershipId": "9900007072660",
+        "firstName": "Leo",
+        "lastName": "Lucero",
+        "location": "Northglenn CO",
+        "rating": "361",
+        "robustness": "382",
+        "provisionalRating": "425",
+        "effectiveRating": "361",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 361,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1306578": {
+      "player_id": 1306578,
+      "membership_id": "9900007808887",
+      "name": "Luis De-La-Pena",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "3A02C378-65DC-4F79-9CB5-E4EDD33DBB58",
+        "readableId": "1306578",
+        "membershipId": "9900007808887",
+        "firstName": "Luis",
+        "lastName": "De-La-Pena",
+        "location": "Denver CO",
+        "rating": "245",
+        "robustness": "60",
+        "provisionalRating": "270",
+        "effectiveRating": "263",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 263,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "995082": {
+      "player_id": 995082,
+      "membership_id": "9900004165433",
+      "name": "Mack Pride",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "9DF608EF-6FAD-4080-A9CB-37381B028CFB",
+        "readableId": "995082",
+        "membershipId": "9900004165433",
+        "firstName": "Mack",
+        "lastName": "Pride",
+        "location": "Gilcrest CO",
+        "rating": "595",
+        "robustness": "2096",
+        "provisionalRating": "525",
+        "effectiveRating": "596",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 596,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1247240": {
+      "player_id": 1247240,
+      "membership_id": "9900007089705",
+      "name": "Rick Teran",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "56E84897-33C7-4EAA-B504-6B3453B4F226",
+        "readableId": "1247240",
+        "membershipId": "9900007089705",
+        "firstName": "Rick",
+        "lastName": "Teran",
+        "location": "Northglenn CO",
+        "rating": "349",
+        "robustness": "375",
+        "provisionalRating": "450",
+        "effectiveRating": "350",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 350,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "990423": {
+      "player_id": 990423,
+      "membership_id": "9900004099493",
+      "name": "Robbie Ludwig",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "A4AD1DEE-90BA-407B-A605-6535E29FDD7D",
+        "readableId": "990423",
+        "membershipId": "9900004099493",
+        "firstName": "Robbie",
+        "lastName": "Ludwig",
+        "location": "Arvada CO",
+        "rating": "437",
+        "robustness": "429",
+        "provisionalRating": "400",
+        "effectiveRating": "438",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 438,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1366416": {
+      "player_id": 1366416,
+      "membership_id": "9900008560272",
+      "name": "Robert \"Bob\" Fenner",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "2475C62A-270E-44DD-9374-27643AE6A0FE",
+        "readableId": "1366416",
+        "membershipId": "9900008560272",
+        "firstName": "Robert \"Bob\"",
+        "lastName": "Fenner",
+        "location": "Brighton CO",
+        "rating": "357",
+        "robustness": "64",
+        "provisionalRating": "470",
+        "effectiveRating": "434",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 435,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1378429": {
+      "player_id": 1378429,
+      "membership_id": "9900008678724",
+      "name": "Sammy D Baca",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "AD13D83B-6204-4CB6-9267-41C79E1DDB73",
+        "readableId": "1378429",
+        "membershipId": "9900008678724",
+        "firstName": "Sammy D",
+        "lastName": "Baca",
+        "location": "Englewood CO",
+        "rating": "419",
+        "robustness": "50",
+        "provisionalRating": "375",
+        "effectiveRating": "386",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 387,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1107583": {
+      "player_id": 1107583,
+      "membership_id": "9900005454086",
+      "name": "susan kester-hoard",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "EAD2DEFE-234F-444C-A939-7AF53EAC9CD1",
+        "readableId": "1107583",
+        "membershipId": "9900005454086",
+        "firstName": "susan",
+        "lastName": "kester-hoard",
+        "location": "Longmont CO",
+        "rating": "169",
+        "robustness": "289",
+        "provisionalRating": "525",
+        "effectiveRating": "169",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 169,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1358322": {
+      "player_id": 1358322,
+      "membership_id": "9900008480846",
+      "name": "Tina Magnuson-Perdue",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "B3D1B1E3-A0C7-4868-BC4E-09EA374ABD59",
+        "readableId": "1358322",
+        "membershipId": "9900008480846",
+        "firstName": "Tina",
+        "lastName": "Magnuson-Perdue",
+        "location": "Colorado Springs CO",
+        "rating": "453",
+        "robustness": "0",
+        "provisionalRating": "250",
+        "effectiveRating": "250",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 250,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1300758": {
+      "player_id": 1300758,
+      "membership_id": "9900007747315",
+      "name": "Tommie Rusch",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "B5F528DC-14DF-4723-95E9-7CD8FA043A8F",
+        "readableId": "1300758",
+        "membershipId": "9900007747315",
+        "firstName": "Tommie",
+        "lastName": "Rusch",
+        "location": "Lakewood CO",
+        "rating": "489",
+        "robustness": "534",
+        "provisionalRating": "450",
+        "effectiveRating": "489",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 489,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "17603": {
+      "player_id": 17603,
+      "membership_id": "9900000180812",
+      "name": "Tonya J Bish",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "532A0FEB-10CF-46EB-88C5-156801A73A27",
+        "readableId": "17603",
+        "membershipId": "9900000180812",
+        "firstName": "Tonya J",
+        "lastName": "Bish",
+        "location": "Longmont CO",
+        "rating": "447",
+        "robustness": "1984",
+        "provisionalRating": "390",
+        "effectiveRating": "448",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 448,
+          "source": "bca",
+          "match_method": "name+rating",
+          "confidence": "high",
+          "added_date": "2026-07-07"
+        }
+      ]
+    },
+    "1263244": {
+      "player_id": 1263244,
+      "membership_id": "9900007253571",
+      "name": "Valeria Mendiza-Poncedeleon",
+      "added_date": "2026-07-07",
+      "record": {
+        "id": "5ED4F98B-7C97-491B-A111-A5353AA56D92",
+        "readableId": "1263244",
+        "membershipId": "9900007253571",
+        "firstName": "Valeria",
+        "lastName": "Mendiza-Poncedeleon",
+        "location": "Fountain CO",
+        "rating": "431",
+        "robustness": "522",
+        "provisionalRating": "448",
+        "effectiveRating": "432",
+        "membershipNumber": null,
+        "imageUrl": null,
+        "lmsId": null,
+        "shareMatches": null,
+        "statsOverall": null,
+        "statsByRating": null,
+        "ratingHistory": null
+      },
+      "bca": [
+        {
+          "leagues": [],
+          "lms_rating": 432,
           "source": "bca",
           "match_method": "name+rating",
           "confidence": "high",
