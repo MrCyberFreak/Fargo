@@ -26,10 +26,10 @@ concurrency:
 jobs:
   pull:
     runs-on: ubuntu-latest
-    # ~1,182 rostered players fetched sequentially at ~1s courtesy delay each is
-    # ~20-30 min every run (the pull fetches all players daily, not just changed
-    # ones). Was 15; raised with headroom for roster growth (NAPA/APA imports).
-    timeout-minutes: 45
+    # Roster is ~3,847 players after BCA backfill (Jul 2026); at ~1s/player that
+    # is ~64 min sequentially. Was 45 (set when roster was ~1,182); raised to 100
+    # to give headroom for further growth (NAPA/APA/BCA imports).
+    timeout-minutes: 100
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
