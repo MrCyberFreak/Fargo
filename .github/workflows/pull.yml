@@ -26,10 +26,19 @@ concurrency:
 jobs:
   pull:
     runs-on: ubuntu-latest
-    # ~1,182 rostered players fetched sequentially at ~1s courtesy delay each is
-    # ~20-30 min every run (the pull fetches all players daily, not just changed
-    # ones). Was 15; raised with headroom for roster growth (NAPA/APA imports).
-    timeout-minutes: 45
+    # ~3,847 rostered players fetched every run (all players daily, not just
+    # changed ones). pull.py fetches PULL_WORKERS at a time — at 8 workers with a
+    # 1s courtesy pause each (~8 req/s) that's ~8-12 min. The timeout is sized for
+    # the DEGRADED case: if concurrency were throttled to effectively sequential
+    # (~64 min at this roster size), 90 min still leaves headroom. A strictly
+    # sequential 45-min cap is what silently cancelled every run after the BCA
+    # backfill tripled the roster (Jul 2026) — the job hit 45 min mid-fetch and
+    # the commit step was skipped, so no data landed. Grows with the roster.
+    timeout-minutes: 90
+    env:
+      # Concurrency for the live fetch. Bump if the roster grows and runs get
+      # long; drop toward 1 if FargoRate ever signals it wants a gentler rate.
+      PULL_WORKERS: '8'
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
@@ -50,7 +59,7 @@ jobs:
             git config user.name  "fargo-tracker[bot]"
             git config user.email "actions@users.noreply.github.com"
             git commit -m "data: rating/robustness changes $(date -u +%F)"
-            # The pull runs ~30 min; `main` can advance during that window (PR
+            # The pull runs ~8-12 min; `main` can advance during that window (PR
             # merges, other workflows), making a bare push non-fast-forward and
             # throwing away the run's data. Rebase our single data commit onto
             # the latest remote and retry. history.csv is append-only and the

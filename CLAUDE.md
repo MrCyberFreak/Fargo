@@ -153,10 +153,16 @@ above — they never cause an existing player to stop being tracked:
   crossref/resolve/add/manual shape (name-only, CO-imputed; CSR advisory, never a
   gate). All committed NoCo divisions are admitted (~1,279 players across 58
   divisions). Same admission-vs-tracking invariant as APA.
-- **Scale note:** ~1,182 ids means ~1,182 fetches/run at ~1s each (~20 min on
-  the Actions runner). Acceptable for a daily job; revisit if the roster grows.
-  The APA resolve is a one-off batch of ~2,000+ searches (~35–40 min), separate
-  from the daily pull.
+- **Scale note:** ~3,847 ids means ~3,847 fetches/run (all players daily, not
+  just changed ones). `pull.py` fetches `PULL_WORKERS` at a time (default 8, each
+  thread its own session + a 1s courtesy pause → ~8 req/s), so a run is ~8-12 min
+  on the Actions runner; `pull.yml`'s `timeout-minutes: 90` is sized for the
+  degraded (effectively-sequential ~64 min) case. A strictly sequential pull with
+  the old 45-min cap silently *cancelled* every run after the BCA backfill tripled
+  the roster (Jul 2026) — it hit the timeout mid-fetch and skipped the commit, so
+  no data landed. Bump `PULL_WORKERS` as the roster grows; drop toward 1 if
+  FargoRate ever wants a gentler rate. The APA resolve is a one-off batch of
+  ~2,000+ searches (~35–40 min), separate from the daily pull.
 
 ## Partial-failure policy
 If a player's fetch fails, log it, skip it, and continue. Successful players are

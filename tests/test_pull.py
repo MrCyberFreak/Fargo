@@ -126,6 +126,45 @@ def test_partial_failure_records_others(tmp_path):
     assert rows[0]["rating_quality"] == "established"  # 250 >= 200
 
 
+def test_parallel_fetch_preserves_order_and_rules(tmp_path):
+    # workers>1 fetches concurrently; history.csv must still come out in roster
+    # order (append-only diff stability) with the recording rules unchanged.
+    # Slow the low ids so, without order preservation, they'd land last.
+    import time
+
+    ids = [5, 4, 3, 2, 1]
+    table = {i: make_rec(i, 400 + i, 100 + i, f"Player {i}") for i in ids}
+
+    def slow_fetch(pid, session=None):
+        time.sleep(0.02 * pid)  # higher ids finish first
+        return table[pid]
+
+    hist = tmp_path / "history.csv"
+    summary = pull.run_pull(
+        roster_of(*ids), hist, fetch=slow_fetch, today="2026-06-05", workers=5
+    )
+
+    assert summary["baselined"] == 5 and summary["new_rows"] == 5
+    rows = read_rows(hist)
+    # roster order is [5,4,3,2,1] — preserved despite finish order being reversed
+    assert [r["player_id"] for r in rows] == ["5", "4", "3", "2", "1"]
+    assert [r["rating"] for r in rows] == ["405", "404", "403", "402", "401"]
+
+
+def test_parallel_partial_failure(tmp_path):
+    # A failing fetch among concurrent workers is skipped; the rest still record.
+    hist = tmp_path / "history.csv"
+    fetch = fetch_from({1: make_rec(1, 500, 250), 3: make_rec(3, 300, 40)})
+
+    summary = pull.run_pull(
+        roster_of(1, 2, 3), hist, fetch=fetch, today="2026-06-05", workers=4
+    )
+
+    assert summary["failed"] == 1 and summary["baselined"] == 2
+    rows = read_rows(hist)
+    assert [r["player_id"] for r in rows] == ["1", "3"]
+
+
 def test_all_fail_exits_nonzero(tmp_path, monkeypatch):
     hist = tmp_path / "history.csv"
     monkeypatch.setattr(pull, "ROSTER_PATH", tmp_path / "roster.json")

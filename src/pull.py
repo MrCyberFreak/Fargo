@@ -29,8 +29,11 @@ from __future__ import annotations
 import csv
 import datetime as dt
 import json
+import os
 import sys
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Callable
 
@@ -40,6 +43,15 @@ from fargo_api import FargoApiError, PlayerRecord
 ROOT = Path(__file__).resolve().parent.parent
 ROSTER_PATH = ROOT / "roster.json"
 HISTORY_PATH = ROOT / "data" / "history.csv"
+
+# How many players to fetch concurrently on the live run. The roster grew past
+# ~3,800 ids (BCA backfill), and a strictly sequential pull with a 1s courtesy
+# pause each is ~64 min — over the workflow timeout, so the job was cancelled
+# before it could commit. A small thread pool fetches N at a time (each thread
+# still pauses REQUEST_DELAY between its own calls, so the API sees ~N req/s —
+# modest and polite). Tunable via PULL_WORKERS. Tests drive run_pull directly
+# with workers=1, so they stay sequential/deterministic and network-free.
+DEFAULT_WORKERS = int(os.environ.get("PULL_WORKERS", "8"))
 
 FIELDNAMES = [
     "date_found", "player_id", "readable_id", "name",
@@ -90,8 +102,15 @@ def run_pull(
     fetch: FetchFn | None = None,
     today: str | None = None,
     session=None,
+    workers: int = 1,
 ) -> dict:
-    """Apply the recording rules for every rostered player. Returns a summary."""
+    """Apply the recording rules for every rostered player. Returns a summary.
+
+    Fetches are issued concurrently when ``workers`` > 1 (roster order of the
+    results is preserved, so history.csv stays deterministic and the append-only
+    diff is stable). The recording rules — baseline / change / unchanged — are
+    applied single-threaded afterwards, unchanged from the sequential version.
+    """
     fetch = fetch or fargo_api.get_player
     today = today or dt.date.today().isoformat()
     last_entries = load_last_entries(history_path)
@@ -99,16 +118,32 @@ def run_pull(
     summary = {"checked": 0, "baselined": 0, "changed": 0, "unchanged": 0, "failed": 0}
     new_rows: list[dict] = []
 
-    for key, entry in roster.items():
+    items = list(roster.items())
+
+    def _fetch_one(item):
+        """Fetch a single player; return (key, entry, pid, record, error)."""
+        key, entry = item
         pid = int(entry["player_id"])
+        try:
+            return key, entry, pid, fetch(pid, session=session), None
+        except FargoApiError as exc:
+            return key, entry, pid, None, exc
+
+    if workers and workers > 1:
+        # ThreadPoolExecutor.map preserves input order, so results come back in
+        # roster order regardless of which fetch finished first.
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            fetched = list(pool.map(_fetch_one, items))
+    else:
+        fetched = [_fetch_one(item) for item in items]
+
+    for key, entry, pid, rec, err in fetched:
         name_hint = entry.get("name", key)
         summary["checked"] += 1
 
-        try:
-            rec = fetch(pid, session=session)
-        except FargoApiError as exc:
+        if err is not None:
             summary["failed"] += 1
-            print(f"FAIL   {pid} {name_hint}: {exc}")
+            print(f"FAIL   {pid} {name_hint}: {err}")
             continue
 
         prev = last_entries.get(pid)
@@ -153,16 +188,24 @@ def run_pull(
 
 def main() -> int:
     roster = load_roster(ROSTER_PATH)
-    session = fargo_api.new_session()
 
-    # Live runs pace themselves between players (tests inject a fake fetch and
-    # never hit this path, so they stay instant).
+    # Each worker thread gets its OWN requests.Session — a single Session is not
+    # guaranteed thread-safe, so we never share one across the pool. Live runs
+    # still pace themselves (each thread pauses REQUEST_DELAY between its calls);
+    # tests inject a fake fetch and never hit this path, so they stay instant.
+    _local = threading.local()
+
     def paced_fetch(pid, session=None):
-        rec = fargo_api.get_player(pid, session=session)
+        sess = getattr(_local, "session", None)
+        if sess is None:
+            sess = _local.session = fargo_api.new_session()
+        rec = fargo_api.get_player(pid, session=sess)
         time.sleep(fargo_api.REQUEST_DELAY)
         return rec
 
-    summary = run_pull(roster, HISTORY_PATH, fetch=paced_fetch, session=session)
+    summary = run_pull(
+        roster, HISTORY_PATH, fetch=paced_fetch, workers=DEFAULT_WORKERS
+    )
 
     print("\n--- run summary ---")
     print(
