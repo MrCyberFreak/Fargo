@@ -378,6 +378,7 @@ def _setup_add(tmp_path, monkeypatch, roster_players, resolution):
     resolve_dir = tmp_path / "resolve"; resolve_dir.mkdir()
     monkeypatch.setattr(imp, "RESOLVE_DIR", resolve_dir)
     monkeypatch.setattr(imp, "RESOLUTION_PATH", resolve_dir / "apa_resolution.json")
+    monkeypatch.setattr(imp, "ADD_CONFLICTS_PATH", resolve_dir / "apa_add_conflicts.json")
     (resolve_dir / "apa_resolution.json").write_text(json.dumps(resolution), encoding="utf-8")
     return roster_path
 
@@ -498,3 +499,79 @@ def test_add_is_idempotent(tmp_path, monkeypatch):
     assert second["created"] == 0 and second["already_present"] == 1
     saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
     assert len(saved["200"]["apa"]) == 1                  # no duplicate membership
+
+
+# --- add() precision guard: member_id cross-id collision detection ------------
+
+def test_add_conflict_member_already_on_different_id(tmp_path, monkeypatch):
+    """member_id already linked to id A; resolve tries to add it to a different id B.
+    -> skipped, recorded in conflicts file, id B NOT created/modified."""
+    # id 100 already holds member_id 9 in the roster.
+    roster_players = {
+        "100": {"player_id": 100, "name": "Bryson Ford",
+                "apa": [{"member_id": 9, "member_number": "80400009", "name": "Bryson Ford",
+                          "source": "apa", "match_method": "name", "added_date": "2026-01-01"}]},
+    }
+    # resolution tries to add the same member_id 9 to a different id 200.
+    resolution = _resolution(resolved=[_resolved_row(200, "Bryson Ford Alt", "CO", 9)])
+    roster_path = _setup_add(tmp_path, monkeypatch, roster_players, resolution)
+
+    s = imp.add(today="2026-07-14")
+
+    # id 200 must NOT exist in the roster (row was skipped).
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    assert "200" not in saved, "conflicting id must not be created"
+    assert s["created"] == 0
+    assert s["conflicts"] == 1
+
+    # conflicts file must be written and contain the expected entry.
+    conflicts_path = imp.ADD_CONFLICTS_PATH
+    assert conflicts_path.exists(), "apa_add_conflicts.json must be written"
+    conflicts = json.loads(conflicts_path.read_text(encoding="utf-8"))
+    assert len(conflicts) == 1
+    c = conflicts[0]
+    assert c["member_id"] == 9
+    assert c["attempted_player_id"] == 200
+    assert 100 in c["existing_player_ids"]
+
+
+def test_add_conflict_idempotent_same_id_not_flagged(tmp_path, monkeypatch):
+    """Re-adding member_id M onto the SAME Fargo id it is already on is idempotent,
+    not a conflict."""
+    roster_players = {
+        "100": {"player_id": 100, "name": "Anna Byrd",
+                "apa": [{"member_id": 7, "member_number": "80400007", "name": "Anna Byrd",
+                          "source": "apa", "match_method": "name", "added_date": "2026-01-01"}]},
+    }
+    # Same member_id 7, same id 100 -> idempotent, no conflict.
+    resolution = _resolution(resolved=[_resolved_row(100, "Anna Byrd", "CO", 7)])
+    roster_path = _setup_add(tmp_path, monkeypatch, roster_players, resolution)
+
+    s = imp.add(today="2026-07-14")
+
+    assert s["conflicts"] == 0
+    assert s["already_present"] == 1
+    # Exactly one link, no duplicate.
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    assert len(saved["100"]["apa"]) == 1
+    # No conflicts file written when there are no conflicts.
+    assert not imp.ADD_CONFLICTS_PATH.exists()
+
+
+def test_add_conflict_brand_new_member_adds_normally(tmp_path, monkeypatch):
+    """A member_id with no prior link anywhere adds without triggering a conflict."""
+    roster_players = {
+        "100": {"player_id": 100, "name": "Existing Player"},
+    }
+    # member_id 42 is brand new, player_id 200 is also new.
+    resolution = _resolution(resolved=[_resolved_row(200, "Brand New", "TX", 42)])
+    roster_path = _setup_add(tmp_path, monkeypatch, roster_players, resolution)
+
+    s = imp.add(today="2026-07-14")
+
+    assert s["created"] == 1
+    assert s["conflicts"] == 0
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    assert "200" in saved
+    assert saved["200"]["apa"][0]["member_id"] == 42
+    assert not imp.ADD_CONFLICTS_PATH.exists()

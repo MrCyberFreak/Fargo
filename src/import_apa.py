@@ -89,6 +89,7 @@ RESOLUTION_PATH = RESOLVE_DIR / "apa_resolution.json"
 MANUAL_PATH = RESOLVE_DIR / "apa_manual.json"
 RECOVERY_PATH = RESOLVE_DIR / "apa_recovery.json"
 UNLINK_PATH = RESOLVE_DIR / "apa_unlink.json"
+ADD_CONFLICTS_PATH = RESOLVE_DIR / "apa_add_conflicts.json"
 
 
 def resolve_source(explicit: Path | None) -> Path:
@@ -308,13 +309,30 @@ def resolve(today: str) -> dict:
     return out
 
 
+def _build_member_id_index(players: dict) -> dict:
+    """member_id -> set of fargo player_id strings that carry that APA member_id.
+    Built once up front so the cross-id duplicate check in add() is O(1) per row."""
+    index: dict = {}
+    for pid, entry in players.items():
+        for link in entry.get("apa") or []:
+            mid = link.get("member_id")
+            if mid is not None:
+                index.setdefault(mid, set()).add(pid)
+    return index
+
+
 def add(today: str, include_variants: bool = False) -> dict:
     """Append matches to roster.json (no network). Idempotent: new ids create a
     slim entry; existing ids just gain the APA cross-link.
 
     By default only the `resolved` (exact-name single) bucket is added. With
     `include_variants=True` the reviewed `variant_candidates` bucket is added too
-    (each link still records match_method "variant", so it stays auditable)."""
+    (each link still records match_method "variant", so it stays auditable).
+
+    Precision guard: before attaching member_id M onto Fargo id F, the roster is
+    checked for any OTHER Fargo id already carrying M. If found the row is SKIPPED
+    and recorded in docs/resolve/apa_add_conflicts.json for human review. An
+    idempotent re-add onto the SAME id M is already on is NOT flagged."""
     if not RESOLUTION_PATH.exists():
         print(f"No resolution file at {RESOLUTION_PATH}; run resolve first.", file=sys.stderr)
         raise SystemExit(1)
@@ -322,7 +340,11 @@ def add(today: str, include_variants: bool = False) -> dict:
     roster = load_roster()
     players = roster.setdefault("players", {})
     suppress = ledger.load_suppress(UNLINK_PATH)
-    summary = {"created": 0, "crosslinked_existing": 0, "already_present": 0}
+    summary = {"created": 0, "crosslinked_existing": 0, "already_present": 0, "conflicts": 0}
+    conflicts: list[dict] = []
+
+    # Build member_id -> {fargo_ids} index once; updated as new ids are created mid-run.
+    mid_index = _build_member_id_index(players)
 
     rows = list(res.get("resolved", []))
     if include_variants:
@@ -332,10 +354,44 @@ def add(today: str, include_variants: bool = False) -> dict:
         key = str(x["player_id"])
         method = x.get("matched_via", "name")
         memberships = x.get("memberships", [])
+
+        # Precision guard: detect member_ids already linked to a DIFFERENT Fargo id.
+        blocked: list[dict] = []
+        safe: list[dict] = []
+        for m in memberships:
+            mid = m.get("member_id")
+            existing_ids = mid_index.get(mid, set())
+            other_ids = existing_ids - {key}
+            if other_ids:
+                blocked.append({"member_id": mid, "existing_player_ids": sorted(other_ids)})
+            else:
+                safe.append(m)
+
+        if blocked:
+            for b in blocked:
+                conflicts.append({
+                    "member_id": b["member_id"],
+                    "attempted_player_id": int(key),
+                    "existing_player_ids": [int(p) for p in b["existing_player_ids"]],
+                    "fargo_name": x.get("fargo_name"),
+                    "search_name": x.get("search_name"),
+                })
+            summary["conflicts"] += len(blocked)
+            if not safe:
+                # All memberships for this row are blocked; skip the entire row.
+                continue
+            # Some memberships are safe; proceed with only those.
+            memberships = safe
+
         if key in players:
             n = _attach_crosslink(roster, key, memberships, today, method, suppress=suppress)
             if n:
                 summary["crosslinked_existing"] += 1
+                # Update the index for memberships just added.
+                for m in memberships:
+                    mid = m.get("member_id")
+                    if mid is not None:
+                        mid_index.setdefault(mid, set()).add(key)
             else:
                 summary["already_present"] += 1
         else:
@@ -350,9 +406,26 @@ def add(today: str, include_variants: bool = False) -> dict:
                         for m in memberships],
             }
             summary["created"] += 1
+            # Update the index for the newly created entry's memberships.
+            for m in memberships:
+                mid = m.get("member_id")
+                if mid is not None:
+                    mid_index.setdefault(mid, set()).add(key)
 
     save_roster(roster)
     summary["roster_total"] = len(players)
+
+    if conflicts:
+        RESOLVE_DIR.mkdir(parents=True, exist_ok=True)
+        ADD_CONFLICTS_PATH.write_text(
+            json.dumps(conflicts, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        try:
+            display = ADD_CONFLICTS_PATH.relative_to(ROOT)
+        except ValueError:
+            display = ADD_CONFLICTS_PATH
+        print(f"WARNING: {len(conflicts)} APA member_id conflict(s) skipped -> "
+              f"{display}", file=sys.stderr)
+
     return summary
 
 
@@ -570,7 +643,8 @@ def main(argv=None) -> int:
         s = add(today, include_variants=args.variants)
         tag = " (incl. variants)" if args.variants else ""
         print(f"created={s['created']} crosslinked_existing={s['crosslinked_existing']} "
-              f"already_present={s['already_present']} roster_total={s['roster_total']}{tag}")
+              f"already_present={s['already_present']} conflicts={s['conflicts']} "
+              f"roster_total={s['roster_total']}{tag}")
         return 0
 
     if args.command == "reclassify":
