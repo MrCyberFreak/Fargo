@@ -174,21 +174,22 @@ FargoRate's read API (`dashboard.fargorate.com/api`) IS reachable from the build
 sandbox directly (content-verified 2026-06-27 against the `docs/api.md` fixture --
 player 1310533: robustness 63 / CO / membership 9900007849538), so resolution can be
 developed and tested locally. But every **scheduled** job still runs on a **GitHub
-Actions runner** (open internet) for automation -- and sandbox reachability has been
-inconsistent across environments, so do NOT depend on it for an unattended run and do
-NOT dismantle the local-pull stopgap on this basis: the scheduled pull
+Actions runner** (open internet) for automation: the scheduled pull
 (`.github/workflows/pull.yml`), name resolution (`.github/workflows/resolve.yml`),
 the APA batch resolve (`.github/workflows/resolve-apa.yml`), the APA recovery
 pass (`.github/workflows/recover-apa.yml`), and the NAPA batch resolve
-(`.github/workflows/resolve-napa.yml`, which clones `_ref/NAPA` first). Claude Code
-only needs `github.com`.
+(`.github/workflows/resolve-napa.yml`, which clones `_ref/NAPA` first). The 2026-06
+Actions billing outage is over and the local Windows Scheduled-Task pull stopgap was
+**retired 2026-07-14** -- Actions is again the sole daily-pull writer. (Sandbox
+reachability of FargoRate has been inconsistent across environments, so don't rely on
+it for an unattended run.) Claude Code only needs `github.com`.
 No LLM runs inside any scheduled job.
 
 ## Source of truth for the API
 `docs/api.md` — verified endpoints, field mapping, and the known-answer fixture
 (`player_id 1310533 → rating 438 / robustness 63 / CO / membership 9900007849538`).
 
-## Cross-league identity (NAPA built; BCA deferred)
+## Cross-league identity (NAPA + BCA built)
 Fargo is the cross-league **identity hub**: each league importer resolves players
 to a stable FargoRate `player_id` and writes an additive, append-only cross-link
 (`apa[]` / `napa[]` / `bca[]`) onto the matching `roster.json` entry. The full
@@ -204,7 +205,9 @@ design contract is `docs/cross-league-identity.md`.
   cross-links into `people.json`; `python src/people.py crosswalk` publishes the
   PII-free `docs/crosswalk.json` (`{source_id -> fargo_player_id, person_id,
   confidence, match_method}`) that PoolPredict consumes instead of joining by
-  name+state. BCA's id-less links use a synthetic `<division>:<norm name>` key.
+  name+state. BCA's id-less links use a synthetic `<league>:<norm name>` key (one
+  crosswalk row per league); when the same league+name maps to two DISTINCT people the
+  key is flagged `ambiguous` and accepted via `docs/resolve/collision_allowlist.json`.
 - **Safety:** `src/audit.py` runs read-only audits (inverted-index collision — the
   HARD invariant, must be empty; cross-source `people_merge_candidates.json`;
   name-divergence; merge-sanity). `src/ledger.py` + `<source>_unlink.json` make a
@@ -212,9 +215,11 @@ design contract is `docs/cross-league-identity.md`.
 - **Cross-linking is NOT merging:** one human across leagues = many cross-link lists
   on ONE `player_id` (automatic, safe). Two different `player_id`s for one human stay
   MANUAL via `people_merges.json`; the audit only emits candidates, never auto-merges.
-- **BCA is deferred (M6):** the schema, people.py, crosswalk, and audits already
-  account for it, but the importer ships once the sibling `bca` project publishes its
-  resolved roster (interface scenario in the design doc).
+- **BCA is built (M6):** `src/import_bca.py` folds the BCA/LMS player set into the
+  roster (backfilled via #15, ~1,571 `bca[]` cross-links); `people.py crosswalk`
+  publishes them under the id-less `<league>:<norm name>` key. Same admission-vs-
+  tracking invariant as APA/NAPA. There is no `resolve-bca.yml` workflow yet, so a BCA
+  re-resolve runs via `fargo-resolve-local` (needs the sibling `bca` clone + REF_TOKEN).
 
 ## Out of scope (do not build without instruction)
 Comparing the *ratings* of another system vs FargoRate (e.g. NAPA rating vs
@@ -284,9 +289,10 @@ does not list them.
   hard gate, secret-scan and STAGE the workflow's file set - STOPPING before
   commit/push for review. `--source <napa|apa|bca>` (req), `--ref-token`/env
   `REF_TOKEN`, `--no-network`. Hands off a dirty audit to `fargo-link-cleanup`; not
-  the daily pull (`fargo-pull-doctor`). Retires once Actions billing is restored
-  and the runner can clone the siblings (then `resolve-<source>.yml` is the single
-  source of truth again).
+  the daily pull (`fargo-pull-doctor`). Still relevant while the private siblings can't
+  be cloned on Actions (no `REF_TOKEN` secret set): NAPA/BCA re-resolves fall back here.
+  Once `REF_TOKEN` is set so every `resolve-<source>.yml` can clone its sibling, that
+  workflow becomes the single source of truth again.
 
 ## Capabilities — what's available & when to reach for it
 <!--
