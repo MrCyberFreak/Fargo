@@ -69,6 +69,7 @@ MANUAL_PATH = RESOLVE_DIR / "napa_manual.json"
 RECOVERY_PATH = RESOLVE_DIR / "napa_recovery.json"
 COLLISIONS_PATH = RESOLVE_DIR / "napa_name_collisions.json"
 UNLINK_PATH = RESOLVE_DIR / "napa_unlink.json"
+ADD_CONFLICTS_PATH = RESOLVE_DIR / "napa_add_conflicts.json"
 
 # NAPA of Northern Colorado: every division is CO, so the source state is imputed CO.
 # Advisory only -- resolution gates on FargoRate's OWN `location` (is_co), never this.
@@ -324,9 +325,26 @@ def resolve(today: str) -> dict:
     return out
 
 
+def _build_napa_player_id_index(players: dict) -> dict:
+    """napa_player_id -> set of fargo player_id strings that carry that napa_player_id.
+    Built once up front so the cross-id duplicate check in add() is O(1) per row."""
+    index: dict = {}
+    for pid, entry in players.items():
+        for link in entry.get("napa") or []:
+            nid = link.get("napa_player_id")
+            if nid is not None:
+                index.setdefault(nid, set()).add(pid)
+    return index
+
+
 def add(today: str, include_variants: bool = False) -> dict:
     """Append matches to roster.json (no network). Idempotent: new ids create a slim
-    entry; existing ids just gain the NAPA cross-link. Only `resolved` by default."""
+    entry; existing ids just gain the NAPA cross-link. Only `resolved` by default.
+
+    Precision guard: before attaching napa_player_id N onto Fargo id F, the roster is
+    checked for any OTHER Fargo id already carrying N. If found the row is SKIPPED
+    and recorded in docs/resolve/napa_add_conflicts.json for human review. An
+    idempotent re-add onto the SAME id N is already on is NOT flagged."""
     if not RESOLUTION_PATH.exists():
         print(f"No resolution file at {RESOLUTION_PATH}; run resolve first.", file=sys.stderr)
         raise SystemExit(1)
@@ -334,7 +352,11 @@ def add(today: str, include_variants: bool = False) -> dict:
     roster = load_roster()
     players = roster.setdefault("players", {})
     suppress = ledger.load_suppress(UNLINK_PATH)
-    summary = {"created": 0, "crosslinked_existing": 0, "already_present": 0}
+    summary = {"created": 0, "crosslinked_existing": 0, "already_present": 0, "conflicts": 0}
+    conflicts: list[dict] = []
+
+    # Build napa_player_id -> {fargo_ids} index once; updated as new ids are created mid-run.
+    nid_index = _build_napa_player_id_index(players)
 
     rows = list(res.get("resolved", []))
     if include_variants:
@@ -344,9 +366,45 @@ def add(today: str, include_variants: bool = False) -> dict:
         key = str(x["player_id"])
         method = x.get("matched_via", "name")
         memberships = x.get("memberships", [])
+
+        # Precision guard: detect napa_player_ids already linked to a DIFFERENT Fargo id.
+        blocked: list[dict] = []
+        safe: list[dict] = []
+        for m in memberships:
+            nid = m.get("napa_player_id")
+            existing_ids = nid_index.get(nid, set())
+            other_ids = existing_ids - {key}
+            if other_ids:
+                blocked.append({"napa_player_id": nid, "existing_player_ids": sorted(other_ids)})
+            else:
+                safe.append(m)
+
+        if blocked:
+            for b in blocked:
+                conflicts.append({
+                    "napa_player_id": b["napa_player_id"],
+                    "attempted_player_id": int(key),
+                    "existing_player_ids": [int(p) for p in b["existing_player_ids"]],
+                    "name": x.get("fargo_name") or x.get("search_name"),
+                })
+            summary["conflicts"] += len(blocked)
+            if not safe:
+                # All memberships for this row are blocked; skip the entire row.
+                continue
+            # Some memberships are safe; proceed with only those.
+            memberships = safe
+
         if key in players:
             n = _attach_crosslink(roster, key, memberships, today, method, suppress=suppress)
-            summary["crosslinked_existing" if n else "already_present"] += 1
+            if n:
+                summary["crosslinked_existing"] += 1
+                # Update the index for memberships just added.
+                for m in memberships:
+                    nid = m.get("napa_player_id")
+                    if nid is not None:
+                        nid_index.setdefault(nid, set()).add(key)
+            else:
+                summary["already_present"] += 1
         else:
             players[key] = {
                 "player_id": x["player_id"],
@@ -360,9 +418,26 @@ def add(today: str, include_variants: bool = False) -> dict:
                          for m in memberships],
             }
             summary["created"] += 1
+            # Update the index for the newly created entry's memberships.
+            for m in memberships:
+                nid = m.get("napa_player_id")
+                if nid is not None:
+                    nid_index.setdefault(nid, set()).add(key)
 
     save_roster(roster)
     summary["roster_total"] = len(players)
+
+    if conflicts:
+        RESOLVE_DIR.mkdir(parents=True, exist_ok=True)
+        ADD_CONFLICTS_PATH.write_text(
+            json.dumps(conflicts, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        try:
+            display = ADD_CONFLICTS_PATH.relative_to(ROOT)
+        except ValueError:
+            display = ADD_CONFLICTS_PATH
+        print(f"WARNING: {len(conflicts)} NAPA napa_player_id conflict(s) skipped -> "
+              f"{display}", file=sys.stderr)
+
     return summary
 
 
@@ -564,7 +639,8 @@ def main(argv=None) -> int:
         s = add(today, include_variants=args.variants)
         tag = " (incl. variants)" if args.variants else ""
         print(f"created={s['created']} crosslinked_existing={s['crosslinked_existing']} "
-              f"already_present={s['already_present']} roster_total={s['roster_total']}{tag}")
+              f"already_present={s['already_present']} conflicts={s['conflicts']} "
+              f"roster_total={s['roster_total']}{tag}")
         return 0
 
     if args.command == "reclassify":

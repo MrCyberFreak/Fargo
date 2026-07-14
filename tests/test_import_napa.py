@@ -259,3 +259,89 @@ def test_add_creates_new_and_crosslinks_existing(tmp_path, monkeypatch):
     assert saved["200"]["state"] == "TX" and saved["200"]["source"] == "napa"
     assert saved["200"]["napa"][0]["confidence"] == "high"
     assert "300" not in saved                                     # variant NOT auto-added
+
+
+# --- add() cross-id precision guard -------------------------------------------
+
+def _setup_add(tmp_path, monkeypatch, roster_players, res_data):
+    roster_path = tmp_path / "roster.json"
+    roster_path.write_text(json.dumps({"players": roster_players}), encoding="utf-8")
+    monkeypatch.setattr(resolve, "ROSTER_PATH", roster_path)
+    resolve_dir = tmp_path / "resolve"
+    resolve_dir.mkdir()
+    monkeypatch.setattr(imp, "RESOLVE_DIR", resolve_dir)
+    monkeypatch.setattr(imp, "RESOLUTION_PATH", resolve_dir / "napa_resolution.json")
+    monkeypatch.setattr(imp, "ADD_CONFLICTS_PATH", resolve_dir / "napa_add_conflicts.json")
+    (resolve_dir / "napa_resolution.json").write_text(json.dumps(res_data), encoding="utf-8")
+    return roster_path, resolve_dir
+
+
+def test_add_conflict_blocks_napa_player_id_already_on_different_fargo_id(tmp_path, monkeypatch):
+    """napa_player_id 10000099 is already on Fargo id 100; add() tries id 200 -> skip + record."""
+    roster_players = {
+        "100": {"player_id": 100, "name": "Alice Archer",
+                "napa": [{"napa_player_id": 10000099, "source": "napa"}]},
+    }
+    res_data = {
+        "generated_at": "2026-06-28",
+        "resolved": [_napa_resolved_row(200, "Alice Archer", "CO", 10000099)],
+        "variant_candidates": [], "ambiguous": [], "unfound": [], "errors": 0,
+    }
+    roster_path, resolve_dir = _setup_add(tmp_path, monkeypatch, roster_players, res_data)
+
+    s = imp.add(today="2026-06-28")
+
+    assert s["conflicts"] == 1
+    assert s["created"] == 0 and s["crosslinked_existing"] == 0
+
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    assert "200" not in saved                                     # blocked, not created
+
+    conflicts = json.loads((resolve_dir / "napa_add_conflicts.json").read_text(encoding="utf-8"))
+    assert len(conflicts) == 1
+    c = conflicts[0]
+    assert c["napa_player_id"] == 10000099
+    assert c["attempted_player_id"] == 200
+    assert c["existing_player_ids"] == [100]
+
+
+def test_add_idempotent_same_id_not_flagged(tmp_path, monkeypatch):
+    """Re-adding napa_player_id 10000099 onto the SAME Fargo id 100 is not a conflict."""
+    roster_players = {
+        "100": {"player_id": 100, "name": "Alice Archer",
+                "napa": [{"napa_player_id": 10000099, "source": "napa"}]},
+    }
+    res_data = {
+        "generated_at": "2026-06-28",
+        "resolved": [_napa_resolved_row(100, "Alice Archer", "CO", 10000099)],
+        "variant_candidates": [], "ambiguous": [], "unfound": [], "errors": 0,
+    }
+    roster_path, resolve_dir = _setup_add(tmp_path, monkeypatch, roster_players, res_data)
+
+    s = imp.add(today="2026-06-28")
+
+    assert s["conflicts"] == 0
+    assert not (resolve_dir / "napa_add_conflicts.json").exists()
+    # already present -> already_present counter, roster unchanged
+    assert s["already_present"] == 1
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    assert len(saved["100"]["napa"]) == 1                         # no duplicate link added
+
+
+def test_add_brand_new_napa_player_id_adds_normally(tmp_path, monkeypatch):
+    """A napa_player_id that appears nowhere in the roster adds without conflict."""
+    roster_players = {}
+    res_data = {
+        "generated_at": "2026-06-28",
+        "resolved": [_napa_resolved_row(300, "Bob Builder", "CO", 10000077)],
+        "variant_candidates": [], "ambiguous": [], "unfound": [], "errors": 0,
+    }
+    roster_path, resolve_dir = _setup_add(tmp_path, monkeypatch, roster_players, res_data)
+
+    s = imp.add(today="2026-06-28")
+
+    assert s["conflicts"] == 0
+    assert s["created"] == 1
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    assert "300" in saved
+    assert saved["300"]["napa"][0]["napa_player_id"] == 10000077

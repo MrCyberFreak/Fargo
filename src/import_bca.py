@@ -258,6 +258,9 @@ def _bca_link(item) -> dict:
 
 
 def cmd_add() -> int:
+    # No cross-id guard here: BCA's dedup key is a synthetic "<league>:<norm name>", not a
+    # unique individual id, so the same league+name on two Fargo ids is two distinct people
+    # (handled by the crosswalk ambiguous flag + collision_allowlist.json, not a conflict).
     resolved = _read_json(RESOLVED_PATH, None)
     if resolved is None:
         print(f"No resolved bucket at {RESOLVED_PATH}. Run `resolve` first.", file=sys.stderr)
