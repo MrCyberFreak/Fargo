@@ -3,5 +3,25 @@
     "member_id": 3121650,
     "player_id": 1060301,
     "note": "APA member 3121650 'Andrew Tran' belongs to the manually-picked Andy Tran (player_id 1116151, apa_manual.json). The 2026-07-14 re-resolve auto-added a namesake link to 1060301 'Andrew Tran' (517, established) but 1116151 (376, established) is a different, human-confirmed person - a 141-pt established gap = distinct humans. Suppress the wrong auto-add; keep the manual pick. user-confirmed 2026-07-14 (cf. prior reassignment cafddb4)."
+  },
+  {
+    "member_id": 1260672,
+    "player_id": 1190543,
+    "note": "APA member 1260672 'Ryan Ocelnik' belongs to 972873 (Ryan Ocelnik, CO). The 2026-07-14 full crossref wrongly attached it to 1190543 'Jennifer Harding' (a different person). Same pair already confirmed distinct in napa_unlink.json (napa 10061307). Suppress the wrong link. user-confirmed 2026-07-14."
+  },
+  {
+    "member_id": 2479576,
+    "player_id": 1028717,
+    "note": "APA member 2479576 'Brian Roybal' belongs to 1332676 (Brian Roybal, Denver CO). The 2026-07-14 full crossref wrongly attached it to 1028717 'Isabel Gutierrez' (a different person). Suppress the wrong link. user-confirmed 2026-07-14."
+  },
+  {
+    "member_id": 3057306,
+    "player_id": 972803,
+    "note": "APA member 3057306 'Deo Basnet' belongs to 1122645 (Deo Basnet, CO). The 2026-07-14 full crossref wrongly attached it to 972803 'Fernando Corona' (a different person). Same pair already confirmed distinct in napa_unlink.json (napa 10063723). Suppress the wrong link. user-confirmed 2026-07-14."
+  },
+  {
+    "member_id": 3059452,
+    "player_id": 1057634,
+    "note": "APA member 3059452 'Gina Trujillo' belongs to 1028707 (Gina Trujillo, Denver CO). The 2026-07-14 full crossref wrongly attached it to 1057634 'Kathy Chane' (a different person). Same pair already confirmed distinct in napa_unlink.json (napa 10065664). Suppress the wrong link. user-confirmed 2026-07-14."
   }
 ]

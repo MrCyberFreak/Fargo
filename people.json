@@ -1,7 +1,7 @@
 {
   "generated_at": "2026-07-14",
-  "person_count": 3857,
-  "merged_count": 6,
+  "person_count": 3870,
+  "merged_count": 7,
   "people": {
     "568": {
       "person_id": 568,
@@ -9253,10 +9253,20 @@
           "member_number": "80423319",
           "name": "Charles Torkildsen",
           "match_method": "name"
+        },
+        {
+          "source": "napa",
+          "member_id": 10089046,
+          "member_number": null,
+          "name": "Charles Torkildsen",
+          "division_id": "13722",
+          "match_method": "name",
+          "confidence": "high"
         }
       ],
       "sources": [
-        "apa"
+        "apa",
+        "napa"
       ],
       "notes": "",
       "added_date": "2026-07-14"
@@ -13246,9 +13256,20 @@
       "fargo_player_ids": [
         971834
       ],
-      "memberships": [],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10070377,
+          "member_number": null,
+          "name": "John Kolb",
+          "division_id": "13205",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
       "sources": [
-        "digitalpool"
+        "digitalpool",
+        "napa"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -13651,13 +13672,6 @@
       ],
       "memberships": [
         {
-          "source": "apa",
-          "member_id": 3057306,
-          "member_number": "80400137",
-          "name": "Deo Basnet",
-          "match_method": "name"
-        },
-        {
           "source": "napa",
           "member_id": 10082896,
           "member_number": null,
@@ -13668,7 +13682,6 @@
         }
       ],
       "sources": [
-        "apa",
         "digitalpool",
         "napa"
       ],
@@ -14072,6 +14085,13 @@
       ],
       "memberships": [
         {
+          "source": "apa",
+          "member_id": 1260672,
+          "member_number": "80400505",
+          "name": "Ryan Ocelnik",
+          "match_method": "name"
+        },
+        {
           "source": "napa",
           "member_id": 10061307,
           "member_number": null,
@@ -14082,6 +14102,7 @@
         }
       ],
       "sources": [
+        "apa",
         "digitalpool",
         "napa"
       ],
@@ -16093,6 +16114,15 @@
       ],
       "memberships": [
         {
+          "source": "napa",
+          "member_id": 10055665,
+          "member_number": null,
+          "name": "Josh Miller",
+          "division_id": "13077",
+          "match_method": "name",
+          "confidence": "high"
+        },
+        {
           "source": "bca",
           "member_id": "colorado-pool-leagues:josh miller",
           "member_number": null,
@@ -16104,6 +16134,7 @@
       ],
       "sources": [
         "bca",
+        "napa",
         "resolve"
       ],
       "notes": "",
@@ -21119,6 +21150,13 @@
       ],
       "memberships": [
         {
+          "source": "apa",
+          "member_id": 3059452,
+          "member_number": "80433833",
+          "name": "Gina Trujillo",
+          "match_method": "name"
+        },
+        {
           "source": "napa",
           "member_id": 10065664,
           "member_number": null,
@@ -21129,6 +21167,7 @@
         }
       ],
       "sources": [
+        "apa",
         "napa"
       ],
       "notes": "",
@@ -21219,13 +21258,6 @@
         1028717
       ],
       "memberships": [
-        {
-          "source": "apa",
-          "member_id": 2479576,
-          "member_number": "80402143",
-          "name": "Brian Roybal",
-          "match_method": "name"
-        },
         {
           "source": "apa",
           "member_id": 2135241,
@@ -24497,13 +24529,6 @@
       "memberships": [
         {
           "source": "apa",
-          "member_id": 3059452,
-          "member_number": "80433833",
-          "name": "Gina Trujillo",
-          "match_method": "name"
-        },
-        {
-          "source": "apa",
           "member_id": 2774091,
           "member_number": "80423407",
           "name": "Kathy Chane",
@@ -25174,6 +25199,15 @@
       ],
       "memberships": [
         {
+          "source": "napa",
+          "member_id": 10069177,
+          "member_number": null,
+          "name": "Lee Garcia",
+          "division_id": "13205",
+          "match_method": "name",
+          "confidence": "high"
+        },
+        {
           "source": "bca",
           "member_id": "bmw-billiards:lee garcia",
           "member_number": null,
@@ -25185,6 +25219,7 @@
       ],
       "sources": [
         "bca",
+        "napa",
         "resolve"
       ],
       "notes": "",
@@ -26095,6 +26130,13 @@
       ],
       "memberships": [
         {
+          "source": "apa",
+          "member_id": 2742690,
+          "member_number": "80402196",
+          "name": "Steven Perry",
+          "match_method": "name"
+        },
+        {
           "source": "bca",
           "member_id": "front-range-usa-pool-league:steven perry",
           "member_number": null,
@@ -26105,6 +26147,7 @@
         }
       ],
       "sources": [
+        "apa",
         "bca",
         "resolve"
       ],
@@ -31864,6 +31907,15 @@
       ],
       "memberships": [
         {
+          "source": "napa",
+          "member_id": 10083016,
+          "member_number": null,
+          "name": "Neil Cavendish",
+          "division_id": "13937",
+          "match_method": "name",
+          "confidence": "high"
+        },
+        {
           "source": "bca",
           "member_id": "5280-billiards:neil cavendish",
           "member_number": null,
@@ -31875,6 +31927,7 @@
       ],
       "sources": [
         "bca",
+        "napa",
         "resolve"
       ],
       "notes": "",
@@ -34799,9 +34852,20 @@
       "fargo_player_ids": [
         1121982
       ],
-      "memberships": [],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10090744,
+          "member_number": null,
+          "name": "Thor Holt",
+          "division_id": "14022",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
       "sources": [
-        "digitalpool"
+        "digitalpool",
+        "napa"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -34885,6 +34949,13 @@
       ],
       "memberships": [
         {
+          "source": "apa",
+          "member_id": 3057306,
+          "member_number": "80400137",
+          "name": "Deo Basnet",
+          "match_method": "name"
+        },
+        {
           "source": "napa",
           "member_id": 10063723,
           "member_number": null,
@@ -34895,6 +34966,7 @@
         }
       ],
       "sources": [
+        "apa",
         "napa"
       ],
       "notes": "",
@@ -45173,13 +45245,6 @@
       "memberships": [
         {
           "source": "apa",
-          "member_id": 1260672,
-          "member_number": "80400505",
-          "name": "Ryan Ocelnik",
-          "match_method": "name"
-        },
-        {
-          "source": "apa",
           "member_id": 2904536,
           "member_number": "80432778",
           "name": "Jennifer Harding",
@@ -45313,7 +45378,8 @@
       "person_id": 1190858,
       "display_name": "Donald Gonzales",
       "fargo_player_ids": [
-        1190858
+        1190858,
+        1397031
       ],
       "memberships": [
         {
@@ -45322,12 +45388,23 @@
           "member_number": "80424837",
           "name": "Don Gonzales",
           "match_method": "name"
+        },
+        {
+          "source": "bca",
+          "member_id": "mirage-tuesday-night-cash-league:don gonzales",
+          "member_number": null,
+          "name": "Don Gonzales",
+          "division_id": "mirage-tuesday-night-cash-league",
+          "match_method": "name+rating",
+          "confidence": "high"
         }
       ],
       "sources": [
-        "apa"
+        "apa",
+        "bca",
+        "resolve"
       ],
-      "notes": "",
+      "notes": "user-confirmed same person 2026-07-14 (Donald/Don Gonzales, both CO, close ratings; one human, two Fargo registrations sharing APA member 3010719)",
       "added_date": "2026-06-07"
     },
     "1190862": {
@@ -45539,9 +45616,20 @@
       "fargo_player_ids": [
         1191282
       ],
-      "memberships": [],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10090610,
+          "member_number": null,
+          "name": "Eduardo Moreno",
+          "division_id": "13711",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
       "sources": [
-        "digitalpool"
+        "digitalpool",
+        "napa"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -52418,6 +52506,15 @@
       ],
       "memberships": [
         {
+          "source": "napa",
+          "member_id": 10080527,
+          "member_number": null,
+          "name": "Evelyn Cruz",
+          "division_id": "13743",
+          "match_method": "name",
+          "confidence": "high"
+        },
+        {
           "source": "bca",
           "member_id": "front-range-usa-pool-league:evelyn cruz",
           "member_number": null,
@@ -52438,6 +52535,7 @@
       ],
       "sources": [
         "bca",
+        "napa",
         "resolve"
       ],
       "notes": "",
@@ -64196,6 +64294,15 @@
       ],
       "memberships": [
         {
+          "source": "napa",
+          "member_id": 10077903,
+          "member_number": null,
+          "name": "Gordon Collins",
+          "division_id": "13722",
+          "match_method": "name",
+          "confidence": "high"
+        },
+        {
           "source": "bca",
           "member_id": "colorado-pool-leagues:gordon collins",
           "member_number": null,
@@ -64207,6 +64314,7 @@
       ],
       "sources": [
         "bca",
+        "napa",
         "resolve"
       ],
       "notes": "",
@@ -65133,9 +65241,20 @@
       "fargo_player_ids": [
         1310527
       ],
-      "memberships": [],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10090743,
+          "member_number": null,
+          "name": "Ash Staunton",
+          "division_id": "13937",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
       "sources": [
-        "digitalpool"
+        "digitalpool",
+        "napa"
       ],
       "notes": "",
       "added_date": "2026-06-06"
@@ -68269,6 +68388,15 @@
       ],
       "memberships": [
         {
+          "source": "napa",
+          "member_id": 10085888,
+          "member_number": null,
+          "name": "Dalton Bartholomew",
+          "division_id": "13077",
+          "match_method": "name",
+          "confidence": "high"
+        },
+        {
           "source": "bca",
           "member_id": "colorado-pool-leagues:dalton bartholomew",
           "member_number": null,
@@ -68280,6 +68408,7 @@
       ],
       "sources": [
         "bca",
+        "napa",
         "resolve"
       ],
       "notes": "",
@@ -68616,6 +68745,15 @@
       ],
       "memberships": [
         {
+          "source": "napa",
+          "member_id": 10038704,
+          "member_number": null,
+          "name": "Adam Johnson",
+          "division_id": "13986",
+          "match_method": "name",
+          "confidence": "high"
+        },
+        {
           "source": "bca",
           "member_id": "napa-of-northern-colorado:adam johnson",
           "member_number": null,
@@ -68627,6 +68765,7 @@
       ],
       "sources": [
         "bca",
+        "napa",
         "resolve"
       ],
       "notes": "",
@@ -68864,6 +69003,13 @@
       ],
       "memberships": [
         {
+          "source": "apa",
+          "member_id": 2479576,
+          "member_number": "80402143",
+          "name": "Brian Roybal",
+          "match_method": "name"
+        },
+        {
           "source": "bca",
           "member_id": "colorado-pool-leagues:brian roybal",
           "member_number": null,
@@ -68874,6 +69020,7 @@
         }
       ],
       "sources": [
+        "apa",
         "bca",
         "resolve"
       ],
@@ -70481,6 +70628,15 @@
       ],
       "memberships": [
         {
+          "source": "napa",
+          "member_id": 10090518,
+          "member_number": null,
+          "name": "Shannon Compton",
+          "division_id": "14064",
+          "match_method": "name",
+          "confidence": "high"
+        },
+        {
           "source": "bca",
           "member_id": "bmw-billiards:shannon compton",
           "member_number": null,
@@ -70492,6 +70648,7 @@
       ],
       "sources": [
         "bca",
+        "napa",
         "resolve"
       ],
       "notes": "",
@@ -75624,6 +75781,15 @@
       ],
       "memberships": [
         {
+          "source": "napa",
+          "member_id": 10068443,
+          "member_number": null,
+          "name": "Colt Brown",
+          "division_id": "13299",
+          "match_method": "name",
+          "confidence": "high"
+        },
+        {
           "source": "bca",
           "member_id": "napa-of-northern-colorado:colt brown",
           "member_number": null,
@@ -75635,6 +75801,7 @@
       ],
       "sources": [
         "bca",
+        "napa",
         "resolve"
       ],
       "notes": "",
@@ -75717,6 +75884,15 @@
       ],
       "memberships": [
         {
+          "source": "napa",
+          "member_id": 10024442,
+          "member_number": null,
+          "name": "Cheryl Jones",
+          "division_id": "13711",
+          "match_method": "name",
+          "confidence": "high"
+        },
+        {
           "source": "bca",
           "member_id": "napa-of-northern-colorado:cheryl jones",
           "member_number": null,
@@ -75728,6 +75904,7 @@
       ],
       "sources": [
         "bca",
+        "napa",
         "resolve"
       ],
       "notes": "",
@@ -83537,6 +83714,13 @@
       ],
       "memberships": [
         {
+          "source": "apa",
+          "member_id": 3468079,
+          "member_number": "80402834",
+          "name": "Kevin Judy",
+          "match_method": "name"
+        },
+        {
           "source": "bca",
           "member_id": "denver-goodtimes-bcapl:kevin judy",
           "member_number": null,
@@ -83547,6 +83731,7 @@
         }
       ],
       "sources": [
+        "apa",
         "bca",
         "resolve"
       ],
@@ -83729,6 +83914,15 @@
       ],
       "memberships": [
         {
+          "source": "napa",
+          "member_id": 10056165,
+          "member_number": null,
+          "name": "Tom Chase",
+          "division_id": "13937",
+          "match_method": "name",
+          "confidence": "high"
+        },
+        {
           "source": "bca",
           "member_id": "napa-of-northern-colorado:tom chase",
           "member_number": null,
@@ -83740,6 +83934,7 @@
       ],
       "sources": [
         "bca",
+        "napa",
         "resolve"
       ],
       "notes": "",
@@ -83753,6 +83948,15 @@
       ],
       "memberships": [
         {
+          "source": "napa",
+          "member_id": 10058507,
+          "member_number": null,
+          "name": "Randy Pierce",
+          "division_id": "13937",
+          "match_method": "name",
+          "confidence": "high"
+        },
+        {
           "source": "bca",
           "member_id": "napa-of-northern-colorado:randy pierce",
           "member_number": null,
@@ -83764,6 +83968,7 @@
       ],
       "sources": [
         "bca",
+        "napa",
         "resolve"
       ],
       "notes": "",
@@ -83777,6 +83982,15 @@
       ],
       "memberships": [
         {
+          "source": "napa",
+          "member_id": 10057869,
+          "member_number": null,
+          "name": "Mario Mirville",
+          "division_id": "13937",
+          "match_method": "name",
+          "confidence": "high"
+        },
+        {
           "source": "bca",
           "member_id": "napa-of-northern-colorado:mario mirville",
           "member_number": null,
@@ -83788,6 +84002,7 @@
       ],
       "sources": [
         "bca",
+        "napa",
         "resolve"
       ],
       "notes": "",
@@ -83801,6 +84016,15 @@
       ],
       "memberships": [
         {
+          "source": "napa",
+          "member_id": 10089419,
+          "member_number": null,
+          "name": "Dan Ukleja",
+          "division_id": "13937",
+          "match_method": "name",
+          "confidence": "high"
+        },
+        {
           "source": "bca",
           "member_id": "napa-of-northern-colorado:dan ukleja",
           "member_number": null,
@@ -83812,6 +84036,7 @@
       ],
       "sources": [
         "bca",
+        "napa",
         "resolve"
       ],
       "notes": "",
@@ -83825,6 +84050,15 @@
       ],
       "memberships": [
         {
+          "source": "napa",
+          "member_id": 10089420,
+          "member_number": null,
+          "name": "Keith Gustin",
+          "division_id": "13937",
+          "match_method": "name",
+          "confidence": "high"
+        },
+        {
           "source": "bca",
           "member_id": "napa-of-northern-colorado:keith gustin",
           "member_number": null,
@@ -83836,6 +84070,7 @@
       ],
       "sources": [
         "bca",
+        "napa",
         "resolve"
       ],
       "notes": "",
@@ -83861,30 +84096,6 @@
       ],
       "notes": "",
       "added_date": "2026-07-14"
-    },
-    "1397031": {
-      "person_id": 1397031,
-      "display_name": "Don Gonzales",
-      "fargo_player_ids": [
-        1397031
-      ],
-      "memberships": [
-        {
-          "source": "bca",
-          "member_id": "mirage-tuesday-night-cash-league:don gonzales",
-          "member_number": null,
-          "name": "Don Gonzales",
-          "division_id": "mirage-tuesday-night-cash-league",
-          "match_method": "name+rating",
-          "confidence": "high"
-        }
-      ],
-      "sources": [
-        "bca",
-        "resolve"
-      ],
-      "notes": "",
-      "added_date": "2026-07-07"
     },
     "1397055": {
       "person_id": 1397055,
@@ -84077,6 +84288,326 @@
       ],
       "notes": "",
       "added_date": "2026-07-07"
+    },
+    "1397532": {
+      "person_id": 1397532,
+      "display_name": "Paul Schreiber",
+      "fargo_player_ids": [
+        1397532
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10041931,
+          "member_number": null,
+          "name": "Paul Schreiber",
+          "division_id": "13711",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-07-14"
+    },
+    "1397538": {
+      "person_id": 1397538,
+      "display_name": "Jong Ham",
+      "fargo_player_ids": [
+        1397538
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10090122,
+          "member_number": null,
+          "name": "Jong Ham",
+          "division_id": "13986",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-07-14"
+    },
+    "1397540": {
+      "person_id": 1397540,
+      "display_name": "Dan Yimmer",
+      "fargo_player_ids": [
+        1397540
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10090091,
+          "member_number": null,
+          "name": "Dan Yimmer",
+          "division_id": "13986",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-07-14"
+    },
+    "1398232": {
+      "person_id": 1398232,
+      "display_name": "Douglas Jamison",
+      "fargo_player_ids": [
+        1398232
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10085129,
+          "member_number": null,
+          "name": "Douglas Jamison",
+          "division_id": "13937",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-07-14"
+    },
+    "1398233": {
+      "person_id": 1398233,
+      "display_name": "Tracie Brunner",
+      "fargo_player_ids": [
+        1398233
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10089883,
+          "member_number": null,
+          "name": "Tracie Brunner",
+          "division_id": "13937",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-07-14"
+    },
+    "1398235": {
+      "person_id": 1398235,
+      "display_name": "Mark Van Nostrand",
+      "fargo_player_ids": [
+        1398235
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10083021,
+          "member_number": null,
+          "name": "Mark Van Nostrand",
+          "division_id": "13937",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-07-14"
+    },
+    "1398236": {
+      "person_id": 1398236,
+      "display_name": "Carlos Navia",
+      "fargo_player_ids": [
+        1398236
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10087524,
+          "member_number": null,
+          "name": "Carlos Navia",
+          "division_id": "13937",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-07-14"
+    },
+    "1398239": {
+      "person_id": 1398239,
+      "display_name": "Richard Laird",
+      "fargo_player_ids": [
+        1398239
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10084735,
+          "member_number": null,
+          "name": "Rich Laird",
+          "division_id": "13937",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-07-14"
+    },
+    "1398242": {
+      "person_id": 1398242,
+      "display_name": "Phillip Mendoza",
+      "fargo_player_ids": [
+        1398242
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10056166,
+          "member_number": null,
+          "name": "Phillip Mendoza",
+          "division_id": "13937",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-07-14"
+    },
+    "1398243": {
+      "person_id": 1398243,
+      "display_name": "Peter Watson",
+      "fargo_player_ids": [
+        1398243
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10058630,
+          "member_number": null,
+          "name": "Peter Watson",
+          "division_id": "13937",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-07-14"
+    },
+    "1398519": {
+      "person_id": 1398519,
+      "display_name": "Dan Hosier",
+      "fargo_player_ids": [
+        1398519
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10068287,
+          "member_number": null,
+          "name": "Dan Hosier",
+          "division_id": "13937",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-07-14"
+    },
+    "1398520": {
+      "person_id": 1398520,
+      "display_name": "Lance Collins",
+      "fargo_player_ids": [
+        1398520
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10058628,
+          "member_number": null,
+          "name": "Lance Collins",
+          "division_id": "13937",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-07-14"
+    },
+    "1398521": {
+      "person_id": 1398521,
+      "display_name": "Alan Saville",
+      "fargo_player_ids": [
+        1398521
+      ],
+      "memberships": [
+        {
+          "source": "napa",
+          "member_id": 10051716,
+          "member_number": null,
+          "name": "Alan Saville",
+          "division_id": "13937",
+          "match_method": "name",
+          "confidence": "high"
+        }
+      ],
+      "sources": [
+        "napa"
+      ],
+      "notes": "",
+      "added_date": "2026-07-14"
+    },
+    "1398540": {
+      "person_id": 1398540,
+      "display_name": "Lauren Lavender",
+      "fargo_player_ids": [
+        1398540
+      ],
+      "memberships": [
+        {
+          "source": "apa",
+          "member_id": 3326368,
+          "member_number": "80435442",
+          "name": "Lauren Lavender",
+          "match_method": "name"
+        }
+      ],
+      "sources": [
+        "apa"
+      ],
+      "notes": "",
+      "added_date": "2026-07-14"
     }
   }
 }

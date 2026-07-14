@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-07-14",
-  "flag_count": 65,
+  "flag_count": 61,
   "flags": [
     {
       "fargo_player_id": 1041504,
@@ -33,12 +33,6 @@
       "link_name": "Dakota Roach"
     },
     {
-      "fargo_player_id": 1028717,
-      "fargo_name": "Isabel Gutierrez",
-      "source": "apa",
-      "link_name": "Brian Roybal"
-    },
-    {
       "fargo_player_id": 1202475,
       "fargo_name": "Chantelle Schuckman",
       "source": "apa",
@@ -57,12 +51,6 @@
       "link_name": "Travis Villiere"
     },
     {
-      "fargo_player_id": 972803,
-      "fargo_name": "Fernando Corona",
-      "source": "apa",
-      "link_name": "Deo Basnet"
-    },
-    {
       "fargo_player_id": 1156046,
       "fargo_name": "Elijah Trujillo",
       "source": "apa",
@@ -73,12 +61,6 @@
       "fargo_name": "Earl Cooley & Rebeka",
       "source": "apa",
       "link_name": "Earl Cooley"
-    },
-    {
-      "fargo_player_id": 1057634,
-      "fargo_name": "Kathy Chane",
-      "source": "apa",
-      "link_name": "Gina Trujillo"
     },
     {
       "fargo_player_id": 667568,
@@ -139,12 +121,6 @@
       "fargo_name": "Roxanne Hoffner",
       "source": "apa",
       "link_name": "Shane Lynch"
-    },
-    {
-      "fargo_player_id": 1190543,
-      "fargo_name": "Jennifer Harding",
-      "source": "apa",
-      "link_name": "Ryan Ocelnik"
     },
     {
       "fargo_player_id": 1068476,

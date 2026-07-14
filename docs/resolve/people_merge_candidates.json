@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-07-14",
-  "candidate_count": 22,
+  "candidate_count": 18,
   "note": "evidence only -- confirm by hand into people_merges.json; never auto-merged",
   "candidates": [
     {
@@ -17,24 +17,6 @@
           "fargo_player_id": 1338676,
           "sources": [
             "apa"
-          ]
-        }
-      ]
-    },
-    {
-      "norm": "brian roybal",
-      "name": "Brian Roybal",
-      "fargo_ids": [
-        {
-          "fargo_player_id": 1028717,
-          "sources": [
-            "apa"
-          ]
-        },
-        {
-          "fargo_player_id": 1332676,
-          "sources": [
-            "bca"
           ]
         }
       ]
@@ -96,24 +78,6 @@
       ]
     },
     {
-      "norm": "deo basnet",
-      "name": "Deo Basnet",
-      "fargo_ids": [
-        {
-          "fargo_player_id": 972803,
-          "sources": [
-            "apa"
-          ]
-        },
-        {
-          "fargo_player_id": 1122645,
-          "sources": [
-            "napa"
-          ]
-        }
-      ]
-    },
-    {
       "norm": "don gonzales",
       "name": "Don Gonzales",
       "fargo_ids": [
@@ -126,6 +90,7 @@
         {
           "fargo_player_id": 1397031,
           "sources": [
+            "apa",
             "bca"
           ]
         }
@@ -145,24 +110,6 @@
           "fargo_player_id": 786167,
           "sources": [
             "napa"
-          ]
-        }
-      ]
-    },
-    {
-      "norm": "gina trujillo",
-      "name": "Gina Trujillo",
-      "fargo_ids": [
-        {
-          "fargo_player_id": 1028707,
-          "sources": [
-            "napa"
-          ]
-        },
-        {
-          "fargo_player_id": 1057634,
-          "sources": [
-            "apa"
           ]
         }
       ]
@@ -343,24 +290,6 @@
         },
         {
           "fargo_player_id": 1368535,
-          "sources": [
-            "apa"
-          ]
-        }
-      ]
-    },
-    {
-      "norm": "ryan ocelnik",
-      "name": "Ryan Ocelnik",
-      "fargo_ids": [
-        {
-          "fargo_player_id": 972873,
-          "sources": [
-            "napa"
-          ]
-        },
-        {
-          "fargo_player_id": 1190543,
           "sources": [
             "apa"
           ]

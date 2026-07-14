@@ -1,8 +1,8 @@
 {
   "generated_at": "2026-07-14",
   "counts": {
-    "apa": 1014,
-    "napa": 741,
+    "apa": 1017,
+    "napa": 774,
     "bca": 1659
   },
   "apa": {
@@ -219,12 +219,6 @@
     "2377793": {
       "fargo_player_id": 1020786,
       "person_id": 1020786,
-      "confidence": "high",
-      "match_method": "name"
-    },
-    "2479576": {
-      "fargo_player_id": 1028717,
-      "person_id": 1028717,
       "confidence": "high",
       "match_method": "name"
     },
@@ -450,12 +444,6 @@
       "confidence": "high",
       "match_method": "name"
     },
-    "3057306": {
-      "fargo_player_id": 972803,
-      "person_id": 972803,
-      "confidence": "high",
-      "match_method": "name"
-    },
     "2312921": {
       "fargo_player_id": 626213,
       "person_id": 626213,
@@ -540,6 +528,12 @@
       "confidence": "high",
       "match_method": "name"
     },
+    "1260672": {
+      "fargo_player_id": 972873,
+      "person_id": 972873,
+      "confidence": "high",
+      "match_method": "name"
+    },
     "3348507": {
       "fargo_player_id": 1300133,
       "person_id": 1300133,
@@ -597,12 +591,6 @@
     "2577620": {
       "fargo_player_id": 1313496,
       "person_id": 1313496,
-      "confidence": "high",
-      "match_method": "name"
-    },
-    "3059452": {
-      "fargo_player_id": 1057634,
-      "person_id": 1057634,
       "confidence": "high",
       "match_method": "name"
     },
@@ -1125,12 +1113,6 @@
     "3427820": {
       "fargo_player_id": 1236065,
       "person_id": 1236065,
-      "confidence": "high",
-      "match_method": "name"
-    },
-    "1260672": {
-      "fargo_player_id": 1190543,
-      "person_id": 1190543,
       "confidence": "high",
       "match_method": "name"
     },
@@ -2329,7 +2311,7 @@
       "match_method": "name"
     },
     "3010719": {
-      "fargo_player_id": 1190858,
+      "fargo_player_id": 1397031,
       "person_id": 1190858,
       "confidence": "high",
       "match_method": "name"
@@ -5970,6 +5952,18 @@
       "confidence": "high",
       "match_method": "manual"
     },
+    "3057306": {
+      "fargo_player_id": 1122645,
+      "person_id": 1122645,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "3059452": {
+      "fargo_player_id": 1028707,
+      "person_id": 1028707,
+      "confidence": "high",
+      "match_method": "name"
+    },
     "3428925": {
       "fargo_player_id": 1395537,
       "person_id": 1395537,
@@ -5982,6 +5976,12 @@
       "confidence": "high",
       "match_method": "name"
     },
+    "2479576": {
+      "fargo_player_id": 1332676,
+      "person_id": 1332676,
+      "confidence": "high",
+      "match_method": "name"
+    },
     "3395781": {
       "fargo_player_id": 1395864,
       "person_id": 1395864,
@@ -5991,6 +5991,18 @@
     "3265572": {
       "fargo_player_id": 1394734,
       "person_id": 1394734,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "3468079": {
+      "fargo_player_id": 1396387,
+      "person_id": 1396387,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "2742690": {
+      "fargo_player_id": 1075474,
+      "person_id": 1075474,
       "confidence": "high",
       "match_method": "name"
     },
@@ -6087,6 +6099,12 @@
     "3225511": {
       "fargo_player_id": 1393455,
       "person_id": 1393455,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "3326368": {
+      "fargo_player_id": 1398540,
+      "person_id": 1398540,
       "confidence": "high",
       "match_method": "name"
     }
@@ -6233,6 +6251,12 @@
     "10079945": {
       "fargo_player_id": 1237946,
       "person_id": 1237946,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10090743": {
+      "fargo_player_id": 1310527,
+      "person_id": 1310527,
       "confidence": "high",
       "match_method": "name"
     },
@@ -6620,6 +6644,12 @@
       "confidence": "high",
       "match_method": "name"
     },
+    "10090610": {
+      "fargo_player_id": 1191282,
+      "person_id": 1191282,
+      "confidence": "high",
+      "match_method": "name"
+    },
     "10078770": {
       "fargo_player_id": 1201110,
       "person_id": 1201110,
@@ -6875,6 +6905,12 @@
     "10065951": {
       "fargo_player_id": 1106906,
       "person_id": 1106906,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10070377": {
+      "fargo_player_id": 971834,
+      "person_id": 971834,
       "confidence": "high",
       "match_method": "name"
     },
@@ -7433,6 +7469,12 @@
     "10034054": {
       "fargo_player_id": 2651,
       "person_id": 2651,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10090744": {
+      "fargo_player_id": 1121982,
+      "person_id": 1121982,
       "confidence": "high",
       "match_method": "name"
     },
@@ -10535,6 +10577,180 @@
     "10041728": {
       "fargo_player_id": 972889,
       "person_id": 972889,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10038704": {
+      "fargo_player_id": 1330792,
+      "person_id": 1330792,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10024442": {
+      "fargo_player_id": 1364564,
+      "person_id": 1364564,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10068443": {
+      "fargo_player_id": 1364458,
+      "person_id": 1364458,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10085888": {
+      "fargo_player_id": 1328222,
+      "person_id": 1328222,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10089419": {
+      "fargo_player_id": 1396626,
+      "person_id": 1396626,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10080527": {
+      "fargo_player_id": 1237055,
+      "person_id": 1237055,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10077903": {
+      "fargo_player_id": 1305799,
+      "person_id": 1305799,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10055665": {
+      "fargo_player_id": 995112,
+      "person_id": 995112,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10089420": {
+      "fargo_player_id": 1396627,
+      "person_id": 1396627,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10069177": {
+      "fargo_player_id": 1065656,
+      "person_id": 1065656,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10057869": {
+      "fargo_player_id": 1396625,
+      "person_id": 1396625,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10083016": {
+      "fargo_player_id": 1107943,
+      "person_id": 1107943,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10058507": {
+      "fargo_player_id": 1396624,
+      "person_id": 1396624,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10090518": {
+      "fargo_player_id": 1338600,
+      "person_id": 1338600,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10056165": {
+      "fargo_player_id": 1396621,
+      "person_id": 1396621,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10089046": {
+      "fargo_player_id": 816757,
+      "person_id": 816757,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10051716": {
+      "fargo_player_id": 1398521,
+      "person_id": 1398521,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10087524": {
+      "fargo_player_id": 1398236,
+      "person_id": 1398236,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10068287": {
+      "fargo_player_id": 1398519,
+      "person_id": 1398519,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10090091": {
+      "fargo_player_id": 1397540,
+      "person_id": 1397540,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10085129": {
+      "fargo_player_id": 1398232,
+      "person_id": 1398232,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10090122": {
+      "fargo_player_id": 1397538,
+      "person_id": 1397538,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10058628": {
+      "fargo_player_id": 1398520,
+      "person_id": 1398520,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10083021": {
+      "fargo_player_id": 1398235,
+      "person_id": 1398235,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10041931": {
+      "fargo_player_id": 1397532,
+      "person_id": 1397532,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10058630": {
+      "fargo_player_id": 1398243,
+      "person_id": 1398243,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10056166": {
+      "fargo_player_id": 1398242,
+      "person_id": 1398242,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10084735": {
+      "fargo_player_id": 1398239,
+      "person_id": 1398239,
+      "confidence": "high",
+      "match_method": "name"
+    },
+    "10089883": {
+      "fargo_player_id": 1398233,
+      "person_id": 1398233,
       "confidence": "high",
       "match_method": "name"
     }
@@ -13746,7 +13962,7 @@
     },
     "mirage-tuesday-night-cash-league:don gonzales": {
       "fargo_player_id": 1397031,
-      "person_id": 1397031,
+      "person_id": 1190858,
       "confidence": "high",
       "match_method": "name+rating"
     },

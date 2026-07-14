@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-06-06",
+  "generated_at": "2026-07-14",
   "source_file": "players_master.json",
-  "apa_players": 2364,
-  "unique_apa_names": 2361,
-  "matched_single": 181,
-  "matched_crosslinks_written": 181,
-  "ambiguous_existing": 8,
-  "new_to_resolve": 2172,
+  "apa_players": 2365,
+  "unique_apa_names": 2362,
+  "matched_single": 809,
+  "matched_crosslinks_written": 7,
+  "ambiguous_existing": 17,
+  "new_to_resolve": 1536,
   "ambiguous_detail": [
     {
       "name": "Alvin Cox",
@@ -23,6 +23,40 @@
           "first_session": 129,
           "last_session": 129,
           "sessions_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Ashleigh Skoworn",
+      "roster_player_ids": [
+        1338676,
+        1128444
+      ],
+      "memberships": [
+        {
+          "member_id": 3029334,
+          "member_number": "80425053",
+          "name": "Ashleigh Skoworn",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7
+        }
+      ]
+    },
+    {
+      "name": "Chantelle Schuckman",
+      "roster_player_ids": [
+        1202475,
+        1183340
+      ],
+      "memberships": [
+        {
+          "member_id": 2766528,
+          "member_number": "80423280",
+          "name": "Chantelle Schuckman",
+          "first_session": 129,
+          "last_session": 133,
+          "sessions_count": 4
         }
       ]
     },
@@ -58,6 +92,40 @@
           "first_session": 123,
           "last_session": 133,
           "sessions_count": 7
+        }
+      ]
+    },
+    {
+      "name": "Dustin Sterling",
+      "roster_player_ids": [
+        786167,
+        740271
+      ],
+      "memberships": [
+        {
+          "member_id": 2722942,
+          "member_number": "80423085",
+          "name": "Dustin Sterling",
+          "first_session": 123,
+          "last_session": 138,
+          "sessions_count": 6
+        }
+      ]
+    },
+    {
+      "name": "Greg Brown",
+      "roster_player_ids": [
+        1015017,
+        1058794
+      ],
+      "memberships": [
+        {
+          "member_id": 3231406,
+          "member_number": "80401514",
+          "name": "Greg Brown",
+          "first_session": 123,
+          "last_session": 124,
+          "sessions_count": 2
         }
       ]
     },
@@ -113,6 +181,40 @@
       ]
     },
     {
+      "name": "Jeff Lang",
+      "roster_player_ids": [
+        1120801,
+        1009701
+      ],
+      "memberships": [
+        {
+          "member_id": 643515,
+          "member_number": "80404650",
+          "name": "Jeff Lang",
+          "first_session": 133,
+          "last_session": 139,
+          "sessions_count": 7
+        }
+      ]
+    },
+    {
+      "name": "Jenny Laney",
+      "roster_player_ids": [
+        1113419,
+        1105180
+      ],
+      "memberships": [
+        {
+          "member_id": 2808219,
+          "member_number": "80423594",
+          "name": "Jenny Laney",
+          "first_session": 123,
+          "last_session": 133,
+          "sessions_count": 7
+        }
+      ]
+    },
+    {
       "name": "Kevin Gendill",
       "roster_player_ids": [
         1301139,
@@ -130,6 +232,48 @@
       ]
     },
     {
+      "name": "Miguel Anariba",
+      "roster_player_ids": [
+        1014394,
+        1100225
+      ],
+      "memberships": [
+        {
+          "member_id": 3101897,
+          "member_number": "80400415",
+          "name": "Miguel Anariba",
+          "first_session": 130,
+          "last_session": 133,
+          "sessions_count": 3
+        }
+      ]
+    },
+    {
+      "name": "Tim Brown",
+      "roster_player_ids": [
+        1380955,
+        1164869
+      ],
+      "memberships": [
+        {
+          "member_id": 3308080,
+          "member_number": "80401703",
+          "name": "Tim Brown",
+          "first_session": 130,
+          "last_session": 133,
+          "sessions_count": 3
+        },
+        {
+          "member_id": 3334455,
+          "member_number": "80401974",
+          "name": "Tim Brown",
+          "first_session": 132,
+          "last_session": 132,
+          "sessions_count": 1
+        }
+      ]
+    },
+    {
       "name": "Travis Thorsten",
       "roster_player_ids": [
         972895,
@@ -143,6 +287,23 @@
           "first_session": 125,
           "last_session": 125,
           "sessions_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Woody Quezada",
+      "roster_player_ids": [
+        10310,
+        745183
+      ],
+      "memberships": [
+        {
+          "member_id": 1208597,
+          "member_number": "80400085",
+          "name": "Woody Quezada",
+          "first_session": 123,
+          "last_session": 139,
+          "sessions_count": 6
         }
       ]
     }

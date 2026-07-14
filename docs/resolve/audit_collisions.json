@@ -17,7 +17,7 @@
       ]
     }
   ],
-  "redundant_same_person_count": 7,
+  "redundant_same_person_count": 8,
   "redundant_same_person": [
     {
       "source": "apa",
@@ -27,6 +27,15 @@
         1249922
       ],
       "person_id": 1228568
+    },
+    {
+      "source": "apa",
+      "member_key": "3010719",
+      "fargo_ids": [
+        1190858,
+        1397031
+      ],
+      "person_id": 1190858
     },
     {
       "source": "apa",

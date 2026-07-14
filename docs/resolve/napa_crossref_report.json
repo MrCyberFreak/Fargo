@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-27",
+  "generated_at": "2026-07-14",
   "source": "_ref\\NAPA",
-  "napa_players": 1279,
-  "unique_napa_names": 1277,
-  "matched_single": 299,
-  "matched_crosslinks_written": 299,
-  "ambiguous_existing": 10,
+  "napa_players": 1285,
+  "unique_napa_names": 1283,
+  "matched_single": 701,
+  "matched_crosslinks_written": 20,
+  "ambiguous_existing": 20,
   "name_collisions_quarantined": 2,
-  "new_to_resolve": 966,
+  "new_to_resolve": 560,
   "ambiguous_detail": [
     {
       "name": "Aaron Hara",
@@ -37,6 +37,38 @@
       ]
     },
     {
+      "name": "Allan Sease",
+      "roster_player_ids": [
+        1274330,
+        1156272
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10076556,
+          "name": "Allan Sease",
+          "division_id": "13881",
+          "division_name": "Monday \"Broomfield Westminster Laggers\" No Limit LC League",
+          "divisions": [
+            "11480",
+            "11493",
+            "11975",
+            "12759",
+            "13247",
+            "13881",
+            "13937",
+            "13986"
+          ],
+          "csr": {
+            "csr_8": 112,
+            "csr_9": 92,
+            "csr_10": 97,
+            "csr_10bp": 87
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
       "name": "Alvin Cox",
       "roster_player_ids": [
         1236055,
@@ -59,6 +91,85 @@
             "csr_9": 69,
             "csr_10": 61,
             "csr_10bp": 67
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "name": "Ashleigh Skoworn",
+      "roster_player_ids": [
+        1338676,
+        1128444
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10054616,
+          "name": "Ashleigh Skoworn",
+          "division_id": "13985",
+          "division_name": "Tuesday \"Felt Laggers\" No Limit LC League",
+          "divisions": [
+            "10992",
+            "10993",
+            "11564",
+            "12148",
+            "12653",
+            "13985"
+          ],
+          "csr": {
+            "csr_9": 52,
+            "csr_10": 49,
+            "csr_8": 59
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "name": "Chantelle Schuckman",
+      "roster_player_ids": [
+        1202475,
+        1183340
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10088967,
+          "name": "Chantelle Schuckman",
+          "division_id": "13722",
+          "division_name": "Friday \"Piazza Friday DP\" No Limit 8-ball League",
+          "divisions": [
+            "13722",
+            "13723"
+          ],
+          "csr": {
+            "csr_9": 46,
+            "csr_10": 37
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "name": "Conn Hall",
+      "roster_player_ids": [
+        972795,
+        1280171
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10083613,
+          "name": "Conn Hall",
+          "division_id": "13205",
+          "division_name": "Monday \"Greeley\" No Limit LC League",
+          "divisions": [
+            "12466",
+            "13205",
+            "14064"
+          ],
+          "csr": {
+            "csr_8": 52,
+            "csr_9": 54,
+            "csr_10": 57
           },
           "imputed_state": "CO"
         }
@@ -95,6 +206,35 @@
       ]
     },
     {
+      "name": "Dustin Sterling",
+      "roster_player_ids": [
+        786167,
+        740271
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10046117,
+          "name": "Dustin Sterling",
+          "division_id": "10243",
+          "division_name": "Tuesday \"Felt Laggers\" Lagger's Choice League",
+          "divisions": [
+            "10243",
+            "10669",
+            "11112",
+            "12399",
+            "12653"
+          ],
+          "csr": {
+            "csr_8": 86,
+            "csr_9": 70,
+            "csr_10": 80,
+            "csr_4": 86
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
       "name": "James Carlan",
       "roster_player_ids": [
         1282295,
@@ -107,13 +247,14 @@
           "division_id": "13986",
           "division_name": "Tuesday \"Zoosters Laggers\" No Limit LC League",
           "divisions": [
-            "13986"
+            "13986",
+            "14095"
           ],
           "csr": {
-            "csr_8": 85,
+            "csr_8": 86,
             "csr_9": 62,
             "csr_10": 73,
-            "csr_10bp": 78
+            "csr_10bp": 74
           },
           "imputed_state": "CO"
         }
@@ -144,28 +285,29 @@
       ]
     },
     {
-      "name": "John Kolb",
+      "name": "Jenny Laney",
       "roster_player_ids": [
-        971834,
-        1295505
+        1113419,
+        1105180
       ],
       "memberships": [
         {
-          "napa_player_id": 10070377,
-          "name": "John Kolb",
-          "division_id": "13205",
-          "division_name": "Monday \"Greeley\" No Limit LC League",
+          "napa_player_id": 10068291,
+          "name": "Jenny Laney",
+          "division_id": "13722",
+          "division_name": "Friday \"Piazza Friday DP\" No Limit 8-ball League",
           "divisions": [
-            "11314",
-            "11920",
-            "12466",
-            "13205",
-            "14064"
+            "11552",
+            "11553",
+            "12732",
+            "12733",
+            "13722",
+            "13723"
           ],
           "csr": {
-            "csr_8": 107,
-            "csr_9": 88,
-            "csr_10": 94
+            "csr_8": 38,
+            "csr_9": 43,
+            "csr_10": 56
           },
           "imputed_state": "CO"
         }
@@ -189,9 +331,45 @@
             "13937"
           ],
           "csr": {
-            "csr_8": 33,
+            "csr_8": 34,
             "csr_9": 43,
             "csr_10": 47
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "name": "Kent Hoffman",
+      "roster_player_ids": [
+        1256345,
+        666351
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10068553,
+          "name": "Kent Hoffman",
+          "division_id": "13985",
+          "division_name": "Tuesday \"Felt Laggers\" No Limit LC League",
+          "divisions": [
+            "10243",
+            "10669",
+            "10992",
+            "10993",
+            "11112",
+            "11552",
+            "11553",
+            "11564",
+            "12148",
+            "12653",
+            "12732",
+            "12733",
+            "13985"
+          ],
+          "csr": {
+            "csr_8": 87,
+            "csr_9": 76,
+            "csr_10": 63
           },
           "imputed_state": "CO"
         }
@@ -218,6 +396,34 @@
             "csr_8": 70,
             "csr_9": 85,
             "csr_10": 83
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "name": "Kurt Schmidt",
+      "roster_player_ids": [
+        1232310,
+        1131331
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10079184,
+          "name": "Kurt Schmidt",
+          "division_id": "13205",
+          "division_name": "Monday \"Greeley\" No Limit LC League",
+          "divisions": [
+            "11314",
+            "11920",
+            "12466",
+            "13205",
+            "14064"
+          ],
+          "csr": {
+            "csr_8": 64,
+            "csr_9": 67,
+            "csr_10": 63
           },
           "imputed_state": "CO"
         }
@@ -252,6 +458,74 @@
       ]
     },
     {
+      "name": "Miguel Anariba",
+      "roster_player_ids": [
+        1014394,
+        1100225
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10050311,
+          "name": "Miguel Anariba",
+          "division_id": "13299",
+          "division_name": "Tuesday \"Piazzas Tuesday\" No Limit LC League",
+          "divisions": [
+            "11296",
+            "11297",
+            "12159",
+            "12732",
+            "12733",
+            "13160",
+            "13161",
+            "13298",
+            "13299"
+          ],
+          "csr": {
+            "csr_9": 87,
+            "csr_10": 88,
+            "csr_7": 87,
+            "csr_8": 110,
+            "csr_10bp": 87
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "name": "Nick Leblanc",
+      "roster_player_ids": [
+        810552,
+        1144651
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10068940,
+          "name": "Nick Leblanc",
+          "division_id": "13985",
+          "division_name": "Tuesday \"Felt Laggers\" No Limit LC League",
+          "divisions": [
+            "10243",
+            "10669",
+            "10992",
+            "10993",
+            "11112",
+            "11552",
+            "11553",
+            "11564",
+            "12148",
+            "12653",
+            "13985"
+          ],
+          "csr": {
+            "csr_8": 109,
+            "csr_9": 74,
+            "csr_10": 74
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
       "name": "Travis Thorsten",
       "roster_player_ids": [
         972895,
@@ -273,6 +547,33 @@
             "csr_10": 106,
             "csr_7": 102,
             "csr_8": 112
+          },
+          "imputed_state": "CO"
+        }
+      ]
+    },
+    {
+      "name": "Woody Quezada",
+      "roster_player_ids": [
+        10310,
+        745183
+      ],
+      "memberships": [
+        {
+          "napa_player_id": 10061335,
+          "name": "Woody Quezada",
+          "division_id": "10102",
+          "division_name": "Tuesday \"Zoosters Laggers\" Lagger's Choice League",
+          "divisions": [
+            "10102",
+            "10669",
+            "10972",
+            "11441"
+          ],
+          "csr": {
+            "csr_8": 100,
+            "csr_9": 85,
+            "csr_10": 67
           },
           "imputed_state": "CO"
         }
