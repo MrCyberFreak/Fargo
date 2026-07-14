@@ -61,17 +61,24 @@ def _sources_of(entry: dict) -> set[str]:
     return s or {"unknown"}
 
 
-def _bca_member_id(m: dict) -> str:
-    """BCA carries NO per-player id, so synthesize a stable key from division + name.
-    Without this, build()'s `(source, member_id)` dedup would collapse every BCA
-    division of one person to a single `(bca, None)` (verified bug)."""
-    return f"{m.get('bca_division_id')}:{norm(m.get('name'))}"
+def _bca_member_id(league: str, parent_name: str) -> str:
+    """BCA carries NO per-player id, so synthesize a stable key from league slug +
+    the parent roster entry's name (norm'd).  One link can cover multiple leagues,
+    so callers emit one membership row per league.
+
+    Key format: ``<league>:<norm(parent_name)>`` — matches the crosswalk contract in
+    docs/cross-league-identity.md section 6 (``<division_id>:<norm_name>``; the bca
+    importer uses league slugs rather than numeric division ids)."""
+    return f"{league}:{norm(parent_name or '')}"
 
 
 def _memberships_of(entry: dict) -> list[dict]:
     """Source-tagged league memberships from a roster entry. Each source emits a
     stable `member_id` so build()'s `(source, member_id)` dedup is correct: APA uses
-    its member_id, NAPA the napa_player_id, BCA a synthetic division+name key."""
+    its member_id, NAPA the napa_player_id, BCA a synthetic league+name key.
+
+    One BCA link can span multiple leagues; we emit one membership record per league
+    so each gets its own crosswalk key and none are silently collapsed."""
     out = []
     for m in entry.get("apa", []) or []:
         out.append({"source": m.get("source", "apa"), "member_id": m.get("member_id"),
@@ -82,11 +89,21 @@ def _memberships_of(entry: dict) -> list[dict]:
                     "member_number": None, "name": m.get("name"),
                     "division_id": m.get("division_id"),
                     "match_method": m.get("match_method"), "confidence": m.get("confidence")})
+    parent_name = entry.get("name") or ""
     for m in entry.get("bca", []) or []:
-        out.append({"source": "bca", "member_id": _bca_member_id(m),
-                    "member_number": None, "name": m.get("name"),
-                    "division_id": m.get("bca_division_id"),
-                    "match_method": m.get("match_method"), "confidence": m.get("confidence")})
+        leagues = m.get("leagues") or []
+        if not leagues:
+            # No league slugs: fall back to a single entry keyed by empty league
+            out.append({"source": "bca", "member_id": _bca_member_id("", parent_name),
+                        "member_number": None, "name": parent_name,
+                        "division_id": None,
+                        "match_method": m.get("match_method"), "confidence": m.get("confidence")})
+        else:
+            for league in leagues:
+                out.append({"source": "bca", "member_id": _bca_member_id(league, parent_name),
+                            "member_number": None, "name": parent_name,
+                            "division_id": league,
+                            "match_method": m.get("match_method"), "confidence": m.get("confidence")})
     return out
 
 
@@ -220,6 +237,13 @@ def _confidence(m: dict) -> str:
     return m.get("confidence") or ("medium" if m.get("match_method") == "variant" else "high")
 
 
+def _row_fids(row: dict) -> set[int]:
+    """FargoRate ids a crosswalk row represents (singular row or ambiguous-plural row)."""
+    if row.get("fargo_player_id") is not None:
+        return {int(row["fargo_player_id"])}
+    return {int(x) for x in row.get("fargo_player_ids", [])}
+
+
 def crosswalk(today: str) -> dict:
     """Publish docs/crosswalk.json -- the slim, PII-free source-id -> FargoRate map
     PoolPredict consumes instead of joining by name+state (see
@@ -248,10 +272,23 @@ def crosswalk(today: str) -> dict:
                 out["napa"][str(m["napa_player_id"])] = {
                     "fargo_player_id": fid, "person_id": person_id,
                     "confidence": _confidence(m), "match_method": m.get("match_method")}
+        parent_name = entry.get("name") or ""
         for m in entry.get("bca", []) or []:
-            out["bca"][_bca_member_id(m)] = {
-                "fargo_player_id": fid, "person_id": person_id,
-                "confidence": _confidence(m), "match_method": m.get("match_method")}
+            for league in (m.get("leagues") or [""]):
+                key = _bca_member_id(league, parent_name)
+                prev = out["bca"].get(key)
+                if prev is None:
+                    out["bca"][key] = {"fargo_player_id": fid, "person_id": person_id,
+                                       "confidence": _confidence(m), "match_method": m.get("match_method")}
+                elif fid not in _row_fids(prev):
+                    # Same id-less `league:norm(name)` key on a DIFFERENT FargoRate id: two
+                    # distinct people the BCA key can't separate (id-less source). Flag the key
+                    # ambiguous instead of silently overwriting one id, so PoolPredict must
+                    # disambiguate rather than trust a wrong single mapping. These keys are
+                    # human-reviewed in docs/resolve/collision_allowlist.json.
+                    out["bca"][key] = {"ambiguous": True,
+                                       "fargo_player_ids": sorted(_row_fids(prev) | {fid}),
+                                       "confidence": "ambiguous", "match_method": "ambiguous"}
 
     payload = {"generated_at": today,
                "counts": {src: len(rows) for src, rows in out.items()}, **out}

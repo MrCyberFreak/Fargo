@@ -36,6 +36,7 @@ ROSTER_PATH = ROOT / "roster.json"
 MERGES_PATH = ROOT / "people_merges.json"
 RESOLVE_DIR = ROOT / "docs" / "resolve"
 COLLISIONS_PATH = RESOLVE_DIR / "audit_collisions.json"
+COLLISION_ALLOWLIST_PATH = RESOLVE_DIR / "collision_allowlist.json"
 NAME_DIVERGENCE_PATH = RESOLVE_DIR / "audit_name_divergence.json"
 MERGE_SANITY_PATH = RESOLVE_DIR / "audit_merge_sanity.json"
 MERGE_CANDIDATES_PATH = RESOLVE_DIR / "people_merge_candidates.json"
@@ -57,23 +58,51 @@ def _write(path: Path, payload: dict) -> None:
 
 
 def source_member_key(source: str, m: dict) -> str | None:
-    """The stable per-source identity key (matches people.py / crosswalk)."""
+    """The stable per-source identity key (matches people.py / crosswalk).
+
+    For BCA, callers must use _crosslinks() rather than calling this directly,
+    because one BCA link covers multiple leagues and expands to one key per league.
+    This function handles the single-league case used internally by _crosslinks."""
     if source == "apa":
         return None if m.get("member_id") is None else str(m["member_id"])
     if source == "napa":
         return None if m.get("napa_player_id") is None else str(m["napa_player_id"])
     if source == "bca":
-        return f"{m.get('bca_division_id')}:{norm(m.get('name'))}"
+        # _league and _parent_name are injected by _crosslinks; callers outside
+        # _crosslinks should not reach this branch directly.
+        league = m.get("_league", "")
+        parent_name = m.get("_parent_name") or ""
+        return f"{league}:{norm(parent_name)}"
     return None
 
 
 def _crosslinks(entry: dict):
-    """Yield (source, member_key, membership) for every cross-link on an entry."""
+    """Yield (source, member_key, membership) for every cross-link on an entry.
+
+    For BCA, one link can carry multiple league slugs (real link shape: leagues=[...]).
+    We expand it into one yield per league, injecting '_league' and '_parent_name'
+    into a copy of the link dict so downstream callers can use m.get('name') reliably."""
+    parent_name = entry.get("name") or ""
     for source in ("apa", "napa", "bca"):
         for m in entry.get(source, []) or []:
-            key = source_member_key(source, m)
-            if key is not None:
-                yield source, key, m
+            if source == "bca":
+                leagues = m.get("leagues") or []
+                if not leagues:
+                    # Link with empty leagues list: emit one row keyed by empty league
+                    augmented = dict(m, _league="", _parent_name=parent_name, name=parent_name)
+                    key = source_member_key(source, augmented)
+                    if key is not None:
+                        yield source, key, augmented
+                else:
+                    for league in leagues:
+                        augmented = dict(m, _league=league, _parent_name=parent_name, name=parent_name)
+                        key = source_member_key(source, augmented)
+                        if key is not None:
+                            yield source, key, augmented
+            else:
+                key = source_member_key(source, m)
+                if key is not None:
+                    yield source, key, m
 
 
 def _fid_to_person(players: dict, merges: list) -> dict[int, int]:
@@ -86,16 +115,32 @@ def _fid_to_person(players: dict, merges: list) -> dict[int, int]:
     return out
 
 
+def _collision_allowlist() -> dict[tuple[str, str], set[int]]:
+    """Human-reviewed collisions to accept: {(source, member_key): {fargo_ids}}.
+
+    Some id-less source keys (BCA `league:norm(name)`) legitimately map two DISTINCT
+    real people who share a league + name; the key cannot separate them and both links
+    are correct. Such a case is reviewed once and listed in collision_allowlist.json so
+    it is reported as `accepted_ambiguous` rather than failing the hard invariant. The
+    accepted fids are pinned, so a NEW id appearing on the same key re-flags it."""
+    data = _load(COLLISION_ALLOWLIST_PATH, {"allow": []})
+    return {(a["source"], a["member_key"]): {int(x) for x in a.get("fargo_ids", [])}
+            for a in data.get("allow", [])}
+
+
 def collisions(today: str) -> dict:
     """One source member linked to >1 distinct PERSON (the hard invariant; must be []).
 
     A member on two Fargo ids that are MERGED (people_merges.json) is the same human
     with two accounts -- people.py dedups it -- so that is NOT a collision; it is
     reported separately as `redundant_same_person` (informational, the link could be
-    pruned to one account but is harmless)."""
+    pruned to one account but is harmless). A collision listed in
+    collision_allowlist.json (with the exact fids reviewed) is reported as
+    `accepted_ambiguous` and does NOT count toward the hard invariant."""
     players = _roster_players()
     merges = _load(MERGES_PATH, [])
     fid_person = _fid_to_person(players, merges)
+    allow = _collision_allowlist()
 
     index: dict[tuple[str, str], set[int]] = {}
     for pid, entry in players.items():
@@ -103,16 +148,22 @@ def collisions(today: str) -> dict:
         for source, key, _m in _crosslinks(entry):
             index.setdefault((source, key), set()).add(fid)
 
-    bad, redundant = [], []
+    bad, redundant, accepted = [], [], []
     for (s, k), fids in sorted(index.items()):
         persons = {fid_person.get(f, f) for f in fids}
         if len(persons) > 1:
-            bad.append({"source": s, "member_key": k, "fargo_ids": sorted(fids),
-                        "person_ids": sorted(persons)})
+            rec = {"source": s, "member_key": k, "fargo_ids": sorted(fids),
+                   "person_ids": sorted(persons)}
+            # Accept only if reviewed AND no unreviewed id has crept onto the key.
+            if (s, k) in allow and fids <= allow[(s, k)]:
+                accepted.append(rec)
+            else:
+                bad.append(rec)
         elif len(fids) > 1:
             redundant.append({"source": s, "member_key": k, "fargo_ids": sorted(fids),
                               "person_id": next(iter(persons))})
     payload = {"generated_at": today, "collision_count": len(bad), "collisions": bad,
+               "accepted_ambiguous_count": len(accepted), "accepted_ambiguous": accepted,
                "redundant_same_person_count": len(redundant),
                "redundant_same_person": redundant}
     _write(COLLISIONS_PATH, payload)

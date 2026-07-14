@@ -1,0 +1,12 @@
+{
+  "note": "Human-reviewed, accepted cross-link collisions. Some id-less source member keys (BCA uses `league:norm(name)`) legitimately map two DISTINCT real people who share a league + name; the key cannot separate them and BOTH links are correct name+rating matches. Each entry here is reviewed once, pins the exact reviewed fargo_ids, and is excluded from the hard collision invariant (reported as `accepted_ambiguous`). The published crosswalk marks such keys `ambiguous` so PoolPredict disambiguates instead of trusting one id. A NEW id appearing on a listed key re-flags it as a real collision. See docs/cross-league-identity.md.",
+  "allow": [
+    {
+      "source": "bca",
+      "member_key": "napa-of-northern-colorado:patrick riley",
+      "fargo_ids": [1267346, 1364701],
+      "reason": "Two distinct real players named Patrick Riley in the napa-of-northern-colorado BCA league: 1267346 (Arvada CO, FargoRate 466) and 1364701 (Broomfield CO, FargoRate 205). Both are correct name+rating matches; the id-less league:norm(name) key cannot separate same-name-same-league players.",
+      "reviewed": "2026-07-14"
+    }
+  ]
+}

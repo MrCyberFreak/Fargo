@@ -20,8 +20,8 @@ def _setup(tmp_path, monkeypatch, roster, merges=None):
     monkeypatch.setattr(audit, "MERGES_PATH", mp)
     rd = tmp_path / "resolve"
     monkeypatch.setattr(audit, "RESOLVE_DIR", rd)
-    for name in ("COLLISIONS_PATH", "NAME_DIVERGENCE_PATH", "MERGE_SANITY_PATH",
-                 "MERGE_CANDIDATES_PATH"):
+    for name in ("COLLISIONS_PATH", "COLLISION_ALLOWLIST_PATH", "NAME_DIVERGENCE_PATH",
+                 "MERGE_SANITY_PATH", "MERGE_CANDIDATES_PATH"):
         monkeypatch.setattr(audit, name, rd / f"{name.lower()}.json")
     return rp
 
@@ -62,6 +62,40 @@ def test_collisions_empty_when_clean(tmp_path, monkeypatch):
     }}
     _setup(tmp_path, monkeypatch, roster)
     assert audit.collisions("2026-06-27")["collision_count"] == 0
+
+
+def test_collisions_allowlist_accepts_reviewed_ambiguous(tmp_path, monkeypatch):
+    # Two DISTINCT (unmerged) people sharing an id-less BCA league:name key.
+    roster = {"players": {
+        "100": {"player_id": 100, "name": "Pat Riley",
+                "bca": [{"source": "bca", "leagues": ["lg1"], "confidence": "high"}]},
+        "200": {"player_id": 200, "name": "Pat Riley",
+                "bca": [{"source": "bca", "leagues": ["lg1"], "confidence": "high"}]},
+    }}
+    rp = _setup(tmp_path, monkeypatch, roster)
+    allow = audit.COLLISION_ALLOWLIST_PATH
+    allow.parent.mkdir(parents=True, exist_ok=True)
+
+    # Unlisted -> a real hard collision.
+    allow.write_text(json.dumps({"allow": []}), encoding="utf-8")
+    out = audit.collisions("2026-07-14")
+    assert out["collision_count"] == 1
+    assert out["accepted_ambiguous_count"] == 0
+
+    # Listed with the exact reviewed fids -> accepted, hard gate clears.
+    allow.write_text(json.dumps({"allow": [
+        {"source": "bca", "member_key": "lg1:pat riley", "fargo_ids": [100, 200]}]}),
+        encoding="utf-8")
+    out = audit.collisions("2026-07-14")
+    assert out["collision_count"] == 0
+    assert out["accepted_ambiguous_count"] == 1
+    assert out["accepted_ambiguous"][0]["member_key"] == "lg1:pat riley"
+
+    # A NEW unreviewed id on the same key re-flags it (fids not subset of reviewed set).
+    roster["players"]["300"] = {"player_id": 300, "name": "Pat Riley",
+                                "bca": [{"source": "bca", "leagues": ["lg1"], "confidence": "high"}]}
+    rp.write_text(json.dumps(roster), encoding="utf-8")
+    assert audit.collisions("2026-07-14")["collision_count"] == 1
 
 
 def test_merge_candidates_cross_source_same_name_diff_ids(tmp_path, monkeypatch):
