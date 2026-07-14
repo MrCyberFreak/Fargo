@@ -1,6 +1,7 @@
 # Cross-league identity & roster sources -- design
 
-Status: DESIGN (no code yet). Authored 2026-06-27. This is the contract for
+Status: BUILT (NAPA, APA `_ref` automation, people/crosswalk, audits, and BCA all
+shipped; last updated 2026-07-14). Authored 2026-06-27. This is the contract for
 adding **NAPA** and **BCA** as roster sources alongside the existing
 **DigitalPool** and **APA**, with the overriding goal of **accurately
 identifying the same human across the pool-data cluster projects**
@@ -121,19 +122,18 @@ memberships, never mutates or reorders existing fields):
             "match_method": "name|variant|manual", "confidence": "high|medium",
             "added_date": "YYYY-MM-DD" } ]
 
-// bca[] -- dedup key = (bca_division_id, norm(name)); BCA has NO per-player id
-"bca": [ { "source": "bca", "bca_division_id": "<lms divisionId>",
-           "division_name": "...", "name": "<name as seen on LMS>",
-           "lms_rating_seen": 518,            // the effectiveRating fingerprint at link time
-           "matched_effective_rating": 518, "rating_delta": 0,
-           "match_method": "name+rating|rating-disambig|name|from-bca-id|manual",
-           "confidence": "high|medium", "added_date": "YYYY-MM-DD" } ]
+// bca[] -- dedup key = (sorted leagues); BCA has NO per-player id and the player
+// NAME lives on the PARENT roster entry, not on the link (real shape from _bca_link):
+"bca": [ { "source": "bca", "leagues": [ "<league slug>", ... ],
+           "lms_rating": 518,               // the effectiveRating fingerprint at link time
+           "match_method": "name+rating|name",
+           "confidence": "high", "added_date": "YYYY-MM-DD" } ]
 ```
 
-Idempotency note: because BCA has no source-side player id, an LMS **name change**
-would append a second `bca[]` entry rather than update one. Acceptable under the
-additive invariant; caught by the audit (section 5). NAPA uses the stable
-`napa_player_id` and has no such issue.
+Idempotency note: because BCA has no source-side player id, the `bca[]` link dedups
+on its sorted `leagues` set and the player name is carried on the parent roster
+entry. A re-run with the same leagues is a no-op; a new league appends. NAPA uses
+the stable `napa_player_id` and has no such issue.
 
 New slim roster entries for never-before-seen NAPA/BCA players follow the existing
 importer shape (`player_id`, `membership_id`, `name`, `state`, `source`,
@@ -159,18 +159,20 @@ Two hard quirks the shared module must honor (verified):
   too). Always qualify a search with a first-name prefix; names hit by the bug
   must be added by id, not search. (Already learned in APA `recover`.)
 
-### 4.1 BCA -- name + FargoRate-rating fingerprint  [DECIDED: deferred + modulate-by-robustness]
+### 4.1 BCA -- name + FargoRate-rating fingerprint  [BUILT: modulate-by-robustness]
 
-**BCA is on hold as a Fargo-side scraper.** The `bca` project is producing its
-own roster; Fargo will **integrate that roster** when it is ready. Fargo does NOT
-scrape `lms.fargorate.com`. Two integration scenarios -- the cross-link schema,
-`people.py`, and crosswalk are identical either way:
+**BUILT (backfilled via PR #15, ~1,571 `bca[]` cross-links).** `src/import_bca.py`
+folds the BCA/LMS player set into `roster.json`. Fargo does NOT scrape
+`lms.fargorate.com`; the `bca` project produces the roster and Fargo integrates it.
+Two integration scenarios -- the cross-link schema, `people.py`, and crosswalk are
+identical either way:
 
 - **Scenario A (preferred):** the `bca` project resolves its players to FargoRate
   ids on its side (it has the LMS name + rating and can run the exact
   rating-corroborated search below) and ships a committed, PII-free roster file
-  carrying at least `{name, fargo_player_id, division_id, rating_seen,
-  match_method, confidence, state}`. Fargo's `import_bca.py` becomes a thin
+  carrying at least `{name, leagues, lms_rating, match_method, confidence}`
+  (the `bca[]` link stores `leagues` + `lms_rating`; the name lives on the parent
+  roster entry). Fargo's `import_bca.py` becomes a thin
   **strong-key consumer** (like DigitalPool): admit the id, attach the `bca[]`
   link, re-validate against the live API. Lowest risk; no LMS knowledge
   duplicated in Fargo.
@@ -285,16 +287,24 @@ moves shared functions into `namematch.py`.
 - **BCA id-less dedup fix (verified bug):** `build()` dedups memberships on
   `(mem["source"], mem.get("member_id"))`. BCA has no `member_id`, so all of one
   person's BCA links would collapse to a single `(bca, None)`. `_memberships_of`
-  must emit a synthetic stable key for BCA, e.g.
-  `member_id = f"{bca_division_id}:{norm(name)}"`, so multiple BCA divisions
+  emits a synthetic stable key for BCA -- one membership row **per league**, keyed
+  `member_id = f"{league}:{norm(parent_name)}"` (the name comes from the parent
+  roster entry, the league from the link's `leagues` list), so multiple BCA leagues
   survive. (NAPA uses `napa_player_id`, fine.)
 - `_render_profile` reads `m.get("member_number")` -- BCA has none; render a
   sensible label (division + name) for BCA memberships.
 
 ### Audit procedures (read-only; each writes `docs/resolve/audit_*.json`)
 1. **Inverted-index collision (hard error):** build `source_member_key ->
-   {fargo_ids}`; any key mapping to >1 Fargo id = one source player linked to two
-   humans. Must be empty.
+   {fargo_ids}`; any key mapping to >1 distinct **person** = one source player
+   linked to two humans. Must be empty. **Exception (`accepted_ambiguous`):** an
+   id-less BCA key (`<league>:<norm name>`) can legitimately map two DISTINCT real
+   people who share a league + name; the key cannot separate them and both links
+   are correct. Such a case is reviewed once and listed in
+   `docs/resolve/collision_allowlist.json` (with the exact reviewed fids pinned);
+   `src/audit.py collisions` then reports it under `accepted_ambiguous` -- it does
+   NOT count toward the hard invariant. A new, unreviewed id creeping onto the same
+   key re-flags it as a real collision.
 2. **BCA rating re-check:** for every `bca[]` link, re-`search()` the linked name
    and confirm the linked id is still the closest CO candidate to
    `lms_rating_seen` and no other same-surname CO candidate is closer. (Use
@@ -319,8 +329,15 @@ Fargo publishes a slim, PII-free crosswalk (new `python src/people.py crosswalk`
 ```jsonc
 { "apa":  { "<member_id>":      { "fargo_player_id": 0, "person_id": 0, "confidence": "high|medium", "match_method": "..." } },
   "napa": { "<napa_player_id>": { "fargo_player_id": 0, "person_id": 0, "confidence": "...", "match_method": "..." } },
-  "bca":  { "<division_id>:<norm_name>": { "fargo_player_id": 0, "person_id": 0, "confidence": "...", "match_method": "..." } } }
+  "bca":  { "<league>:<norm_name>": { "fargo_player_id": 0, "person_id": 0, "confidence": "...", "match_method": "..." } } }
 ```
+
+The BCA key is `<league>:<norm name>` -- one crosswalk row **per league slug**,
+built from the link's `leagues` list crossed with the parent entry's name via
+`norm`. **Ambiguity:** when the same `<league>:<norm name>` key maps to two
+DISTINCT people (e.g. two different "Patrick Riley" players in one league), the
+crosswalk flags that key `{"ambiguous": true, "fargo_player_ids": [...]}` instead
+of silently overwriting one id, and PoolPredict must not blindly join it.
 
 PoolPredict resolution order (the contract; PoolPredict code is edited in that
 repo, not here):
@@ -335,7 +352,7 @@ repo, not here):
 
 ---
 
-## 7. Build sequence (BCA deferred)
+## 7. Build sequence (all milestones BUILT)
 
 - **M0 Scaffolding:** `_ref/` clone helper + `.gitignore` entry; extract
   `src/namematch.py` from `import_apa.py` (APA tests stay green); correct the
@@ -353,11 +370,13 @@ repo, not here):
 - **M5 CI:** `resolve-napa.yml` (clone -> resolve -> add -> people build ->
   commit). Update CLAUDE.md "Roster sources" + add a "Cross-league identity"
   contract section.
-- **M6 BCA (deferred):** once the `bca` project ships its roster, build
-  `src/import_bca.py` per the chosen interface scenario (4.1) + `resolve-bca.yml`.
+- **M6 BCA (BUILT):** `src/import_bca.py` folds the BCA/LMS player set into the
+  roster per scenario 4.1 (backfilled via PR #15, ~1,571 `bca[]` cross-links). The
+  crosswalk emits one row per `<league>:<norm name>` key and flags ambiguous keys;
+  `src/audit.py` accepts reviewed ambiguity via `collision_allowlist.json`.
 
-Note: BCA is designed now (schema, people.py, crosswalk, audits all account for
-it) but built last, pending the bca project's roster + the interface decision.
+Note: BCA was designed up front (schema, people.py, crosswalk, audits all account
+for it) and is now built.
 
 ---
 
