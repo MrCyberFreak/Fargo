@@ -57,8 +57,7 @@ def test_collisions_empty_when_clean(tmp_path, monkeypatch):
     roster = {"players": {
         "100": {"player_id": 100, "name": "A", "napa": [{"source": "napa", "napa_player_id": 1, "name": "A"}]},
         "200": {"player_id": 200, "name": "B",
-                "bca": [{"source": "bca", "bca_division_id": "D1", "name": "B"},
-                        {"source": "bca", "bca_division_id": "D2", "name": "B"}]},  # 2 distinct keys
+                "bca": [{"source": "bca", "leagues": ["D1", "D2"]}]},  # 2 distinct league keys (name on parent)
     }}
     _setup(tmp_path, monkeypatch, roster)
     assert audit.collisions("2026-06-27")["collision_count"] == 0

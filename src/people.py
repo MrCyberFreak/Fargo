@@ -67,8 +67,7 @@ def _bca_member_id(league: str, parent_name: str) -> str:
     so callers emit one membership row per league.
 
     Key format: ``<league>:<norm(parent_name)>`` — matches the crosswalk contract in
-    docs/cross-league-identity.md section 6 (``<division_id>:<norm_name>``; the bca
-    importer uses league slugs rather than numeric division ids)."""
+    docs/cross-league-identity.md section 6 (the bca importer keys on league slugs)."""
     return f"{league}:{norm(parent_name or '')}"
 
 
