@@ -144,11 +144,23 @@ def roster_name_index(roster: dict) -> dict[str, list[str]]:
 
 
 def _attach_crosslink(roster: dict, pid: str, memberships: list[dict], today: str,
-                      method: str = "name", suppress: set | None = None) -> int:
+                      method: str = "name", suppress: set | None = None,
+                      nid_index: dict | None = None,
+                      conflicts: list | None = None) -> int:
     """Add a `napa` cross-link list to one roster entry. Strictly additive (dedup on
     napa_player_id); existing fields are never touched. A `(napa_player_id, pid)` pair
-    in `suppress` (the napa_unlink ledger) is never (re)added. Returns memberships
-    newly linked."""
+    in `suppress` (the napa_unlink ledger) is never (re)added.
+
+    Cross-id guard (crossref path): when `nid_index` is provided, any napa_player_id
+    already linked to a DIFFERENT Fargo id is skipped and appended to `conflicts`
+    (same schema as napa_add_conflicts.json). An idempotent re-attach onto the SAME
+    id is NOT flagged. `nid_index` is updated in-place for each membership newly
+    linked so subsequent names in the same run see ids attached earlier.
+
+    `add()` does NOT pass `nid_index` — it pre-filters blocked memberships before
+    calling this function, avoiding double-reporting of the same conflict.
+
+    Returns memberships newly linked."""
     suppress = suppress or set()
     entry = roster["players"][pid]
     existing = entry.setdefault("napa", [])
@@ -157,11 +169,27 @@ def _attach_crosslink(roster: dict, pid: str, memberships: list[dict], today: st
     for m in memberships:
         if (str(m["napa_player_id"]), int(pid)) in suppress:   # corrected wrong link -> skip
             continue
-        if m["napa_player_id"] in have:
+        nid = m["napa_player_id"]
+        # Cross-id guard: only active when crossref passes a nid_index.
+        if nid_index is not None:
+            existing_ids = nid_index.get(nid, set())
+            other_ids = existing_ids - {pid}
+            if other_ids:
+                if conflicts is not None:
+                    conflicts.append({
+                        "napa_player_id": nid,
+                        "attempted_player_id": int(pid),
+                        "existing_player_ids": sorted(int(p) for p in other_ids),
+                        "name": m.get("name"),
+                    })
+                continue  # skip — do not attach
+        if nid in have:
             continue
         existing.append({**m, "source": "napa", "match_method": method,
                          "confidence": _confidence(method), "added_date": today})
-        have.add(m["napa_player_id"])
+        have.add(nid)
+        if nid_index is not None:
+            nid_index.setdefault(nid, set()).add(pid)
         added += 1
     if not existing:
         entry.pop("napa", None)
@@ -182,6 +210,13 @@ def crossref(ref: Path, dry_run: bool, today: str) -> dict:
     to_resolve: list[dict] = []
     collisions: list[dict] = []
     links_written = 0
+    crossref_conflicts: list[dict] = []
+
+    # Build the napa_player_id -> {fargo_ids} index from the current roster so the
+    # cross-id guard in _attach_crosslink can detect collisions in O(1). Updated
+    # in-place by _attach_crosslink as new links are written, so names processed
+    # later in this same run also see ids attached earlier.
+    nid_index = _build_napa_player_id_index(roster.get("players", {}))
 
     for name_key in sorted(by_name):
         entries = by_name[name_key]
@@ -196,7 +231,9 @@ def crossref(ref: Path, dry_run: bool, today: str) -> dict:
             matched.append({"player_id": int(pid), "name": entries[0]["name"],
                             "memberships": memberships})
             if not dry_run:
-                links_written += _attach_crosslink(roster, pid, memberships, today, suppress=suppress)
+                links_written += _attach_crosslink(
+                    roster, pid, memberships, today, suppress=suppress,
+                    nid_index=nid_index, conflicts=crossref_conflicts)
         elif len(pids) > 1:
             ambiguous.append({"name": entries[0]["name"],
                               "roster_player_ids": [int(p) for p in pids],
@@ -212,6 +249,7 @@ def crossref(ref: Path, dry_run: bool, today: str) -> dict:
         "unique_napa_names": len(by_name),
         "matched_single": len(matched),
         "matched_crosslinks_written": links_written,
+        "crossref_conflicts": len(crossref_conflicts),
         "ambiguous_existing": len(ambiguous),
         "name_collisions_quarantined": len(collisions),
         "new_to_resolve": len(to_resolve),
@@ -228,6 +266,16 @@ def crossref(ref: Path, dry_run: bool, today: str) -> dict:
             json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         COLLISIONS_PATH.write_text(
             json.dumps(collisions, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        if crossref_conflicts:
+            ADD_CONFLICTS_PATH.write_text(
+                json.dumps(crossref_conflicts, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8")
+            try:
+                display = ADD_CONFLICTS_PATH.relative_to(ROOT)
+            except ValueError:
+                display = ADD_CONFLICTS_PATH
+            print(f"WARNING: {len(crossref_conflicts)} NAPA napa_player_id crossref conflict(s) "
+                  f"skipped -> {display}", file=sys.stderr)
     return report
 
 

@@ -345,3 +345,118 @@ def test_add_brand_new_napa_player_id_adds_normally(tmp_path, monkeypatch):
     saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
     assert "300" in saved
     assert saved["300"]["napa"][0]["napa_player_id"] == 10000077
+
+
+# --- crossref() cross-id precision guard --------------------------------------
+
+def _setup_crossref_conflict(tmp_path, monkeypatch, roster_players, master):
+    """Set up a crossref run using the given roster and master, with all path
+    monkeypatches needed for crossref + conflict file assertions."""
+    roster_path, resolve_dir = _setup_crossref(tmp_path, monkeypatch,
+                                               roster_players, master)
+    monkeypatch.setattr(imp, "ADD_CONFLICTS_PATH",
+                        resolve_dir / "napa_add_conflicts.json")
+    return roster_path, resolve_dir
+
+
+def test_crossref_conflict_napa_player_id_already_on_different_fargo_id(tmp_path, monkeypatch):
+    """crossref: napa_player_id N already on Fargo id A; name also matches Fargo id B.
+    -> link to B must be SKIPPED and recorded; id A is untouched."""
+    roster_players = {
+        "100": {"player_id": 100, "name": "Alice Archer",
+                "napa": [{"napa_player_id": 10000099, "source": "napa"}]},
+        "200": {"player_id": 200, "name": "Alice Archer Alt"},
+    }
+    # NAPA master has one player whose napa_player_id 10000099 maps via name to id 200,
+    # but that napa_player_id is already linked to id 100.
+    master = {
+        1: npl(10000099, "Alice Archer Alt"),
+    }
+    roster_path, resolve_dir = _setup_crossref_conflict(tmp_path, monkeypatch,
+                                                        roster_players, master)
+
+    rep = imp.crossref(Path("ignored"), dry_run=False, today="2026-07-14")
+
+    assert rep["matched_single"] == 1
+    assert rep["crossref_conflicts"] == 1
+    assert rep["matched_crosslinks_written"] == 0
+
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    assert "napa" not in saved["200"], "conflicting link must not be attached to id 200"
+
+    conflicts_path = resolve_dir / "napa_add_conflicts.json"
+    assert conflicts_path.exists()
+    conflicts = json.loads(conflicts_path.read_text(encoding="utf-8"))
+    assert len(conflicts) == 1
+    c = conflicts[0]
+    assert c["napa_player_id"] == 10000099
+    assert c["attempted_player_id"] == 200
+    assert 100 in c["existing_player_ids"]
+
+
+def test_crossref_conflict_idempotent_same_id_not_flagged(tmp_path, monkeypatch):
+    """crossref: re-attaching napa_player_id N onto the SAME Fargo id it already
+    lives on is idempotent — NOT flagged as a conflict."""
+    roster_players = {
+        "100": {"player_id": 100, "name": "Alice Archer",
+                "napa": [{"napa_player_id": 10000099, "source": "napa"}]},
+    }
+    master = {1: npl(10000099, "Alice Archer")}
+    roster_path, resolve_dir = _setup_crossref_conflict(tmp_path, monkeypatch,
+                                                        roster_players, master)
+
+    rep = imp.crossref(Path("ignored"), dry_run=False, today="2026-07-14")
+
+    assert rep["crossref_conflicts"] == 0
+    assert not (resolve_dir / "napa_add_conflicts.json").exists()
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    assert len(saved["100"]["napa"]) == 1   # no duplicate
+
+
+def test_crossref_conflict_normal_single_match_still_attaches(tmp_path, monkeypatch):
+    """crossref: a napa_player_id with no prior link anywhere attaches normally."""
+    roster_players = {"100": {"player_id": 100, "name": "Anna Byrd"}}
+    master = {1: npl(10000001, "Anna Byrd")}
+    roster_path, resolve_dir = _setup_crossref_conflict(tmp_path, monkeypatch,
+                                                        roster_players, master)
+
+    rep = imp.crossref(Path("ignored"), dry_run=False, today="2026-07-14")
+
+    assert rep["crossref_conflicts"] == 0
+    assert rep["matched_crosslinks_written"] == 1
+    assert not (resolve_dir / "napa_add_conflicts.json").exists()
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    assert saved["100"]["napa"][0]["napa_player_id"] == 10000001
+
+
+def test_crossref_conflict_detects_mid_run_collision(tmp_path, monkeypatch):
+    """crossref: two NAPA players with the same napa_player_id match different roster
+    ids. The first attach succeeds; the second is blocked within the same run."""
+    roster_players = {
+        "100": {"player_id": 100, "name": "Carol Ccc"},
+        "200": {"player_id": 200, "name": "Dave Ddd"},
+    }
+    # Both NAPA entries share napa_player_id 10000055 (a real cross-id collision).
+    master = {
+        1: npl(10000055, "Carol Ccc"),   # -> links to id 100 first (sorted)
+        2: npl(10000055, "Dave Ddd"),    # -> same napa_player_id, different id -> blocked
+    }
+    roster_path, resolve_dir = _setup_crossref_conflict(tmp_path, monkeypatch,
+                                                        roster_players, master)
+
+    rep = imp.crossref(Path("ignored"), dry_run=False, today="2026-07-14")
+
+    # One attach succeeds; one is blocked mid-run.
+    assert rep["matched_single"] == 2
+    assert rep["crossref_conflicts"] == 1
+    assert rep["matched_crosslinks_written"] == 1
+
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    # Carol Ccc (sorted first) gets the link; Dave Ddd is blocked.
+    assert saved["100"]["napa"][0]["napa_player_id"] == 10000055
+    assert "napa" not in saved["200"]
+
+    conflicts = json.loads((resolve_dir / "napa_add_conflicts.json").read_text(encoding="utf-8"))
+    assert len(conflicts) == 1
+    assert conflicts[0]["attempted_player_id"] == 200
+    assert 100 in conflicts[0]["existing_player_ids"]

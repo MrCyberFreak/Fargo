@@ -575,3 +575,125 @@ def test_add_conflict_brand_new_member_adds_normally(tmp_path, monkeypatch):
     assert "200" in saved
     assert saved["200"]["apa"][0]["member_id"] == 42
     assert not imp.ADD_CONFLICTS_PATH.exists()
+
+
+# --- crossref() cross-id precision guard --------------------------------------
+
+def _setup_crossref_conflict(tmp_path, monkeypatch, roster_players, apa_players):
+    """Set up a crossref run with an apa source and controlled path fixtures."""
+    roster_path, src = _setup(tmp_path, monkeypatch, roster_players, apa_players)
+    monkeypatch.setattr(imp, "ADD_CONFLICTS_PATH",
+                        imp.RESOLVE_DIR / "apa_add_conflicts.json")
+    return roster_path, src
+
+
+def test_crossref_conflict_member_already_on_different_id(tmp_path, monkeypatch):
+    """crossref: member_id M already on Fargo id A; name matches Fargo id B.
+    -> link to B must be SKIPPED and recorded; id A must be unchanged."""
+    # Roster: id 100 already carries member_id 9; id 200 has a different player.
+    roster_players = {
+        "100": {"player_id": 100, "name": "Bryson Ford",
+                "apa": [{"member_id": 9, "member_number": "80400009", "name": "Bryson Ford",
+                         "source": "apa", "match_method": "name", "added_date": "2026-01-01"}]},
+        "200": {"player_id": 200, "name": "Bryson Ford Alt"},
+    }
+    # APA source has a player whose member_id 9 matches the roster name "Bryson Ford Alt"
+    # (i.e. one name -> one roster id 200, but member_id 9 already lives on id 100).
+    apa_players = {
+        "1": apa_rec(9, "80400009", "Bryson Ford Alt"),
+    }
+    roster_path, src = _setup_crossref_conflict(tmp_path, monkeypatch,
+                                                roster_players, apa_players)
+
+    rep = imp.crossref(src, dry_run=False, today="2026-07-14")
+
+    # The match is found (one roster id), but the link must be blocked.
+    assert rep["matched_single"] == 1
+    assert rep["crossref_conflicts"] == 1
+    assert rep["matched_crosslinks_written"] == 0
+
+    # roster id 200 must NOT have an apa cross-link.
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    assert "apa" not in saved["200"], "conflicting link must not be attached to id 200"
+
+    # conflicts file must be written.
+    conflicts_path = imp.ADD_CONFLICTS_PATH
+    assert conflicts_path.exists(), "apa_add_conflicts.json must be written"
+    conflicts = json.loads(conflicts_path.read_text(encoding="utf-8"))
+    assert len(conflicts) == 1
+    c = conflicts[0]
+    assert c["member_id"] == 9
+    assert c["attempted_player_id"] == 200
+    assert 100 in c["existing_player_ids"]
+
+
+def test_crossref_conflict_idempotent_same_id_not_flagged(tmp_path, monkeypatch):
+    """crossref: re-attaching member_id M onto the SAME Fargo id it already lives on
+    is idempotent — NOT flagged as a conflict."""
+    roster_players = {
+        "100": {"player_id": 100, "name": "Anna Byrd",
+                "apa": [{"member_id": 7, "member_number": "80400007", "name": "Anna Byrd",
+                         "source": "apa", "match_method": "name", "added_date": "2026-01-01"}]},
+    }
+    apa_players = {"1": apa_rec(7, "80400007", "Anna Byrd")}
+    roster_path, src = _setup_crossref_conflict(tmp_path, monkeypatch,
+                                                roster_players, apa_players)
+
+    rep = imp.crossref(src, dry_run=False, today="2026-07-14")
+
+    assert rep["crossref_conflicts"] == 0
+    assert not imp.ADD_CONFLICTS_PATH.exists()
+    # The link already exists; nothing new written, nothing duplicated.
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    assert len(saved["100"]["apa"]) == 1
+
+
+def test_crossref_conflict_normal_single_match_still_attaches(tmp_path, monkeypatch):
+    """crossref: a member_id with no prior link on any other id attaches normally."""
+    roster_players = {"100": {"player_id": 100, "name": "Anna Byrd"}}
+    apa_players = {"1": apa_rec(1, "80400001", "Anna Byrd")}
+    roster_path, src = _setup_crossref_conflict(tmp_path, monkeypatch,
+                                                roster_players, apa_players)
+
+    rep = imp.crossref(src, dry_run=False, today="2026-07-14")
+
+    assert rep["crossref_conflicts"] == 0
+    assert rep["matched_crosslinks_written"] == 1
+    assert not imp.ADD_CONFLICTS_PATH.exists()
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    assert saved["100"]["apa"][0]["member_id"] == 1
+
+
+def test_crossref_conflict_detects_mid_run_collision(tmp_path, monkeypatch):
+    """crossref: two APA names both map to different roster ids but share the same
+    member_id. The first attach succeeds; the second is blocked mid-run without
+    requiring an index rebuild."""
+    # ids 100 and 200 exist; no apa links yet.
+    roster_players = {
+        "100": {"player_id": 100, "name": "Alice Aaa"},
+        "200": {"player_id": 200, "name": "Bob Bbb"},
+    }
+    # Both APA records share member_id 5 (a real cross-id collision).
+    apa_players = {
+        "1": apa_rec(5, "80400005", "Alice Aaa"),   # -> links to id 100 first
+        "2": apa_rec(5, "80400005", "Bob Bbb"),     # -> same member_id, different id -> blocked
+    }
+    roster_path, src = _setup_crossref_conflict(tmp_path, monkeypatch,
+                                                roster_players, apa_players)
+
+    rep = imp.crossref(src, dry_run=False, today="2026-07-14")
+
+    # One attach succeeds (Alice -> 100); one is blocked (Bob -> 200, same member_id 5).
+    assert rep["matched_single"] == 2
+    assert rep["crossref_conflicts"] == 1
+    assert rep["matched_crosslinks_written"] == 1
+
+    saved = json.loads(roster_path.read_text(encoding="utf-8"))["players"]
+    # id 100 (Alice, sorted first) gets the link; id 200 (Bob) is blocked.
+    assert saved["100"]["apa"][0]["member_id"] == 5
+    assert "apa" not in saved["200"]
+
+    conflicts = json.loads(imp.ADD_CONFLICTS_PATH.read_text(encoding="utf-8"))
+    assert len(conflicts) == 1
+    assert conflicts[0]["attempted_player_id"] == 200
+    assert 100 in conflicts[0]["existing_player_ids"]

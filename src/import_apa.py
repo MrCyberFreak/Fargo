@@ -147,6 +147,13 @@ def crossref(path: Path, dry_run: bool, today: str) -> dict:
     ambiguous: list[dict] = []   # roster name held by >1 id; left for review
     to_resolve: list[dict] = []  # not in roster; queued for FargoRate search
     links_written = 0
+    crossref_conflicts: list[dict] = []
+
+    # Build the member_id -> {fargo_ids} index from the current roster so the
+    # cross-id guard in _attach_crosslink can detect collisions in O(1). Updated
+    # in-place by _attach_crosslink as new links are written, so names processed
+    # later in this same run also see ids attached earlier.
+    mid_index = _build_member_id_index(roster.get("players", {}))
 
     for name_key in sorted(by_name):
         recs = by_name[name_key]
@@ -158,7 +165,9 @@ def crossref(path: Path, dry_run: bool, today: str) -> dict:
             matched.append({"player_id": int(pid), "name": recs[0].get("displayName"),
                             "memberships": memberships})
             if not dry_run:
-                links_written += _attach_crosslink(roster, pid, memberships, today, suppress=suppress)
+                links_written += _attach_crosslink(
+                    roster, pid, memberships, today, suppress=suppress,
+                    mid_index=mid_index, conflicts=crossref_conflicts)
         elif len(pids) > 1:
             ambiguous.append({"name": clean_name(recs[0].get("displayName")),
                               "roster_player_ids": [int(p) for p in pids],
@@ -174,6 +183,7 @@ def crossref(path: Path, dry_run: bool, today: str) -> dict:
         "unique_apa_names": len(by_name),
         "matched_single": len(matched),
         "matched_crosslinks_written": links_written,
+        "crossref_conflicts": len(crossref_conflicts),
         "ambiguous_existing": len(ambiguous),
         "new_to_resolve": len(to_resolve),
         "ambiguous_detail": ambiguous,
@@ -187,14 +197,36 @@ def crossref(path: Path, dry_run: bool, today: str) -> dict:
             json.dumps(to_resolve, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         REPORT_PATH.write_text(
             json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        if crossref_conflicts:
+            ADD_CONFLICTS_PATH.write_text(
+                json.dumps(crossref_conflicts, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8")
+            try:
+                display = ADD_CONFLICTS_PATH.relative_to(ROOT)
+            except ValueError:
+                display = ADD_CONFLICTS_PATH
+            print(f"WARNING: {len(crossref_conflicts)} APA member_id crossref conflict(s) "
+                  f"skipped -> {display}", file=sys.stderr)
     return report
 
 
 def _attach_crosslink(roster: dict, pid: str, memberships: list[dict], today: str,
-                      method: str = "name", suppress: set | None = None) -> int:
+                      method: str = "name", suppress: set | None = None,
+                      mid_index: dict | None = None,
+                      conflicts: list | None = None) -> int:
     """Add an `apa` cross-link list to one roster entry. Strictly additive:
     existing fields are never touched; re-running only adds new member_ids. A
     `(member_id, pid)` pair in `suppress` (the apa_unlink ledger) is never (re)added.
+
+    Cross-id guard (crossref path): when `mid_index` is provided, any member_id
+    already linked to a DIFFERENT Fargo id is skipped and appended to `conflicts`
+    (same schema as apa_add_conflicts.json). An idempotent re-attach onto the SAME
+    id is NOT flagged. `mid_index` is updated in-place for each membership newly
+    linked so subsequent names in the same run see ids attached earlier.
+
+    `add()` does NOT pass `mid_index` — it pre-filters blocked memberships before
+    calling this function, avoiding double-reporting of the same conflict.
+
     Returns the number of memberships newly linked."""
     suppress = suppress or set()
     entry = roster["players"][pid]
@@ -204,10 +236,26 @@ def _attach_crosslink(roster: dict, pid: str, memberships: list[dict], today: st
     for m in memberships:
         if (str(m["member_id"]), int(pid)) in suppress:   # corrected wrong link -> skip
             continue
-        if m["member_id"] in have:
+        mid = m["member_id"]
+        # Cross-id guard: only active when crossref passes a mid_index.
+        if mid_index is not None:
+            existing_ids = mid_index.get(mid, set())
+            other_ids = existing_ids - {pid}
+            if other_ids:
+                if conflicts is not None:
+                    conflicts.append({
+                        "member_id": mid,
+                        "attempted_player_id": int(pid),
+                        "existing_player_ids": sorted(int(p) for p in other_ids),
+                        "name": m.get("name"),
+                    })
+                continue  # skip — do not attach
+        if mid in have:
             continue
         existing.append({**m, "source": "apa", "match_method": method, "added_date": today})
-        have.add(m["member_id"])
+        have.add(mid)
+        if mid_index is not None:
+            mid_index.setdefault(mid, set()).add(pid)
         added += 1
     if not existing:                      # nothing to keep — drop the empty key
         entry.pop("apa", None)
