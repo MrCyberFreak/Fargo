@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-27",
-  "candidate_count": 16,
+  "generated_at": "2026-07-14",
+  "candidate_count": 22,
   "note": "evidence only -- confirm by hand into people_merges.json; never auto-merged",
   "candidates": [
     {
@@ -22,6 +22,24 @@
       ]
     },
     {
+      "norm": "brian roybal",
+      "name": "Brian Roybal",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 1028717,
+          "sources": [
+            "apa"
+          ]
+        },
+        {
+          "fargo_player_id": 1332676,
+          "sources": [
+            "bca"
+          ]
+        }
+      ]
+    },
+    {
       "norm": "bryson ford",
       "name": "Bryson Ford",
       "fargo_ids": [
@@ -34,6 +52,7 @@
         {
           "fargo_player_id": 1363082,
           "sources": [
+            "apa",
             "napa"
           ]
         }
@@ -52,7 +71,26 @@
         {
           "fargo_player_id": 1202475,
           "sources": [
-            "apa"
+            "apa",
+            "bca"
+          ]
+        }
+      ]
+    },
+    {
+      "norm": "conn hall",
+      "name": "Conn Hall",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 972795,
+          "sources": [
+            "bca"
+          ]
+        },
+        {
+          "fargo_player_id": 1280171,
+          "sources": [
+            "napa"
           ]
         }
       ]
@@ -71,6 +109,24 @@
           "fargo_player_id": 1122645,
           "sources": [
             "napa"
+          ]
+        }
+      ]
+    },
+    {
+      "norm": "don gonzales",
+      "name": "Don Gonzales",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 1190858,
+          "sources": [
+            "apa"
+          ]
+        },
+        {
+          "fargo_player_id": 1397031,
+          "sources": [
+            "bca"
           ]
         }
       ]
@@ -130,6 +186,24 @@
       ]
     },
     {
+      "norm": "howard popejoy",
+      "name": "Howard Popejoy",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 1147089,
+          "sources": [
+            "bca"
+          ]
+        },
+        {
+          "fargo_player_id": 1160337,
+          "sources": [
+            "bca"
+          ]
+        }
+      ]
+    },
+    {
       "norm": "jeff lang",
       "name": "Jeff Lang",
       "fargo_ids": [
@@ -160,7 +234,26 @@
         {
           "fargo_player_id": 1113419,
           "sources": [
-            "apa"
+            "apa",
+            "bca"
+          ]
+        }
+      ]
+    },
+    {
+      "norm": "kent hoffman",
+      "name": "Kent Hoffman",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 666351,
+          "sources": [
+            "napa"
+          ]
+        },
+        {
+          "fargo_player_id": 1256345,
+          "sources": [
+            "bca"
           ]
         }
       ]
@@ -208,13 +301,32 @@
         {
           "fargo_player_id": 1014394,
           "sources": [
-            "apa"
+            "apa",
+            "bca"
           ]
         },
         {
           "fargo_player_id": 1100225,
           "sources": [
             "napa"
+          ]
+        }
+      ]
+    },
+    {
+      "norm": "patrick riley",
+      "name": "Patrick Riley",
+      "fargo_ids": [
+        {
+          "fargo_player_id": 1267346,
+          "sources": [
+            "bca"
+          ]
+        },
+        {
+          "fargo_player_id": 1364701,
+          "sources": [
+            "bca"
           ]
         }
       ]
@@ -286,7 +398,8 @@
         {
           "fargo_player_id": 745183,
           "sources": [
-            "apa"
+            "apa",
+            "bca"
           ]
         }
       ]

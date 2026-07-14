@@ -1,7 +1,18 @@
 {
-  "generated_at": "2026-06-27",
-  "flag_count": 4,
+  "generated_at": "2026-07-14",
+  "flag_count": 5,
   "flags": [
+    {
+      "states": [
+        "AURORA CO",
+        "CO"
+      ],
+      "person_id": 1362854,
+      "fargo_player_ids": [
+        1362854,
+        1363082
+      ]
+    },
     {
       "states": [
         "Denver CO",

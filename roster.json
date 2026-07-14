@@ -21009,20 +21009,7 @@
       "state": "TX",
       "source": "apa",
       "added_date": "2026-06-07",
-      "note": "APA membership 80400630 (Andrew Tran) reassigned to player 1116151 (Andy Tran, CO) on 2026-06-25 — earlier name-only auto-match linked the wrong FargoRate namesake (this id is TX). Player retained, still tracked.",
-      "apa": [
-        {
-          "member_id": 3121650,
-          "member_number": "80400630",
-          "name": "Andrew Tran",
-          "first_session": 135,
-          "last_session": 135,
-          "sessions_count": 1,
-          "source": "apa",
-          "match_method": "name",
-          "added_date": "2026-07-14"
-        }
-      ]
+      "note": "APA membership 80400630 (Andrew Tran) reassigned to player 1116151 (Andy Tran, CO) on 2026-06-25 — earlier name-only auto-match linked the wrong FargoRate namesake (this id is TX). Player retained, still tracked."
     },
     "1306927": {
       "player_id": 1306927,

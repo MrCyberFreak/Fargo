@@ -3,5 +3,6 @@
   {"person": "Jeff Lang",       "fargo_player_ids": [1120801, 1009701], "reason": "user-confirmed same person 2026-06-07"},
   {"person": "Kris Sandoval",   "fargo_player_ids": [1249922, 1228568], "reason": "user-confirmed same person 2026-06-07"},
   {"person": "Tim Brown",       "fargo_player_ids": [1380955, 1164869], "reason": "user-confirmed same person 2026-06-07 (2 APA memberships)"},
-  {"person": "Premchand Koru",  "fargo_player_ids": [1368535, 1356604], "reason": "user-confirmed same person 2026-06-07"}
+  {"person": "Premchand Koru",  "fargo_player_ids": [1368535, 1356604], "reason": "user-confirmed same person 2026-06-07"},
+  {"person": "Bryson Ford",     "fargo_player_ids": [1362854, 1363082], "reason": "user-confirmed same person 2026-07-14 (Ford / Ford-Bachman, both provisional; one human, two Fargo registrations sharing APA member 3061444)"}
 ]

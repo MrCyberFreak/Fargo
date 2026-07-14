@@ -1,0 +1,7 @@
+[
+  {
+    "member_id": 3121650,
+    "player_id": 1060301,
+    "note": "APA member 3121650 'Andrew Tran' belongs to the manually-picked Andy Tran (player_id 1116151, apa_manual.json). The 2026-07-14 re-resolve auto-added a namesake link to 1060301 'Andrew Tran' (517, established) but 1116151 (376, established) is a different, human-confirmed person - a 141-pt established gap = distinct humans. Suppress the wrong auto-add; keep the manual pick. user-confirmed 2026-07-14 (cf. prior reassignment cafddb4)."
+  }
+]

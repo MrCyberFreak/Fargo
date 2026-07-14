@@ -1,8 +1,23 @@
 {
-  "generated_at": "2026-07-03",
+  "generated_at": "2026-07-14",
   "collision_count": 0,
   "collisions": [],
-  "redundant_same_person_count": 6,
+  "accepted_ambiguous_count": 1,
+  "accepted_ambiguous": [
+    {
+      "source": "bca",
+      "member_key": "napa-of-northern-colorado:patrick riley",
+      "fargo_ids": [
+        1267346,
+        1364701
+      ],
+      "person_ids": [
+        1267346,
+        1364701
+      ]
+    }
+  ],
+  "redundant_same_person_count": 7,
   "redundant_same_person": [
     {
       "source": "apa",
@@ -12,6 +27,15 @@
         1249922
       ],
       "person_id": 1228568
+    },
+    {
+      "source": "apa",
+      "member_key": "3061444",
+      "fargo_ids": [
+        1362854,
+        1363082
+      ],
+      "person_id": 1362854
     },
     {
       "source": "apa",
