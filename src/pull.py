@@ -40,10 +40,21 @@ from fargo_api import FargoApiError, PlayerRecord
 ROOT = Path(__file__).resolve().parent.parent
 ROSTER_PATH = ROOT / "roster.json"
 HISTORY_PATH = ROOT / "data" / "history.csv"
+# Parallel append-only log of the DISPLAYED (effective) rating — the number the
+# FargoRate site shows and FairMatch handicaps on. history.csv keeps the RAW
+# rating; this file mirrors it for the blended value (see docs/api.md). Kept
+# separate so history.csv's append-only "never rewrite" invariant is untouched.
+EFFECTIVE_HISTORY_PATH = ROOT / "data" / "effective_history.csv"
 
 FIELDNAMES = [
     "date_found", "player_id", "readable_id", "name",
     "rating", "robustness", "rating_quality", "entry_type",
+]
+
+EFFECTIVE_FIELDNAMES = [
+    "date_found", "player_id", "readable_id", "name",
+    "effective_rating", "provisional_rating", "robustness",
+    "rating_quality", "entry_type",
 ]
 
 FetchFn = Callable[..., PlayerRecord]
@@ -73,14 +84,41 @@ def load_last_entries(path: Path) -> dict[int, dict]:
     return last
 
 
-def append_rows(path: Path, rows: list[dict]) -> None:
+def append_rows(path: Path, rows: list[dict], fieldnames: list[str] = FIELDNAMES) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     new_file = not path.exists()
     with path.open("a", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=FIELDNAMES)
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
         if new_file:
             writer.writeheader()
         writer.writerows(rows)
+
+
+def _raw_row(today: str, rec, entry_type: str) -> dict:
+    return {
+        "date_found": today,
+        "player_id": rec.player_id,
+        "readable_id": rec.membership_id or "",
+        "name": rec.name,
+        "rating": rec.rating,
+        "robustness": rec.robustness,
+        "rating_quality": rec.rating_quality,
+        "entry_type": entry_type,
+    }
+
+
+def _effective_row(today: str, rec, entry_type: str) -> dict:
+    return {
+        "date_found": today,
+        "player_id": rec.player_id,
+        "readable_id": rec.membership_id or "",
+        "name": rec.name,
+        "effective_rating": rec.effective_rating,
+        "provisional_rating": rec.provisional_rating,
+        "robustness": rec.robustness,
+        "rating_quality": rec.rating_quality,
+        "entry_type": entry_type,
+    }
 
 
 def run_pull(
@@ -90,14 +128,27 @@ def run_pull(
     fetch: FetchFn | None = None,
     today: str | None = None,
     session=None,
+    effective_path: Path | None = None,
 ) -> dict:
-    """Apply the recording rules for every rostered player. Returns a summary."""
+    """Apply the recording rules for every rostered player. Returns a summary.
+
+    history_path tracks the RAW rating (FargoRating). When effective_path is
+    given, the DISPLAYED (effective) rating is tracked in parallel there under
+    the same rules — a row only when that file's own last value moved. The two
+    logs are independent append-only files, so raw wobble and displayed-rating
+    moves are recorded on their own cadences.
+    """
     fetch = fetch or fargo_api.get_player
     today = today or dt.date.today().isoformat()
     last_entries = load_last_entries(history_path)
+    last_effective = load_last_entries(effective_path) if effective_path is not None else {}
 
-    summary = {"checked": 0, "baselined": 0, "changed": 0, "unchanged": 0, "failed": 0}
+    summary = {
+        "checked": 0, "baselined": 0, "changed": 0, "unchanged": 0, "failed": 0,
+        "eff_baselined": 0, "eff_changed": 0, "eff_unchanged": 0,
+    }
     new_rows: list[dict] = []
+    new_eff_rows: list[dict] = []
 
     for key, entry in roster.items():
         pid = int(entry["player_id"])
@@ -111,6 +162,7 @@ def run_pull(
             print(f"FAIL   {pid} {name_hint}: {exc}")
             continue
 
+        # --- RAW rating -> history.csv (unchanged behavior) ---
         prev = last_entries.get(pid)
         if prev is not None:
             unchanged = (
@@ -120,34 +172,43 @@ def run_pull(
             if unchanged:
                 summary["unchanged"] += 1
                 print(f"OK     {pid} {rec.name}: unchanged ({rec.rating}/{rec.robustness})")
-                continue
-            entry_type = "change"
+            else:
+                new_rows.append(_raw_row(today, rec, "change"))
+                summary["changed"] += 1
+                print(f"CHANGE {pid} {rec.name}: "
+                      f"{prev['rating']}/{prev['robustness']} -> {rec.rating}/{rec.robustness}")
         else:
-            entry_type = "baseline"
-
-        new_rows.append({
-            "date_found": today,
-            "player_id": rec.player_id,
-            "readable_id": rec.membership_id or "",
-            "name": rec.name,
-            "rating": rec.rating,
-            "robustness": rec.robustness,
-            "rating_quality": rec.rating_quality,
-            "entry_type": entry_type,
-        })
-
-        if entry_type == "baseline":
+            new_rows.append(_raw_row(today, rec, "baseline"))
             summary["baselined"] += 1
             print(f"BASE   {pid} {rec.name}: {rec.rating}/{rec.robustness} ({rec.rating_quality})")
-        else:
-            summary["changed"] += 1
-            print(f"CHANGE {pid} {rec.name}: "
-                  f"{prev['rating']}/{prev['robustness']} -> {rec.rating}/{rec.robustness}")
+
+        # --- EFFECTIVE (displayed) rating -> effective_history.csv ---
+        if effective_path is not None:
+            prev_eff = last_effective.get(pid)
+            if prev_eff is not None:
+                eff_unchanged = (
+                    int(prev_eff["effective_rating"]) == rec.effective_rating
+                    and int(prev_eff["robustness"]) == rec.robustness
+                )
+                if eff_unchanged:
+                    summary["eff_unchanged"] += 1
+                else:
+                    new_eff_rows.append(_effective_row(today, rec, "change"))
+                    summary["eff_changed"] += 1
+                    print(f"EFF    {pid} {rec.name}: "
+                          f"{prev_eff['effective_rating']}/{prev_eff['robustness']} -> "
+                          f"{rec.effective_rating}/{rec.robustness}")
+            else:
+                new_eff_rows.append(_effective_row(today, rec, "baseline"))
+                summary["eff_baselined"] += 1
 
     if new_rows:
-        append_rows(history_path, new_rows)
+        append_rows(history_path, new_rows, FIELDNAMES)
+    if new_eff_rows:
+        append_rows(effective_path, new_eff_rows, EFFECTIVE_FIELDNAMES)
 
     summary["new_rows"] = len(new_rows)
+    summary["new_eff_rows"] = len(new_eff_rows)
     return summary
 
 
@@ -162,13 +223,21 @@ def main() -> int:
         time.sleep(fargo_api.REQUEST_DELAY)
         return rec
 
-    summary = run_pull(roster, HISTORY_PATH, fetch=paced_fetch, session=session)
+    summary = run_pull(
+        roster, HISTORY_PATH, fetch=paced_fetch, session=session,
+        effective_path=EFFECTIVE_HISTORY_PATH,
+    )
 
     print("\n--- run summary ---")
     print(
         f"checked={summary['checked']} baselined={summary['baselined']} "
         f"changed={summary['changed']} unchanged={summary['unchanged']} "
         f"failed={summary['failed']} new_rows={summary['new_rows']}"
+    )
+    print(
+        f"effective: baselined={summary['eff_baselined']} "
+        f"changed={summary['eff_changed']} unchanged={summary['eff_unchanged']} "
+        f"new_eff_rows={summary['new_eff_rows']}"
     )
 
     if summary["checked"] > 0 and summary["failed"] == summary["checked"]:

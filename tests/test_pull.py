@@ -20,11 +20,12 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 import fargo_api  # noqa: E402
-from fargo_api import FargoApiError, PlayerRecord, quality_for  # noqa: E402
+from fargo_api import FargoApiError, PlayerRecord, effective_for, quality_for  # noqa: E402
 import pull  # noqa: E402
 
 
-def make_rec(player_id, rating, robustness, name="Test Player"):
+def make_rec(player_id, rating, robustness, name="Test Player", *,
+             provisional=0, effective=None):
     return PlayerRecord(
         player_id=player_id,
         membership_id=f"M{player_id}",
@@ -34,6 +35,8 @@ def make_rec(player_id, rating, robustness, name="Test Player"):
         location="CO",
         rating_quality=quality_for(robustness),
         row_id=f"guid-{player_id}",
+        provisional_rating=provisional,
+        effective_rating=effective,  # None -> defaults to raw via __post_init__
         raw={},
     )
 
@@ -130,6 +133,7 @@ def test_all_fail_exits_nonzero(tmp_path, monkeypatch):
     hist = tmp_path / "history.csv"
     monkeypatch.setattr(pull, "ROSTER_PATH", tmp_path / "roster.json")
     monkeypatch.setattr(pull, "HISTORY_PATH", hist)
+    monkeypatch.setattr(pull, "EFFECTIVE_HISTORY_PATH", tmp_path / "effective_history.csv")
     (tmp_path / "roster.json").write_text(
         '{"players": {"2": {"player_id": 2, "name": "Missing"}}}'
     )
@@ -145,6 +149,7 @@ def test_some_succeed_exits_zero(tmp_path, monkeypatch):
     hist = tmp_path / "history.csv"
     monkeypatch.setattr(pull, "ROSTER_PATH", tmp_path / "roster.json")
     monkeypatch.setattr(pull, "HISTORY_PATH", hist)
+    monkeypatch.setattr(pull, "EFFECTIVE_HISTORY_PATH", tmp_path / "effective_history.csv")
     (tmp_path / "roster.json").write_text(
         '{"players": {"1": {"player_id": 1, "name": "Ok"},'
         ' "2": {"player_id": 2, "name": "Missing"}}}'
@@ -157,3 +162,83 @@ def test_some_succeed_exits_zero(tmp_path, monkeypatch):
 
     monkeypatch.setattr(fargo_api, "get_player", one_ok)
     assert pull.main() == 0  # at least one succeeded -> green run
+
+
+# --- effective (displayed) rating: computation + parallel history ---------
+
+def test_effective_for_blend_and_edges():
+    # preliminary blend, verified against live data (raw 458 / prov 440 / rob 67)
+    assert effective_for(458, 440, 67) == 446
+    # established (robustness >= 200) -> starter drops, effective == raw
+    assert effective_for(600, 440, 250) == 600
+    # exactly at the 200 line -> effective == raw
+    assert effective_for(500, 440, 200) == 500
+    # no provisional starter -> effective == raw
+    assert effective_for(438, 0, 63) == 438
+
+
+def test_effective_history_baseline_then_change(tmp_path):
+    hist = tmp_path / "history.csv"
+    eff = tmp_path / "effective_history.csv"
+
+    rec1 = make_rec(1310533, 458, 67, "Nathan Carroll", provisional=440, effective=446)
+    s1 = pull.run_pull(roster_of(1310533), hist, fetch=fetch_from({1310533: rec1}),
+                       today="2026-07-15", effective_path=eff)
+    assert s1["eff_baselined"] == 1 and s1["new_eff_rows"] == 1
+    er = read_rows(eff)
+    assert len(er) == 1
+    assert er[0]["entry_type"] == "baseline"
+    assert er[0]["effective_rating"] == "446"
+    assert er[0]["provisional_rating"] == "440"
+    assert er[0]["robustness"] == "67"
+
+    # displayed rating moves 446 -> 452
+    rec2 = make_rec(1310533, 470, 72, "Nathan Carroll", provisional=440, effective=452)
+    s2 = pull.run_pull(roster_of(1310533), hist, fetch=fetch_from({1310533: rec2}),
+                       today="2026-07-16", effective_path=eff)
+    assert s2["eff_changed"] == 1 and s2["new_eff_rows"] == 1
+    er = read_rows(eff)
+    assert len(er) == 2
+    assert er[-1]["entry_type"] == "change" and er[-1]["effective_rating"] == "452"
+
+
+def test_effective_unchanged_writes_nothing(tmp_path):
+    hist = tmp_path / "history.csv"
+    eff = tmp_path / "effective_history.csv"
+    rec = make_rec(1310533, 458, 67, provisional=440, effective=446)
+
+    pull.run_pull(roster_of(1310533), hist, fetch=fetch_from({1310533: rec}),
+                  today="2026-07-15", effective_path=eff)
+    s2 = pull.run_pull(roster_of(1310533), hist, fetch=fetch_from({1310533: rec}),
+                       today="2026-07-16", effective_path=eff)
+    assert s2["eff_unchanged"] == 1 and s2["new_eff_rows"] == 0
+    assert len(read_rows(eff)) == 1  # still just the baseline
+
+
+def test_raw_move_without_effective_move_records_only_raw(tmp_path):
+    # A raw wobble that rounds to the same displayed rating: history.csv gets a
+    # row, effective_history.csv does not — the two logs move independently.
+    hist = tmp_path / "history.csv"
+    eff = tmp_path / "effective_history.csv"
+
+    pull.run_pull(roster_of(1310533), hist,
+                  fetch=fetch_from({1310533: make_rec(1310533, 458, 67, provisional=440, effective=446)}),
+                  today="2026-07-15", effective_path=eff)
+    s2 = pull.run_pull(roster_of(1310533), hist,
+                       fetch=fetch_from({1310533: make_rec(1310533, 459, 67, provisional=440, effective=446)}),
+                       today="2026-07-16", effective_path=eff)
+
+    assert s2["changed"] == 1 and s2["new_rows"] == 1          # raw file recorded the move
+    assert s2["eff_unchanged"] == 1 and s2["new_eff_rows"] == 0  # displayed rating held
+    assert len(read_rows(hist)) == 2
+    assert len(read_rows(eff)) == 1
+
+
+def test_no_effective_path_leaves_effective_untracked(tmp_path):
+    # Backward-compat: without effective_path, only history.csv is written.
+    hist = tmp_path / "history.csv"
+    s = pull.run_pull(roster_of(1310533), hist,
+                      fetch=fetch_from({1310533: make_rec(1310533, 458, 67)}),
+                      today="2026-07-15")
+    assert s["new_eff_rows"] == 0 and s["eff_baselined"] == 0
+    assert not (tmp_path / "effective_history.csv").exists()

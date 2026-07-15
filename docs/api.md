@@ -104,18 +104,47 @@ code never touches these field names:
 | `membership_id` (str) | `BBMMembershipId` | `membershipId` |
 | `row_id` (str) | `RowId` | `id` |
 | `name` (str) | `FullName` | `firstName` + `lastName` |
-| `rating` (int) | `FargoRating` | `effectiveRating` (fallback `rating`) |
+| `rating` (int) — **RAW** | `FargoRating` | `effectiveRating` (fallback `rating`)² |
 | `robustness` (int) | `Robustness` | `robustness` |
+| `provisional_rating` (int) | `ProvisionalRating` | `provisionalRating` |
+| `effective_rating` (int) — **DISPLAYED** | *computed*¹ | `effectiveRating` |
 | `location` (str) | `State` | `location` |
 | `rating_quality` | derived | derived |
 
 Notes:
 - **All numeric values come back as JSON strings** (`"438"`, `"63"`) — parse to int.
-- `rating` = **effectiveRating / FargoRating** (438), *not* the search field
-  `rating` (437), which is a different (pre-effective) value.
+- **RAW vs DISPLAYED rating — these are two different numbers.** `FargoRating`
+  (the pull's `rating`) is the raw whole-history performance rating. The
+  fargorate.com **site displays** `effectiveRating`, a games-weighted blend of
+  the raw rating and the `ProvisionalRating` "starter":
+
+      effective = provisional + (min(robustness, 200) / 200) * (rating - provisional)
+
+  Weight on the raw rating is `robustness/200`; at robustness ≥ 200 (established)
+  the starter drops out and **effective == raw**. A provisional of `0` (no
+  starter — established players and some new accounts) also gives effective ==
+  raw. Verified live 2026-07-15: player 1310533 raw `458` / provisional `440` /
+  robustness `67` → `446`, matching the site.
+  ¹ `/api/players/{id}` does **not** return `effectiveRating` (and the id-keyed
+  `/api/ratings/{id}` returns `[]`), so the pull **computes** it from the three
+  fields the id lookup does return — `FargoRating`, `ProvisionalRating`,
+  `Robustness` — via `fargo_api.effective_for()`. No name re-search needed, so
+  the identity invariant holds. The exact half-integer rounding rule is
+  UNVERIFIED (only whole-number cases observed); round-to-nearest is used.
+  ² The `indexsearch` normalizer historically keeps `rating` = the *displayed*
+  value (`effectiveRating`, fallback `rating`) for name resolution; the pull
+  never uses search, so its `rating` is always the raw `FargoRating`.
+- **This assumption used to be invisible.** At the Phase-0 fixture (2026-06-05)
+  the player was raw 438 / provisional 0, so effective == raw == 438 and the two
+  fields agreed — the divergence only appears once a preliminary player's raw
+  rating pulls ahead of the blended one. Do **not** assume `FargoRating ==
+  effectiveRating`.
 - `rating_quality` = `established` if `robustness >= 200` else `preliminary`.
   The 200 threshold was confirmed in Phase 0 (FairMatch's progress bar read
-  63/200 ≈ 32% for this player).
+  63/200 ≈ 32% for this player) and is the same line at which the starter drops.
+- The pull records the raw rating in `data/history.csv` and the displayed
+  (effective) rating in `data/effective_history.csv` (parallel append-only log,
+  added 2026-07-15), each triggered independently by its own value moving.
 
 ## Known-answer fixture (regression anchor)
 
