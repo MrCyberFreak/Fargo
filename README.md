@@ -3,8 +3,11 @@
 Tracks [FargoRate](https://www.fargorate.com/) (pool/billiards) ratings for a
 fixed roster of players over time. A scheduled GitHub Actions job fetches each
 player's current **rating** and **robustness** and appends a dated row to
-`data/history.csv` **only when one of those values has changed**. The repo *is*
-the database; git history is the audit trail. No external services, no secrets.
+`data/history.csv` **only when one of those values has changed**. It also tracks
+the **displayed (effective) rating** — the blended number fargorate.com actually
+shows a preliminary player — in a parallel `data/effective_history.csv`. The
+repo *is* the database; git history is the audit trail. No external services, no
+secrets.
 
 See **[CLAUDE.md](CLAUDE.md)** for the full behavioral contract and
 **[docs/api.md](docs/api.md)** for the verified API.
@@ -15,8 +18,13 @@ See **[CLAUDE.md](CLAUDE.md)** for the full behavioral contract and
   No-change days produce no commit.
 - **`roster.json`** is the fixed list of tracked players, keyed on the integer
   FargoRate `player_id` (never re-searched by name once resolved).
-- **`data/history.csv`** is the append-only log:
+- **`data/history.csv`** is the append-only log of the **raw** rating:
   `date_found, player_id, readable_id, name, rating, robustness, rating_quality, entry_type`.
+- **`data/effective_history.csv`** is the parallel append-only log of the
+  **displayed (effective)** rating — the blended value the site shows, computed
+  from the raw rating + provisional + robustness (see `docs/api.md`):
+  `date_found, player_id, readable_id, name, effective_rating, provisional_rating, robustness, rating_quality, entry_type`.
+  Each log is triggered independently, by its own value moving.
 
 ## Adding players (Phase 1 resolution)
 Names collide, so each player is confirmed once, then tracked by id.
@@ -66,7 +74,8 @@ free Actions minutes/month — far more than a daily two-minute pull needs.
 ## Layout
 ```
 roster.json                 # tracked players: player_id -> full record + added_date
-data/history.csv            # append-only baseline/change log (created on first run)
+data/history.csv            # append-only RAW-rating log (created on first run)
+data/effective_history.csv  # parallel DISPLAYED-rating log (created on first run)
 src/fargo_api.py            # thin, normalized FargoRate API client
 src/resolve.py              # Phase 1 name -> id resolution
 src/pull.py                 # Phase 2 scheduled pull (recording rules)
