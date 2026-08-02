@@ -20,4 +20,4 @@ basket/
 _ref/
 
 # Session handoff docs are local-only — never committed.
-handoffs/
+_handoffs/
